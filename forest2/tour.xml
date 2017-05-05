@@ -1,0 +1,359 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+	
+				<layer name="logo"
+		type="image"
+		url="LOGO.png"
+		keep="true"
+		visible="true"
+		enabled="true"
+		handcursor="true"
+		align="lefttop"
+		edge="lefttop"
+		width="75%" height="prop"
+
+		x="5"
+		y="5"
+		rotate="0"
+		scale="0.15"
+		alpha="0.24"
+		bgcolor="0x000000"
+		bgalpha="0.0"
+		bgborder="0"
+		bgroundedge="0"
+		bgshadow=""
+		bgcapture="false"
+		onover="tween(alpha, 1); tween(scale, 0.17)"
+		onhover=""
+		onout="tween(alpha, 0.3); tween(scale, 0.15)"
+		onclick="openurl('https://3dshu.github.io/mypage/');"
+		ondown=""
+		onup=""
+		onloaded=""
+       />
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
+		<scene name="scene_PANO1____" title="PANO1____" onstart="" thumburl="panos/PANO1____.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO1____.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO1____.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO1____.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+	
+	
+	
+	<scene name="scene_PANO2__" title="PANO2__" onstart="" thumburl="panos/PANO2__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO2__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO2__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO2__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+	
+	
+	<scene name="scene_PANO5__" title="PANO5__" onstart="" thumburl="panos/PANO5__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO5__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO5__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO5__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO6__" title="PANO6__" onstart="" thumburl="panos/PANO6__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO6__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO6__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO6__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO7__" title="PANO7__" onstart="" thumburl="panos/PANO7__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO7__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO7__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO7__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO9__" title="PANO9__" onstart="" thumburl="panos/PANO9__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO9__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO9__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO9__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	
+	
+	<scene name="scene_PANO10__" title="PANO10__" onstart="" thumburl="panos/PANO10__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO10__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO10__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO10__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO11__" title="PANO11__" onstart="" thumburl="panos/PANO11__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO11__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO11__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO11__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO12__" title="PANO12__" onstart="" thumburl="panos/PANO12__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO12__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO12__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO12__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO13__" title="PANO13__" onstart="" thumburl="panos/PANO13__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO13__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO13__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO13__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO14__" title="PANO14__" onstart="" thumburl="panos/PANO14__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO14__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO14__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO14__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO15__" title="PANO15__" onstart="" thumburl="panos/PANO15__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO15__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO15__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO15__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO16__" title="PANO16__" onstart="" thumburl="panos/PANO16__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO16__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO16__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO16__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_PANO19__" title="PANO19__" onstart="" thumburl="panos/PANO19__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO19__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO19__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO19__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+	<scene name="scene_PANO20__" title="PANO20__" onstart="" thumburl="panos/PANO20__.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/PANO20__.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PANO20__.tiles/pano_%s.jpg" />
+
+			<cube url="panos/PANO20__.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+
+
+</krpano>

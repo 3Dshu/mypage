@@ -1,0 +1,98 @@
+﻿<krpano>
+	
+	    <include url="%SWFPATH%/plugins/showtext.xml" />
+		
+		<textstyle name="DEFAULT"
+           origin="cursor"
+           edge="bottom"
+           xoffset="0"
+           yoffset="-12"
+           fadeintime="0.3"
+           showtime="0.1"
+           fadetime="0.0"
+           font="Arial"
+           fontsize="50.0"
+           bold="true"
+           italic="false"
+           textcolor="0xFFFFFF"
+           textalign="none"
+           padding="6"
+           css=""
+           width=""
+           height=""
+           vcenter=""
+           background="false"
+           backgroundcolor="0x000000"
+           backgroundalpha="0.4"
+           border="false"
+           bordercolor="0xFFFFFF"
+           borderalpha="1"
+           borderwidth="5"
+           roundedge="5"
+           shadow="3"
+           shadowrange="10"
+           shadowangle="45"
+           shadowcolor="0xFFFFFFF"
+           shadowalpha="1"
+           textshadow="6"
+           textshadowrange="5"
+           textshadowangle="60"
+           textshadowcolor="0xFFFFFF"
+           textshadowalpha="1.0"
+           embeddedfonts="false"
+           alpha="1.0"
+           blendmode="normal"
+           effect=""
+           parent=""
+           noclip="true"
+           />
+	 
+	
+	<style name="spot" url="spot.png" align="lefttop" edge="bottom" scale="0.5" oy="3"/>
+
+	<layer name="sidebar" keep="true" enebled="false" visible="false" type="container"   children="true" zorder="5" handcursor="false" bgborder="3 0xFFFFFF 1" bgroundedge="0" maskchildren="false"  align="center" width="70%" height="65%" bgcolor="0x000000" bgalpha="0.1" >
+				
+		<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js"  align="lefttop" width="1920" height="1280" direction="all" onhover_autoscrolling="true">
+		<layer name="mapk" url="korfumap.png" align="lefttop" width="100%" height="prop" zorder="9">
+			<layer name="spot1" style="spot" x="660" y="540"  zorder="5" onhover="showtext(гостинная); tween(layer[spot1].alpha ,0.2)" onout="tween(layer[spot1].alpha ,1)" onclick="loadscene(scene_gostinnaya,null,MERGE,OPENBLEND(1, 1, 0.5)); set(layer[map_button_close].visible,false); set(layer[sidebar].visible, false); set(layer[sidebar].enebled, false,); set(layer[map_button_open].visible, true);set(layer[map_button_open].alpha, 0.4)"/>
+			<layer name="spot2" style="spot" x="1400" y="520"  zorder="3" onhover="showtext(прихожая); tween(layer[spot2].alpha ,0.2)" onout="tween(layer[spot2].alpha ,1)" onclick="loadscene(scene_prihojaya,null,MERGE,OPENBLEND(1, 1, 0.5)); set(layer[map_button_close].visible,false);set(layer[sidebar].visible, false); set(layer[sidebar].enebled, false,); set(layer[map_button_open].visible, true);set(layer[map_button_open].alpha, 0.4)"/>
+			<layer name="spot3" style="spot" x="890" y="920"  zorder="6" onhover="showtext(кухня); tween(layer[spot3].alpha ,0.2)" onout="tween(layer[spot3].alpha ,1)" onclick="loadscene(scene_kuhnya,null,MERGE,OPENBLEND(1, 1, 0.5)); set(layer[map_button_close].visible,false);set(layer[sidebar].visible, false); set(layer[sidebar].enebled, false,); set(layer[map_button_open].visible, true);set(layer[map_button_open].alpha, 0.4)"/>
+			<layer name="spot4" style="spot" x="1400" y="920"  zorder="4" onhover="showtext(ванна); tween(layer[spot4].alpha ,0.2)" onout="tween(layer[spot4].alpha ,1)" onclick="loadscene(scene_vanna,null,MERGE,OPENBLEND(1, 1, 0.5)); set(layer[map_button_close].visible,false);set(layer[sidebar].visible, false); set(layer[sidebar].enebled, false,); set(layer[map_button_open].visible, true) ;set(layer[map_button_open].alpha, 0.4)"/>
+			</layer>
+		</layer>
+	</layer>
+	
+		<!-- a style for a simple textfield element -->
+	<style name="text"
+	       url="%SWFPATH%/plugins/textfield.swf"
+	       background="false"
+	       css="color:#FFFFFF;"
+	       enabled="false"
+	       />
+		   
+		   	<layer name="box3" type="container" align="rightbottom" x="50" y="150" width="300" height="200" bgcolor="0x0033FF" bgalpha="0.5" bgcapture="true" maskchildren="false" ondown="draglayer();">
+		<layer name="txt4" style="text" html="drag me" align="lefttop" />
+		<layer name="box4" type="container" align="center" x="0" y="0" width="100" height="100" bgcolor="0x33FF33" bgalpha="0.7" bgcapture="true" ondown="draglayer();">
+			<layer name="txt5" style="text" html="drag me" align="center" />
+		</layer>
+		<layer name="txt6" style="text" html="maskchildren=false" align="leftbottom" />
+	</layer>
+		   
+	<layer name="map_button_close" url="test.png" keep="true" maskchildren="true" align="rightbottom" edge="rightbottom" x="10%" y="10%" alpha="1" width="prop" height="22" visible="false" scale="1" enebled="true"
+				onhover="showtext(скрыть план)"
+				onclick="set(layer[map_button_open].visible, true); set(visible, false); set(enebled, false); set(layer[sidebar].visible, false); set(layer[sidebar].enebled, false,);set(layer[map_button_open].alpha, 0.4)" 
+		/>
+
+ 
+ 
+ <layer name="map_button_open" url="knopka.png" keep="true" zorder="10" align="righttop" edge="righttop" x="3" y="3"  width="prop" height="23%" alpha="0.4" visible="true" scale="0.9" 
+
+ onhover="showtext(план); set(layer[map_button_open].alpha, 1);"
+ onout="tween(layer[map_button_open].alpha ,0.4)"
+
+ onclick=" ; set(layer[sidebar].visible, true); set(layer[map_button_close].visible, true);  set(layer[map_button_close].enebled, true); set(visible, false); delayedcall(0.3, set(layer[sidebar].visible, true, WAIT)); set(layer[sidebar].visible, true) ;" 
+ />
+
+
+
+</krpano>
