@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <head>
-<script src="/assets/jquery.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="forest/tour.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
 <style>
 body {
   font-family: helvetica, sans-serif;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
   background: #232323;
 }
 div {
@@ -26,6 +27,7 @@ h1 {
 h2 {
   text-align: center;
   color: #bbbbbb;
+  font-size: 40px;
   margin: 0px 0 70px 0;
 }
 p {
@@ -48,35 +50,32 @@ p {
 
 small {
   opacity: 0;
+  font-size: 18px;
 }
 
 .show-description p {
-  height: 150px;
+  height: 80px;
 }
 
 .show-description small {
   opacity: 1;
 }
 
-.first{
+.flat1{
   background-image: url("first.jpg");
 }
-.second{
+.flat2{
   background-image: url("second.jpg");
 }
-.dessert{
+.forest1{
   background-image: url("therth.jpg");
 }
-.forest{
-  background-image: url("forest.jpg");
+.forest2{
+  id="forest/tour.html";
 }
-
-.titlu {
+.price {
   float: right;
-  font-size: 90%;
-  position: relative;
 }
-
 @media (max-width: 500px) {
   h1 {
     font-size: 50px;
@@ -95,7 +94,7 @@ small {
     line-height: 24px;
   }
   small {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -107,26 +106,33 @@ small {
 <h1>Aleksey Shunguev</h1>
 <h2>3D turi</h2>
 
-<div class="first">
-  <p>KAFE "Lounge BAR" <span class="titlu">3D</span><br/>
-  <small>Дизайн концепция Кафе, разработан в дизайн студии "Экоград". В 3д туре использована карта для бустрого перехода между сценами </small></p>
+<div class="flat1">
+  <p>KAFE "Lounge BAR"                     <span class="price">3D</span><br/>
+  <small>Дизайн концепция Кафе. В кафе есть сцена для выступлений, уютные приват-комнаты. Бар расположен у входа   </small></p>
 </div>
 
-<div class="second">
-  <p>28m flat <span class="titlu">3D</span><br/>
-  <small>Дизайн квартиры для молодого человека(девушка), общей площадью 28 квадратных метров, моделировалось 4-5 дней. в ванной мультирез</small></p>
+<div id="forest/tour.html" style="width:600px; height:200px;"></div>
+
+<div class="flat2">
+  <p>28m flat <span class="price">3D</span><br/>
+  <small>Дизайн квартиры для молодого человека(девушка), общей площадью 28 квадратных метров</small></p>
 </div>
   
-<div class="dessert">
-  <p>30m flat <span class="titlu">3D</span><br/>
-  <small>Дизайн кваритиры для молодой пары, общей площадью 30квадратных метров, в 3д тур доабвленна карта для перехода к следующей сцене</small></p>
+<div class="forest1">
+  <p>30m flat <span class="price">3D</span><br/>
+  <small>Дизайн кваритиры для молодой пары, общей площадью 30 квадратных метров</small></p>
 </div>
 
-<div class="forest">
-  <p>FOREST <span class="titlu">FOTO</span><br/>
-  <small>Фотографии сделанны на камеру Никон Д5300 с объективом Никор фишай, Склеивалось в программе ПТГУИ без лицензии. </small></p>
+<div class="forest2">
+  <p>FOREST <span class="price">FOTO</span><br/>
+  <small>Фотографии сделанны в лесу на камеру Никон Д5300 с объективом Никор фишай</small></p>
 </div>
 
+
+
+<script>
+  embedpano({swf:"forest/tour.swf", xml:"forest/tour.xml", target:"forest/tour.html"});
+</script>
 
 <script>
   $('div').on('click', function() {
