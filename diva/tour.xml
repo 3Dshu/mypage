@@ -1,6 +1,6 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
-	<include url="skin/vtourskin.xml" />
+	<include url="skin/vtourskin_design_ultra_light.xml" /> 
 
 	<include url="plugins/garrows/garrows.xml" />
 
@@ -166,14 +166,13 @@
 		</image>
 		<hotspot name="spot2" style="skin_hotspotstyle_navigate" ath="0.155" atv="15.863" linkedscene="scene_pano2" />
 		
-				<hotspot name="logo" type="image" url="logo.jpg" distorted="true"
-	         
-	    onloaded="calc_pos_from_hfov_yaw_pitch_roll(12, 9, -6, 0);"
-		alpha="1"
-		onover="tween(scale, 2, 0.8)"
-		onout="tween(scale, 1)"
+				<hotspot name="logo" type="image" distorted="true" renderer="css3d" url="logo.jpg"    
+				onloaded="calc_pos_from_hfov_yaw_pitch_roll(12, 9, -6, 0);"
+				alpha="1"
+				onover="tween(scale, 2, 0.8)"
+				onout="tween(scale, 1)"
 	
-	         />
+				/>
 	
 	
 
