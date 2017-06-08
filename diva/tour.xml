@@ -1,7 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
 	<include url="skin/vtourskin.xml" />
-	<plugin name="editor" url="plugins/editor.swf" keep="true" />
+
 	<include url="plugins/garrows/garrows.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
