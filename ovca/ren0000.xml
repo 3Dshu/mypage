@@ -1,0 +1,20 @@
+﻿<krpano>
+
+	<include url="skin/objectskin.xml" />
+
+	<image type="CYLINDER" hfov="1.00" vfov="0.750000" voffset="0.00" multires="true" tilesize="512" progressive="true" frames="26" frame="1">
+		<level tiledimagewidth="3072" tiledimageheight="2304">
+			<cylinder url="ren0000.tiles/%0f/l4/%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="1536" tiledimageheight="1152">
+			<cylinder url="ren0000.tiles/%0f/l3/%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="768" tiledimageheight="578">
+			<cylinder url="ren0000.tiles/%0f/l2/%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="256" tiledimageheight="194" aspreview="true">
+			<cylinder url="ren0000.tiles/%0f/l1/%v_%h.jpg" />
+		</level>
+	</image>
+
+</krpano>
