@@ -1,0 +1,213 @@
+﻿<krpano bgcolor="0x000000">
+
+	<!-- the skin and the flat pano viewing and controlling setup -->
+	<!-- <include url="skin/defaultskin.xml" /> -->
+	<include url="skin/flatpano_setup.xml" />
+	<plugin url="moretweentypes.swf"
+        alturl="moretweentypes.js"
+        preload="true"
+        />
+	
+		<!-- LOGO GALAKTIKA -->
+			<layer name="logoG"
+			type="image"
+			url="LOGO.png"
+			keep="true"
+			visible="true"
+			enabled="true"
+			handcursor="true"
+			align="righttop"
+			width="75%" height="prop"
+			edge="righttop"			
+			x="15"
+			y="15"
+			rotate="0"
+			scale="0.3"
+			alpha="0.6"
+			bgcolor="0x000000"
+			bgalpha="0.0"
+			bgborder="0"
+			bgroundedge="0"
+			bgshadow=""
+			bgcapture="false"
+			onover="tween(alpha, 1, 0.2); tween(scale, 0.3)"
+			onhover=""
+			onout="tween(alpha, 0.6); tween(scale, 0.3)"
+			onclick="openurl('http://www.bestpl.ru');"
+			ondown=""
+			onup=""
+			onloaded=""
+			/>
+	
+	<!--ramka -->
+			<layer name="ramka"
+			type="image"
+			url="ramka.png"
+			keep="true"
+			visible="true"
+			enabled="false"
+			handcursor="true"
+			align="righttop"
+			width="75%" height="prop"
+			edge="center"			
+			x="50%"
+			y="95%"
+			rotate="0"
+			scale="0.13"
+			alpha="1"
+			bgcolor="0x000000"
+			bgalpha="0.0"
+			bgborder="0"
+			bgroundedge="0"
+			bgshadow=""
+			bgcapture="false"
+			onover=""
+			onhover=""
+			onout=""
+			onclick=""
+			ondown=""
+			onup=""
+			onloaded=""
+			/>
+	
+	<!-- knopka -->
+			<layer name="knopka1"
+			type="image"
+			url="knopka1.png"
+			keep="true"
+			visible="true"
+			enabled="true"
+			handcursor="true"
+			align="righttop"
+			width="75%" height="prop"
+			edge="center"			
+			x="33%"
+			y="95%"
+			rotate="0"
+			scale="0.1"
+			alpha="0.8"
+			bgcolor="0x000000"
+			bgalpha="0.0"
+			bgborder="0"
+			bgroundedge="0"
+			bgshadow=""
+			bgcapture="false"
+			onover="tween(alpha, 1, 0.2); tween(scale, 0.12)"
+			onhover=""
+			onout="tween(alpha, 0.8); tween(scale, 0.1)"
+			onclick="tween(hotspot[spot4].alpha ,0); tween(hotspot[spot2].alpha ,1 , 1); tween(scale, 0.12, 0.27, easeOutElastic); tween(layer[ramka].x, 33%, easeInElastic)"
+			ondown=""
+			onup=""
+			onloaded=""
+			/>
+	
+	
+	
+	<!-- knopka -->
+			<layer name="knopka2"
+			type="image"
+			url="knopka2.png"
+			keep="true"
+			visible="true"
+			enabled="true"
+			handcursor="true"
+			align="righttop"
+			width="75%" height="prop"
+			edge="center"			
+			x="50%"
+			y="95%"
+			rotate="0"
+			scale="0.1"
+			alpha="0.8"
+			bgcolor="0x000000"
+			bgalpha="0.0"
+			bgborder="0"
+			bgroundedge="0"
+			bgshadow=""
+			bgcapture="false"
+			onover="tween(alpha, 1, 0.2); tween(scale, 0.12)"
+			onhover=""
+			onout="tween(alpha, 0.8); tween(scale, 0.1)"
+			onclick="tween(hotspot[spot2].alpha ,0); tween(hotspot[spot4].alpha ,0); tween(layer[ramka].x, 50%, easeInElastic)"
+			ondown=""
+			onup=""
+			onloaded=""
+			/>
+	
+		<!-- knopka -->
+			<layer name="knopka3"
+			type="image"
+			url="knopka3.png"
+			keep="true"
+			visible="true"
+			enabled="true"
+			handcursor="true"
+			align="righttop"
+			width="75%" height="prop"
+			edge="center"			
+			x="67%"
+			y="95%"
+			rotate="0"
+			scale="0.1"
+			alpha="0.8"
+			bgcolor="0x000000"
+			bgalpha="0.0"
+			bgborder="0"
+			bgroundedge="0"
+			bgshadow=""
+			bgcapture="false"
+			onover="tween(alpha, 1, 0.2); tween(scale, 0.12)"
+			onhover=""
+			onout="tween(alpha, 0.8); tween(scale, 0.1)"
+			onclick="tween(hotspot[spot2].alpha ,0); tween(hotspot[spot4].alpha ,1); tween(layer[ramka].x, 67%, easeInElastic)"
+			ondown=""
+			onup=""
+			onloaded=""
+			/>
+	
+	
+		<action name="do_crop_animation">
+		<!-- add attributes to the hotspot -->
+		registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+		registerattribute(yframes, calc((imageheight / %2) BOR 0));
+		registerattribute(frames, calc(xframes * yframes));
+		registerattribute(frame, 0);
+
+		set(crop, '0|0|%1|%2');
+
+		setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+			if(loaded,
+				inc(frame);
+				if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, %1);
+				mul(ypos, %2);
+				calc(crop, xpos + '|' + ypos + '|%1|%2');
+			  ,
+				clearinterval(calc('crop_anim_' + name));
+			  );
+		  );
+	</action>
+	<!-- preview pano image -->
+	<preview url="rt0000.tiles/preview.jpg" />
+
+	<!-- pano image -->
+	<image type="CYLINDER" hfov="1.00" vfov="0.774194" voffset="0.00" multires="true" tilesize="512" progressive="true">
+		<level tiledimagewidth="2560" tiledimageheight="1982">
+			<cylinder url="rt0000.tiles/l3/%v/l3_%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="1280" tiledimageheight="992">
+			<cylinder url="rt0000.tiles/l2/%v/l2_%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="640" tiledimageheight="496">
+			<cylinder url="rt0000.tiles/l1/%v/l1_%v_%h.jpg" />
+		</level>
+	</image>
+	
+	<hotspot name="spot1" zorder="2" url="waves2.png"   alpha="0"   scale="1"     enabled="false"     onloaded="do_crop_animation(256, 256, 30);"   ath="0.02" atv="-0.01"  />
+	<hotspot name="spot2" zorder="1"  distorted="true"  url="zemlya.jpg" enabled="false"  handcursor="false"  alpha="0"   scale="0.00352"          ath="0" atv="0"  onhover="tween(hotspot[spot1].alpha ,1), tween(hotspot[spot1].scale, 1, 2)" onout="tween(hotspot[spot1].alpha ,0)" onclick="looktohotspot(get(name),35)"  />
+	<hotspot name="spot3" zorder="3" url="waves.png"       scale="0.3"          onloaded="do_crop_animation(128,128, 10);"   ath="-0.02" atv="0"  onhover="tween(hotspot[spot1].alpha , 1, 1)" onout="tween(hotspot[spot1].alpha ,0);" onclick="tween(hotspot[spot3].enable, false); looktohotspot(get(name), 0.1, smooth(0.7 , 0.50, 0.5)); tween(layer[spot1].alpha, 1); "  />
+	<hotspot name="spot4" zorder="1"  distorted="true"  url="prujini.jpg" enabled="false"  handcursor="false"  alpha="0"   scale="0.00352"          ath="0" atv="0"  onhover="tween(hotspot[spot2].alpha ,1)" onout="tween(hotspot[spot2].alpha ,0)" onclick="looktohotspot(get(name),35)"  />
+</krpano>
