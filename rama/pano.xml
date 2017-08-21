@@ -33,7 +33,7 @@
 			onover="tween(alpha, 1, 0.2); tween(scale, 0.3)"
 			onhover=""
 			onout="tween(alpha, 0.6); tween(scale, 0.3)"
-			onclick="openurl('http://www.bestpl.ru');"
+			onclick="openurl('http://www.lasersao.ru/');"
 			ondown=""
 			onup=""
 			onloaded=""
