@@ -95,7 +95,7 @@
 			onover="tween(alpha, 1, 0.2); tween(scale, 0.12)"
 			onhover=""
 			onout="tween(alpha, 0.8); tween(scale, 0.1)"
-			onclick="tween(hotspot[spot4].alpha ,0); tween(hotspot[spot2].alpha ,1 , 1); tween(scale, 0.12, 0.27, easeOutElastic); tween(layer[ramka].x, 33%, easeInElastic)"
+			onclick="tween(hotspot[spot4].alpha ,0); tween(hotspot[spot2].alpha ,1 , 1); tween(scale, 0.12, 0.27, easeOutElastic); tween(layer[ramka].x, 33%, easeInElastic); tween(hotspot[spot3].scale, 0.3);tween(hotspot[spot1].alpha , 0, 1);"
 			ondown=""
 			onup=""
 			onloaded=""
@@ -128,7 +128,7 @@
 			onover="tween(alpha, 1, 0.2); tween(scale, 0.12)"
 			onhover=""
 			onout="tween(alpha, 0.8); tween(scale, 0.1)"
-			onclick="tween(hotspot[spot2].alpha ,0); tween(hotspot[spot4].alpha ,0); tween(layer[ramka].x, 50%, easeInElastic)"
+			onclick="tween(hotspot[spot2].alpha ,0); tween(hotspot[spot4].alpha ,0); tween(layer[ramka].x, 50%, easeInElastic); tween(hotspot[spot3].scale, 0.3);tween(hotspot[spot1].alpha , 0, 1);"
 			ondown=""
 			onup=""
 			onloaded=""
@@ -159,7 +159,7 @@
 			onover="tween(alpha, 1, 0.2); tween(scale, 0.12)"
 			onhover=""
 			onout="tween(alpha, 0.8); tween(scale, 0.1)"
-			onclick="tween(hotspot[spot2].alpha ,0); tween(hotspot[spot4].alpha ,1); tween(layer[ramka].x, 67%, easeInElastic)"
+			onclick="tween(hotspot[spot2].alpha ,0); tween(hotspot[spot4].alpha ,1); tween(layer[ramka].x, 67%, easeInElastic); tween(hotspot[spot3].scale, 0.3);tween(hotspot[spot1].alpha , 0, 1);"
 			ondown=""
 			onup=""
 			onloaded=""
@@ -206,8 +206,8 @@
 		</level>
 	</image>
 	
-	<hotspot name="spot1" zorder="2" url="waves2.png"   alpha="0"   scale="1"     enabled="false"     onloaded="do_crop_animation(256, 256, 30);"   ath="0.02" atv="-0.01"  />
+	<hotspot name="spot1" zorder="2" url="waves2.png"   alpha="0"   scale="1"     enabled="false"     onloaded="do_crop_animation(256, 256, 30);"   ath="0.02" atv="0.01"  />
 	<hotspot name="spot2" zorder="1"  distorted="true"  url="zemlya.jpg" enabled="false"  handcursor="false"  alpha="0"   scale="0.00352"          ath="0" atv="0"  onhover="tween(hotspot[spot1].alpha ,1), tween(hotspot[spot1].scale, 1, 2)" onout="tween(hotspot[spot1].alpha ,0)" onclick="looktohotspot(get(name),35)"  />
-	<hotspot name="spot3" zorder="3" url="waves.png"       scale="0.3"          onloaded="do_crop_animation(128,128, 10);"   ath="-0.02" atv="0"  onhover="tween(hotspot[spot1].alpha , 1, 1)" onout="tween(hotspot[spot1].alpha ,0);" onclick="tween(hotspot[spot3].enable, false); looktohotspot(get(name), 0.1, smooth(0.7 , 0.50, 0.5)); tween(layer[spot1].alpha, 1); "  />
+	<hotspot name="spot3" zorder="3" url="waves.png"       scale="0.3"          onloaded="do_crop_animation(128,128, 10);"   ath="-0.02" atv="0"  onhover="" onout="" onclick="tween(hotspot[spot1].alpha, 1, 0.5); tween(hotspot[spot3].scale, 0); looktohotspot(get(name), 0.1, smooth(0.7 , 0.50, 0.5));  "  />
 	<hotspot name="spot4" zorder="1"  distorted="true"  url="prujini.jpg" enabled="false"  handcursor="false"  alpha="0"   scale="0.00352"          ath="0" atv="0"  onhover="tween(hotspot[spot2].alpha ,1)" onout="tween(hotspot[spot2].alpha ,0)" onclick="looktohotspot(get(name),35)"  />
 </krpano>
