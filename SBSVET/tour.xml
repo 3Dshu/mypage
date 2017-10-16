@@ -282,13 +282,13 @@
 		
 		<hotspot name="zavodknopka"  zorder="2" distorted="true" rx="-5" ry="-68" rz="0" url="knopka.png" enabled="true"  handcursor="true"  alpha="1"   scale="0.1"          ath="224" atv="-13" onhover="tween(hotspot[zavodknopka_GL].alpha ,1)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" onclick="switchHotspots(zavod); "/>
 		
-		<hotspot name="zavodknopka_GL"  zorder="1" distorted="true" rx="-5" ry="-68" rz="0" url="knopka_GL.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="224" atv="-13" onhover="tween(hotspot[zavodknopka_GL].alpha ,1)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" />
+		<hotspot name="zavodknopka_GL"  zorder="1" distorted="true" rx="-5" ry="-68" rz="0" url="knopka_GL.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="224" atv="-13" onhover="tween(hotspot[zavodknopka_GL].alpha ,0.5)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" />
 		
 		<hotspot name="sklad"  zorder="1" group="sklad" distorted="true" visible="false" url="sklad.png" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="180" atv="0" />
 		
 		<hotspot name="skladknopka2"  zorder="2" distorted="true" rx="0" ry="0" rz="-3" url="knopka2.png" enabled="true"  handcursor="true"  alpha="1"   scale="0.1"          ath="165" atv="-10" onhover="tween(hotspot[zavodknopka_GL2].alpha ,1)" onout="tween(hotspot[zavodknopka_GL2].alpha ,0)" onclick="switchHotspots(sklad); "/>
 		
-		<hotspot name="zavodknopka_GL2"  zorder="1" distorted="true" rx="0" ry="0" rz="-3" url="knopka_GL2.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="165" atv="-10" onhover="tween(hotspot[zavodknopka_GL].alpha ,1)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" />
+		<hotspot name="zavodknopka_GL2"  zorder="1" distorted="true" rx="0" ry="0" rz="-3" url="knopka_GL2.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="165" atv="-10" onhover="tween(hotspot[zavodknopka_GL].alpha ,0.5)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" />
 		
 	</scene>
 
