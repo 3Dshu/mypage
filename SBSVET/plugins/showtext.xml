@@ -41,7 +41,7 @@
 			delayedcall(showtext_timer, get(showtext_timeout), showtext_hide() );
 		  );
 	</action>
-
+	
 
 	<action name="showtext_createnewtext">
 		<!-- stop running mouse and alpha update calls -->
