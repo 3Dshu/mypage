@@ -1,6 +1,6 @@
 <krpano>
 
-	<include url="%SWFPATH%/plugins/showtext.xml" />
+	<!--<include url="%SWFPATH%/plugins/showtext.xml" />-->
 	
 	
 <textstyle name="DEFAULT"
