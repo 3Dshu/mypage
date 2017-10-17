@@ -1,8 +1,8 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
-	<include url="skin/vtourskin.xml" />
-	<include url="/plugins/showtext.xml" />
-
+	<!-- <include url="skin/vtourskin.xml" />-->
+	<!-- <include url="/plugins/showtext.xml" />-->
+		<include url="knopki.xml" />
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
 	               maps_type="google"
@@ -109,139 +109,6 @@
 	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-			<layer name="office"	zorder="10"	type="image"		url="office.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="150"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="1"
-		bgcolor="0x000000"
-		bgalpha="0.0"
-		bgborder="0"
-		bgroundedge="0"
-		bgshadow=""
-		bgcapture="false"
-		onover="tween(layer[glow].alpha,1 , 0.33)"
-		onhover="showtext(оффис)"
-		onout="tween(layer[glow].alpha,0 , 0.25)"
-		onclick="lookto(258,-22,70,smooth(100,50,100))"
-		ondown=""
-		onup=""
-		onloaded=""
-       />
-				<layer name="glow"	zorder="1"	type="image"		url="glow.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="150"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="0"
-
-       />
-	
-	
-	<layer name="shop"	zorder="10"	type="image"		url="shop.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="200"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="1"
-		bgcolor="0x000000"
-		bgalpha="0.0"
-		bgborder="0"
-		bgroundedge="0"
-		bgshadow=""
-		bgcapture="false"
-		onover="tween(layer[glow1].alpha,1 , 0.33)"
-		onhover="showtext(торговый центр)"
-		onout="tween(layer[glow1].alpha,0 , 0.25)"
-		onclick="lookto(95,0,90,smooth(100,50,100))"
-		ondown=""
-		onup=""
-		onloaded=""
-       />
-				<layer name="glow1"	zorder="1"	type="image"		url="glow.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="200"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="0"
-
-       />
-	   
-	   	<layer name="zavod"	zorder="10"	type="image"		url="zavod.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="250"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="1"
-		bgcolor="0x000000"
-		bgalpha="0.0"
-		bgborder="0"
-		bgroundedge="0"
-		bgshadow=""
-		bgcapture="false"
-		onover="tween(layer[glow2].alpha,1 , 0.33)"
-		onhover="showtext(завод)"
-		onout="tween(layer[glow2].alpha,0 , 0.25)"
-		onclick="lookto(224,-10,75,smooth(100,50,100))"
-		ondown=""
-		onup=""
-		onloaded=""
-       />
-				<layer name="glow2"	zorder="1"	type="image"		url="glow.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="250"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="0"
-
-       />
-	   
-	   	   	<layer name="sklad"	zorder="10"	type="image"		url="klad.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="300"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="1"
-		bgcolor="0x000000"
-		bgalpha="0.0"
-		bgborder="0"
-		bgroundedge="0"
-		bgshadow=""
-		bgcapture="false"
-		onover="tween(layer[glow3].alpha,1 , 0.33)"
-		onhover="showtext(склад)"
-		onout="tween(layer[glow3].alpha,0 , 0.25)"
-		onclick="lookto(165,-10,75,smooth(100,50,100))"
-		ondown=""
-		onup=""
-		onloaded=""
-       />
-				<layer name="glow3"	zorder="1"	type="image"		url="glow.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="leftbottom"
-		width="75%" height="prop"
-		edge="center"
-		x="300"
-		y="90"
-		rotate="0"
-		scale="0.033"
-		alpha="0"
-
-       />
 
 	<!-- startup action - load the first scene -->
 	<action name="startup" autorun="onstart">
