@@ -1,32 +1,37 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
-	<!-- <include url="skin/vtourskin.xml" />-->
-	<!-- <include url="/plugins/showtext.xml" />-->
-		<include url="knopki.xml" />
+	<include url="skin/vtourskin_design_flat_light.xml"  />
+		<!--<include url="plugins/showtext.xml" preload="true"/>-->
+
+   <include url="add/SDsvet.xml" />
+		<plugin url.html5="plugins/moretweentypes.js"
+			url.flash="plugins/moretweentypes.swf"
+			preload="true"
+        />
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
 	               maps_type="google"
 	               maps_bing_api_key=""
 	               maps_google_api_key=""
-	               maps_zoombuttons="false"
-	               gyro="false"
-	               webvr="false"
+	               maps_zoombuttons="true"
+	               gyro="true"
+	               webvr="true"
 	               webvr_gyro_keeplookingdirection="false"
 	               webvr_prev_next_hotspots="false"
 	               littleplanetintro="false"
-	               title="false"
-	               thumbs="false"
+	               title="true"
+	               thumbs="true"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
 	               thumbs_opened="false"
-	               thumbs_text="false"
+	               thumbs_text="true"
 	               thumbs_dragging="false"
 	               thumbs_onhoverscrolling="false"
 	               thumbs_scrollbuttons="false"
 	               thumbs_scrollindicator="false"
 	               thumbs_loop="false"
-	               tooltips_buttons="false"
+	               tooltips_buttons="true"
 	               tooltips_thumbs="false"
-	               tooltips_hotspots="false"
+	               tooltips_hotspots="true"
 	               tooltips_mapspots="false"
 	               deeplinking="false"
 	               loadscene_flags="MERGE"
@@ -59,56 +64,15 @@
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
 	-->
-				<textstyle name="DEFAULT"
-           origin="cursor"
-           edge="bottom"
-           xoffset="0"
-           yoffset="-12"
-           fadeintime="0.3"
-           showtime="0.1"
-           fadetime="0.0"
-           font="Arial"
-           fontsize="30.0"
-           bold="false"
-           italic="false"
-           textcolor="0xFFFFFF"
-           textalign="none"
-           padding="6"
-           css=""
-           width=""
-           height=""
-           vcenter=""
-           background="false"
-           backgroundcolor="0x000000"
-           backgroundalpha="0.4"
-           border="false"
-           bordercolor="0xFFFFFF"
-           borderalpha="1"
-           borderwidth="5"
-           roundedge="5"
-           shadow="0"
-           shadowrange="10"
-           shadowangle="45"
-           shadowcolor="0x000000"
-           shadowalpha="0.9"
-           textshadow="4"
-           textshadowrange="4"
-           textshadowangle="60"
-           textshadowcolor="0x000000"
-           textshadowalpha="1.0"
-           embeddedfonts="false"
-           alpha="1.0"
-           blendmode="normal"
-           effect=""
-           parent=""
-           noclip="true"
-           />
+
 	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
 	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
 	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
 	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
 
 	<!-- startup action - load the first scene -->
 	<action name="startup" autorun="onstart">
@@ -144,18 +108,22 @@
 			</level>
 		</image>
 		
-		<hotspot name="zavod01"  zorder="1" group="zavod" distorted="true" visible="false" url="zavod_b.png" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="180" atv="0" />
-		<hotspot name="zavod02"  zorder="1" group="zavod" distorted="true"  visible="false"  url="zavod_l.png" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="270" atv="0" />
+		<hotspot name="zavod01"  zorder="1" group="zavod" distorted="true" visible="false" url="zavod_b.png" preload="true" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="180" atv="0" />
+		<hotspot name="zavod02"  zorder="1" group="zavod" distorted="true"  visible="false"  url="zavod_l.png" preload="true" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="270" atv="0" />
 		
-		<hotspot name="zavodknopka"  zorder="2" distorted="true" rx="-5" ry="-68" rz="0" url="knopka.png" enabled="true"  handcursor="true"  alpha="1"   scale="0.1"          ath="224" atv="-13" onhover="tween(hotspot[zavodknopka_GL].alpha ,1)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" onclick="switchHotspots(zavod); "/>
+		<hotspot name="zavodknopka"  zorder="2" distorted="true" rx="-5" ry="-68" rz="0" url="knopka.png" enabled="true"  handcursor="true"  alpha="1"   scale="0.1"          ath="224" atv="-13" onhover="tween(hotspot[zavodknopka_GL].alpha , 0.4, 0.25, easeOutElastic)" onout="tween(hotspot[zavodknopka_GL].alpha ,0 , 1 ,easeOutElastic)" onclick="switchHotspots(zavod); "/>
 		
-		<hotspot name="zavodknopka_GL"  zorder="1" distorted="true" rx="-5" ry="-68" rz="0" url="knopka_GL.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="224" atv="-13" onhover="tween(hotspot[zavodknopka_GL].alpha ,0.5)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" />
+		<hotspot name="zavodknopka_GL"  zorder="1" distorted="true" rx="-5" ry="-68" rz="0" url="knopka_GL.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="224" atv="-13"  />
 		
-		<hotspot name="sklad"  zorder="1" group="sklad" distorted="true" visible="false" url="sklad.png" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="180" atv="0" />
+		<hotspot name="sklad"  zorder="1" group="sklad" distorted="true" visible="false" url="sklad.png" preload="true" enabled="false"  handcursor="false"  alpha="1"   scale="0.3145"          ath="180" atv="0" />
 		
-		<hotspot name="skladknopka2"  zorder="2" distorted="true" rx="0" ry="0" rz="-3" url="knopka2.png" enabled="true"  handcursor="true"  alpha="1"   scale="0.1"          ath="165" atv="-10" onhover="tween(hotspot[zavodknopka_GL2].alpha ,1)" onout="tween(hotspot[zavodknopka_GL2].alpha ,0)" onclick="switchHotspots(sklad); "/>
+		<hotspot name="skladknopka2"  zorder="2" distorted="true" rx="0" ry="0" rz="-3" url="knopka2.png" enabled="true"  handcursor="true"  alpha="1"   scale="0.1"          ath="165" atv="-10" onhover="tween(hotspot[zavodknopka_GL2].alpha ,0.4, 0.25, easeOutElastic)" onout="tween(hotspot[zavodknopka_GL2].alpha ,0 , 1 ,easeOutElastic)" onclick="switchHotspots(sklad); "/>
 		
-		<hotspot name="zavodknopka_GL2"  zorder="1" distorted="true" rx="0" ry="0" rz="-3" url="knopka_GL2.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="165" atv="-10" onhover="tween(hotspot[zavodknopka_GL].alpha ,0.5)" onout="tween(hotspot[zavodknopka_GL].alpha ,0)" />
+		<hotspot name="zavodknopka_GL2"  zorder="1" distorted="true" rx="0" ry="0" rz="-3" url="knopka_GL2.png" enabled="true"  handcursor="true"  alpha="0"   scale="0.1"          ath="165" atv="-10"  />
+		
+		
+		<hotspot name="lampa0ZIES80"  zorder="10" distorted="true" visible="true" url="lampa.jpg" enabled="true"  handcursor="false"  alpha="1"   scale="1"   onhover="tween(hotspot[lampaTEST].alpha, 1, 0.5, easeOutElastic); set(hotspot[lampaTEST].enabled, true)"  onout="tween(hotspot[lampaTEST].alpha, 0, 0.7, easeInQuart)"  onclick="tween(hotspot[lampaTEST].alpha, 1, 0.5, easeOutElastic); set(hotspot[lampaTEST].enabled, true)"   ath="170" atv="0" />
+		<hotspot name="lampaTEST"  zorder="9" distorted="false" edge="leftbottom" visible="true" url="modul.png"  enabled="false"  handcursor="true"  alpha="0"   scale="0.22"   onhover="tween(hotspot[lampaTEST].alpha, 1, 0.5, easeOutElastic)"   onout="tween(hotspot[lampaTEST].alpha, 0, 0.7, easeInQuart); set(hotspot[lampaTEST].enabled, false))"  onclick="switchHotspots(sklad)"  ath="170" atv="0" />
 		
 	</scene>
 
