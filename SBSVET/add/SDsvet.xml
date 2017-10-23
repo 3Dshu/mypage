@@ -1,7 +1,9 @@
 ﻿<krpano>
 	
 	    <include url="%SWFPATH%/plugins/showtext.xml" />
-		
+		<plugin url.html5="plugins/moretweentypes.js"
+			url.flash="plugins/moretweentypes.swf"
+			preload="true"/>
 <textstyle name="DEFAULT" origin="cursor" edge="bottom" xoffset="0" yoffset="-20" fadeintime="0.0"        showtime="0.1"
            fadetime="0.0"
            font="Arial"
