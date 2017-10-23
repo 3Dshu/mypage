@@ -2,7 +2,7 @@
 	
 	    <include url="%SWFPATH%/plugins/showtext.xml" />
 		
-		<plugin url.html5="moretweentypes.js"
+		<plugin url="moretweentypes.js"
 	
 			preload="true"/>
 			

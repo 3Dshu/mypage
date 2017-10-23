@@ -4,10 +4,7 @@
 		<!--<include url="plugins/showtext.xml" preload="true"/>-->
 
    <include url="add/SDsvet.xml" />
-		<plugin url.html5="plugins/moretweentypes.js"
-			url.flash="plugins/moretweentypes.swf"
-			preload="true"
-        />
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
 	               maps_type="google"
