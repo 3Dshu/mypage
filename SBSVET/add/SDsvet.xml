@@ -105,31 +105,31 @@
 			
 					<layer  name="IKONKI_SER_standart"  style="IKONKI_SER_podsvetka" y="8%" onhover="tween(layer[IKONKI_SER_standart].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 100); showtext(1. Серия СТАНДАРТ, DEFAULT2)" onout="tween(layer[IKONKI_SER_standart].alpha, 0, 1)" 
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_standart"              style="IKONKI_SER" y="8%" crop="0|0|256|256"   zorder="31"  />
+					<layer name="SER_standart"              style="IKONKI_SER" y="8%" crop="0|0|64|64"   zorder="31"  />
 			
 					<layer  name="IKONKI_SER_riteil" style="IKONKI_SER_podsvetka" y="22%" onhover="tween(layer[IKONKI_SER_riteil].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 208); showtext(2. Серия РИТЕЙЛ, DEFAULT2) " onout="tween(layer[IKONKI_SER_riteil].alpha, 0, 1)"
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_riteil"              style="IKONKI_SER" y="22%" crop="256|0|256|256"   zorder="31"  />
+					<layer name="SER_riteil"              style="IKONKI_SER" y="22%" crop="64|0|64|64"   zorder="31"  />
 					
 					<layer  name="IKONKI_SER_ultra" style="IKONKI_SER_podsvetka" y="36%" onhover="tween(layer[IKONKI_SER_ultra].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 312); showtext(3. Серия ульратонкие светодиодные панели, DEFAULT2)" onout="tween(layer[IKONKI_SER_ultra].alpha, 0, 1)"
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_ultra"              style="IKONKI_SER" y="36%" crop="512|0|256|256"   zorder="31"  />
+					<layer name="SER_ultra"              style="IKONKI_SER" y="36%" crop="128|0|64|64"   zorder="31"  />
 					
 					<layer  name="IKONKI_SER_arctik" style="IKONKI_SER_podsvetka" y="50%" onhover="tween(layer[IKONKI_SER_arctik].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 416); showtext(4. Серия АРКТИК, DEFAULT2)" onout="tween(layer[IKONKI_SER_arctik].alpha, 0, 1)"
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_arctik"              style="IKONKI_SER" y="50%" crop="768|0|256|256"   zorder="31"  />
+					<layer name="SER_arctik"              style="IKONKI_SER" y="50%" crop="192|0|64|64"   zorder="31"  />
 					
 					<layer  name="IKONKI_SER_modul" style="IKONKI_SER_podsvetka" y="64%" onhover="tween(layer[IKONKI_SER_modul].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 520); showtext(5. Серия МОДУЛЬ, DEFAULT2) " onout="tween(layer[IKONKI_SER_modul].alpha, 0, 1)"
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_modul"              style="IKONKI_SER" y="64%" crop="1024|0|256|256"   zorder="31"  />
+					<layer name="SER_modul"              style="IKONKI_SER" y="64%" crop="256|0|64|64"   zorder="31"  />
 					
 					<layer  name="IKONKI_SER_JKH" style="IKONKI_SER_podsvetka" y="78%" onhover="tween(layer[IKONKI_SER_JKH].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 624); showtext(6. Серия ЖКХ, DEFAULT2)" onout="tween(layer[IKONKI_SER_JKH].alpha, 0, 1)"
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_JKH"              style="IKONKI_SER" y="78%" crop="1280|0|256|256"   zorder="31"  />
+					<layer name="SER_JKH"              style="IKONKI_SER" y="78%" crop="320|0|64|64"   zorder="31"  />
 					
 					<layer  name="IKONKI_lok" style="IKONKI_SER_podsvetka" y="92%" onhover="tween(layer[IKONKI_lok].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 728); showtext(7. Серия акцентное освещение, DEFAULT2)" onout="tween(layer[IKONKI_lok].alpha, 0, 1)"
 					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
-					<layer name="SER_lok"              style="IKONKI_SER" y="92%" crop="1536|0|256|256"   zorder="31"  />
+					<layer name="SER_lok"              style="IKONKI_SER" y="92%" crop="384|0|64|64"   zorder="31"  />
 					
 					
 					
