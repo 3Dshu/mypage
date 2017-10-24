@@ -1,12 +1,13 @@
 ﻿<krpano>
+
+	
+		<plugin url.html5="moretweentypes.js"
+			preload="true"
+        />
 	
 	    <include url="%SWFPATH%/plugins/showtext.xml" />
 		
-		<plugin url="moretweentypes.js"
-	
-			preload="true"/>
-			
-<textstyle name="DEFAULT" origin="cursor" edge="bottom" xoffset="0" yoffset="-20" fadeintime="0.0"        showtime="0.1"
+<textstyle name="DEFAULT3" origin="cursor" edge="bottom" xoffset="0" yoffset="-20" fadeintime="0.3"        showtime="0.1"
            fadetime="0.0"
            font="Arial"
            fontsize="18.0"
@@ -14,14 +15,14 @@
            italic="false"
            textcolor="0xFFFFFF"
            textalign="none"
-           padding="1"
+           padding="55"
            css=""
            width=""
            height=""
            vcenter=""
            background="false"
-           backgroundcolor="0xFFFFFF"
-           backgroundalpha="1.0"
+           backgroundcolor="0x5E75AA"
+           backgroundalpha="0.3"
            border="false"
            bordercolor="0x000000"
            borderalpha="1.0"
@@ -41,10 +42,108 @@
            parent=""
            noclip="true"
            />
-	 
+		   
+		   <action name="switchheight">
+				if(hotspot[get(i)].group == %1, 
+					switch(hotspot[get(i)].visible);
+				);
+			);
+		</action>
+		   
+		   <textstyle name="DEFAULT2" origin="lefttop" edge="leftcenter" xoffset="80" yoffset="0" fadeintime="0.3"        showtime="0.1"
+           fadetime="0.0"
+           font="Arial"
+           fontsize="60.0"
+           bold="true"
+           italic="false"
+           textcolor="0x5E75AA"
+           textalign="none"
+           padding="55"
+           css=""
+           width=""
+           height=""
+           vcenter=""
+           background="false"
+           backgroundcolor="0x000000"
+           backgroundalpha="0.3"
+           border="false"
+           bordercolor="0xFFFFF00"
+           borderalpha="1.0"
+           borderwidth="1.0"
+           roundedge="0"
+           shadow="0.0"
+           shadowrange="4.0"
+           shadowangle="45"
+           shadowcolor="0x000000"
+           shadowalpha="1.0"
+           textshadow="0.0"
+           textshadowrange="4.0"
+           textshadowangle="45"
+           textshadowcolor="0x000000"
+           textshadowalpha="1.0"
+           alpha="1.0"
+           parent=""
+           noclip="true"
+           />
+<!--	/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->	   
+	 <style name="IKONKI_SER" url="serii_PROD.png"		keep="true"		visible="true"		enabled="false"		handcursor="false"		align="centertop" 
+	width="95" height="95" 
+	edge="center"
+	rotate="0"
+	scale="1"
+	alpha="1"
+	bgcolor="0x000000"
+	bgalpha="0.0"
+	bgborder="0"
+	bgroundedge="0"
+	bgshadow=""
+	bgcapture="false"/>
+		
+	<style name="IKONKI_SER_podsvetka" keep="true" enebled="false" visible="true" type="container" zorder="30"  bgcapture="true" handcursor="true" alpha="0" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="64" maskchildren="true"  align="centertop"  width="93" height="93  " edge="center" bgcolor="0xFFFF00" bgalpha="0.9" />
+		
+			<layer  name="IKONKI_SER_MENU" keep="true" enebled="false" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="0" maskchildren="true"  align="leftttop" x="11" y="50" width="100" height="0" bgcolor="0x5E75AA" bgalpha="0" >
+			
+					<layer  name="IKONKI_SER_standart"  style="IKONKI_SER_podsvetka" y="8%" onhover="tween(layer[IKONKI_SER_standart].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 100); showtext(1. Серия СТАНДАРТ, DEFAULT2)" onout="tween(layer[IKONKI_SER_standart].alpha, 0, 1)" 
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_standart"              style="IKONKI_SER" y="8%" crop="0|0|256|256"   zorder="31"  />
+			
+					<layer  name="IKONKI_SER_riteil" style="IKONKI_SER_podsvetka" y="22%" onhover="tween(layer[IKONKI_SER_riteil].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 208); showtext(2. Серия РИТЕЙЛ, DEFAULT2) " onout="tween(layer[IKONKI_SER_riteil].alpha, 0, 1)"
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_riteil"              style="IKONKI_SER" y="22%" crop="256|0|256|256"   zorder="31"  />
+					
+					<layer  name="IKONKI_SER_ultra" style="IKONKI_SER_podsvetka" y="36%" onhover="tween(layer[IKONKI_SER_ultra].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 312); showtext(3. Серия ульратонкие светодиодные панели, DEFAULT2)" onout="tween(layer[IKONKI_SER_ultra].alpha, 0, 1)"
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_ultra"              style="IKONKI_SER" y="36%" crop="512|0|256|256"   zorder="31"  />
+					
+					<layer  name="IKONKI_SER_arctik" style="IKONKI_SER_podsvetka" y="50%" onhover="tween(layer[IKONKI_SER_arctik].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 416); showtext(4. Серия АРКТИК, DEFAULT2)" onout="tween(layer[IKONKI_SER_arctik].alpha, 0, 1)"
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_arctik"              style="IKONKI_SER" y="50%" crop="768|0|256|256"   zorder="31"  />
+					
+					<layer  name="IKONKI_SER_modul" style="IKONKI_SER_podsvetka" y="64%" onhover="tween(layer[IKONKI_SER_modul].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 520); showtext(5. Серия МОДУЛЬ, DEFAULT2) " onout="tween(layer[IKONKI_SER_modul].alpha, 0, 1)"
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_modul"              style="IKONKI_SER" y="64%" crop="1024|0|256|256"   zorder="31"  />
+					
+					<layer  name="IKONKI_SER_JKH" style="IKONKI_SER_podsvetka" y="78%" onhover="tween(layer[IKONKI_SER_JKH].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 624); showtext(6. Серия ЖКХ, DEFAULT2)" onout="tween(layer[IKONKI_SER_JKH].alpha, 0, 1)"
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_JKH"              style="IKONKI_SER" y="78%" crop="1280|0|256|256"   zorder="31"  />
+					
+					<layer  name="IKONKI_lok" style="IKONKI_SER_podsvetka" y="92%" onhover="tween(layer[IKONKI_lok].alpha, 1, 1); set(textstyle[DEFAULT2].yoffset, 728); showtext(7. Серия акцентное освещение, DEFAULT2)" onout="tween(layer[IKONKI_lok].alpha, 0, 1)"
+					onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc)"/>
+					<layer name="SER_lok"              style="IKONKI_SER" y="92%" crop="1536|0|256|256"   zorder="31"  />
+					
+					
+					
+					
+			
+			</layer>
+	<!--	/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	
+	
+	
+	
 	
 	<style name="ikonki" url="IKONKI_PRIMENENIE3.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="left"
-	width="25%" height="prop" y="30%" 
+	width="256" height="prop" 
 		edge="center"
 		rotate="0"
 		scale="0.138"
@@ -56,31 +155,40 @@
 		bgshadow=""
 		bgcapture="false"/>
 
-		<layer  name="sidebar" keep="true" enebled="false" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="0" maskchildren="true"  align="top" width="100%" height="16%" bgcolor="0x5E75AA" bgalpha="0.5" >
+		<layer  name="sidebar" keep="true" enebled="true" visible="true" type="container" zorder="6"  bgcapture="false" handcursor="false" draggable="false" bgborder="3 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="lefttop" width="150" y="3" x="3" height="44" >
+				<!--<layer name="scrollarea" alturl="%SWFPATH%/plugins/scrollarea.js"  handcursor="false" align="left" width="150" height="50" y="0"  draggable="false" direction="h" onhover_autoscrolling="false">-->
+					<layer name="LOGOshapka" url="shapkaR.jpg" handcursor="true" scale="1" align="center" width="109%" height="109%"  zorder="3"  onhover_autoscrolling="true" ondown="tween(layer[LOGOshapka].scale, 0.99, 0.06, easeInOutExpo);  "   onup="tween(layer[LOGOshapka].scale, 1, 0.06, easeInOutExpo);" onclick="tween(layer[IKONKI_SER_MENU].height, 750, 1.2, easeOutBounce)" />
+				
+				<!--</layer>-->
+				 
+		</layer>
+		
+		
+		
+		
+		<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="0" maskchildren="true"  align="leftttop" x="100" width="95%" height="50" bgcolor="0x5E75AA" bgalpha="0.33" >
 			
-			<layer name="ofАice"              style="ikonki" x="9%" crop="0|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 9%])"   onhover="showtext(оффис, DEFAULT3)"            							  onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(258,-22,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 9%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
-			<layer name="torg center"         style="ikonki" x="12%" crop="128|0|128|128" zorder="11"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 12%])"  onhover="showtext(торговый центр, DEFAULT3)"	 								onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(95,0,90,smooth(100,50,100))"      ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 12%])"   onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
-			<layer name="avto"                style="ikonki" x="15%"  crop="256|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 15%])"   onhover="showtext(автомагистрали, DEFAULT3)"        				      onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(190,0,110,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 15%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
-			<layer name="parkovki"            style="ikonki" x="18%" crop="384|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 18%])"   onhover="showtext(парковки, DEFAULT3)"             					 onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(258,2,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 18%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
-			<layer name="administrtiv"        style="ikonki" x="21%" crop="512|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 21%])"   onhover="showtext(административные [br]учереждения, DEFAULT3)"              onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(348,2,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 21%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
-			<layer name="zavIod"              style="ikonki" x="24%" crop="640|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 24%])"   onhover="showtext(завод, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(210,-5,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 24%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
-			<layer name="skload"              style="ikonki" x="27%"  crop="768|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 27%])"   onhover="showtext(склад, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(170,-5,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 27%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
-			<layer name="podsARH"             style="ikonki" x="30%"  crop="896|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 30%])"   onhover="showtext(архитектруная [br]подсветка, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(170,-5,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 30%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
-			<layer name="park"                style="ikonki" x="33%"  crop="768|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.33); set(layer[glowIN].x , 33%])"   onhover="showtext(парк, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.25)"   onclick="oninterrupt( trace(user interrupt); );lookto(170,-5,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 33%])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
+			<layer name="ofАice"              style="ikonki" x="90" crop="0|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x ,90])"   onhover="showtext(оффис, DEFAULT3)"            							  onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(87,-15,60,smooth(100,50,100));loadscene(scene_main,MERGE,KEEPVIEW , BLEND(1)); tween(hotspot[oFFISE].alpha, 0.7 , 2 , easeOutBounce)"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 90])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			
+			<layer name="torg center"         style="ikonki" x="120" crop="128|0|128|128" zorder="11"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 120])"  onhover="showtext(торговый центр, DEFAULT3)"	 								onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(-90,0,90,smooth(100,50,100)); loadscene(scene_main,MERGE,KEEPVIEW , BLEND(1))"      ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 120])"   onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			
+			<layer name="avto"                style="ikonki" x="150"  crop="256|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 150])"   onhover="showtext(автомагистрали, DEFAULT3)"        				      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(0,0,110,smooth(100,50,100));  loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(1));  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 150])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);" />
+			
+			<layer name="parkovki"            style="ikonki" x="180" crop="384|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 180])"   onhover="showtext(парковки, DEFAULT3)"             					 onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); ); lookto(87,10,90,smooth(100,50,100)); loadscene(scene_parking,MERGE,KEEPVIEW, BLEND(1));  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 180])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			
+			<layer name="administrtiv"        style="ikonki" x="210" crop="512|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 210])"   onhover="showtext(административные [br]учереждения, DEFAULT3)"              onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(190,-2,60,smooth(100,50,100)); loadscene(scene_main,MERGE,KEEPVIEW , BLEND(1)); tween(hotspot[adminni].alpha, 0.7 , 0.3 , easeOutElastic)"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 210])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			
+			<layer name="zavIod"              style="ikonki" x="240" crop="640|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 240])"   onhover="showtext(завод, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(50,-5,70,smooth(100,50,100)); loadscene(scene_main,MERGE,KEEPVIEW , BLEND(1));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 240])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			
+			<layer name="skload"              style="ikonki" x="270"  crop="768|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 270])"   onhover="showtext(склад, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(-15,-5,70,smooth(100,50,100))"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 270])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>	
+			
+			<layer name="podsARH"             style="ikonki" x="300"  crop="896|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 300])"   onhover="showtext(архитектруная [br]подсветка, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(-87,-5,70,smooth(100,50,100)); loadscene(scene_main,MERGE,KEEPVIEW , BLEND(1));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 300])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
+			<layer name="park"                style="ikonki" x="330"  crop="768|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 330])"   onhover="showtext(парк, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(90,90,140,smooth(100,50,100)); loadscene(scene_main,MERGE,KEEPVIEW , BLEND(1));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 330])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
 			
 			
 			<layer name="glowOUT" 		style="ikonki" x="15%"   crop="1280|0|128|128"  alpha="0" zorder="6" handcursor="false"/>
 			<layer name="glowIN"        style="ikonki" x="19%"  crop="1152|0|128|128"  alpha="0" zorder="6" handcursor="false"/>
-		
-		<layer name="scrollarea" alturl="%SWFPATH%/plugins/scrollarea.js"  handcursor="false" align="topright" width="100%" height="100%" y="-50"  draggable="false" direction="h" onhover_autoscrolling="true">
-		<layer name="LOGOshapka" url="shapka.png" handcursor="false" align="center" width="100%" height="100%"  zorder="4" onhover_autoscrolling="true">
-			
-			
 		</layer>
-		</layer>
-	</layer>
-
-
 	
 
 
