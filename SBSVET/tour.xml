@@ -97,7 +97,7 @@
 			</level>
 		</image>
 		
-		<hotspot name="oFFISE"  zorder="1" distorted="true" visible="true" url="OFFICE.png" preload="true" enabled="false"  handcursor="false"  alpha="0"   scale="0.263"   rx="0" ry="0.0" rz="0"       ath="90" atv="0" />
+		<hotspot name="oFFISE"   zorder="1" distorted="true" visible="true" url="OFFICE.png"  preload="true" enabled="false"  handcursor="false"  alpha="0"   scale="0.6575"   rx="0" ry="0.0" rz="0"       ath="90" atv="0" />
 		<hotspot name="adminni"  zorder="1" distorted="true" visible="true" url="adminni.png" preload="true" enabled="false"  handcursor="false"  alpha="0"   scale="0.263"   rx="0" ry="0.0" rz="0"       ath="180" atv="0" />
 
 	</scene>
