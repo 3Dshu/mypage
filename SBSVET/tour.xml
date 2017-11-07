@@ -1,10 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
+	<!-- <include url="skin/vtourskin.xml" />-->
 		<include url="add/SDsvet.xml" />
-		
-		<plugin url.html5="plugins/moretweentypes.js"
-			preload="true"
-        />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -77,49 +74,318 @@
 		if(startactions !== null, startactions() );
 	</action>
 
-
+<action name="calc_pos_from_hfov_yaw_pitch_roll">
+calc(deg2rad, Math.PI / 180.0);
+<!--  calc the hotspot size  -->
+calc(hfov, 0.5 * (%1) * deg2rad); Math.tan(hfov); set(width, calc(hfov * 1000)); set(height, 'prop');
+<!--  calc the ath, atv and rotate settings  -->
+calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2rad); Math.cos(ch, yaw); Math.sin(sh, yaw); Math.cos(ca, pitch); Math.sin(sa, pitch); Math.cos(cb, roll); Math.sin(sb, roll); Math.atan2(yaw, calc(cb*sh - sb*sa*ch), calc(ca*ch)); Math.atan2(roll, calc(sb*ch - cb*sa*sh), calc(cb*ca)); Math.asin(pitch, calc(cb*sa*ch + sb*sh)); calc(ath, yaw / deg2rad); calc(atv, pitch / deg2rad); calc(rotate, roll / deg2rad);
+</action>
 	
-	<scene name="scene_main" title="main" onstart="" thumburl="panos/main.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1" fovmin="90" fovmax="150" limitview="auto" />
-
-		<preview url="panos/main.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="3840" tiledimageheight="3840">
-				<cube url="panos/main.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1792" tiledimageheight="1792">
-				<cube url="panos/main.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/main.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		
-		<hotspot name="oFFISE"   zorder="1" distorted="true" visible="true" url="OFFICE.png"  preload="true" enabled="false"  handcursor="false"  alpha="0"   scale="0.6575"   rx="0" ry="0.0" rz="0"       ath="90" atv="0" />
-		<hotspot name="adminni"  zorder="1" distorted="true" visible="true" url="adminni.png" preload="true" enabled="false"  handcursor="false"  alpha="0"   scale="0.263"   rx="0" ry="0.0" rz="0"       ath="180" atv="0" />
-
-	</scene>
-
-	<scene name="scene_parking" title="parking" onstart="" thumburl="panos/parking.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_park" title="park" onstart="" thumburl="panos/park.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/parking.tiles/preview.jpg" />
+		<preview url="panos/park.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
 			<level tiledimagewidth="3840" tiledimageheight="3840">
-				<cube url="panos/parking.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				<cube url="panos/park.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="1792" tiledimageheight="1792">
-				<cube url="panos/parking.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				<cube url="panos/park.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/parking.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				<cube url="panos/park.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
+		
+				<hotspot name="offic" alpha="0.1" 
+					url="/picture/offic.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(22, -85, 0, 0);"
+				/>
+				<hotspot name="offic_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[offic].alpha, 1)" onout="tween(hotspot[offic].alpha, 0.1)"
+				>
+					<point ath="75.140" atv="-18.377" />
+					<point ath="94.425" atv="-17.970" />
+					<point ath="94.877" atv="4.419" />
+					<point ath="74.798" atv="3.932" />
+				</hotspot>
+		
+				<hotspot name="zavod" alpha="0.1" 
+					url="/picture/zavod.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(36, -30, 0, 0);"
+				/>
+				<hotspot name="zavod_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[zavod].alpha, 1)" onout="tween(hotspot[zavod].alpha, 0.1)"
+				>
+					<point ath="12.685" atv="-6.303" />
+					<point ath="18.028" atv="-8.376" />
+					<point ath="18.963" atv="-13.626" />
+					<point ath="21.346" atv="-13.728" />					
+					<point ath="22.265" atv="-7.848" />
+					<point ath="46.787" atv="-4.901" />
+					<point ath="46.878" atv="0.972" />
+					<point ath="12.665" atv="0.163" />
+					<point ath="20.197" atv="2.237" />
+				</hotspot>
+				
+				<hotspot name="sklad" alpha="0.1" 
+					url="/picture/sklad.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(64, 30, 0, 0);"
+				/>
+				<hotspot name="sklad_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[sklad].alpha, 1)" onout="tween(hotspot[sklad].alpha, 0.1)"
+				>
+					<point ath="1.915" atv="3.500" />
+					<point ath="-60.547" atv="1.493" />
+					<point ath="-60.669" atv="-1.740" />
+					<point ath="-45.154" atv="-1.874" />					
+					<point ath="-44.035" atv="-2.642" />
+					<point ath="-21.042" atv="-2.261" />
+					<point ath="-19.728" atv="-3.603" />
+					<point ath="1.545" atv="-3.603" />
+				</hotspot>
+		
+		<hotspot name="torgC" alpha="0.1" 
+					url="/picture/torgC.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(49, 92, 0, 0);"
+				/>
+				<hotspot name="torgC_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[torgC].alpha, 1)" onout="tween(hotspot[torgC].alpha, 0.1)"
+				>
+					<point ath="-112.887" atv="6.525" />
+					<point ath="-113.265" atv="1.719" />
+					<point ath="-115.227" atv="1.500" />
+					<point ath="-116.341" atv="-10.611" />					
+					<point ath="-67.420" atv="-10.802" />
+					<point ath="-70.605" atv="1.702" />
+					<point ath="-72.025" atv="1.832" />
+					<point ath="-72.499" atv="6.418" />
+				</hotspot>
+				
+						<hotspot name="admin" alpha="0.1" 
+					url="/picture/admin.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(43, -171, 0, 0);"
+				/>
+				<hotspot name="admin_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[admin].alpha, 1)" onout="tween(hotspot[admin].alpha, 0.1)"
+				>
+					<point ath="150.563" atv="-9.282" />
+					<point ath="150.842" atv="5.863" />
+					<point ath="-169.165" atv="6.048" />
+					<point ath="-169.212" atv="-10.261" />					
+				</hotspot>
+				
+				<hotspot name="kafe" alpha="0.1" 
+					url="/picture/kafe.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(26, -121 , 0, 0);"
+				/>
+				<hotspot name="kafe_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[kafe].alpha, 1)" onout="tween(hotspot[kafe].alpha, 0.1)"
+				>
+					<point ath="109.454" atv="-2.399" />
+					<point ath="125.712" atv="-3.971" />
+					<point ath="133.327" atv="-3.549" />
+					<point ath="133.629" atv="2.295" />		
+					<point ath="109.624" atv="1.637" />							
+				</hotspot>
 
+	</scene>
+
+	<scene name="scene_parkovka" title="parkovka" onstart="" thumburl="panos/parkovka.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/parkovka.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3840" tiledimageheight="3840">
+				<cube url="panos/parkovka.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/parkovka.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/parkovka.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+				<hotspot name="offic" alpha="0.1" 
+					url="/picture/offic.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(22, -85, 0, 0);"
+				/>
+				<hotspot name="offic_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[offic].alpha, 1)" onout="tween(hotspot[offic].alpha, 0.1)"
+				>
+					<point ath="75.140" atv="-18.377" />
+					<point ath="94.425" atv="-17.970" />
+					<point ath="94.877" atv="4.419" />
+					<point ath="74.798" atv="3.932" />
+				</hotspot>
+		
+				<hotspot name="zavod" alpha="0.1" 
+					url="/picture/zavod.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(36, -30, 0, 0);"
+				/>
+				<hotspot name="zavod_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[zavod].alpha, 1)" onout="tween(hotspot[zavod].alpha, 0.1)"
+				>
+					<point ath="12.685" atv="-6.303" />
+					<point ath="18.028" atv="-8.376" />
+					<point ath="18.963" atv="-13.626" />
+					<point ath="21.346" atv="-13.728" />					
+					<point ath="22.265" atv="-7.848" />
+					<point ath="46.787" atv="-4.901" />
+					<point ath="46.878" atv="0.972" />
+					<point ath="12.665" atv="0.163" />
+					<point ath="20.197" atv="2.237" />
+				</hotspot>
+				
+				<hotspot name="sklad" alpha="0.1" 
+					url="/picture/sklad.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(64, 30, 0, 0);"
+				/>
+				<hotspot name="sklad_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[sklad].alpha, 1)" onout="tween(hotspot[sklad].alpha, 0.1)"
+				>
+					<point ath="1.915" atv="3.500" />
+					<point ath="-60.547" atv="1.493" />
+					<point ath="-60.669" atv="-1.740" />
+					<point ath="-45.154" atv="-1.874" />					
+					<point ath="-44.035" atv="-2.642" />
+					<point ath="-21.042" atv="-2.261" />
+					<point ath="-19.728" atv="-3.603" />
+					<point ath="1.545" atv="-3.603" />
+				</hotspot>
+		
+		<hotspot name="torgC" alpha="0.1" 
+					url="/picture/torgC.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(49, 92, 0, 0);"
+				/>
+				<hotspot name="torgC_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[torgC].alpha, 1)" onout="tween(hotspot[torgC].alpha, 0.1)"
+				>
+					<point ath="-112.887" atv="6.525" />
+					<point ath="-113.265" atv="1.719" />
+					<point ath="-115.227" atv="1.500" />
+					<point ath="-116.341" atv="-10.611" />					
+					<point ath="-67.420" atv="-10.802" />
+					<point ath="-70.605" atv="1.702" />
+					<point ath="-72.025" atv="1.832" />
+					<point ath="-72.499" atv="6.418" />
+				</hotspot>
+				
+						<hotspot name="admin" alpha="0.1" 
+					url="/picture/admin.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(43, -171, 0, 0);"
+				/>
+				<hotspot name="admin_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[admin].alpha, 1)" onout="tween(hotspot[admin].alpha, 0.1)"
+				>
+					<point ath="150.563" atv="-9.282" />
+					<point ath="150.842" atv="5.863" />
+					<point ath="-169.165" atv="6.048" />
+					<point ath="-169.212" atv="-10.261" />					
+				</hotspot>
+				
+				<hotspot name="kafe" alpha="0.1" 
+					url="/picture/kafe.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(26, -121 , 0, 0);"
+				/>
+				<hotspot name="kafe_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[kafe].alpha, 1)" onout="tween(hotspot[kafe].alpha, 0.1)"
+				>
+					<point ath="109.454" atv="-2.399" />
+					<point ath="125.712" atv="-3.971" />
+					<point ath="133.327" atv="-3.549" />
+					<point ath="133.629" atv="2.295" />		
+					<point ath="109.624" atv="1.637" />							
+				</hotspot>
 	</scene>
 
 	<scene name="scene_trassa" title="trassa" onstart="" thumburl="panos/trassa.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -140,7 +406,316 @@
 			</level>
 		</image>
 
+						<hotspot name="offic" alpha="0.1" 
+					url="/picture/offic.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(22, -85, 0, 0);"
+				/>
+				<hotspot name="offic_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[offic].alpha, 1)" onout="tween(hotspot[offic].alpha, 0.1)"
+				>
+					<point ath="75.140" atv="-18.377" />
+					<point ath="94.425" atv="-17.970" />
+					<point ath="94.877" atv="4.419" />
+					<point ath="74.798" atv="3.932" />
+				</hotspot>
+		
+				<hotspot name="zavod" alpha="0.1" 
+					url="/picture/zavod.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(36, -30, 0, 0);"
+				/>
+				<hotspot name="zavod_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[zavod].alpha, 1)" onout="tween(hotspot[zavod].alpha, 0.1)"
+				>
+					<point ath="12.685" atv="-6.303" />
+					<point ath="18.028" atv="-8.376" />
+					<point ath="18.963" atv="-13.626" />
+					<point ath="21.346" atv="-13.728" />					
+					<point ath="22.265" atv="-7.848" />
+					<point ath="46.787" atv="-4.901" />
+					<point ath="46.878" atv="0.972" />
+					<point ath="12.665" atv="0.163" />
+					<point ath="20.197" atv="2.237" />
+				</hotspot>
+				
+				<hotspot name="sklad" alpha="0.1" 
+					url="/picture/sklad.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(64, 30, 0, 0);"
+				/>
+				<hotspot name="sklad_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[sklad].alpha, 1)" onout="tween(hotspot[sklad].alpha, 0.1)"
+				>
+					<point ath="1.915" atv="3.500" />
+					<point ath="-60.547" atv="1.493" />
+					<point ath="-60.669" atv="-1.740" />
+					<point ath="-45.154" atv="-1.874" />					
+					<point ath="-44.035" atv="-2.642" />
+					<point ath="-21.042" atv="-2.261" />
+					<point ath="-19.728" atv="-3.603" />
+					<point ath="1.545" atv="-3.603" />
+				</hotspot>
+		
+		<hotspot name="torgC" alpha="0.1" 
+					url="/picture/torgC.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(49, 92, 0, 0);"
+				/>
+				<hotspot name="torgC_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[torgC].alpha, 1)" onout="tween(hotspot[torgC].alpha, 0.1)"
+				>
+					<point ath="-112.887" atv="6.525" />
+					<point ath="-113.265" atv="1.719" />
+					<point ath="-115.227" atv="1.500" />
+					<point ath="-116.341" atv="-10.611" />					
+					<point ath="-67.420" atv="-10.802" />
+					<point ath="-70.605" atv="1.702" />
+					<point ath="-72.025" atv="1.832" />
+					<point ath="-72.499" atv="6.418" />
+				</hotspot>
+				
+						<hotspot name="admin" alpha="0.1" 
+					url="/picture/admin.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(43, -171, 0, 0);"
+				/>
+				<hotspot name="admin_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[admin].alpha, 1)" onout="tween(hotspot[admin].alpha, 0.1)"
+				>
+					<point ath="150.563" atv="-9.282" />
+					<point ath="150.842" atv="5.863" />
+					<point ath="-169.165" atv="6.048" />
+					<point ath="-169.212" atv="-10.261" />					
+				</hotspot>
+				
+				<hotspot name="kafe" alpha="0.1" 
+					url="/picture/kafe.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(26, -121 , 0, 0);"
+				/>
+				<hotspot name="kafe_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[kafe].alpha, 1)" onout="tween(hotspot[kafe].alpha, 0.1)"
+				>
+					<point ath="109.454" atv="-2.399" />
+					<point ath="125.712" atv="-3.971" />
+					<point ath="133.327" atv="-3.549" />
+					<point ath="133.629" atv="2.295" />		
+					<point ath="109.624" atv="1.637" />							
+				</hotspot>
+		
 	</scene>
 
+	<scene name="scene_ulica" title="ulica" onstart="" thumburl="panos/ulica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/ulica.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3840" tiledimageheight="3840">
+				<cube url="panos/ulica.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/ulica.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/ulica.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+						<hotspot name="offic" alpha="0.1" 
+					url="/picture/offic.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(22, -85, 0, 0);"
+				/>
+				<hotspot name="offic_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[offic].alpha, 1)" onout="tween(hotspot[offic].alpha, 0.1)"
+				>
+					<point ath="75.140" atv="-18.377" />
+					<point ath="94.425" atv="-17.970" />
+					<point ath="94.877" atv="4.419" />
+					<point ath="74.798" atv="3.932" />
+				</hotspot>
+		
+				<hotspot name="zavod" alpha="0.1" 
+					url="/picture/zavod.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(36, -30, 0, 0);"
+				/>
+				<hotspot name="zavod_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[zavod].alpha, 1)" onout="tween(hotspot[zavod].alpha, 0.1)"
+				>
+					<point ath="12.685" atv="-6.303" />
+					<point ath="18.028" atv="-8.376" />
+					<point ath="18.963" atv="-13.626" />
+					<point ath="21.346" atv="-13.728" />					
+					<point ath="22.265" atv="-7.848" />
+					<point ath="46.787" atv="-4.901" />
+					<point ath="46.878" atv="0.972" />
+					<point ath="12.665" atv="0.163" />
+					<point ath="20.197" atv="2.237" />
+				</hotspot>
+				
+				<hotspot name="sklad" alpha="0.1" 
+					url="/picture/sklad.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(64, 30, 0, 0);"
+				/>
+				<hotspot name="sklad_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[sklad].alpha, 1)" onout="tween(hotspot[sklad].alpha, 0.1)"
+				>
+					<point ath="1.915" atv="3.500" />
+					<point ath="-60.547" atv="1.493" />
+					<point ath="-60.669" atv="-1.740" />
+					<point ath="-45.154" atv="-1.874" />					
+					<point ath="-44.035" atv="-2.642" />
+					<point ath="-21.042" atv="-2.261" />
+					<point ath="-19.728" atv="-3.603" />
+					<point ath="1.545" atv="-3.603" />
+				</hotspot>
+		
+		<hotspot name="torgC" alpha="0.1" 
+					url="/picture/torgC.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(49, 92, 0, 0);"
+				/>
+				<hotspot name="torgC_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[torgC].alpha, 1)" onout="tween(hotspot[torgC].alpha, 0.1)"
+				>
+					<point ath="-112.887" atv="6.525" />
+					<point ath="-113.265" atv="1.719" />
+					<point ath="-115.227" atv="1.500" />
+					<point ath="-116.341" atv="-10.611" />					
+					<point ath="-67.420" atv="-10.802" />
+					<point ath="-70.605" atv="1.702" />
+					<point ath="-72.025" atv="1.832" />
+					<point ath="-72.499" atv="6.418" />
+				</hotspot>
+				
+						<hotspot name="admin" alpha="0.1" 
+					url="/picture/admin.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(43, -171, 0, 0);"
+				/>
+				<hotspot name="admin_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[admin].alpha, 1)" onout="tween(hotspot[admin].alpha, 0.1)"
+				>
+					<point ath="150.563" atv="-9.282" />
+					<point ath="150.842" atv="5.863" />
+					<point ath="-169.165" atv="6.048" />
+					<point ath="-169.212" atv="-10.261" />					
+				</hotspot>
+				
+				<hotspot name="kafe" alpha="0.1" 
+					url="/picture/kafe.png" 
+					distorted="true"
+					enabled="false"
+					handcursor="false"
+					onloaded="calc_pos_from_hfov_yaw_pitch_roll(26, -121 , 0, 0);"
+				/>
+				<hotspot name="kafe_CLICK" 
+					distorted="true"
+					enabled="true"
+					handcursor="true"
+					alpha="0"
+					onhover="tween(hotspot[kafe].alpha, 1)" onout="tween(hotspot[kafe].alpha, 0.1)"
+				>
+					<point ath="109.454" atv="-2.399" />
+					<point ath="125.712" atv="-3.971" />
+					<point ath="133.327" atv="-3.549" />
+					<point ath="133.629" atv="2.295" />		
+					<point ath="109.624" atv="1.637" />							
+				</hotspot>
+		
+	</scene>
+
+		<scene name="scene_rgb" title="rgb" onstart="" thumburl="panos/rgb.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/rgb.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3840" tiledimageheight="3840">
+				<cube url="panos/rgb.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/rgb.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/rgb.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+	</scene>
 
 </krpano>
+
+
