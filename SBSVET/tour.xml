@@ -121,7 +121,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</image>
 		
 				<hotspot name="offic" alpha="0.1" 
-					url="/picture/offic.png" 
+					url="%SWFPATH%/picture/offic.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -141,7 +141,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 				<hotspot name="zavod" alpha="0.1" 
-					url="/picture/zavod.png" 
+					url="%SWFPATH%/picture/zavod.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -166,7 +166,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="sklad" alpha="0.1" 
-					url="/picture/sklad.png" 
+					url="%SWFPATH%/picture/sklad.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -190,7 +190,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 		<hotspot name="torgC" alpha="0.1" 
-					url="/picture/torgC.png" 
+					url="%SWFPATH%/picture/torgC.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -214,7 +214,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 						<hotspot name="admin" alpha="0.1" 
-					url="/picture/admin.png" 
+					url="%SWFPATH%/picture/admin.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -234,7 +234,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="kafe" alpha="0.1" 
-					url="/picture/kafe.png" 
+					url="%SWFPATH%/picture/kafe.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -274,7 +274,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 			</level>
 		</image>
 				<hotspot name="offic" alpha="0.1" 
-					url="/picture/offic.png" 
+					url="%SWFPATH%/picture/offic.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -294,7 +294,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 				<hotspot name="zavod" alpha="0.1" 
-					url="/picture/zavod.png" 
+					url="%SWFPATH%/picture/zavod.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -319,7 +319,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="sklad" alpha="0.1" 
-					url="/picture/sklad.png" 
+					url="%SWFPATH%/picture/sklad.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -343,7 +343,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 		<hotspot name="torgC" alpha="0.1" 
-					url="/picture/torgC.png" 
+					url="%SWFPATH%/picture/torgC.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -367,7 +367,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 						<hotspot name="admin" alpha="0.1" 
-					url="/picture/admin.png" 
+					url="%SWFPATH%/picture/admin.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -387,7 +387,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="kafe" alpha="0.1" 
-					url="/picture/kafe.png" 
+					url="%SWFPATH%/picture/kafe.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -427,7 +427,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</image>
 
 						<hotspot name="offic" alpha="0.1" 
-					url="/picture/offic.png" 
+					url="%SWFPATH%/picture/offic.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -447,7 +447,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 				<hotspot name="zavod" alpha="0.1" 
-					url="/picture/zavod.png" 
+					url="%SWFPATH%/picture/zavod.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -472,7 +472,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="sklad" alpha="0.1" 
-					url="/picture/sklad.png" 
+					url="%SWFPATH%/picture/sklad.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -496,7 +496,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 		<hotspot name="torgC" alpha="0.1" 
-					url="/picture/torgC.png" 
+					url="%SWFPATH%/picture/torgC.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -520,7 +520,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 						<hotspot name="admin" alpha="0.1" 
-					url="/picture/admin.png" 
+					url="%SWFPATH%/picture/admin.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -540,7 +540,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="kafe" alpha="0.1" 
-					url="/picture/kafe.png" 
+					url="%SWFPATH%/picture/kafe.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -581,7 +581,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</image>
 
 						<hotspot name="offic" alpha="0.1" 
-					url="/picture/offic.png" 
+					url="%SWFPATH%/picture/offic.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -601,7 +601,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 				<hotspot name="zavod" alpha="0.1" 
-					url="/picture/zavod.png" 
+					url="%SWFPATH%/picture/zavod.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -626,7 +626,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="sklad" alpha="0.1" 
-					url="/picture/sklad.png" 
+					url="%SWFPATH%/picture/sklad.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -650,7 +650,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 		
 		<hotspot name="torgC" alpha="0.1" 
-					url="/picture/torgC.png" 
+					url="%SWFPATH%/picture/torgC.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -674,7 +674,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 						<hotspot name="admin" alpha="0.1" 
-					url="/picture/admin.png" 
+					url="%SWFPATH%/picture/admin.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
@@ -694,7 +694,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				</hotspot>
 				
 				<hotspot name="kafe" alpha="0.1" 
-					url="/picture/kafe.png" 
+					url="%SWFPATH%/picture/kafe.png" 
 					distorted="true"
 					enabled="false"
 					handcursor="false"
