@@ -88,7 +88,7 @@
 				bgshadow=""
 				bgcapture="false"/>
 				
-		<layer  name="ledpicture"  keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="true" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="2" maskchildren="true"  align="leftttop" x="13" y="-130" width="130" height="130" bgcolor="0x75c3f3" bgalpha="0.9" onhover="showtext(описание, DEFAULT1)" >
+		<layer  name="ledpicture"  keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="true" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="2" maskchildren="true"  align="leftttop" x="13" y="-130" width="130" height="130" bgcolor="0x75c3f3" bgalpha="0.9" onhover="showtext(описание, DEFAULT1)" onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);">
 			<layer name="pic_led" style="pic_led_min" align="center" width="97%" height="97%" crop="300|0|100|100" zorder="10"   />
 
 		</layer>
