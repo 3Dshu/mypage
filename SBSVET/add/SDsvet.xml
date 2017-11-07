@@ -94,7 +94,7 @@
 		</layer>
 <!--/////////////////////////////////////-->		
 		
-		<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="leftttop" x="0" width="16%" height="50" bgcolor="0x5E75AA" bgalpha="0.33" >
+		<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="leftttop" x="0" width="305" height="50" bgcolor="0x5E75AA" bgalpha="0.33" >
 			
 			
 			<layer name="avto"                style="ikonki" x="190"  crop="256|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 190])"   onhover="showtext(автомагистрали, DEFAULT3)"        				      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(0,0,110,smooth(100,50,100));  loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(1)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 190])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);" />
