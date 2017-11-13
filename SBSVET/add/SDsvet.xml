@@ -9,7 +9,7 @@
 		/>
 		
 <textstyle name="DEFAULT3" origin="cursor" edge="bottom" xoffset="0" yoffset="-20" fadeintime="0.3"        showtime="0.1"
-           fadetime="0.0"           font="Arial"           fontsize="18.0"           bold="true"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="55"           css=""
+           fadetime="0.0"           font="Arial"           fontsize="18.0"           bold="false"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="55"           css=""
            width=""           height=""           vcenter=""           background="false"           backgroundcolor="0x5E75AA"
            backgroundalpha="0.3"           border="false"           bordercolor="0x000000"           borderalpha="1.0"
            borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"           textshadow="0.0"
@@ -31,7 +31,7 @@
            noclip="true"
            />
 		   
-		    <textstyle name="DEFAULT1" origin="cursor" edge="bottom" xoffset="0" yoffset="60" fadeintime="0.3"        showtime="0.2"
+		    <textstyle name="DEFAULT1" origin="cursor" edge="bottom" xoffset="0" yoffset="60" fadeintime="0.1"        showtime="0.1"
            fadetime="0.0"           font="Arial"           fontsize="20.0"           bold="true"           italic="false"           textcolor="0x5E75AA"           textalign="center"           padding="0"           css=""
            width=""           height=""           vcenter=""           background="false"           backgroundcolor="0x000000"           backgroundalpha="0.3"           border="false"           bordercolor="0xFFFFF00"
            borderalpha="1.0"           borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"
@@ -58,7 +58,7 @@
 	width="256" height="prop" 
 		edge="center"
 		rotate="0"
-		scale="0.138"
+		scale="0.185"
 		alpha="1"
 		bgcolor="0x000000"
 		bgalpha="0.0"
@@ -69,7 +69,7 @@
 
 		<layer  name="sidebar" keep="true" enebled="true" visible="true" type="container" zorder="6"  bgcapture="false" handcursor="false" draggable="false" bgborder="3 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="lefttop" width="150" y="3" x="3" height="44" >
 				<!--<layer name="scrollarea" alturl="%SWFPATH%/plugins/scrollarea.js"  handcursor="false" align="left" width="150" height="50" y="0"  draggable="false" direction="h" onhover_autoscrolling="false">-->
-					<layer name="LOGOshapka" url="shapkaR.jpg" handcursor="true" scale="1" align="center" width="109%" height="109%"  zorder="3"  onhover_autoscrolling="true" ondown="tween(layer[LOGOshapka].scale, 0.99, 0.06, easeInOutExpo);  "   onup="tween(layer[LOGOshapka].scale, 1, 0.06, easeInOutExpo);" onclick="tween(layer[IKONKI_SER_MENU].height, 750, 1.4, easeOutBounce)" />
+					<layer name="LOGOshapka" url="shapkaR.jpg" handcursor="true" scale="1" align="center" width="109%" height="109%"  zorder="3"  onhover_autoscrolling="true" ondown="tween(layer[LOGOshapka].scale, 0.99, 0.06, easeInOutExpo);  "   onup="tween(layer[LOGOshapka].scale, 1, 0.06, easeInOutExpo);" onclick="tween(layer[IKONKI_SER_MENU].height, 750, 1.4, easeOutBounce); loadscene(scene_rgb,MERGE,KEEPVIEW, BLEND(1));tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);" />
 				
 				<!--</layer>-->
 
@@ -88,22 +88,22 @@
 				bgshadow=""
 				bgcapture="false"/>
 				
-		<layer  name="ledpicture"  keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="true" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="2" maskchildren="true"  align="leftttop" x="13" y="-130" width="130" height="130" bgcolor="0x75c3f3" bgalpha="0.9" onhover="showtext(описание, DEFAULT1)" onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);">                                                                                                                                                         
+		<layer  name="ledpicture"  keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="true" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="2" maskchildren="true"  align="leftttop" x="13" y="-130" width="130" height="130" bgcolor="0x75c3f3" bgalpha="0.9" onhover="showtext(описание, DEFAULT1)" onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);">
 			<layer name="pic_led" style="pic_led_min" align="center" width="97%" height="97%" crop="300|0|100|100" zorder="10"   />
 
 		</layer>
 <!--/////////////////////////////////////-->		
 		
-		<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="leftttop" x="0" width="305" height="50" bgcolor="0x5E75AA" bgalpha="0.33" >
+		<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="leftttop" x="0" width="335" height="50" bgcolor="0x5E75AA" bgalpha="0.33" >
 			
 			
 			<layer name="avto"                style="ikonki" x="190"  crop="256|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 190])"   onhover="showtext(автомагистрали, DEFAULT3)"        				      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(0,0,110,smooth(100,50,100));  loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(1)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 190])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);" />
 			
-			<layer name="parkovki"            style="ikonki" x="220" crop="384|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 220])"   onhover="showtext(парковки, DEFAULT3)"             					 onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); ); lookto(87,10,90,smooth(100,50,100)); loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(1)); set(layer[pic_led].crop,100|0|100|100) ;  tween(layer[ledpicture].y, 50, 1.8, easeInExpo);  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 220])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			<layer name="parkovki"            style="ikonki" x="230" crop="384|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 230])"   onhover="showtext(парковки, DEFAULT3)"             					 onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); ); lookto(87,10,90,smooth(100,50,100)); loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(1)); set(layer[pic_led].crop,100|0|100|100) ;  tween(layer[ledpicture].y, 50, 1.8, easeInExpo);  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 230])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 						
-			<layer name="podsARH"             style="ikonki" x="250"  crop="896|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 250])"   onhover="showtext(подсветка, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(170,15,120,smooth(100,50,100)); loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(1)); set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 50, 1.8, easeInExpo); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 250])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+			<layer name="podsARH"             style="ikonki" x="270"  crop="896|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 270])"   onhover="showtext(подсветка, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(170,15,120,smooth(100,50,100)); loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(1)); set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 50, 1.8, easeInExpo); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 270])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 			
-			<layer name="park"                style="ikonki" x="280"  crop="1024|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 280])"   onhover="showtext(парк, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(90,70,140,smooth(100,50,100)); loadscene(scene_park,MERGE,KEEPVIEW , BLEND(1)); set(layer[pic_led].crop,300|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo);  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 280])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
+			<layer name="park"                style="ikonki" x="310"  crop="1024|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 310])"   onhover="showtext(парк, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(90,70,140,smooth(100,50,100)); loadscene(scene_park,MERGE,KEEPVIEW , BLEND(1)); set(layer[pic_led].crop,300|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo);  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 310])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>			
 			
 			
 			<layer name="glowOUT" 		style="ikonki" x="15%"   crop="1280|0|128|128"  alpha="0" zorder="6" handcursor="false"/>
