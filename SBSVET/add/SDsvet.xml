@@ -7,6 +7,7 @@
 	    <include url="showtext.xml" 
 			preload="true"
 		/>
+
 		
 <textstyle name="DEFAULT3" origin="cursor" edge="bottom" xoffset="0" yoffset="-20" fadeintime="0.3"        showtime="0.1"
            fadetime="0.0"           font="Arial"           fontsize="18.0"           bold="false"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="55"           css=""
@@ -88,7 +89,7 @@
 				bgshadow=""
 				bgcapture="false"/>
 				
-		<layer  name="ledpicture"  keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="true" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="2" maskchildren="true"  align="leftttop" x="13" y="-130" width="130" height="130" bgcolor="0x75c3f3" bgalpha="0.9" onhover="showtext(описание, DEFAULT1)" onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);">
+		<layer  name="ledpicture"  keep="true" enebled="true" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="true" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="2" maskchildren="true"  align="leftttop" x="13" y="-130" width="130" height="130" bgcolor="0x75c3f3" bgalpha="0.9" onhover="showtext(описание, DEFAULT1)" onclick="tween(layer[ledpicture].y, -130, 0.9, easeOutBounce); action(open_st);">
 			<layer name="pic_led" style="pic_led_min" align="center" width="97%" height="97%" crop="300|0|100|100" zorder="10"   />
 
 		</layer>

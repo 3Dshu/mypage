@@ -63,10 +63,9 @@
 	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
 	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
 		<style name="_hotspot_ani"
-    url="images/hotspot.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
-    timer="0"    delay="0"
-	
-    onloaded="       
+		url="images/hotspot.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
+		timer="0"    delay="0"
+		onloaded="       
         if(icon_type == 'arrow', set(crop,0|0|54|54);set(crop_normal,0|0|54|54);set(crop_hover,0|54|54|54);set(crop_down,0|108|54|54);set(delay,.7);animation(););
         if(icon_type == 'camera', set(crop,54|0|54|54);set(crop_normal,54|0|54|54);set(crop_hover,54|54|54|54);set(crop_down,54|108|54|54);set(delay,1.3););
         if(icon_type == 'info', set(crop,108|0|54|54);set(crop_normal,108|0|54|54);set(crop_hover,108|54|54|54);set(crop_down,108|108|54|54);set(delay,.7);animation(););
@@ -80,63 +79,58 @@
         txtadd(hotspot[get(name)].ondown,copy(crop,crop_down););
         txtadd(hotspot[get(name)].onup,copy(crop,crop_normal););
         resetsize();
-    "
-    animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
-/>
-<action name="open_st">
-		set(plugin[screen_tint].visible, true);
-		tween(plugin[screen_tint].alpha,.9,0.5,default);
-		set(layer[frame].visible,true);
-		tween(layer[frame].alpha,1,2);
-	</action>
-	
-		set(GALLERYwidth,   675); 
-		set(GALLERYheight,  345); 
+		"
+		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
+		/>
 		
-	<action name="close_st">
-		tween(plugin[screen_tint].alpha,0,0.5,default);
-		set(plugin[screen_tint].visible, false);
-		tween(layer[frame].alpha,0,.3,default,wait);
-		set(layer[frame].visible,false);
-	</action>
-	 <action name="reset">
-		tween(layer[cc_01].y,-250);
-		tween(layer[text_01].x,20,1);
-		tween(layer[text_01].alpha,.8,.5);
-		tween(layer[cc_02].y,-250);
-		tween(layer[text_02].x,820,1);
-		tween(layer[text_02].alpha,.8,.5);
-		tween(layer[cc_03].y,-250,.3);
-		tween(layer[text_03].x,1620,1);
-		tween(layer[text_03].alpha,.8,.5);
-		tween(layer[scrollarea].x, 800);
-	</action>
-	<action name="reset_arrow">
-		tween(layer[cc_01].y,-250,.01);
-		tween(layer[text_01].x,20,.01);
-		tween(layer[text_01].alpha,.8,.05);
-		tween(layer[cc_02].y,-250,.01);
-		tween(layer[text_02].x,820,.01);
-		tween(layer[text_02].alpha,.8,.05);
-		tween(layer[cc_03].y,-250,.03);
-		tween(layer[text_03].x,1620,.01);
-		tween(layer[text_03].alpha,0.8,.05);
-	</action>
-	<plugin name="screen_tint"
-			 url="images/screen_tint.png"
-	         keep="false"
-	         align="center"
-	         width="100%"
-	         height="100%"
-	         visible="false" enabled="false"
- 	         zorder="10"
-	         alpha="0" blendmode="multiply" smoothing="true"
- 	         refreshrate="auto"
-	         />
+		<action name="open_st">
+			set(plugin[screen_tint].visible, true);
+			tween(plugin[screen_tint].alpha,.9,0.5,default);
+			set(layer[frame].visible,true);
+			tween(layer[frame].alpha,1,2);
+		</action>
 	
-		
-
-	
+		<action name="close_st">
+			tween(plugin[screen_tint].alpha,0,0.5,default);
+			set(plugin[screen_tint].visible, false);
+			tween(layer[frame].alpha,0,.3,default,wait);
+			set(layer[frame].visible,false);
+		</action>
+		 <action name="reset">
+			tween(layer[cc_01].y,-250);
+			tween(layer[text_01].x,20,1);
+			tween(layer[text_01].alpha,.8,.5);
+			tween(layer[cc_02].y,-250);
+			tween(layer[text_02].x,820,1);
+			tween(layer[text_02].alpha,.8,.5);
+			tween(layer[cc_03].y,-250,.3);
+			tween(layer[text_03].x,1620,1);
+			tween(layer[text_03].alpha,.8,.5);
+			tween(layer[scrollarea].x, 800);
+		</action>
+		<action name="reset_arrow">
+			tween(layer[cc_01].y,-250,.01);
+			tween(layer[text_01].x,20,.01);
+			tween(layer[text_01].alpha,.8,.05);
+			tween(layer[cc_02].y,-250,.01);
+			tween(layer[text_02].x,820,.01);
+			tween(layer[text_02].alpha,.8,.05);
+			tween(layer[cc_03].y,-250,.03);
+			tween(layer[text_03].x,1620,.01);
+			tween(layer[text_03].alpha,0.8,.05);
+		</action>
+		<plugin name="screen_tint"
+				 url="images/screen_tint.png"
+				 keep="false"
+				 align="center"
+				 width="100%"
+				 height="100%"
+				 visible="false" enabled="false"
+				 zorder="10"
+				 alpha="0" blendmode="multiply" smoothing="true"
+				 refreshrate="auto"
+				 />
+			
 	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
