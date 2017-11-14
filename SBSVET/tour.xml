@@ -342,15 +342,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</image>
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 			
-	<hotspot name="info_01"
-		ath="20" atv="-20"
-		zorder="10"
-		scale=".75"
-		style="_hotspot_ani"
-		icon_type="info" 
-		delay="0"
-		onclick="action(open_st);"
-	/>	
+	
 		<plugin name="screen_tint"
 			 url="images/screen_tint.png"
 	         keep="false"
