@@ -1,0 +1,51 @@
+<krpano>
+
+	<!-- include the menu -->
+	<include url="sidemenu.xml" />
+	
+	
+
+	<!-- define menu items -->
+	<!-- EN -->
+	<group name="en_level_0">
+		<group name="object_1"  value="УЛИЧНЫЕ СВЕТИЛЬНИКИ"      link="switch_menu(1);" />
+		<group name="object_2"  value="ПРОМЫШЛЕННЫЕ СВЕТИЛЬНИКИ"      link="switch_menu(2);" />
+		<group name="object_3"  value="ЖКХ"            	link="switch_menu(3);" />
+		<group name="object_4"  value="АКЦЕНТНОЕ ОСВЕЩЕНИЕ" 			link="switch_menu(4);" />
+		<group name="object_5"  value="УЛЬТРАТОНКИЕ СВЕТОДИОДНЫЕ ПАНЕЛИ"      link="switch_menu(5);" />
+		<group name="object_6"  value="РИТЕЙЛ"      link="switch_menu(6);" />
+		<group name="object_7"  value="АРКТИК"            	link="switch_menu(7);" />
+		<group name="object_8"  value="ОФИСНЫЕ СВЕТИЛЬНИКИ" 			link="switch_menu(8);" />
+	</group>
+
+	<group name="en_level_1">
+		<group name="object_1"  value="СВЕТИЛЬНИК УЛИЧНЫЙ СВЕТОДИОДНЫЙ E 32.5" 		onclick="action(open_st);"   thumb_url="images/LED5000E321.jpg" />
+		<group name="object_2"  value="СВЕТИЛЬНИК УЛИЧНЫЙ СВЕТОДИОДНЫЙ E60"			link="loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(1));" thumb_url="images/LED5000E321.jpg" />
+		<group name="object_3"  value="СВЕТИЛЬНИК УЛИЧНЫЙ СВЕТОДИОДНЫЙ E90"						link="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(1));" thumb_url="images/LED5000E902.jpg" />
+		<group name="object_4"  value="СВЕТИЛЬНИК УЛИЧНЫЙ СВЕТОДИОДНЫЙ E120" 			link="loadscene(scene_16,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E902.jpg" />
+		<group name="object_5"  value="СВЕТИЛЬНИК УЛИЧНЫЙ СВЕТОДИОДНЫЙ E180"  			link="loadscene(scene_10,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E1803.jpg" />
+	</group>
+
+	<group name="en_level_2">
+		<group name="object_1"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 32ВТ, КСС 80"  	link="loadscene(scene_33,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_2"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 32ВТ, КСС 30"  		link="loadscene(scene_35,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_3"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 60ВТ, КСС 80" link="loadscene(scene_34,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_4"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 60ВТ, КСС 30" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_5"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 90ВТ, КСС 80" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_6"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 90ВТ, КСС 30" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_7"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 120ВТ, КСС 80" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_8"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 120ВТ, КСС 30" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_9"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 180ВТ, КСС 80" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		<group name="object_10"  value="ПРОМЫШЛЕННЫЙ СВЕТИЛЬНИК 180ВТ, КСС 30" link="loadscene(scene_31,null,MERGE,BLEND(0.5));" thumb_url="images/LED5000E32180IP65.jpg" />
+		
+	</group>                                                                                                  
+                                                                                                            
+	<group name="en_level_3">
+		<group name="object_1"  value="СВЕТОДИОДНЫЙ СВЕТИЛЬНИК 6W"  	link="loadscene(scene_01,null,MERGE,BLEND(0.5));" thumb_url="images/SDSLEDЖКХD17012W.jpg" />
+		<group name="object_2"  value="СВЕТОДИОДНЫЙ СВЕТИЛЬНИК 12W"  			link="loadscene(scene_38,null,MERGE,BLEND(0.5));" thumb_url="images/SDSLEDЖКХD17012W.jpg" />
+		<group name="object_3"  value="СВЕТОДИОДНЫЙ СВЕТИЛЬНИК 18W"  			link="loadscene(scene_38,null,MERGE,BLEND(0.5));" thumb_url="images/SDSLEDЖКХD17012W.jpg" />
+	</group>                                                                                                  
+
+	
+
+</krpano>
