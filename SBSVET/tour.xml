@@ -137,27 +137,27 @@
 			set(layer[frame].visible,false);
 		</action>
 		 <action name="reset">
-			tween(layer[cc_01].y,-250);
-			tween(layer[text_01].x,20,1);
+			tween(layer[cc_01].y,-45%);
+			tween(layer[text_01].x,0.5%,1);
 			tween(layer[text_01].alpha,.8,.5);
-			tween(layer[cc_02].y,-250);
-			tween(layer[text_02].x,820,1);
+			tween(layer[cc_02].y,-45%);
+			tween(layer[text_02].x,33.833%,1);
 			tween(layer[text_02].alpha,.8,.5);
-			tween(layer[cc_03].y,-250,.3);
-			tween(layer[text_03].x,1620,1);
+			tween(layer[cc_03].y,-45%);
+			tween(layer[text_03].x,67.166%,1);
 			tween(layer[text_03].alpha,.8,.5);
-			tween(layer[scrollarea].x, 800);
+			tween(layer[scrollarea].x, -100%);
 		</action>
 		<action name="reset_arrow">
-			tween(layer[cc_01].y,-250,.01);
-			tween(layer[text_01].x,20,.01);
-			tween(layer[text_01].alpha,.8,.05);
-			tween(layer[cc_02].y,-250,.01);
-			tween(layer[text_02].x,820,.01);
-			tween(layer[text_02].alpha,.8,.05);
-			tween(layer[cc_03].y,-250,.03);
-			tween(layer[text_03].x,1620,.01);
-			tween(layer[text_03].alpha,0.8,.05);
+			tween(layer[cc_01].y,-45%);
+			tween(layer[text_01].x,0.5%,1);
+			tween(layer[text_01].alpha,.8,.5);
+			tween(layer[cc_02].y,-45%);
+			tween(layer[text_02].x,33.833%,1);
+			tween(layer[text_02].alpha,.8,.5);
+			tween(layer[cc_03].y,-45%);
+			tween(layer[text_03].x,67.166%,1);
+			tween(layer[text_03].alpha,.8,.5);
 		</action>
 		<plugin name="screen_tint"
 				 url="images/screen_tint.png"
@@ -220,14 +220,14 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          borderwidth="1.0"
          bordercolor="0xff00ff"
          borderalpha="0.0"
-         onover="tween(hotspot[avto_trassa].alpha, 0.3);tween(hotspot[avto_trassa].borderwidth, 8);"
+         onover="tween(hotspot[avto_trassa].alpha, 0.3);tween(hotspot[avto_trassa].borderwidth, 8);tween(hotspot[LIGHTS_avto].alpha, 1)"
 		 onhover="showtext(автомагистрали, DEFAULT5)"
 		 onout="tween(hotspot[avto_trassa].alpha, 0);
 		 tween(hotspot[avto_trassa].borderwidth, 1);"
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.35));"
+         onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.35)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo);"
          onloaded=""
 			>
  <point ath="-70.69384872826782" atv="3.6929794736448995"/>
@@ -283,7 +283,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_park,MERGE,KEEPVIEW , BLEND(0.35));"
+         onclick="loadscene(scene_park,MERGE,KEEPVIEW , BLEND(0.35));set(layer[pic_led].crop,300|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo);"
          onloaded=""
 			>
  <point ath="-65.80075467453872" atv="10.873217020238384"/>
@@ -344,14 +344,14 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          borderwidth="1.0"
          bordercolor="0xff00ff"
          borderalpha="0.0"
-         onover="tween(hotspot[parkovka_HS].alpha, 0.3);tween(hotspot[parkovka_HS].borderwidth, 8);"
+         onover="tween(hotspot[parkovka_HS].alpha, 0.3);tween(hotspot[parkovka_HS].borderwidth, 8); "
 		 onhover="showtext(парковка, DEFAULT5)"
 		 onout="tween(hotspot[parkovka_HS].alpha, 0);
 		 tween(hotspot[parkovka_HS].borderwidth, 1);"
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(0.35));"
+         onclick="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(0.35));set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 50, 1.8, easeInExpo);"
          onloaded=""
 			>
  <point ath="102.71347734522195" atv="12.33609473272735"/>
@@ -380,7 +380,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(0.35));"
+         onclick="loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(0.35));set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 50, 1.8, easeInExpo); "
          onloaded=""
 			>
  <point ath="95.42168522746653" atv="2.461335753708519"/>
@@ -404,7 +404,19 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
  <point ath="95.97758883465656" atv="2.81458467206838"/>
  </hotspot>
  
-		
+		<hotspot name="LIGHTS_avto"
+		 type="image"
+		  visible="true"
+		   renderer="webgl"
+		alpha="0.5" 
+		url="%SWFPATH%/picture/LIGHT_avto.jpg" 
+		keep="true"
+		scale="0.798"
+		distorted="true"
+		enabled="true"
+		handcursor="false"
+		onloaded="calc_pos_from_hfov_yaw_pitch_roll(0, 0, 0, 0);"
+		/>
 				
 				<hotspot name="offic" alpha="0.1" 
 					url="%SWFPATH%/picture/offic.png" 
@@ -572,57 +584,70 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 			</level>
 		</image>
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-			
-	
-		<plugin name="screen_tint"
-			 url="images/screen_tint.png"
-	         keep="false"
-	         align="center"
-	         width="100%"
-	         height="100%"
-	         visible="false" enabled="false"
- 	         zorder="10"
-	         alpha="0" blendmode="multiply" smoothing="true"
- 	         refreshrate="auto"
-	         />
-			<!--********** Container Holding ScrollArea, Images and Buttons **********-->
-		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="805" 	height="605" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
+		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="55%" 	height="prop" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
-			<layer name="container" keep="true" type="container" align="center" y="0" width="800" height="600"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
-			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="2400" height="600" direction="h" onloaded="setcenter(0,0);">
+			<layer name="container" keep="true" type="container" align="center" y="0" width="99%" height="99%"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">
 			
-		<layer name="image_01" url="%CURRENTXML%/images/LED5000E321.jpg" align="left" x="0" zorder="12" scale="1" handcursor="false" onclick=""/>
-		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" x="750" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="20" y="100"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
+		<layer name="image_01" url="%CURRENTXML%/images/LED5000E321.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="0.5%" y="25%"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
 						
 							<!--********** Container Holding Content **********-->
-		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-250" width="800" height="250" zorder="14" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" handcursor="false" height="250" zorder="14" html="data:test_text0" css="font-family:Times; font-size:14px; color:#ffffff;" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0"  />
-		<layer name="close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale=".5"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-250,.5,default,wait); tween(layer[text_01].x,15,.3);" />
+		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-45%" width="33.333%" height="45%" zorder="14" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_1" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false"  zorder="14" html="data:test_text0" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_1_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_1_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_01].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_01].y,ty); delayedcall(0,dragging()); );"	/>
+		
+		<layer name="close_01" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale="1"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-45%,.5,default,wait); tween(layer[text_01].x,15,.3);" />
 		</layer>
 						
 						
 									<!--********** 02**********-->
-		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="800" scale="1" handcursor="false" zorder="11" onclick=""/>
-		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" x="850" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" x="1550" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="820" y="100" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,750,.3,default,wait); tween(layer[cc_02].y,0)"/>
+		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="33.833%" y="25%" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,30%,.3,default,wait); tween(layer[cc_02].y,0)"/>
        						
 						<!--********** Container Holding Content **********-->
-		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="800" y="-250" width="800" height="250" zorder="12" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="11" children="false" html="data:test_text2" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-		<layer name="close_02" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-250,.3,default,wait); tween(layer[text_02].x,820,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
+		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="33.333%" y="-45%" width="33.333%" height="45%" zorder="12" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_2" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="11" children="false" html="data:test_text2" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_2_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(layer[scrollbar_ulica_2_page].bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_2_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_02].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_02].y,ty); delayedcall(0,dragging()); );"	/>
+			
+		<layer name="close_02" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-45%,.3,default,wait); tween(layer[text_02].x,33.833%,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
 		</layer>
        
        			
-		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="1600" scale="1" handcursor="false" zorder="12" onclick=""/>
-		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" x="1650" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="1620" y="100" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,1550,.5,default,wait); tween(layer[cc_03].y,0)"/>
+		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="67.166%" y="25%" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,60%,.5,default,wait); tween(layer[cc_03].y,0)"/>
        	   					
        	   			<!--********** Container Holding Content **********-->
-		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="1600" y="-250" width="800" height="250" zorder="13" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="12" children="false" html="data:test_text1" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-250,.3,default,wait);tween(layer[text_03].x,1620,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
+		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="66.666%" y="-45%" width="33.333%" height="45%" zorder="13" bgcolor="0xffffff" bgalpha="0.9" visible="true" maskchildren="true">
+		<layer name="textmask_ulica_3" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+			<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="12" children="false" html="data:test_text1"                  css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"  />
+		</layer>
+		
+		<layer name="scrollbar_ulica_3_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_3_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_03].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_03].y,ty); delayedcall(0,dragging()); );"	/>	
+		
+       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-45%,.3,default,wait);tween(layer[text_03].x,67.166%,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
 					</layer>						 
 				</layer>
 			</layer>
@@ -631,14 +656,17 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	
 	<data name="test_text0">
 		<p style="color:#ffffff; font-family:Times; font-size:18px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-			<b>Светильник уличный светодиодный E 32.5</b>	
+			<b>Светильник уличный светодиодный E90</b>	
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.
-
-Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
-Возможность замены светодиодов.
+		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[br]
+		[br]
+		Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+		[br]
+		Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
+		[br]
+		Возможность замены светодиодов.
+		
  </p>
 	</data>
 	<data name="test_text1">
@@ -648,16 +676,16 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
 	Тип освещения-----------------------------Светодиодное[br]
 	Напряжение питания----------------------176-264В/50Гц[br]
-	Мощность-----------------------------------32.5 Вт[br]
-	Световой поток----------------------------3510 Лм[br]
+	Мощность-----------------------------------90 Вт[br]
+	Световой поток----------------------------9720 Лм[br]
 	Температура свечения--------------------5000 К[br]
 	Коэффициент пульсаций-----------------[lt] 1%[br]
 	Температура эксплуатации--------------от -50 до +50 С[br]
 	Степень защиты:--------------------------IP65[br]
-	Габаритные размеры----------------------370х180х60 мм[br]
+	Габаритные размеры----------------------540х190х95 мм[br]
 	Крепление----------------------------------Консоль/Скоба[br]
-	КСС-----------------------------------------Широкая ассиметричная[br]
-	Вес-------------------------------------------2 кг[br]
+	КСС-------------------------------------------Широкая ассиметричная[br]
+
  </p>
 	</data>
 	
@@ -667,15 +695,15 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
 
-✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br]
-[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
-[br]
-✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br]
-[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br]
-[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br]
+[br]✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br][br]
+
+✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br][br]
+
+✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br][br]
+
+✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br][br]
+
+✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br][br]
 
 
  </p>
@@ -684,7 +712,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	<data name="test_css">
 		p {color:#ffffff; font-family:Times;}
 		a {color:#ffffff}
-	</data>
+	</data> 
 
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 				
@@ -710,55 +738,72 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		
 	<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	
-		<plugin name="screen_tint"
-			 url="images/screen_tint.png"
-	         keep="false"
-	         align="center"
-	         width="100%"
-	         height="100%"
-	         visible="false" enabled="false"
- 	         zorder="10"
-	         alpha="0" blendmode="multiply" smoothing="true"
- 	         refreshrate="auto"
-	         />
+
 			<!--********** Container Holding ScrollArea, Images and Buttons **********-->
-		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="805" 	height="605" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
+		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="55%" 	height="prop" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
-			<layer name="container" keep="true" type="container" align="center" y="0" width="800" height="600"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
-			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="2400" height="600" direction="h" onloaded="setcenter(0,0);">
+			<layer name="container" keep="true" type="container" align="center" y="0" width="99%" height="99%"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">
 			
-		<layer name="image_01" url="%CURRENTXML%/images/LED5000E902.jpg" align="left" x="0" zorder="12" scale="1" handcursor="false" onclick=""/>
-		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" x="750" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="20" y="100"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
+		<layer name="image_01" url="%CURRENTXML%/images/LED5000E1202.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="0.5%" y="25%"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
 						
 							<!--********** Container Holding Content **********-->
-		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-250" width="800" height="250" zorder="14" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" handcursor="false" height="250" zorder="14" html="data:test_text0" css="font-family:Times; font-size:14px; color:#ffffff;" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0"  />
-		<layer name="close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale=".5"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-250,.5,default,wait); tween(layer[text_01].x,15,.3);" />
+		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-45%" width="33.333%" height="45%" zorder="14" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_1" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false"  zorder="14" html="data:test_text0" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_1_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_1_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_01].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_01].y,ty); delayedcall(0,dragging()); );"	/>
+		
+		<layer name="close_01" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale="1"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-45%,.5,default,wait); tween(layer[text_01].x,15,.3);" />
 		</layer>
 						
 						
 									<!--********** 02**********-->
-		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="800" scale="1" handcursor="false" zorder="11" onclick=""/>
-		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" x="850" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" x="1550" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="820" y="100" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,750,.3,default,wait); tween(layer[cc_02].y,0)"/>
+		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="33.833%" y="25%" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,30%,.3,default,wait); tween(layer[cc_02].y,0)"/>
        						
 						<!--********** Container Holding Content **********-->
-		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="800" y="-250" width="800" height="250" zorder="12" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="11" children="false" html="data:test_text2" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-		<layer name="close_02" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-250,.3,default,wait); tween(layer[text_02].x,820,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
+		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="33.333%" y="-45%" width="33.333%" height="45%" zorder="12" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_2" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="11" children="false" html="data:test_text2" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_2_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(layer[scrollbar_ulica_2_page].bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_2_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_02].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_02].y,ty); delayedcall(0,dragging()); );"	/>
+			
+		<layer name="close_02" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-45%,.3,default,wait); tween(layer[text_02].x,33.833%,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
 		</layer>
        
        			
-		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="1600" scale="1" handcursor="false" zorder="12" onclick=""/>
-		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" x="1650" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="1620" y="100" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,1550,.5,default,wait); tween(layer[cc_03].y,0)"/>
+		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="67.166%" y="25%" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,60%,.5,default,wait); tween(layer[cc_03].y,0)"/>
        	   					
        	   			<!--********** Container Holding Content **********-->
-		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="1600" y="-250" width="800" height="250" zorder="13" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="12" children="false" html="data:test_text1" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-250,.3,default,wait);tween(layer[text_03].x,1620,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
+		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="66.666%" y="-45%" width="33.333%" height="45%" zorder="13" bgcolor="0xffffff" bgalpha="0.9" visible="true" maskchildren="true">
+		<layer name="textmask_ulica_3" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+			<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="12" children="false" html="data:test_text1"                  css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"  />
+		</layer>
+		
+		<layer name="scrollbar_ulica_3_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_3_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_03].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_03].y,ty); delayedcall(0,dragging()); );"	/>	
+		
+       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-45%,.3,default,wait);tween(layer[text_03].x,67.166%,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
 					</layer>						 
 				</layer>
 			</layer>
@@ -770,11 +815,14 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 			<b>Светильник уличный светодиодный E90</b>	
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.
-
-Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
-Возможность замены светодиодов.
+		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[br]
+		[br]
+		Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+		[br]
+		Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
+		[br]
+		Возможность замены светодиодов.
+		
  </p>
 	</data>
 	<data name="test_text1">
@@ -792,8 +840,8 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	Степень защиты:--------------------------IP65[br]
 	Габаритные размеры----------------------540х190х95 мм[br]
 	Крепление----------------------------------Консоль/Скоба[br]
-	КСС------------------------------------Широкая ассиметричная[br]
-	Вес-------------------------------------------3 кг[br]
+	КСС-------------------------------------------Широкая ассиметричная[br]
+
  </p>
 	</data>
 	
@@ -803,15 +851,15 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
 
-✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br]
-[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
-[br]
-✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br]
-[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br]
-[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br]
+[br]✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br][br]
+
+✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br][br]
+
+✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br][br]
+
+✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br][br]
+
+✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br][br]
 
 
  </p>
@@ -820,7 +868,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	<data name="test_css">
 		p {color:#ffffff; font-family:Times;}
 		a {color:#ffffff}
-	</data>
+	</data> 
 
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 				
@@ -847,55 +895,70 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 			
-		<plugin name="screen_tint"
-			 url="images/screen_tint.png"
-	         keep="false"
-	         align="center"
-	         width="100%"
-	         height="100%"
-	         visible="false" enabled="false"
- 	         zorder="10"
-	         alpha="0" blendmode="multiply" smoothing="true"
- 	         refreshrate="auto"
-	         />
-			<!--********** Container Holding ScrollArea, Images and Buttons **********-->
-		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="805" 	height="605" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
+		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="55%" 	height="prop" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
-			<layer name="container" keep="true" type="container" align="center" y="0" width="800" height="600"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
-			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="2400" height="600" direction="h" onloaded="setcenter(0,0);">
+			<layer name="container" keep="true" type="container" align="center" y="0" width="99%" height="99%"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">
 			
-		<layer name="image_01" url="%CURRENTXML%/images/LED5000E1803.jpg" align="left" x="0" zorder="12" scale="1" handcursor="false" onclick=""/>
-		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" x="750" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="20" y="100"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
+		<layer name="image_01" url="%CURRENTXML%/images/LED5000E1803.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="0.5%" y="25%"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
 						
 							<!--********** Container Holding Content **********-->
-		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-250" width="800" height="250" zorder="14" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" handcursor="false" height="250" zorder="14" html="data:test_text0" css="font-family:Times; font-size:14px; color:#ffffff;" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0"  />
-		<layer name="close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale=".5"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-250,.5,default,wait); tween(layer[text_01].x,15,.3);" />
+		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-45%" width="33.333%" height="45%" zorder="14" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_1" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false"  zorder="14" html="data:test_text0" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_1_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_1_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_01].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_01].y,ty); delayedcall(0,dragging()); );"	/>
+		
+		<layer name="close_01" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale="1"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-45%,.5,default,wait); tween(layer[text_01].x,15,.3);" />
 		</layer>
 						
 						
 									<!--********** 02**********-->
-		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="800" scale="1" handcursor="false" zorder="11" onclick=""/>
-		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" x="850" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" x="1550" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="820" y="100" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,750,.3,default,wait); tween(layer[cc_02].y,0)"/>
+		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="33.833%" y="25%" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,30%,.3,default,wait); tween(layer[cc_02].y,0)"/>
        						
 						<!--********** Container Holding Content **********-->
-		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="800" y="-250" width="800" height="250" zorder="12" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="11" children="false" html="data:test_text2" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-		<layer name="close_02" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-250,.3,default,wait); tween(layer[text_02].x,820,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
+		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="33.333%" y="-45%" width="33.333%" height="45%" zorder="12" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_2" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="11" children="false" html="data:test_text2" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_2_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(layer[scrollbar_ulica_2_page].bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_2_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_02].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_02].y,ty); delayedcall(0,dragging()); );"	/>
+			
+		<layer name="close_02" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-45%,.3,default,wait); tween(layer[text_02].x,33.833%,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
 		</layer>
        
        			
-		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="1600" scale="1" handcursor="false" zorder="12" onclick=""/>
-		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" x="1650" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="1620" y="100" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,1550,.5,default,wait); tween(layer[cc_03].y,0)"/>
+		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="67.166%" y="25%" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,60%,.5,default,wait); tween(layer[cc_03].y,0)"/>
        	   					
        	   			<!--********** Container Holding Content **********-->
-		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="1600" y="-250" width="800" height="250" zorder="13" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="12" children="false" html="data:test_text1" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-250,.3,default,wait);tween(layer[text_03].x,1620,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
+		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="66.666%" y="-45%" width="33.333%" height="45%" zorder="13" bgcolor="0xffffff" bgalpha="0.9" visible="true" maskchildren="true">
+		<layer name="textmask_ulica_3" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+			<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="12" children="false" html="data:test_text1"                  css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"  />
+		</layer>
+		
+		<layer name="scrollbar_ulica_3_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_3_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_03].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_03].y,ty); delayedcall(0,dragging()); );"	/>	
+		
+       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-45%,.3,default,wait);tween(layer[text_03].x,67.166%,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
 					</layer>						 
 				</layer>
 			</layer>
@@ -904,14 +967,17 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	
 	<data name="test_text0">
 		<p style="color:#ffffff; font-family:Times; font-size:18px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-			<b>Светильник уличный светодиодный E180</b>	
+			<b>Светильник уличный светодиодный E90</b>	
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.
-
-Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
-Возможность замены светодиодов.
+		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[br]
+		[br]
+		Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+		[br]
+		Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
+		[br]
+		Возможность замены светодиодов.
+		
  </p>
 	</data>
 	<data name="test_text1">
@@ -929,8 +995,9 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	Степень защиты:--------------------------IP65[br]
 	Габаритные размеры----------------------720х190х95 мм[br]
 	Крепление----------------------------------Консоль[br]
-	Энергоэффективность--------------------108 Лм/Вт[br]
+	Энергоэффективность--------------------------108 Лм/Вт[br]
 	Вес-------------------------------------------4.5 кг[br]
+
  </p>
 	</data>
 	
@@ -940,15 +1007,15 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
 
-✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br]
-[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
-[br]
-✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br]
-[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br]
-[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br]
+[br]✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br][br]
+
+✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br][br]
+
+✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br][br]
+
+✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br][br]
+
+✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br][br]
 
 
  </p>
@@ -986,55 +1053,72 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 
 				<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	
-		<plugin name="screen_tint"
-			 url="images/screen_tint.png"
-	         keep="false"
-	         align="center"
-	         width="100%"
-	         height="100%"
-	         visible="false" enabled="false"
- 	         zorder="10"
-	         alpha="0" blendmode="multiply" smoothing="true"
- 	         refreshrate="auto"
-	         />
+
 			<!--********** Container Holding ScrollArea, Images and Buttons **********-->
-		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="805" 	height="605" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
+		<layer name="frame" url="%CURRENTXML%/skin/win_bg.png" align="center" x="0" y="0" width="55%" 	height="prop" zorder="11" visible="false" enabled="true" handcursor="false" alpha="0.1">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
-			<layer name="container" keep="true" type="container" align="center" y="0" width="800" height="600"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
-			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="2400" height="600" direction="h" onloaded="setcenter(0,0);">
+			<layer name="container" keep="true" type="container" align="center" y="0" width="99%" height="99%"	handcursor="false"	 zorder="10" bgcolor="0xFFFFFF" bgalpha="0">
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">
 			
-		<layer name="image_01" url="%CURRENTXML%/images/LED5000E902.jpg" align="left" x="0" zorder="12" scale="1" handcursor="false" onclick=""/>
-		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" x="750" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="20" y="100"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
+		<layer name="image_01" url="%CURRENTXML%/images/LED5000E902.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+		<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_01" style="_hotspot_ani" icon_type="info" align="leftbottom" scale="0.5" x="0.5%" y="25%"  zorder="13" alpha=".6" onover="tween(layer[text_01].alpha,1)" onout="tween(layer[text_01].alpha,.6)" onclick="tween(layer[text_01].alpha, 0, .3); tween(layer[text_01].x,-40,.2,default,wait); tween(layer[cc_01].y,0,.5)" />
 						
 							<!--********** Container Holding Content **********-->
-		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-250" width="800" height="250" zorder="14" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" handcursor="false" height="250" zorder="14" html="data:test_text0" css="font-family:Times; font-size:14px; color:#ffffff;" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0"  />
-		<layer name="close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale=".5"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-250,.5,default,wait); tween(layer[text_01].x,15,.3);" />
+		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-45%" width="33.333%" height="45%" zorder="14" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_1" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false"  zorder="14" html="data:test_text0" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_1_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_1_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_01].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_01].y,ty); delayedcall(0,dragging()); );"	/>
+		
+		<layer name="close_01" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale="1"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-45%,.5,default,wait); tween(layer[text_01].x,15,.3);" />
 		</layer>
 						
 						
 									<!--********** 02**********-->
-		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="800" scale="1" handcursor="false" zorder="11" onclick=""/>
-		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" x="850" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" x="1550" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -800, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="820" y="100" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,750,.3,default,wait); tween(layer[cc_02].y,0)"/>
+		<layer name="image_02" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+		<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+		<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_02" style="_hotspot_ani" icon_type="info" align="leftbottom" x="33.833%" y="25%" scale=".5" zorder="13" alpha=".6" onover="tween(layer[text_02].alpha,1)" onout="tween(layer[text_02].alpha,.6)" onclick="tween(layer[text_02].alpha,0,.3); tween(layer[text_02].x,30%,.3,default,wait); tween(layer[cc_02].y,0)"/>
        						
 						<!--********** Container Holding Content **********-->
-		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="800" y="-250" width="800" height="250" zorder="12" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="11" children="false" html="data:test_text2" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-		<layer name="close_02" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-250,.3,default,wait); tween(layer[text_02].x,820,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
+		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="33.333%" y="-45%" width="33.333%" height="45%" zorder="12" bgcolor="0xffffff" bgalpha="0.9" visible="true">
+		<layer name="textmask_ulica_2" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="11" children="false" html="data:test_text2" 
+		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		</layer>
+		<layer name="scrollbar_ulica_2_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(layer[scrollbar_ulica_2_page].bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_2_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_02].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_02].y,ty); delayedcall(0,dragging()); );"	/>
+			
+		<layer name="close_02" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_02].alpha,1)" onout="tween(layer[close_02].alpha,.5)" onclick="tween(layer[cc_02].y,-45%,.3,default,wait); tween(layer[text_02].x,33.833%,.3,default);tween(layer[text_02].alpha,.8,.3,default);" />
 		</layer>
        
        			
-		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="1600" scale="1" handcursor="false" zorder="12" onclick=""/>
-		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" x="1650" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(200,0.17),default,wait); action(reset_arrow);" />
-		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="1620" y="100" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,1550,.5,default,wait); tween(layer[cc_03].y,0)"/>
+		<layer name="image_03" url="%CURRENTXML%/images/LED5000E1803_5.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+		<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+		<layer name="text_03" style="_hotspot_ani" icon_type="info"  align="leftbottom" x="67.166%" y="25%" zorder="14" scale=".5" alpha=".6" onover="tween(layer[text_03].alpha,1)" onout="tween(layer[text_03].alpha,.8)" onclick="tween(layer[text_03].alpha,0,.3);tween(layer[text_03].x,60%,.5,default,wait); tween(layer[cc_03].y,0)"/>
        	   					
        	   			<!--********** Container Holding Content **********-->
-		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="1600" y="-250" width="800" height="250" zorder="13" bgcolor="0x000000" bgalpha=".8" visible="true">
-		<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="leftbottom" x="0" y="0" width="800" height="250" handcursor="false" zorder="12" children="false" html="data:test_text1" css="font-family:Times; font-size:14px; color:#ffffff;" autoheight="false" vcenter="false" background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0" />
-       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale=".5"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-250,.3,default,wait);tween(layer[text_03].x,1620,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
+		<layer name="cc_03" keep="true" type="container" align="leftbottom" x="66.666%" y="-45%" width="33.333%" height="45%" zorder="13" bgcolor="0xffffff" bgalpha="0.9" visible="true" maskchildren="true">
+		<layer name="textmask_ulica_3" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
+			<layer name="content_03" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="12" children="false" html="data:test_text1"                  css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"  />
+		</layer>
+		
+		<layer name="scrollbar_ulica_3_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+	
+		<layer name="scrollslider_ulica_3_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
+		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_03].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_03].y,ty); delayedcall(0,dragging()); );"	/>	
+		
+       	<layer name="close_03" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="13" scale="1"  onover="tween(layer[close_03].alpha,1)" onout="tween(layer[close_03].alpha,.5)" onclick="tween(layer[cc_03].y,-45%,.3,default,wait);tween(layer[text_03].x,67.166%,1,default,wait);tween(layer[text_03].alpha,1,.5,default,wait);" />
 					</layer>						 
 				</layer>
 			</layer>
@@ -1046,11 +1130,14 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 			<b>Светильник уличный светодиодный E90</b>	
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.
-
-Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
-Возможность замены светодиодов.
+		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[br]
+		[br]
+		Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+		[br]
+		Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
+		[br]
+		Возможность замены светодиодов.
+		
  </p>
 	</data>
 	<data name="test_text1">
@@ -1068,8 +1155,8 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	Степень защиты:--------------------------IP65[br]
 	Габаритные размеры----------------------540х190х95 мм[br]
 	Крепление----------------------------------Консоль/Скоба[br]
-	КСС------------------------------------Широкая ассиметричная[br]
-	Вес-------------------------------------------3 кг[br]
+	КСС-------------------------------------------Широкая ассиметричная[br]
+
  </p>
 	</data>
 	
@@ -1079,15 +1166,15 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
 
-✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br]
-[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
-[br]
-✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br]
-[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br]
-[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br]
+[br]✔Светодиодные уличные светильники являются одним из наиболее экономичных видов освещения, экономия электроэнергии достигает 70%[br][br]
+
+✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br][br]
+
+✔Светодиодные уличные светильники обеспечивают отличную цветопередачу, ударопрочны, виброустойчивы, экологичны, монтируются на стандартные опоры освещения[br][br]
+
+✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность[br][br]
+
+✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br][br]
 
 
  </p>
