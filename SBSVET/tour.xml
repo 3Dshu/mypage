@@ -1,7 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour" onstart="initiate_menu(); startup();">
 
 
-	<!-- <include url="skin/vtourskin.xml" />-->
+	<include url="skin/vtourskin.xml" />
 	<include url="add/SDsvet.xml" />
 	<include url="menu.xml" />
 	
@@ -15,7 +15,7 @@
 	               webvr="true"
 	               webvr_gyro_keeplookingdirection="false"
 	               webvr_prev_next_hotspots="true"
-	               littleplanetintro="false"
+	               littleplanetintro="true"
 	               title="true"
 	               thumbs="true"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
@@ -45,8 +45,8 @@
 	               controlbar_overlap.no-fractionalscaling="10"
 	               controlbar_overlap.fractionalscaling="0"
 	               design_skin_images="vtourskin.png"
-	               design_bgcolor="0x2D3E50"
-	               design_bgalpha="0.8"
+	               design_bgcolor="0x5E75AA"
+	               design_bgalpha="0.3"
 	               design_bgborder="0"
 	               design_bgroundedge="1"
 	               design_bgshadow="0 4 10 0x000000 0.3"
@@ -62,6 +62,32 @@
 	    from above or optionally include one of the predefined designs from below.
 	-->
 	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	
+	<events onmousedown="copy(lastmx,mouse.x);
+                         copy(lastmy,mouse.y);
+                         if(clicks === null, set(clicks,0));
+                         inc(clicks);
+                         delayedcall(0.4, set(clicks,0));
+                        "
+            onmouseup="if(lastmx == mouse.x,
+                          if(lastmy == mouse.y,
+                             if(clicks GE 2,
+                                 set(clicks,0);
+                                 mul(tofov,view.fov,0.5);
+                                 if(tofov LT view.fovmin, copy(tofov,view.fovmin));
+                                 screentosphere(mouse.x,mouse.y,toh,tov);
+                                 adjusthlookat(get(toh));
+                                 tween(view.hlookat,get(toh));
+                                 tween(view.vlookat,get(tov));
+                                 tween(view.fov,get(tofov));
+                                );
+                            );
+                         );
+                        "
+            onmousewheel="stoptween(view.hlookat,view.vlookat,view.fov);"
+            onkeydown="events.onmousewheel();"
+            />
+	
 	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
 	<textstyle name="DEFAULT4" origin="cursor" edge="bottom" xoffset="0" yoffset="40" fadeintime="0.3"        showtime="0.1"
            fadetime="0.0"           font="Arial"           fontsize="18.0"           bold="false"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="0"           css=""
@@ -214,6 +240,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          handcursor="true"
          capture="false"
          style=""
+		 zorder="1"
          alpha="0.0"
          fillcolor="0x75c3f3"
          fillalpha="0.5"
@@ -227,8 +254,8 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.35)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo);"
-         onloaded=""
+         onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.666)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 13, 1.8, easeInExpo);"
+         onloaded="animation();"
 			>
  <point ath="-70.69384872826782" atv="3.6929794736448995"/>
  <point ath="-72.09401824035086" atv="3.4825184518880397"/>
@@ -270,6 +297,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          handcursor="true"
          capture="false"
          style=""
+		 zorder="1"
          alpha="0.0"
          fillcolor="0x75c3f3"
          fillalpha="0.5"
@@ -283,7 +311,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_park,MERGE,KEEPVIEW , BLEND(0.35));set(layer[pic_led].crop,300|0|100|100) ;tween(layer[ledpicture].y, 50, 1.8, easeInExpo);"
+         onclick="loadscene(scene_park,MERGE,KEEPVIEW , BLEND(0.666));set(layer[pic_led].crop,300|0|100|100) ;tween(layer[ledpicture].y, 13, 1.8, easeInExpo);"
          onloaded=""
 			>
  <point ath="-65.80075467453872" atv="10.873217020238384"/>
@@ -337,6 +365,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          enabled="true"
          handcursor="true"
          capture="false"
+		 zorder="1"
          style=""
          alpha="0.0"
          fillcolor="0x75c3f3"
@@ -344,14 +373,14 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          borderwidth="1.0"
          bordercolor="0xff00ff"
          borderalpha="0.0"
-         onover="tween(hotspot[parkovka_HS].alpha, 0.3);tween(hotspot[parkovka_HS].borderwidth, 8); "
+         onover="tween(hotspot[parkovka_HS].alpha, 0.666);tween(hotspot[parkovka_HS].borderwidth, 8); "
 		 onhover="showtext(парковка, DEFAULT5)"
 		 onout="tween(hotspot[parkovka_HS].alpha, 0);
 		 tween(hotspot[parkovka_HS].borderwidth, 1);"
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(0.35));set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 50, 1.8, easeInExpo);"
+         onclick="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(0.666));set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 13, 1.8, easeInExpo);"
          onloaded=""
 			>
  <point ath="102.71347734522195" atv="12.33609473272735"/>
@@ -364,8 +393,9 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		          keep="true"
          visible="true"
          enabled="true"
-         handcursor="true"
-         capture="false"
+         handcursor="false"
+         capture="true"
+		 zorder="1"
          style=""
          alpha="0.0"
          fillcolor="0x75c3f3"
@@ -380,7 +410,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
          
          ondown=""
          onup=""
-         onclick="loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(0.35));set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 50, 1.8, easeInExpo); "
+         onclick="loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(0.666));set(layer[pic_led].crop,200|0|100|100) ; tween(layer[ledpicture].y, 13, 1.8, easeInExpo); "
          onloaded=""
 			>
  <point ath="95.42168522746653" atv="2.461335753708519"/>
@@ -715,7 +745,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	</data> 
 
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-				
+			
 	</scene>
 
 	<scene name="scene_parkovka" title="parkovka" onstart="" thumburl="panos/parkovka.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -871,7 +901,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	</data> 
 
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-				
+			
 				
 	</scene>
 
@@ -908,13 +938,13 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		<layer name="cc_01" keep="true" type="container" align="leftbottom" x="0" y="-45%" width="33.333%" height="45%" zorder="14" bgcolor="0xffffff" bgalpha="0.9" visible="true">
 		<layer name="textmask_ulica_1" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
 		<layer name="content_01" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false"  zorder="14" html="data:test_text0" 
-		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		css.no-mobile="font-family:Arial; font-size:24px; color:#000000; padding:14px; margin:14px;  margin-right:200px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
 		</layer>
-		<layer name="scrollbar_ulica_1_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
+		<layer name="scrollbar_ulica_1_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onover="set(bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
 	
 		<layer name="scrollslider_ulica_1_page" url="skin/sliderbutton.png" align="righttop" x="20" y="60" zorder="22" crop="0|0|10|50" onovercrop="10|0|10|50" ondowncrop="20|0|10|50" 
 		   	ondown="copy(cy,y);copy(sy,mouse.stagey);dragging();" 
-		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,60); div(ty,180); sub(th,180,layer[content_01].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_01].y,ty); delayedcall(0,dragging()); );"	/>
+		   	dragging="if(pressed, sub(dy,mouse.stagey,sy); add(ny,cy,dy); if(ny LT 60, set(ny,60)); if(ny GT 180, set(ny,180)); copy(y,ny); sub(ty,ny,58); div(ty,114); sub(th,180,layer[content_01].pixelheight); mul(ty,th); add(ty,10); copy(layer[content_01].y,ty); delayedcall(0,dragging()); );"	/>
 		
 		<layer name="close_01" style="_hotspot_ani" icon_type="close_X" align="righttop" x="0" y="0" visible="true" alpha=".8" zorder="15" scale="1"  onover="tween(layer[close_01].alpha,1)" onout="tween(layer[close_01].alpha,.5)" onclick="tween(layer[cc_01].y,-45%,.5,default,wait); tween(layer[text_01].x,15,.3);" />
 		</layer>
@@ -930,7 +960,7 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 		<layer name="cc_02" keep="true" type="container" align="leftbottom" x="33.333%" y="-45%" width="33.333%" height="45%" zorder="12" bgcolor="0xffffff" bgalpha="0.9" visible="true">
 		<layer name="textmask_ulica_2" type="container" align="lefttop" x="5" y="5" width="100%" height="100%" maskchildren="true">
 		<layer name="content_02" url="%CURRENTXML%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" handcursor="false" zorder="11" children="false" html="data:test_text2" 
-		css.no-mobile="font-family:Arial; font-size:20px; color:#000000; padding:24px; margin:15px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
+		css.no-mobile="font-family:Arial; font-size:24px; color:#000000; padding:50px; margin:50px; margin-bottom:15px; text-align:left;" css.mobile="font-family:Arial; font-size:12px; color:#000000; padding:4px; margin:4px; margin-bottom:4px; text-align:left;"/>
 		</layer>
 		<layer name="scrollbar_ulica_2_page" type="container" bgcolor="0x000000" bgalpha="0.3" align="righttop" x="20" y="58" zorder="21" width="10" height="172" bgroundedge="3" bgshadow="0 0 3 0x000000 1" onovercrop="set(layer[scrollbar_ulica_2_page].bgshadow,'0 0 1 0x000000 1')" visible="true" enabled="true"/>		
 	
@@ -970,13 +1000,13 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 			<b>Светильник уличный светодиодный E90</b>	
 		</p>
 		<p style="color:#ffffff; font-family:Times; font-size:22px; padding:0px; margin:0px; margin-bottom:10px; text-align:left; text-shadow: #000000 0px 1px 0px">
-		Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[br]
+		[br]●Светодиодные светильники cерии "Модуль" в исполнении "Street-Led' предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[br]
 		[br]
-		Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+		●Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
 		[br]
-		Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
+		●Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]
 		[br]
-		Возможность замены светодиодов.
+		●Возможность замены светодиодов.
 		
  </p>
 	</data>
@@ -1186,9 +1216,15 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 	</data>
 
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->		
+		
+ 
 	</scene>
 
-
+<plugin url="plugins/moretweentypes.js" preload="true"/>
+<layer name="tuur" type="text" keep="true" align="rightbottom" x="10" y="10" width="30" height="30" bgcolor="0xffffff" bgroundedge="15" onclick="ShiftView(in); oninterrupt()"/>
+<action name="ShiftView">
+if(%1 == 'in', tween(view.tx, 700,5,); tween(view.tz, 00,5,); tween(view.ty, 1,5,); set(layer[tuur].onclick, ShiftView(out)); , tween(view.tx, 0,3,); tween(view.ty, 0,3,); tween(view.tz, 0,3,); set(layer[tuur].onclick, ShiftView(in));	);
+</action>
 </krpano>
 
 
