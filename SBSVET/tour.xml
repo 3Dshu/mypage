@@ -1220,11 +1220,6 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
  
 	</scene>
 
-<plugin url="plugins/moretweentypes.js" preload="true"/>
-<layer name="tuur" type="text" keep="true" align="rightbottom" x="10" y="10" width="30" height="30" bgcolor="0xffffff" bgroundedge="15" onclick="ShiftView(in); oninterrupt()"/>
-<action name="ShiftView">
-if(%1 == 'in', tween(view.tx, 700,5,); tween(view.tz, 00,5,); tween(view.ty, 1,5,); set(layer[tuur].onclick, ShiftView(out)); , tween(view.tx, 0,3,); tween(view.ty, 0,3,); tween(view.tz, 0,3,); set(layer[tuur].onclick, ShiftView(in));	);
-</action>
 </krpano>
 
 
