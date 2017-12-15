@@ -70,7 +70,7 @@
 
 		<layer  name="sidebar" keep="true" enebled="true" visible="true" type="container" zorder="9"  bgcapture="false" handcursor="false" draggable="false" bgborder="3 0xFFFFFF 1" bgroundedge="14" maskchildren="true"  align="lefttop" width="195" y="3" x="3" height="50" >
 				<!--<layer name="scrollarea" alturl="%SWFPATH%/plugins/scrollarea.js"  handcursor="false" align="left" width="150" height="50" y="0"  draggable="false" direction="h" onhover_autoscrolling="false">-->
-					<layer name="LOGOshapka" url="shapkaR.jpg" handcursor="true" scale="1" align="center" width="109%" height="112%"  zorder="8"  onhover_autoscrolling="true" ondown="tween(layer[LOGOshapka].scale, 0.99, 0.06, easeInOutExpo);  "   onup="tween(layer[LOGOshapka].scale, 1, 0.06, easeInOutExpo);" onclick="tween(layer[IKONKI_SER_MENU].height, 750, 1.4, easeOutBounce); loadscene(scene_rgb,MERGE,KEEPVIEW, BLEND(1));tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);" />
+					<layer name="LOGOshapka" url="shapkaR.jpg" handcursor="true" scale="1" align="center" width="109%" height="112%"  zorder="8"  onhover_autoscrolling="true" ondown="tween(layer[LOGOshapka].scale, 0.99, 0.06, easeInOutExpo);  "   onup="tween(layer[LOGOshapka].scale, 1, 0.06, easeInOutExpo);" onclick="tween(layer[IKONKI_SER_MENU].height, 750, 1.4, easeOutBounce); loadscene(scene_ALLLIGHT,MERGE,KEEPVIEW, BLEND(1));tween(layer[ledpicture].y, -130, 0.9, easeOutBounce);" />
 				
 				<!--</layer>-->
 
