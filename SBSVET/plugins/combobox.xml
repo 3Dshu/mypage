@@ -1,7 +1,7 @@
 <krpano>
 
 	<!--
-		combobox.xml Plugin - krpano 1.19-pr13
+		combobox.xml Plugin - krpano 1.19-pr14
 
 		- This plugin converts <combobox> elements in the current xml
 		  into <layer> container, scrollarea and textfield elements.
@@ -154,7 +154,7 @@
 		calc(cb.closeList,        'combobox_closelist(' + cbname + ');');
 
 		<!-- create sub-layers -->
-		def(saname, string, 'combobox_%1_scrollarea');
+		calc(saname, 'combobox_' + cbname + '_scrollarea');
 		addlayer(get(saname));
 		copy(sa, layer[get(saname)]);
 		copy(sa.parent, cbname);
@@ -167,7 +167,7 @@
 		set(sa.height, 100%);
 		copy(cb.scrollarea, sa);
 
-		def(mkname, string, 'combobox_%1_marker');
+		calc(mkname, 'combobox_' + cbname + '_marker');
 		addlayer(get(mkname));
 		copy(mk, layer[get(mkname)]);
 		copy(mk.parent, saname);
