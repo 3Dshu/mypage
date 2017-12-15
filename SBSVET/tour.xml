@@ -340,7 +340,7 @@
 		</image>
 		
 		<hotspot name="sklad" alpha="0" 
-					url="%SWFPATH%/PICTURE/sklad.png" 
+					url="%FIRSTXML%/PICTURE/sklad.png" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -375,7 +375,7 @@
 				</hotspot>
 				
 				<hotspot name="zavod" alpha="0" 
-					url="%SWFPATH%/PICTURE/zavod.png" 
+					url="%FIRSTXML%/PICTURE/zavod.png" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -418,7 +418,7 @@
 					 <point ath="30.666610419074345" atv="2.924307459591473"/>
 				</hotspot>
 				<hotspot name="offic" alpha="0" 
-					url="%SWFPATH%/PICTURE/offic.jpg" 
+					url="%FIRSTXML%/PICTURE/offic.jpg" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -440,7 +440,7 @@
 					 <point ath="75.1437123601412" atv="-16.623172437994757"/>
 				</hotspot>
 				<hotspot name="kafe" alpha="0.1" 
-					url="%SWFPATH%/PICTURE/kafe.jpg" 
+					url="%FIRSTXML%/PICTURE/kafe.jpg" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -464,7 +464,7 @@
 					 </hotspot>
 					 
 					 <hotspot name="admin" alpha="0.1" 
-					url="%SWFPATH%/picture/admin.jpg" 
+					url="%FIRSTXML%/picture/admin.jpg" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -487,7 +487,7 @@
 				 <point ath="179.32281180942755" atv="12.990485004095888"/>				
 				</hotspot>
 				<hotspot name="torgC" alpha="0.1" 
-					url="%SWFPATH%/picture/torgcenter.png" 
+					url="%FIRSTXML%/picture/torgcenter.png" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -495,7 +495,7 @@
 					onloaded="calc_pos_from_hfov_yaw_pitch_roll(39, 81.023, .444, 5.483);"
 				/>
 				<hotspot name="torgC2" alpha="0.1" 
-					url="%SWFPATH%/picture/torgcenter2.png" 
+					url="%FIRSTXML%/picture/torgcenter2.png" 
 					keep="true"
 					distorted="true"
 					enabled="false"
