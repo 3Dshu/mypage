@@ -340,7 +340,7 @@
 		</image>
 		
 		<hotspot name="sklad" alpha="0" 
-					url="%FIRSTXML%/PICTURE/sklad.png" 
+					url="%SWFPATH%/PICTURE/sklad.png" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -375,7 +375,7 @@
 				</hotspot>
 				
 				<hotspot name="zavod" alpha="0" 
-					url="%FIRSTXML%/PICTURE/zavod.png" 
+					url="%SWFPATH%/PICTURE/zavod.png" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -418,7 +418,7 @@
 					 <point ath="30.666610419074345" atv="2.924307459591473"/>
 				</hotspot>
 				<hotspot name="offic" alpha="0" 
-					url="%FIRSTXML%/PICTURE/offic.jpg" 
+					url="%SWFPATH%/PICTURE/offic.jpg" 
 					keep="true"
 					distorted="true"
 					enabled="false"
@@ -440,7 +440,7 @@
 					 <point ath="75.1437123601412" atv="-16.623172437994757"/>
 				</hotspot>
 				<hotspot name="kafe" alpha="0.1" 
-					url="%FIRSTXML%/PICTURE/kafe.jpg" 
+					url="%SWFPATH%/PICTURE/kafe.jpg" 
 					keep="true"
 					distorted="true"
 					enabled="false"
