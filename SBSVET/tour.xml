@@ -374,7 +374,7 @@
 				 <point ath="-61.34087759289332" atv="-0.7954137127458563"/>
 				</hotspot>
 				
-				<hotspot name="zavod" alpha="0" 
+				<!--<hotspot name="zavod" alpha="0" 
 					url="%SWFPATH%/PICTURE/zavod.png" 
 					keep="true"
 					distorted="true"
@@ -519,7 +519,7 @@
 					 <point ath="-61.81306951104534" atv="6.859986671516784"/>
 					 <point ath="-112.50727053933915" atv="7.136664315019468"/>
 					 <point ath="-114.38069984724527" atv="-10.3394957920359"/>
-				</hotspot>
+				</hotspot>-->
 				 <hotspot name="park"
 		          keep="true"
          visible="true"
