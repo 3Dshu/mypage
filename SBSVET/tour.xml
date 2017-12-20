@@ -416,7 +416,7 @@
 					 <point ath="18.162520020019883" atv="2.821018573527445"/>
 					 <point ath="21.173804266370098" atv="3.022231906202377"/>
 					 <point ath="30.666610419074345" atv="2.924307459591473"/>
-				</hotspot>
+				</hotspot>-->
 				<hotspot name="offic" alpha="0" 
 					url="%SWFPATH%/PICTURE/offic.jpg" 
 					keep="true"
@@ -463,7 +463,7 @@
 					 <point ath="122.38304851378746" atv="5.029457338173978"/>		
 					 </hotspot>
 					 
-					 <hotspot name="admin" alpha="0.1" 
+					<!-- <hotspot name="admin" alpha="0.1" 
 					url="%FIRSTXML%/picture/admin.jpg" 
 					keep="true"
 					distorted="true"
