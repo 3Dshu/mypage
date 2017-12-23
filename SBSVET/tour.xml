@@ -8,7 +8,7 @@
 		<plugin url.html5="plugins/moretweentypes.js"
 			preload="true"
         />
-		<include url="thumbbar.xml" />
+	
  
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
