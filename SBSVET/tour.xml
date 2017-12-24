@@ -1270,7 +1270,7 @@ IP65[br]
 			
 			
 		
-			<layer name="container" keep="true" type="container" align="leftbottom" edge="leftbottom" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.4" bgcolor="0x000000" >
+			<layer name="container" keep="true" type="container" align="leftbottom" edge="leftbottom" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.3" bgcolor="0x75C4F4" >
 			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="center"  backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">
 			
 			
