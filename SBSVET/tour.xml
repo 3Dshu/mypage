@@ -8,7 +8,7 @@
 		<plugin url.html5="plugins/moretweentypes.js"
 			preload="true"
         />
-	
+		
  
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -228,6 +228,52 @@
             onmousewheel="stoptween(view.hlookat,view.vlookat,view.fov);"
             onkeydown="events.onmousewheel();"
             />
+			<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+			<events onresize="customsizing();" />
+
+				<action name="customsizing">
+if(stagewidth LT 1024 ,
+set(layer[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:12px; text-align:left;');,set(plugin[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
+);
+if(stagewidth LT 1024 ,
+set(layer[kratk_opis_teh].css, 'font-family:Arial; color:#ffffff; font-size:11px; text-align:left;');,set(plugin[kratk_opis_teh].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
+);
+if(stagewidth LT 1024 ,
+set(layer[kratk_opis_teh_].css, 'font-family:Arial; color:#ffffff; font-size:11px; text-align:right;');,set(plugin[kratk_opis_teh_].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:right;');
+);
+if(stagewidth LT 1024 ,
+set(layer[kratk_opis_teh_].padding, '10 10 10 10' ); ,set(plugin[kratk_opis_teh_].padding, '25 25 70 30');
+);
+if(stagewidth LT 1024 ,
+set(layer[kratk_opis_teh].padding, '10 10 10 10' ); ,set(plugin[kratk_opis_teh].padding, '25 25 70 30');
+);
+if(stagewidth LT 840,
+set(layer[LED_E32].css, 'font-family:Arial; color:#ffffff; font-size:22px'),
+set(layer[LED_E32].css, 'font-family:Arial; color:#ffffff; font-size:28px');
+);
+if(stagewidth LT 1024 ,
+set(layer[text_prim_teh_].padding, '10 10 10 10' ); ,set(plugin[text_prim_teh_].padding, '25 25 70 30');
+);
+if(stagewidth LT 1024 ,
+set(layer[rialproject].width,100% ); ,set(plugin[rialproject].width, 60%);
+);
+if(stagewidth LT 1024,
+set(style[priemushestvaIK].scale, 0.5);,set(style[priemushestvaIK].scale, 1);
+);
+if(stagewidth LT 1024,
+set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
+);
+				</action>
+
+
+<data name="bigCSS">
+p{ font-family:Arial; color:#ffffff; font-size:22px; text-align:left; }
+</data>
+
+<data name="smallCSS">
+p{ font-family:Arial; color:#ffffff; font-size:12px; text-align:left;}
+</data>
+				
 	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
 	<style name="hs_park"
 			 keep="false"
@@ -1148,12 +1194,14 @@
 			
 			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="80"	handcursor="false"	 zorder="83" bgalpha="0.4" bgcolor="0x000000" >
 			<layer name="PODpis" type="text" align="top" x="0" y="-10" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
-			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true"
 			/>
-			<layer name="avto" style="primenenieIK" align="center" x="-25" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT5)"/>
-			<layer name="parkovki" style="primenenieIK" align="center" x="25" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT5)"/>
-			<layer name="podsvetka" style="primenenieIK" align="center" x="75" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT5)"/>
-			<layer name="park" style="primenenieIK" align="center" x="-75" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная подсветка, DEFAULT5)"/>
+			<layer name="avto" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT5)"/>
+			<layer name="parkovki" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT5)"/>
+			<layer name="podsvetka" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT5)"/>
+			<layer name="park" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная подсветка, DEFAULT5)"/>
+			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT5)"/>
+			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные учереждения, DEFAULT5)"/>
 			</layer>
 			
 			<layer name="TEHharacter" keep="true" type="container" align="righttop" edge="righttop" y="130" x="0" width="40%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545"		
@@ -1174,10 +1222,10 @@
 
 ✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
 ✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
-" css="font-family:Tahoma; color:#ffffff; font-size:22px;text-align:left;"
-			vcenter="true" padding="17" wordwrap="true"/>
+" css="font-family:Arial; color:#ffffff; font-size:24px; text-align:left;"
+			vcenter="true" padding="17" wordwrap="true" />
 			</layer>
-			
+
 			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="60%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.8" bgcolor="0x000000" maskchildren="true" alpha="0">
 				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
 Напряжение питания[br]
@@ -1235,10 +1283,10 @@ IP65[br]
 			<layer name="PODpis_" type="text" align="top" x="0" y="-10" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#296895; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
-			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение энергозатрат, DEFAULT4)"/>
-			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия 3 года, DEFAULT4)"/>
-			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное обслуживание, DEFAULT4)"/>
-			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка до склада, DEFAULT4)"/>
+			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение энергозатрат, DEFAULT5)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия 3 года, DEFAULT5)"/>
+			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное обслуживание, DEFAULT5)"/>
+			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка до склада, DEFAULT5)"/>
 			</layer>
 		</layer>
 
