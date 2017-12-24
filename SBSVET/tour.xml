@@ -266,6 +266,7 @@ set(style[priemushestvaIK].scale, 0.5);,set(style[priemushestvaIK].scale, 1);
 if((stagewidth LT 1024) OR (stageheight LT 900),
 set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
 );
+
 				</action>
 
 
@@ -1186,7 +1187,7 @@ p{ font-family:Arial; color:#ffffff; font-size:12px; text-align:left;}
 		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
-		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0.1" maskchildren="true">
+		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0.1" maskchildren="false">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  bgcapture="true" handcursor="false"
 		>
@@ -1194,8 +1195,9 @@ p{ font-family:Arial; color:#ffffff; font-size:12px; text-align:left;}
 			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/street-modul/svetilnik-ulichnyij-svetodiodnyij-e32.5.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
+			<layer name="blaskside" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="40%" height="100%"	handcursor="false"	 zorder="80" bgalpha="0.4" bgcolor="0x000000" />
 			
-			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="80"	handcursor="false"	 zorder="83" bgalpha="0.4" bgcolor="0x000000" >
+			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="80"	handcursor="false"	 zorder="83" bgalpha="0.0" bgcolor="0x000000" >
 			<layer name="PODpis" type="text" align="top" x="0" y="-10" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true"
 			/>
@@ -1220,7 +1222,7 @@ p{ font-family:Arial; color:#ffffff; font-size:12px; text-align:left;}
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
 			/>
 			</layer>
-			<layer name="text_op" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="80%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.6" bgcolor="0x000000" maskchildren="true" alpha="1" >
+			<layer name="text_op" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="80%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="1" >
 				<layer name="kratk_opis_text" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]
 
 ✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
@@ -1229,7 +1231,7 @@ p{ font-family:Arial; color:#ffffff; font-size:12px; text-align:left;}
 			vcenter="true" padding="17" wordwrap="true" />
 			</layer>
 
-			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="80%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.6" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="80%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
 Напряжение питания[br]
 Мощность[br]
@@ -1259,7 +1261,7 @@ IP65[br]
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
 			
-			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="80%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.6" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="180" x="0" width="40%" height="80%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для наружного освещения автомагистралей, железнодорожных перронов, парков и скверов парковок, цехов, складских терминалов, спортивных и промышленных сооружений." css="font-family:Arial; color:#ffffff; font-size:18px; text-align:left;"
 			vcenter="true" padding="17" wordwrap="true"/>
 			<layer name="rialproject" keep="true" url="%CURRENTXML%/images/LED5000E1803_4.jpg" align="bottom"
@@ -1283,7 +1285,7 @@ IP65[br]
 				
 			</layer>
 			<layer name="priemushestvO" keep="true" type="container" align="rightbottom" edge="rightbottom" y="2.5%" x="1%" width="38%" height="12%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0xfff046" bgshadow="0 0 8 3 0xfff046 0">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-10" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#296895; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-10" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение энергозатрат, DEFAULT5)"/>
