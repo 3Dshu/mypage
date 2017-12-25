@@ -60,7 +60,7 @@
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
 	-->
-	<events onresize="customsizing();" />
+	<events onresize="customsizing(); customsizing2();" />
 					<action name="customsizing">
 if((stagewidth LT 1024) OR (stageheight LT 840),
 set(layer[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:12px; text-align:left;');,set(plugin[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
@@ -98,7 +98,7 @@ set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
 );
 
 				</action>
-						<events onresize="customsizing2();" />
+					
 					<action name="customsizing2">
 if((stagewidth LT 1024) OR (stageheight LT 840),
 set(layer[TOP_name].align, rightttop);,set(layer[TOP_name].align, center);
@@ -1181,7 +1181,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT5)"/>
 			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT5)"/>
 			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT5)"/>
-			<layer name="park" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная подсветка, DEFAULT5)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная подсветка, DEFAULT5)"/>
 			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT5)"/>
 			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные учереждения, DEFAULT5)"/>
 			</layer>
