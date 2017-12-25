@@ -72,9 +72,9 @@
 			<layer name="glow_line" type="container" align="left" x="48" y="0" width="220" height="65" rotate="0" zorder="3" visible="true" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.2" bgborder="0" bgroundedge="12" bgshadow="0 0 5 5 0x5ae1ff 0.7" bgcapture="false" handcursor="false" alpha="0"/>
 		
 				
-				<layer name="TOP_name" type="text" align="center" x="-10%" y="10" html="[b]_______________________________[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+				<!--<layer name="TOP_name" type="text" align="center" x="-10%" y="10" html="[b]_______________________________[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
 			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="" onout="" onclick="loadscene(scene_alllight,MERGE,KEEPVIEW, BLEND(1));" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
-				/>
+				/>-->
 				
 				<layer name="LOGOshapka" url="SDsvet.png" handcursor="true" scale="1" align="left" width="prop" height="80%" x="50" bgcolor="0x5ae1ff" zorder="3" alpha="1" onhover_autoscrolling="true" onover="tween(layer[glow_line].alpha, 0.7, 0.5)" onout="tween(layer[glow_line].alpha, 0.0, 0.5)" onclick="  openurl('http://sdsvet.ru');" ondown="" />
 				
