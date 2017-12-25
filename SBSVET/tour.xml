@@ -2,6 +2,7 @@
 
 	<include url="skin/vtourskin.xml" />
 	<include url="plugins/showtext.xml" />
+	<include url="add/SDsvet.xml"/>
 
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
@@ -63,7 +64,62 @@
 
 	
 	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<textstyle name="DEFAULT4" origin="cursor" edge="bottom" xoffset="0" yoffset="40" fadeintime="0.3"        showtime="0.1"
+	
+
+<action name="calc_pos_from_hfov_yaw_pitch_roll">
+calc(deg2rad, Math.PI / 180.0);
+<!--  calc the hotspot size  -->
+calc(hfov, 0.5 * (%1) * deg2rad); Math.tan(hfov); set(width, calc(hfov * 1000)); set(height, 'prop');
+<!--  calc the ath, atv and rotate settings  -->
+calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2rad); Math.cos(ch, yaw); Math.sin(sh, yaw); Math.cos(ca, pitch); Math.sin(sa, pitch); Math.cos(cb, roll); Math.sin(sb, roll); Math.atan2(yaw, calc(cb*sh - sb*sa*ch), calc(ca*ch)); Math.atan2(roll, calc(sb*ch - cb*sa*sh), calc(cb*ca)); Math.asin(pitch, calc(cb*sa*ch + sb*sh)); calc(ath, yaw / deg2rad); calc(atv, pitch / deg2rad); calc(rotate, roll / deg2rad);
+</action>
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<events onresize="customsizing();" />
+					<action name="customsizing">
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(layer[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:12px; text-align:left;');,set(plugin[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
+);
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(layer[kratk_opis_teh].css, 'font-family:Arial; color:#ffffff; font-size:11px; text-align:left;');,set(plugin[kratk_opis_teh].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
+);
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(layer[kratk_opis_teh_].css, 'font-family:Arial; color:#ffffff; font-size:11px; text-align:right;');,set(plugin[kratk_opis_teh_].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:right;');
+);
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(layer[kratk_opis_teh_].padding, '10 10 10 10' ); ,set(plugin[kratk_opis_teh_].padding, '25 25 70 30');
+);
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(layer[kratk_opis_teh].padding, '10 10 10 10' ); ,set(plugin[kratk_opis_teh].padding, '25 25 70 30');
+);
+if(stagewidth LT 840,
+set(layer[LED_E32].css, 'font-family:Arial; color:#ffffff; font-size:22px'),
+set(layer[LED_E32].css, 'font-family:Arial; color:#ffffff; font-size:28px');
+);
+if((stagewidth LT 1024) OR (stageheight LT 840) ,
+set(layer[text_prim_teh_].padding, '10 10 10 10' ); ,set(plugin[text_prim_teh_].padding, '25 25 70 30');
+);
+if((stagewidth LT 1024) OR (stageheight LT 840) ,
+set(layer[text_prim_teh_].css, 'font-family:Arial; color:#ffffff; font-size:11px'); ,set(plugin[text_prim_teh_].css, 'font-family:Arial; color:#ffffff; font-size:18px');
+);
+if((stagewidth LT 1024),
+set(layer[rialproject].width,100% ); ,set(plugin[rialproject].width, 60%);
+);
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(style[priemushestvaIK].scale, 0.5);,set(style[priemushestvaIK].scale, 1);
+);
+if((stagewidth LT 1024) OR (stageheight LT 840),
+set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
+);
+
+				</action>
+
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+		<textstyle name="DEFAULT4" origin="cursor" edge="bottom" xoffset="0" yoffset="40" fadeintime="0.3"        showtime="0.1"
            fadetime="0.0"           font="Arial"           fontsize="18.0"           bold="false"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="0"           css=""
            width=""           height=""           vcenter=""           background="false"           backgroundcolor="0xffffff"
            backgroundalpha="0.3"           border="false"           bordercolor="0x000000"           borderalpha="1.0"
@@ -79,7 +135,7 @@
            borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"           textshadow="0.0"
            textshadowrange="4.0"           textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
            />
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+
 		<style name="_hotspot_ani"
 		url="images/hotspot.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
 		timer="0"    delay="0"
@@ -207,22 +263,7 @@
 			tween(layer[text_03].x,67.166%,1);
 			tween(layer[text_03].alpha,.8,.5);
 		</action>
-	
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<action name="startup" autorun="onstart">
-		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
-		loadscene(get(startscene), null, MERGE);
-		if(startactions !== null, startactions() );
-	</action>
 
-<action name="calc_pos_from_hfov_yaw_pitch_roll">
-calc(deg2rad, Math.PI / 180.0);
-<!--  calc the hotspot size  -->
-calc(hfov, 0.5 * (%1) * deg2rad); Math.tan(hfov); set(width, calc(hfov * 1000)); set(height, 'prop');
-<!--  calc the ath, atv and rotate settings  -->
-calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2rad); Math.cos(ch, yaw); Math.sin(sh, yaw); Math.cos(ca, pitch); Math.sin(sa, pitch); Math.cos(cb, roll); Math.sin(sb, roll); Math.atan2(yaw, calc(cb*sh - sb*sa*ch), calc(ca*ch)); Math.atan2(roll, calc(sb*ch - cb*sa*sh), calc(cb*ca)); Math.asin(pitch, calc(cb*sa*ch + sb*sh)); calc(ath, yaw / deg2rad); calc(atv, pitch / deg2rad); calc(rotate, roll / deg2rad);
-</action>
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
 	<style name="hs_park"
 			 keep="false"
 			 visible="true"
@@ -379,51 +420,12 @@ calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2
 				 onup=""
 				
 			/>
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<events onresize="customsizing();" />
-					<action name="customsizing">
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(layer[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:12px; text-align:left;');,set(plugin[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
-);
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(layer[kratk_opis_teh].css, 'font-family:Arial; color:#ffffff; font-size:11px; text-align:left;');,set(plugin[kratk_opis_teh].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
-);
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(layer[kratk_opis_teh_].css, 'font-family:Arial; color:#ffffff; font-size:11px; text-align:right;');,set(plugin[kratk_opis_teh_].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:right;');
-);
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(layer[kratk_opis_teh_].padding, '10 10 10 10' ); ,set(plugin[kratk_opis_teh_].padding, '25 25 70 30');
-);
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(layer[kratk_opis_teh].padding, '10 10 10 10' ); ,set(plugin[kratk_opis_teh].padding, '25 25 70 30');
-);
-if(stagewidth LT 840,
-set(layer[LED_E32].css, 'font-family:Arial; color:#ffffff; font-size:22px'),
-set(layer[LED_E32].css, 'font-family:Arial; color:#ffffff; font-size:28px');
-);
-if((stagewidth LT 1024) OR (stageheight LT 840) ,
-set(layer[text_prim_teh_].padding, '10 10 10 10' ); ,set(plugin[text_prim_teh_].padding, '25 25 70 30');
-);
-if((stagewidth LT 1024) OR (stageheight LT 840) ,
-set(layer[text_prim_teh_].css, 'font-family:Arial; color:#ffffff; font-size:11px'); ,set(plugin[text_prim_teh_].css, 'font-family:Arial; color:#ffffff; font-size:18px');
-);
-if((stagewidth LT 1024),
-set(layer[rialproject].width,100% ); ,set(plugin[rialproject].width, 60%);
-);
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(style[priemushestvaIK].scale, 0.5);,set(style[priemushestvaIK].scale, 1);
-);
-if((stagewidth LT 1024) OR (stageheight LT 840),
-set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
-);
-
-				</action>
-
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
 	<!-- startup action - load the first scene -->
 	<action name="startup" autorun="onstart">
 		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
@@ -456,7 +458,6 @@ set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
 				<hotspot name="avto_trassa"
 			 style="hs_AREA_"
 			 onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.666));"
-			 onloaded=""
 			>
 			<point atv="3.870963486942284" ath="-61.61953844740697"/>
 			<point atv="5.403407015275075" ath="-61.628196799176294"/>
@@ -502,80 +503,80 @@ set(style[primenenieIK].scale, 0.5);,set(style[primenenieIK].scale, 1);
 		style="hs_AREA_"
         onclick="loadscene(scene_torgcenter,MERGE,KEEPVIEW, BLEND(0.666));"
 			>
- <point ath="-39.659752460512095" atv="10.42363458441208"/>
- <point ath="-60.204557113061355" atv="6.786041784849452"/>
- <point ath="-114.93679751031198" atv="7.067175953278805"/>
- <point ath="-118.79709817937672" atv="8.082315002844087"/>
- <point ath="-115.01710720226882" atv="8.320466339785847"/>
- <point ath="-114.78315739526406" atv="8.591454907805028"/>
- <point ath="-114.78265703383485" atv="8.7169105061539"/>
- <point ath="-120.15392949071091" atv="8.843093517478602"/>
- <point ath="-118.18089987662478" atv="10.595254013631314"/>
- <point ath="-112.17430914098196" atv="14.704680998867024"/>
- <point ath="-103.57405761838658" atv="13.729993951985644"/>
- <point ath="-100.76749711251426" atv="14.155450464296193"/>
- <point ath="-100.74801404714242" atv="14.557099377324057"/>
- <point ath="-101.70477416054365" atv="15.76931872071602"/>
- <point ath="-82.18653183083768" atv="15.927600704236493"/>
- <point ath="-81.4615472309415" atv="16.228725424230042"/>
- <point ath="-81.16297250342274" atv="16.984384902144512"/>
- <point ath="-80.81296816097222" atv="16.966043469309547"/>
- <point ath="-80.74248323790744" atv="16.19234528745296"/>
- <point ath="-79.81188778609504" atv="15.735399088970475"/>
- <point ath="-61.75954234609566" atv="14.30379652798148"/>
- <point ath="-64.04762765665379" atv="13.223901320786682"/>
- <point ath="-64.0687275063907" atv="12.909957632867252"/>
- <point ath="-61.36748805464077" atv="12.627362139849287"/>
- <point ath="-58.22424830870591" atv="13.747489482661909"/>
- </hotspot>
+			 <point ath="-39.659752460512095" atv="10.42363458441208"/>
+			 <point ath="-60.204557113061355" atv="6.786041784849452"/>
+			 <point ath="-114.93679751031198" atv="7.067175953278805"/>
+			 <point ath="-118.79709817937672" atv="8.082315002844087"/>
+			 <point ath="-115.01710720226882" atv="8.320466339785847"/>
+			 <point ath="-114.78315739526406" atv="8.591454907805028"/>
+			 <point ath="-114.78265703383485" atv="8.7169105061539"/>
+			 <point ath="-120.15392949071091" atv="8.843093517478602"/>
+			 <point ath="-118.18089987662478" atv="10.595254013631314"/>
+			 <point ath="-112.17430914098196" atv="14.704680998867024"/>
+			 <point ath="-103.57405761838658" atv="13.729993951985644"/>
+			 <point ath="-100.76749711251426" atv="14.155450464296193"/>
+			 <point ath="-100.74801404714242" atv="14.557099377324057"/>
+			 <point ath="-101.70477416054365" atv="15.76931872071602"/>
+			 <point ath="-82.18653183083768" atv="15.927600704236493"/>
+			 <point ath="-81.4615472309415" atv="16.228725424230042"/>
+			 <point ath="-81.16297250342274" atv="16.984384902144512"/>
+			 <point ath="-80.81296816097222" atv="16.966043469309547"/>
+			 <point ath="-80.74248323790744" atv="16.19234528745296"/>
+			 <point ath="-79.81188778609504" atv="15.735399088970475"/>
+			 <point ath="-61.75954234609566" atv="14.30379652798148"/>
+			 <point ath="-64.04762765665379" atv="13.223901320786682"/>
+			 <point ath="-64.0687275063907" atv="12.909957632867252"/>
+			 <point ath="-61.36748805464077" atv="12.627362139849287"/>
+			 <point ath="-58.22424830870591" atv="13.747489482661909"/>
+			 </hotspot>
  
  <hotspot name="park"
 style="hs_AREA_"
 onclick="loadscene(scene_park,MERGE,KEEPVIEW, BLEND(0.666));"
 			>
- <point ath="-12.241825515535822" atv="12.920860355523324"/>
- <point ath="-1.3763178543317167" atv="13.307647783035426"/>
- <point ath="34.06451171745357" atv="21.490602592495254"/>
- <point ath="35.172943370765324" atv="21.183661009360822"/>
- <point ath="30.365418545142745" atv="11.461577687145168"/>
- <point ath="36.4994828240001" atv="10.718696289766518"/>
- <point ath="50.46475869171621" atv="22.24056463610197"/>
- <point ath="52.253089614521855" atv="22.743600526959472"/>
- <point ath="113.80069096750907" atv="11.963892433475818"/>
- <point ath="124.26506779557329" atv="16.440366087008005"/>
- <point ath="108.40122766165982" atv="18.823256242323183"/>
- <point ath="102.90676843677878" atv="20.9482584570159"/>
- <point ath="99.16683388007502" atv="19.37965650265025"/>
- <point ath="91.35694582425828" atv="24.276907202008122"/>
- <point ath="89.21642724622325" atv="25.474574879154773"/>
- <point ath="70.85296226662592" atv="26.231242665298748"/>
- <point ath="77.25630641110934" atv="31.656376008074066"/>
- <point ath="48.89748953906593" atv="39.37039089255387"/>
- <point ath="111.99619131023172" atv="47.66375756661341"/>
- <point ath="149.40791878835495" atv="50.025317659437434"/>
- <point ath="136.2077011695226" atv="40.662424091574245"/>
- <point ath="152.0608127421463" atv="31.360704957995875"/>
- <point ath="139.21654084490106" atv="30.45559277509062"/>
- <point ath="147.77380530635992" atv="25.68985051206687"/>
- <point ath="165.47624968093936" atv="28.88833075515031"/>
- <point ath="166.61118885193113" atv="26.978684694082983"/>
- <point ath="-146.1074989683578" atv="23.44235589790431"/>
- <point ath="-138.33143557533649" atv="27.44180087790301"/>
- <point ath="-156.40103577125168" atv="32.48080416334334"/>
- <point ath="-106.92345334739429" atv="56.65556117406404"/>
- <point ath="-98.41419819586832" atv="37.629269960118854"/>
- <point ath="-69.57354548285537" atv="36.155730621211084"/>
- <point ath="-73.43547379065569" atv="30.786334986140705"/>
- <point ath="-58.85457865442663" atv="28.004793145560363"/>
- <point ath="-32.97707354080592" atv="40.889336210672454"/>
- <point ath="-18.91634270705225" atv="27.31512241653967"/>
- <point ath="-24.198621355014836" atv="26.37610545296511"/>
- <point ath="-21.66141469392926" atv="23.800138708427752"/>
- <point ath="-37.81228625644337" atv="20.609063187589783"/>
- <point ath="-30.802506258726964" atv="17.442162788543477"/>
- <point ath="-13.055121925440574" atv="19.720169906668474"/>
- <point ath="-9.197276729161558" atv="14.481989736679475"/>
- <point ath="-11.953695682233274" atv="13.069997652074834"/>
+			 <point ath="-12.241825515535822" atv="12.920860355523324"/>
+			 <point ath="-1.3763178543317167" atv="13.307647783035426"/>
+			 <point ath="34.06451171745357" atv="21.490602592495254"/>
+			 <point ath="35.172943370765324" atv="21.183661009360822"/>
+			 <point ath="30.365418545142745" atv="11.461577687145168"/>
+			 <point ath="36.4994828240001" atv="10.718696289766518"/>
+			 <point ath="50.46475869171621" atv="22.24056463610197"/>
+			 <point ath="52.253089614521855" atv="22.743600526959472"/>
+			 <point ath="113.80069096750907" atv="11.963892433475818"/>
+			 <point ath="124.26506779557329" atv="16.440366087008005"/>
+			 <point ath="108.40122766165982" atv="18.823256242323183"/>
+			 <point ath="102.90676843677878" atv="20.9482584570159"/>
+			 <point ath="99.16683388007502" atv="19.37965650265025"/>
+			 <point ath="91.35694582425828" atv="24.276907202008122"/>
+			 <point ath="89.21642724622325" atv="25.474574879154773"/>
+			 <point ath="70.85296226662592" atv="26.231242665298748"/>
+			 <point ath="77.25630641110934" atv="31.656376008074066"/>
+			 <point ath="48.89748953906593" atv="39.37039089255387"/>
+			 <point ath="111.99619131023172" atv="47.66375756661341"/>
+			 <point ath="149.40791878835495" atv="50.025317659437434"/>
+			 <point ath="136.2077011695226" atv="40.662424091574245"/>
+			 <point ath="152.0608127421463" atv="31.360704957995875"/>
+			 <point ath="139.21654084490106" atv="30.45559277509062"/>
+			 <point ath="147.77380530635992" atv="25.68985051206687"/>
+			 <point ath="165.47624968093936" atv="28.88833075515031"/>
+			 <point ath="166.61118885193113" atv="26.978684694082983"/>
+			 <point ath="-146.1074989683578" atv="23.44235589790431"/>
+			 <point ath="-138.33143557533649" atv="27.44180087790301"/>
+			 <point ath="-156.40103577125168" atv="32.48080416334334"/>
+			 <point ath="-106.92345334739429" atv="56.65556117406404"/>
+			 <point ath="-98.41419819586832" atv="37.629269960118854"/>
+			 <point ath="-69.57354548285537" atv="36.155730621211084"/>
+			 <point ath="-73.43547379065569" atv="30.786334986140705"/>
+			 <point ath="-58.85457865442663" atv="28.004793145560363"/>
+			 <point ath="-32.97707354080592" atv="40.889336210672454"/>
+			 <point ath="-18.91634270705225" atv="27.31512241653967"/>
+			 <point ath="-24.198621355014836" atv="26.37610545296511"/>
+			 <point ath="-21.66141469392926" atv="23.800138708427752"/>
+			 <point ath="-37.81228625644337" atv="20.609063187589783"/>
+			 <point ath="-30.802506258726964" atv="17.442162788543477"/>
+			 <point ath="-13.055121925440574" atv="19.720169906668474"/>
+			 <point ath="-9.197276729161558" atv="14.481989736679475"/>
+			 <point ath="-11.953695682233274" atv="13.069997652074834"/>
  </hotspot>
  
  <hotspot name="parkovka_HS"
@@ -847,13 +848,13 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.666));"
 				<point atv="-10.559478331804648" ath="126.81018009430142"/>					
 				</hotspot>
 				
-				<hotspot name="ser_6"
+			<!--	<hotspot name="ser_6"
 				style="_hotspot_SERii"
 				icon_type="promishl"
 				atv="-2" ath="117"
 				alpha="0"
 				
-				></hotspot>
+				></hotspot>-->
 				
 				<hotspot name="kafe_CLICK" 
 				 style="hs_BUILDING_"
