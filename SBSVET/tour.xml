@@ -62,7 +62,7 @@
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
 	-->
-	events onresize="customsizing(); customsizing2();" />
+	<events onresize="customsizing(); customsizing2();" />
 					<action name="customsizing">
 if((stagewidth LT 1024) OR (stageheight LT 840),
 set(layer[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:12px; text-align:left;');,set(plugin[kratk_opis_text].css, 'font-family:Arial; color:#ffffff; font-size:18px; text-align:left;');
