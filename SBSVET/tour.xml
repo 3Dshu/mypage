@@ -469,8 +469,16 @@ set(layer[sidebar1].align, rightbottom);,set(layer[sidebar1].align, right);
 
 		<preview url="panos/alllight.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/alllight.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="4352" tiledimageheight="4352">
+				<cube url="panos/alllight.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2176" tiledimageheight="2176">
+				<cube url="panos/alllight.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/alllight.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
 		</image>
 		<hotspot name="avto_trassa"
 			 style="hs_AREA_"
@@ -891,8 +899,16 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 		<preview url="panos/park.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/park.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="4352" tiledimageheight="4352">
+				<cube url="panos/park.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2176" tiledimageheight="2176">
+				<cube url="panos/park.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/park.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
 		</image>
 		<hotspot name="hs4" style="hs_park">
  <point ath="-11.517214935251332" atv="14.514541575960573"/>
@@ -1266,8 +1282,16 @@ IP65[br]
 
 		<preview url="panos/parkovka.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/parkovka.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="4352" tiledimageheight="4352">
+				<cube url="panos/parkovka.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2176" tiledimageheight="2176">
+				<cube url="panos/parkovka.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/parkovka.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
 		</image>
 		<hotspot name="hs4" style="hs_parkovka">
  <point ath="63.41825279517741" atv="7.1700552477982"/>
@@ -1502,8 +1526,16 @@ IP65[br]
 
 		<preview url="panos/torgcenter.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/torgcenter.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="4352" tiledimageheight="4352">
+				<cube url="panos/torgcenter.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2176" tiledimageheight="2176">
+				<cube url="panos/torgcenter.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/torgcenter.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
 		</image>
 		<hotspot name="hs4" style="hs_torgcentr">
  <point ath="-61.73170905622936" atv="13.327422549031496"/>
@@ -1673,8 +1705,16 @@ IP65[br]
 
 		<preview url="panos/trassa.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/trassa.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="4352" tiledimageheight="4352">
+				<cube url="panos/trassa.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2176" tiledimageheight="2176">
+				<cube url="panos/trassa.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/trassa.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
 		</image>
 		<hotspot name="hs4" style="hs_trassa">
  <point ath="74.0881006127762" atv="1.947453262235674"/>
@@ -2268,8 +2308,16 @@ IP65[br]
 
 		<preview url="panos/ulica.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/ulica.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="4352" tiledimageheight="4352">
+				<cube url="panos/ulica.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2176" tiledimageheight="2176">
+				<cube url="panos/ulica.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/ulica.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
 		</image>
 		<hotspot name="hs4" style="hs_ulica">
  <point ath="97.31010740569761" atv="2.1263509083249637"/>
