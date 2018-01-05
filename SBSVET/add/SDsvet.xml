@@ -74,9 +74,9 @@
 				
 				
 				
-				<layer name="LOGOshapka" url="SDsvet.png" handcursor="true" scale="1" align="left" width="prop" height="80%" x="50" bgcolor="0x5ae1ff" zorder="3" alpha="1" onhover_autoscrolling="true" onover="tween(layer[glow_line].alpha, 0.7, 0.5)" onout="tween(layer[glow_line].alpha, 0.0, 0.5)" onclick="  openurl('http://sdsvet.ru');" ondown="" />
+				<layer name="LOGOshapka" url="SDsvet.png" handcursor="true" scale="1" align="left" width="prop" height="80%" x="5%" bgcolor="0x5ae1ff" zorder="3" alpha="1" onhover_autoscrolling="true" onover="tween(layer[glow_line].alpha, 0.7, 0.5)" onout="tween(layer[glow_line].alpha, 0.0, 0.5)" onclick="  openurl('http://sdsvet.ru');" ondown="" />
 				
-				<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="7"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" maskchildren="true"  align="rightttop" x="0" width="450" height="80" bgcolor="0x5E75AA" bgalpha="0" scalechildren="true" >
+				<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="7"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" maskchildren="true"  align="rightttop" x="0" width="35%" height="80" bgcolor="0x5E75AA" bgalpha="0" scalechildren="true" >
 			
 			
 			<layer name="avto" style="ikonki" x="30" y="10" crop="256|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 30])"   onhover="showtext(автомагистрали, DEFAULT3)"        				      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(0,0,110,smooth(100,50,100));  loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(1)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 13, 1.8, easeInExpo); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 30])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);" />
