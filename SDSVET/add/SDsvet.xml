@@ -1,0 +1,105 @@
+﻿<krpano>
+
+		<plugin url.html5="moretweentypes.js"
+			preload="true"
+        />
+	
+	    <include url="showtext.xml" 
+			preload="true"
+		/>
+
+		
+<textstyle name="DEFAULT3" origin="cursor" edge="bottom" xoffset="0" yoffset="40" fadeintime="0.1"        showtime="0.1"
+           fadetime="0.02"           font="Arial"           fontsize="18.0"           bold="false"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="50 0 0 0"           css=""
+           width=""           height=""           vcenter=""           background="false"           backgroundcolor="0x5E75AA"
+           backgroundalpha="0.3"           border="false"           bordercolor="0x000000"           borderalpha="1.0"
+           borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"           textshadow="0.0"
+           textshadowrange="4.0"           textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />
+		   
+		   <action name="switchheight">
+				if(hotspot[get(i)].group == %1, 
+					switch(hotspot[get(i)].visible);
+				);
+			);
+		</action>
+		   
+		   <textstyle name="DEFAULT2" origin="lefttop" edge="leftcenter" xoffset="80" yoffset="0" fadeintime="0.3"        showtime="0.1"
+           fadetime="0.0"           font="Arial"           fontsize="60.0"           bold="true"           italic="false"           textcolor="0x5E75AA"           textalign="none"           padding="55"           css=""
+           width=""           height=""           vcenter=""           background="false"           backgroundcolor="0x000000"           backgroundalpha="0.3"           border="false"           bordercolor="0xFFFFF00"
+           borderalpha="1.0"           borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"
+           textshadow="0.0"           textshadowrange="4.0"           textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
+           noclip="true"
+           />
+		   
+		    <textstyle name="DEFAULT1" origin="cursor" edge="bottom" xoffset="0" yoffset="60" fadeintime="0.1"        showtime="0.1"
+           fadetime="0.0"           font="Arial"           fontsize="20.0"           bold="true"           italic="false"           textcolor="0x5E75AA"           textalign="center"           padding="0"           css=""
+           width=""           height=""           vcenter=""           background="false"           backgroundcolor="0x000000"           backgroundalpha="0.3"           border="false"           bordercolor="0xFFFFF00"
+           borderalpha="1.0"           borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"
+           textshadow="0.0"           textshadowrange="4.0"           textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
+           noclip="true"
+           />
+<!--	/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->	   
+	 <style name="IKONKI_SER" url="LED5000E1803.jpg"		keep="true"		visible="true"		enabled="false"		handcursor="false"		align="centertop" 
+	width="95" height="95" 	edge="center"	rotate="0"	scale="1"	alpha="1"	bgcolor="0x000000"	bgalpha="0.0"
+	bgborder="0"	bgroundedge="0"	bgshadow=""	bgcapture="false"
+	/>
+			
+	<style name="IKONKI_SER_podsvetka" keep="true" enebled="false" visible="true" type="container" zorder="30"  bgcapture="true" handcursor="true" alpha="0" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="64" maskchildren="true"  align="centertop"  width="93" height="93  " edge="center" bgcolor="0xFFFF00" bgalpha="0.9" />
+		
+			<layer  name="IKONKI_SER_MENU" keep="true" enebled="false" visible="true" type="container" zorder="3"  bgcapture="true" handcursor="false" draggable="false" bgborder="0 0xFFFFFF 1" bgroundedge="0" maskchildren="true"  align="leftttop" x="11" y="50" width="100" height="0" bgcolor="0x5E75AA" bgalpha="0" >
+			</layer>
+	<!--	/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+	
+	
+	<style name="ikonki" url="IKONKI_PRIMENENIE3.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="left"
+	width="256" height="prop" 
+		edge="center"
+		rotate="0"
+		scale="0.2"
+		
+		alpha="1"
+		bgcolor="0x000000"
+		bgalpha="0.0"
+		bgborder="0"
+		bgroundedge="0"
+		bgshadow=""
+		scalechildren="true"
+		maskchildren="true"
+		bgcapture="false"/>
+
+		<layer  name="sidebar" keep="true" enebled="true" visible="true" type="container" zorder="2"  bgcapture="false" handcursor="false" draggable="false" bgcolor="0x1a2545" bgalpha="0.7" bgshadow="0 0 11 8 0x5ae1ff 0.3" maskchildren="true" scalechildren="true" align="lefttop" width="100%" y="0" x="0" height="8%"  >
+						
+				
+				<layer name="LOGOshapka" url="SDsvet.png" handcursor="true" scale="1" align="left" width="prop" height="80%" x="1%" bgcolor="0x5ae1ff" zorder="3" glow="0xff00ff, 0.5, 20, 1" alpha="1" onhover_autoscrolling="true" onover="tween(layer[glow_line].alpha, 0.7, 0.5)" onout="tween(layer[glow_line].alpha, 0.0, 0.5); " onclick="  openurl('http://sdsvet.ru');" ondown="" />
+				
+				<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="7"  bgcapture="true" handcursor="false" scale="1" draggable="false" bgborder="0 0xFFFFFF 1"   align="rightcenter" x="0" width="450" height="100%" bgcolor="0x5E75AA" bgalpha="0" scalechildren="true" >	
+					<layer name="avto" style="ikonki" x="30" y="0" crop="256|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 30])"   onhover="showtext(автомагистрали, DEFAULT3)"        				      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(0,0,110,smooth(100,50,100));  loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(1)); set(layer[pic_led].crop,0|0|100|100) ;tween(layer[ledpicture].y, 13, 1.8, easeInExpo); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 30])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);" />
+					
+					<layer name="parkovki" style="ikonki" x="75" y="0" crop="384|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 75])"   onhover="showtext(парковки, DEFAULT3)"             					 onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); ); lookto(87,10,90,smooth(100,50,100)); loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(1));   "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 75])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+								
+					<layer name="podsARH" style="ikonki" x="120" y="0" crop="896|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 120])"   onhover="showtext(подсветка, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(170,15,120,smooth(100,50,100)); loadscene(scene_ulica,MERGE,KEEPVIEW , BLEND(1)); "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 120])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					
+					<layer name="park" style="ikonki" x="165" y="0" crop="1024|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 165])"   onhover="showtext(парк, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(90,70,140,smooth(100,50,100)); loadscene(scene_park,MERGE,KEEPVIEW , BLEND(1));   "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 165])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>	
+					<layer name="offisIKtop" style="ikonki" x="210" y="0" crop="0|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 210])"   onhover="showtext(оффис, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(85,-8,60,smooth(100,50,100));  "   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 210])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="torg_centrIKtop" style="ikonki" x="255" y="0" crop="128|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 255])"   onhover="showtext(торговый центр, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="tween(layer[ledpicture].y, 13, 0.9, easeOutBounce); tween(layer[IKONKI_SER_MENU].height, 0, 0.56, easeInCirc); oninterrupt( trace(user interrupt); );lookto(-85,3,90,smooth(100,50,100));  loadscene(scene_torgcenter,MERGE,KEEPVIEW , BLEND(1));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 255])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="adminIKtop" style="ikonki" x="300" y="0" crop="512|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 300])"   onhover="showtext(администрация, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick=" oninterrupt( trace(user interrupt); );lookto(-205,-3,90,smooth(100,50,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 300])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="zavodIKtop" style="ikonki" x="345" y="0" crop="640|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 345])"   onhover="showtext(завод, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick=" oninterrupt( trace(user interrupt); );lookto(35,-3,60,smooth(100,50,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 345])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="scladIKtop" style="ikonki" x="390" y="0" crop="768|0|128|128"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 390])"   onhover="showtext(склад, DEFAULT3)"                                      onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick=" oninterrupt( trace(user interrupt); );lookto(-30,-3,60,smooth(100,50,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 390])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					
+					
+					<layer name="glowOUT" 		style="ikonki" x="15%"  y="0" crop="1280|0|128|128"  alpha="0" zorder="6" handcursor="false"/>
+					<layer name="glowIN"        style="ikonki" x="19%" y="0" crop="1152|0|128|128"  alpha="0" zorder="6" handcursor="false"/>
+				</layer>
+	
+				
+
+		</layer>
+
+	
+
+
+
+</krpano>

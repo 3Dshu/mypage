@@ -1,0 +1,39 @@
+<krpano>
+<events onresize="customsizingBIG();" />
+					<action name="customsizingBIG">
+						if(stagewidth LT 762, customsizing425(); ST_SH(), customsizing1024(); ST_SH());
+					</action>
+					<action name="ST_SH">
+					if(stagewidth LT calc(0.8*stageheight),
+					set(layer[container_picture], width=100%, height=50%, align=top, edge=top);
+					set(layer[primenenie], y=0%, x=0%, hight=10%, width=50% , align=leftbottom, edge=leftbottom); set(layer[block_swich_text], align=leftbottom, edge=leftbottom, width=100%, height=40%, y=12%);
+					
+					set(layer[sidebar].height, 5%);
+					, 
+					set(layer[container_picture], width=60%, height=100%, align=lefttop, edge=lefttop);			
+					set(layer[primenenie], y='7%',width=40% , align=righttop, edge=righttop,);
+					
+					set(layer[block_swich_text], align=righttop, edge=righttop, width=40%, height=70%, y=17%); 
+					set(layer[sidebar].height, 8%);
+					); 
+					</action>
+					<action name="customsizing425">
+						if(stagewidth LT 425, 
+						set(layer[sidebar1].scale, 0.5); set(layer[LOGOshapka].scale, 0.75); set(layer[LEDNAME].height, 30); set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:12px'); 
+						
+						, 
+						set(layer[sidebar1].scale, 0.52);
+						set(layer[LOGOshapka].scale, 1); set(layer[LEDNAME].height, 35); set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:16px');
+						
+						);
+					</action>
+					<action name="customsizing1024">
+						if(stagewidth LT 1024, 
+						set(layer[sidebar1].scale, 0.6); set(layer[LEDNAME].height, 40); set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:20px'); 
+						, 
+						set(layer[sidebar1].scale, 0.8); set(layer[LEDNAME].height, 50); set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:28px');
+						
+						);
+					</action>
+
+</krpano>
