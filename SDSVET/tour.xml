@@ -5,6 +5,8 @@
 	<include url="add/SDsvet.xml"/>
 	<include url="add/custom.xml"/>
 
+	
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
 	               maps_type="google"
@@ -66,8 +68,14 @@
 
 					
 					
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> 
+	textstyle name="DEFAULT4" origin="cursor" edge="bottom" xoffset="0" yoffset="40" fadeintime="0.3"        showtime="0.1"
+           fadetime="0.0"           font="Arial"           fontsize="18.0"           bold="false"           italic="false"           textcolor="0xFFFFFF"           textalign="none"           padding="0"           css=""
+           width=""           height=""           vcenter=""           background="false"           backgroundcolor="0xffffff"
+           backgroundalpha="0.3"           border="false"           bordercolor="0x000000"           borderalpha="1.0"
+           borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"           textshadow="0.0"
+           textshadowrange="4.0"           textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />-->
 		   
 		   
 		   <textstyle name="DEFAULT5" origin="cursor" edge="bottom" xoffset="0" yoffset="45" fadeintime="0.3"        showtime="0.1"
@@ -420,6 +428,9 @@
 				<cube url="panos/alllight.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
+		
+
+			
 		<hotspot name="avto_trassa"
 			 style="hs_AREA_"
 			 onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.7));"
@@ -1106,7 +1117,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
-		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0.1" maskchildren="false">
+		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="true" alpha="0.1" maskchildren="false">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
 
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
@@ -1116,7 +1127,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				/>
 			</layer>
 			
-			<layer name="blaskside" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="80" bgalpha="0.4" bgcolor="0x000000" parent="layer[frame]"/>
+			<layer name="blaskside" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="100%" height="100%"	handcursor="true"	 zorder="80" bgalpha="0.4" bgcolor="0x000000" parent="layer[frame]"/>
 			
 			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="7%" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
 			<layer name="PODpis" type="text" align="top" x="0" y="-10" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
@@ -1130,7 +1141,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные учереждения, DEFAULT5)"/>
 			</layer>
 			
-			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="17%" x="0" width="40%" height="70%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x1a2545" scalechildren="true">
+			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="17%" x="0" width="40%" height="70%"	handcursor="true"	 zorder="83" bgalpha="0.2" bgcolor="0x1a2545" scalechildren="true">
 			<layer name="TEHharacter" keep="true" type="container" align="centertop" edge="centertop" y="1%" x="0" width="100%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545" scalechildren="true"		
 			>
 			<layer name="kratk_opis" type="text" align="center" x="-33%" y="0" html="Краткое[br]описание" css="font-family:Arial; color:#000000; font-size:14px" 
@@ -1144,16 +1155,16 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
 			/>
 			</layer>
-			<layer name="text_op" keep="true" type="container" align="centertop" edge="centertop" y="10%" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]
+			
 
-✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
-" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
-			vcenter="true" padding="17" wordwrap="true" />
+			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="true" mwheel="true" draggable="true" renderer="css3d"  zorder="83" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
+				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			</layer>
 
-			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="10%" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
 Напряжение питания[br]
 Мощность[br]
@@ -1183,9 +1194,9 @@ IP65[br]
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
 			
-			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="10%" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для наружного освещения автомагистралей, железнодорожных перронов, парков и скверов парковок, цехов, складских терминалов, спортивных и промышленных сооружений." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
-			vcenter="true" padding="17" wordwrap="true"/>
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
 			</layer>
 			
