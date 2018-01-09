@@ -4,7 +4,7 @@
 						if(stagewidth LT 762, customsizing425(); ST_SH(), customsizing1024(); ST_SH());
 					</action>
 					<action name="ST_SH">
-					if(stagewidth LT calc(0.8*stageheight),
+					if(stagewidth LT stageheight,
 					set(layer[container_picture], width=100%, height=50%, align=top, edge=top);
 					set(layer[primenenie], y=0%, x=0%, hight=10%, width=50% , align=leftbottom, edge=leftbottom); set(layer[block_swich_text], align=leftbottom, edge=leftbottom, width=100%, height=40%, y=12%);
 					
