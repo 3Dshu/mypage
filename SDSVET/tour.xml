@@ -1,4 +1,4 @@
-﻿<krpano version="1.19" title="Virtual Tour">
+﻿<krpano version="1.19" title="Virtual Tour" showerrors="false">
 
 	<include url="skin/vtourskin.xml" />
 	<include url="plugins/showtext.xml" />
