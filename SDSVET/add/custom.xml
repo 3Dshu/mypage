@@ -8,12 +8,12 @@
 					set(layer[container_picture], width=100%, height=50%, align=top, edge=top);
 					set(layer[ZNAKI], y=0, x=0, hight=20%, width=100% , align=bottom, edge=bottom); 
 					set(layer[block_swich_text], align=leftbottom, edge=leftbottom, width=100%, height=40%, y=11%);
-					set(stagescale, 0.5)
+					set(stagescale, 1)
 					, 
 					set(layer[container_picture], width=60%, height=100%, align=lefttop, edge=lefttop);			
 					set(layer[ZNAKI], y=8%,x=0, hight=10%, width=40%, align=righttop, edge=righttop,);
 					set(layer[block_swich_text], align=righttop, edge=righttop, width=40%, height=80%, y=20%); 
-					set(stagescale, 1)
+					set(stagescale, 0.5)
 					); 
 					</action>
 					<action name="customsizing425">
