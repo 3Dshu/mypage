@@ -13,7 +13,7 @@
 					set(layer[container_picture], width=60%, height=100%, align=lefttop, edge=lefttop);			
 					set(layer[ZNAKI], y=8%,x=0, hight=10%, width=40%, align=righttop, edge=righttop,);
 					set(layer[block_swich_text], align=righttop, edge=righttop, width=40%, height=80%, y=20%); 
-					set(stagescale, 0.5)
+					set(stagescale, 0.75)
 					); 
 					</action>
 					<action name="customsizing425">
