@@ -184,6 +184,7 @@
 			tween(plugin[screen_tint].alpha,.9,0.5,default);
 			set(layer[frame].visible,true);
 			tween(layer[frame].alpha,1,2);
+			skin_hideskin();
 		</action>
 	
 		<action name="close_st">
@@ -191,6 +192,7 @@
 			set(plugin[screen_tint].visible, false);
 			tween(layer[frame].alpha,0,.3,default,wait);
 			set(layer[frame].visible,false);
+			skin_showskin();
 		</action>
 		 <action name="reset">
 			tween(layer[cc_01].y,-45%);
@@ -1200,7 +1202,7 @@ IP65[br]
 						
 			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
 			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
-			<layer name="PODpis" type="text" align="top" x="0" y="-10" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
 			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT5)"/>
@@ -1211,7 +1213,7 @@ IP65[br]
 			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные учереждения, DEFAULT5)"/>
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-10" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение энергозатрат, DEFAULT5)"/>

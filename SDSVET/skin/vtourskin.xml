@@ -855,15 +855,15 @@
 		tween(layer[skin_splitter_bottom].y, get(layer[skin_splitter_bottom].y_closed), get(hidetime));
 		tween(layer[skin_control_bar].y,     get(layer[skin_control_bar    ].y_closed), get(hidetime));
 
-		set(layer[skin_btn_prev_fs].enabled, true);
+		<!--set(layer[skin_btn_prev_fs].enabled, true);
 		set(layer[skin_btn_next_fs].enabled, true);
 		tween(layer[skin_btn_prev_fs].x|layer[skin_btn_prev_fs].alpha, 0|0.25, get(hidetime));
-		tween(layer[skin_btn_next_fs].x|layer[skin_btn_next_fs].alpha, 0|0.25, get(hidetime));
+		tween(layer[skin_btn_next_fs].x|layer[skin_btn_next_fs].alpha, 0|0.25, get(hidetime));-->
 
 		if(layer[skin_logo], tween(layer[skin_logo].alpha, 0.0, 0.5, default, set(layer[skin_logo].visible,false)); );
 
 		stopdelayedcall(skin_btn_show_alpha);
-		set(layer[skin_btn_show].visible, true);
+		<!--set(layer[skin_btn_show].visible, true);-->
 		delayedcall(skin_btn_show_alpha, get(hidetime), tween(layer[skin_btn_show].alpha, 0.25, 0.25); );
 	</action>
 
