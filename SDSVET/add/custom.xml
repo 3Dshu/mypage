@@ -51,12 +51,12 @@
 					set(layer[block_swich_text], align=righttop, edge=righttop, width=65%, height=80%, y=30%); 
 					set(layer[ZNAKI], y=15%,x=0, hight=20%, width=65%, align=righttop, edge=righttop,);
 					,
-					(stagewidth LT calc(3.4*stageheight)) AND (stagewidth GT calc(2.0*stageheight)),
+					(stagewidth LT calc(3.4*stageheight)) AND (stagewidth GT calc(2.2*stageheight)),
 					set(layer[container_picture], width=45%, height=100%, align=lefttop, edge=lefttop);
 					set(layer[block_swich_text], align=righttop, edge=righttop, width=55%, height=80%, y=26%); 
 					set(layer[ZNAKI], y=13%,x=0, hight=16%, width=55%, align=righttop, edge=righttop,);
 					,
-					(stagewidth LT calc(2.0*stageheight)) AND (stagewidth GT calc(0.9*stageheight)),
+					(stagewidth LT calc(2.2*stageheight)) AND (stagewidth GT calc(0.9*stageheight)),
 					set(layer[container_picture], width=60%, height=100%, align=lefttop, edge=lefttop);
 					set(layer[block_swich_text], align=righttop, edge=righttop, width=40%, height=80%, y=20%);
 					set(layer[ZNAKI], y=8%,x=0, hight=10%, width=40%, align=righttop, edge=righttop,);
