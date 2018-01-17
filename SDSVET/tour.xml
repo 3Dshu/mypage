@@ -1,7 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour" showerrors="false">
 
 	<include url="skin/vtourskin.xml" />
-	<include url="plugins/showtext.xml" />
+	<include url="%SWFPATH%/plugins/showtext.xml" />
 	<include url="add/SDsvet.xml"/>
 	<include url="add/custom.xml"/>
 
@@ -327,7 +327,6 @@
 			 onup=""
 			 onclick="action(open_st);"
 			 onloaded=""
-			 animation="tween(timer,4,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
 			/>
 			<style name="hs_AREA_"
 		         keep="true"
@@ -346,8 +345,7 @@
 				 onover="tween(hotspot[get(name)].alpha, 0.7);"
 				 onhover=""
 				 onout="tween(hotspot[get(name)].alpha, 0);
-				 tween(hotspot[get(name)].borderwidth, 1);"
-				 
+				 tween(hotspot[get(name)].borderwidth, 1);"				 
 				 ondown=""
 				 onup=""
 				
@@ -368,8 +366,7 @@
 				 borderalpha="0.3"
 				 onover="tween(hotspot[get(name)].alpha, 0.7);"
 				 onhover=""
-				 onout="tween(hotspot[get(name)].alpha, 0);"
-				 
+				 onout="tween(hotspot[get(name)].alpha, 0);"				 
 				 ondown=""
 				 onup=""
 				
