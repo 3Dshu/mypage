@@ -79,8 +79,8 @@
 		   <textstyle name="DEFAULT5"  origin="cursor" edge="rightbottom" xoffset="0" yoffset="45" fadeintime="1"        showtime="0.1"
            fadetime="0" font="Arial" fontsize="22.0" bold="true" italic="false" textcolor="0xFFFFFF" textalign="none" padding="0" css="" background="false"     backgroundcolor="0xffffff" backgroundalpha="0.3" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
            />
-		   <textstyle name="DEFAULT2"  origin="cursor" edge="bottom" xoffset="0" yoffset="45" fadeintime="1"        showtime="0.1"
-           fadetime="0" font="Arial" fontsize="22.0" bold="true" italic="false" textcolor="0xFFFFFF" textalign="none" padding="0" css="" background="false"     backgroundcolor="0xffffff" backgroundalpha="0.3" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+		   <textstyle name="DEFAULT2"  origin="cursor" edge="top" xoffset="0" yoffset="20" fadeintime="1"        showtime="0.1"
+           fadetime="0" font="Futura" fontsize="22.0" bold="true" italic="false" textcolor="0x75c3f3" textalign="none" padding="0" css="" background="true"     backgroundcolor="0x000000" backgroundalpha="0.6" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="5" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
            />
 		   <textstyle name="DEFAULT1" origin="cursor" edge="right" xoffset="0" yoffset="50" fadeintime="0.2"        showtime="0.2"
            fadetime="0.2" font="Arial" fontsize="20.0" bold="false" italic="true" textcolor="0x75C4F4" textalign="center" padding="5" css="" background="true"     backgroundcolor="0x1a2545" backgroundalpha="1" border="true" bordercolor="0x000000" borderalpha="1.0" borderwidth="0.3" roundedge="3" shadow="4" shadowrange="15.0" shadowangle="60" shadowcolor="0x75C4F4" shadowalpha="1.0" textshadow="0.0" textshadowrange="0.0"           textshadowangle="45" textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
@@ -397,11 +397,11 @@
 			  delayedcall(0, align_at_mouse());
 			</action>
 			
-			<layer name="avto1" style="ikonki" align="lefttop" edge="bottom" crop="256|0|128|128" enabled="false" scale="0.5" alpha="0" zorder="10" onloaded="align_at_mouse();"/>					
-			<layer name="parkovki1" style="ikonki" align="lefttop" edge="bottom" crop="384|0|128|128" enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>								
-			<layer name="podsARH1" style="ikonki" align="lefttop" edge="bottom" crop="896|0|128|128" enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
-			<layer name="torg_centrIKtop1" style="ikonki" align="lefttop" edge="bottom" crop="128|0|128|128"  enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>		
-			<layer name="park1" style="ikonki" align="lefttop" edge="bottom" crop="1024|0|128|128" enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
+			<layer name="avto1" style="ikonki" align="lefttop" x="50" edge="bottom" crop="256|0|128|128" enabled="false" scale="0.3" alpha="0" zorder="10" onloaded="align_at_mouse();"/>					
+			<layer name="parkovki1" style="ikonki" align="lefttop" edge="bottom" crop="384|0|128|128" enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>								
+			<layer name="podsARH1" style="ikonki" align="lefttop" edge="bottom" crop="896|0|128|128" enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
+			<layer name="torg_centrIKtop1" style="ikonki" align="lefttop" edge="bottom" crop="128|0|128|128"  enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>		
+			<layer name="park1" style="ikonki" align="lefttop" edge="bottom" crop="1024|0|128|128" enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
 					
 		<plugin name="hotspot_DINAMICH2" 
 			align="lefttop"
