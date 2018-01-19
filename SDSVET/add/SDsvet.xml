@@ -4,7 +4,7 @@
 			preload="true"
         />
 	
-	    <include url="showtext.xml" 
+	    <include url="%SWFPATH%/showtext.xml" 
 			preload="true"
 		/>
 
@@ -32,13 +32,8 @@
            noclip="true"
            />
 		   
-		    <textstyle name="DEFAULT1" origin="cursor" edge="bottom" xoffset="0" yoffset="60" fadeintime="0.1"        showtime="0.1"
-           fadetime="0.0"           font="Arial"           fontsize="20.0"           bold="true"           italic="false"           textcolor="0x5E75AA"           textalign="center"           padding="0"           css=""
-           width=""           height=""           vcenter=""           background="false"           backgroundcolor="0x000000"           backgroundalpha="0.3"           border="false"           bordercolor="0xFFFFF00"
-           borderalpha="1.0"           borderwidth="1.0"           roundedge="0"           shadow="0.0"           shadowrange="4.0"           shadowangle="45"           shadowcolor="0x000000"           shadowalpha="1.0"
-           textshadow="0.0"           textshadowrange="4.0"           textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
-           noclip="true"
-           />
+		    
+
 <!--	/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->	   
 	 <style name="IKONKI_SER" url="LED5000E1803.jpg"		keep="true"		visible="true"		enabled="false"		handcursor="false"		align="centertop" 
 	width="95" height="95" 	edge="center"	rotate="0"	scale="1"	alpha="1"	bgcolor="0x000000"	bgalpha="0.0"
