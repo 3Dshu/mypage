@@ -397,11 +397,11 @@
 			  delayedcall(0, align_at_mouse());
 			</action>
 			
-			<layer name="avto1" style="ikonki" align="lefttop" x="50" edge="bottom" crop="256|0|128|128" enabled="false" scale="0.3" alpha="0" zorder="10" onloaded="align_at_mouse();"/>					
-			<layer name="parkovki1" style="ikonki" align="lefttop" edge="bottom" crop="384|0|128|128" enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>								
-			<layer name="podsARH1" style="ikonki" align="lefttop" edge="bottom" crop="896|0|128|128" enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
-			<layer name="torg_centrIKtop1" style="ikonki" align="lefttop" edge="bottom" crop="128|0|128|128"  enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>		
-			<layer name="park1" style="ikonki" align="lefttop" edge="bottom" crop="1024|0|128|128" enabled="false" scale="0.3" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
+			<layer name="avto1" style="ikonki" align="lefttop" x="50" edge="bottom" crop="256|0|128|128" enabled="false" scale="0.18" alpha="0" zorder="10" onloaded="align_at_mouse();"/>					
+			<layer name="parkovki1" style="ikonki" align="lefttop" edge="bottom" crop="384|0|128|128" enabled="false" scale="0.18" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>								
+			<layer name="podsARH1" style="ikonki" align="lefttop" edge="bottom" crop="896|0|128|128" enabled="false" scale="0.18" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
+			<layer name="torg_centrIKtop1" style="ikonki" align="lefttop" edge="bottom" crop="128|0|128|128"  enabled="false" scale="0.18" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>		
+			<layer name="park1" style="ikonki" align="lefttop" edge="bottom" crop="1024|0|128|128" enabled="false" scale="0.18" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
 					
 		<plugin name="hotspot_DINAMICH2" 
 			align="lefttop"
@@ -1253,9 +1253,12 @@ IP65[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для наружного освещения автомагистралей, железнодорожных перронов, парков и скверов парковок, цехов, складских терминалов, спортивных и промышленных сооружений." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_PIK.jpg" alpha="1" align="leftcenter" x="5%" y="-20%" width="25%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_PIK.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
 			onclick="openurl('http://sdsvet.ru/proektyi/onezhskij-sudostroitelnyij-zavod-niko.html')" >
-			<layer name="project_vipolnen" url="%CURRENTXML%/images/project_PIK.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false"/>
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/project_PIK.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
 			</layer>
 			</layer>
 			</layer>
