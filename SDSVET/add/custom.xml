@@ -11,6 +11,7 @@
 						set(layer[LEDNAME].height, 30);
 						set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:12px'); 
 						set(layer[kratk_opis_text], css='font-family:Arial; color:#ffffff; font-size:10px; text-align:left;', padding='5 5 5 5');
+						set(layer[kratk_opis_text1], css='font-family:Arial; color:#ffffff; font-size:10px; text-align:left;', padding='5 5 5 5');
 						set(layer[text_prim_teh_], css='font-family:Arial; color:#ffffff; font-size:10px; text-align:left;', padding='5 5 5 5');
 						set(layer[kratk_opis_teh], css='font-family:Arial; color:#ffffff; font-size:10px; text-align:left;', padding='5 5 5 5');
 						set(layer[kratk_opis_teh_2], css='font-family:Arial; color:#ffffff; font-size:10px; text-align:right;', padding='5 5 5 5')
@@ -21,6 +22,7 @@
 						set(layer[LEDNAME].height, 35);
 						set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:16px');
 						set(layer[kratk_opis_text], css='font-family:Arial; color:#ffffff; font-size:12px; text-align:left;', padding='8 8 8 8');
+						set(layer[kratk_opis_text1], css='font-family:Arial; color:#ffffff; font-size:12px; text-align:left;', padding='8 8 8 8');
 						set(layer[text_prim_teh_], css='font-family:Arial; color:#ffffff; font-size:12px; text-align:left;', padding='8 8 8 8');
 						set(layer[kratk_opis_teh], css='font-family:Arial; color:#ffffff; font-size:12px; text-align:left;', padding='8 8 8 8');
 						set(layer[kratk_opis_teh_2], css='font-family:Arial; color:#ffffff; font-size:12px; text-align:right;', padding='8 8 8 8')
@@ -30,6 +32,7 @@
 						set(layer[LEDNAME].height, 40);
 						set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:20px');
 						set(layer[kratk_opis_text], css='font-family:Arial; color:#ffffff; font-size:16px; text-align:left;', padding='15 15 15 15');
+						set(layer[kratk_opis_text1], css='font-family:Arial; color:#ffffff; font-size:16px; text-align:left;', padding='15 15 15 15');
 						set(layer[text_prim_teh_], css='font-family:Arial; color:#ffffff; font-size:16px; text-align:left;', padding='15 15 15 15');
 						set(layer[kratk_opis_teh], css='font-family:Arial; color:#ffffff; font-size:16px; text-align:left;', padding='15 15 15 15');
 						set(layer[kratk_opis_teh_2], css='font-family:Arial; color:#ffffff; font-size:16px; text-align:right;', padding='15 15 15 15')
@@ -39,6 +42,7 @@
 						set(layer[LEDNAME].height, 50);
 						set(layer[LED_NAME].css, 'font-family:Arial; color:#ffffff; font-size:28px');
 						set(layer[kratk_opis_text], css='font-family:Arial; color:#ffffff; font-size:20px; text-align:left;', padding='25 25 25 30');
+						set(layer[kratk_opis_text1], css='font-family:Arial; color:#ffffff; font-size:20px; text-align:left;', padding='25 25 25 30');
 						set(layer[text_prim_teh_], css='font-family:Arial; color:#ffffff; font-size:20px; text-align:left;', padding='25 25 25 30');
 						set(layer[kratk_opis_teh], css='font-family:Arial; color:#ffffff; font-size:20px; text-align:left;', padding='25 25 25 30');
 						set(layer[kratk_opis_teh_2], css='font-family:Arial; color:#ffffff; font-size:20px; text-align:right;', padding='25 25 25 30')
