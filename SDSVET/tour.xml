@@ -79,6 +79,9 @@
 		   <textstyle name="DEFAULT5"  origin="cursor" edge="rightbottom" xoffset="0" yoffset="45" fadeintime="1"        showtime="0.1"
            fadetime="0" font="Arial" fontsize="22.0" bold="true" italic="false" textcolor="0xFFFFFF" textalign="none" padding="0" css="" background="false"     backgroundcolor="0xffffff" backgroundalpha="0.3" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
            />
+		   <textstyle name="DEFAULT2"  origin="cursor" edge="bottom" xoffset="0" yoffset="45" fadeintime="1"        showtime="0.1"
+           fadetime="0" font="Arial" fontsize="22.0" bold="true" italic="false" textcolor="0xFFFFFF" textalign="none" padding="0" css="" background="false"     backgroundcolor="0xffffff" backgroundalpha="0.3" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />
 		   <textstyle name="DEFAULT1" origin="cursor" edge="right" xoffset="0" yoffset="50" fadeintime="0.2"        showtime="0.2"
            fadetime="0.2" font="Arial" fontsize="20.0" bold="false" italic="true" textcolor="0x75C4F4" textalign="center" padding="5" css="" background="true"     backgroundcolor="0x1a2545" backgroundalpha="1" border="true" bordercolor="0x000000" borderalpha="1.0" borderwidth="0.3" roundedge="3" shadow="4" shadowrange="15.0" shadowangle="60" shadowcolor="0x75C4F4" shadowalpha="1.0" textshadow="0.0" textshadowrange="0.0"           textshadowangle="45" textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
            noclip="true"
@@ -124,7 +127,6 @@
 		edge="center"
 		rotate="0"
 		scale="1"
-
 		alpha="1"
 		bgcolor="0x000000"
 		bgalpha="0.0"
@@ -360,10 +362,8 @@
 				 borderwidth="1.0"
 				 bordercolor="0xfff046"
 				 borderalpha="1.0"
-				 onover="tween(hotspot[get(name)].alpha, 0.7);"
+				 
 				 onhover=""
-				 onout="tween(hotspot[get(name)].alpha, 0);
-				 tween(hotspot[get(name)].borderwidth, 1);"
 				 
 				 ondown=""
 				 onup=""
@@ -396,13 +396,12 @@
 			  copy(y, mouse.y);
 			  delayedcall(0, align_at_mouse());
 			</action>
-			<layer name="avto1" style="ikonki" crop="256|0|128|128"   zorder="10" onloaded="align_at_mouse();"/>
-					
-			<layer name="parkovki1" style="ikonki" crop="384|0|128|128"   zorder="10" onloaded="align_at_mouse();"/>
-								
-			<layer name="podsARH1" style="ikonki" crop="896|0|128|128"   zorder="10" onloaded="align_at_mouse();"/>
-					
-			<layer name="park1" style="ikonki" crop="1024|0|128|128"   zorder="10"  onloaded="align_at_mouse();"/>	
+			
+			<layer name="avto1" style="ikonki" align="lefttop" edge="bottom" crop="256|0|128|128" enabled="false" scale="0.5" alpha="0" zorder="10" onloaded="align_at_mouse();"/>					
+			<layer name="parkovki1" style="ikonki" align="lefttop" edge="bottom" crop="384|0|128|128" enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>								
+			<layer name="podsARH1" style="ikonki" align="lefttop" edge="bottom" crop="896|0|128|128" enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
+			<layer name="torg_centrIKtop1" style="ikonki" align="lefttop" edge="bottom" crop="128|0|128|128"  enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>		
+			<layer name="park1" style="ikonki" align="lefttop" edge="bottom" crop="1024|0|128|128" enabled="false" scale="0.5" alpha="0"  zorder="10" onloaded="align_at_mouse();"/>	
 					
 		<plugin name="hotspot_DINAMICH2" 
 			align="lefttop"
@@ -472,9 +471,11 @@
 
 			
 		<hotspot name="avto_trassa"
-			 style="hs_AREA_"
-			 onhover="showtext(АВТОТРАССА, DEFAULT5);"
-			 onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.7));"
+			style="hs_AREA_"
+			onhover="showtext(АВТОТРАССА, DEFAULT2);"
+			onout="tween(plugin[avto1].alpha, 0)"
+			onover="tween(plugin[avto1].alpha, 1)"
+			onclick="loadscene(scene_trassa,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
 			<point atv="3.87" ath="-61.61"/>
 			<point atv="5.40" ath="-61.62"/>
@@ -518,7 +519,9 @@
 
 		<hotspot name="torgcenter"
 		style="hs_AREA_"
-		onhover="showtext(ТОРГОВЫЙ ЦЕНТР, DEFAULT5)"
+		onout="tween(plugin[torg_centrIKtop1].alpha, 0)"
+onover="tween(plugin[torg_centrIKtop1].alpha, 1)"
+		onhover="showtext(ТОРГОВЫЙ ЦЕНТР, DEFAULT2)"
         onclick="loadscene(scene_torgcenter,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
 			 <point ath="-39.65" atv="10.42"/>
@@ -550,7 +553,9 @@
  
  <hotspot name="park"
 style="hs_AREA_"
-onhover="showtext(ПАРК, DEFAULT5)"
+onhover="showtext(ПАРК, DEFAULT2)"
+onout="tween(plugin[park1].alpha, 0)"
+onover="tween(plugin[park1].alpha, 1)"
 onclick="loadscene(scene_park,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
 			 <point ath="-12.24" atv="12.92"/>
@@ -600,7 +605,9 @@ onclick="loadscene(scene_park,MERGE,KEEPVIEW, BLEND(0.7));"
  
  <hotspot name="parkovka_HS"
 style="hs_AREA_"
-onhover="showtext(ПАРКОВКА, DEFAULT5)"
+onout="tween(plugin[parkovki1].alpha, 0)"
+onover="tween(plugin[parkovki1].alpha, 1)"
+onhover="showtext(ПАРКОВКА, DEFAULT2)"
 onclick="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
  <point ath="70.32" atv="7.15"/>
@@ -684,7 +691,9 @@ onclick="loadscene(scene_parkovka,MERGE,KEEPVIEW, BLEND(0.7));"
  
   <hotspot name="doroga_HS"
 style="hs_AREA_"
-onhover="showtext(УЛИЦА, DEFAULT5)"
+onhover="showtext(УЛИЦА, DEFAULT2)"
+onout="tween(plugin[PODSarh1].alpha, 0)"
+onover="tween(plugin[PODSarh1].alpha, 1)"
 onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
  <point ath="95.65749663724787" atv="2.580153516138492"/>
