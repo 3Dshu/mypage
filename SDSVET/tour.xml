@@ -241,10 +241,10 @@
 	<style name="hs_park"
 			 keep="false"
 			 visible="true"
-			 enabled="true" 
-			 handcursor="true"
+			 enabled="false" 
+			 handcursor="false"
 			 capture="false"
-			 zorder="1"
+			 zorder="22"
 			 alpha="0.3"
 			 fillcolor="0x75c3f3"
 			 fillalpha="0.8"
@@ -252,21 +252,31 @@
 			 bordercolor="0x00e4ff"
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"
-			 onover=""
-			 onhover="showtext(LED_5000_E32.5, DEFAULT5);"
+			/>
+			
+			<style name="hs_BIG_park_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(LED_5000_E32.5, DEFAULT2);"
 			 onout=""
 			 ondown=""
 			 onup=""
 			 onclick="action(open_st);"
 			 onloaded=""
 			/>
+	
 			<style name="hs_trassa"
 			 keep="false"
 			 visible="true"
-			 enabled="true" 
-			 handcursor="true"
+			 enabled="false" 
+			 handcursor="false"
 			 capture="false"
-			 zorder="1"
+			 zorder="22"
 			 alpha="0.3"
 			 fillcolor="0x75c3f3"
 			 fillalpha="0.8"
@@ -275,20 +285,35 @@
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"
 			 onover=""
-			 onhover="showtext(LED_5000_E180, DEFAULT5)"
+			 onhover=""
+			 onout=""
+			 ondown=""
+			 onup=""
+			 onclick=""
+			 onloaded=""
+			/>
+			
+			<style name="hs_trassa_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(LED_5000_E180, DEFAULT2)"
 			 onout=""
 			 ondown=""
 			 onup=""
 			 onclick="action(open_st);"
-
 			/>
 			<style name="hs_parkovka"
 			 keep="false"
 			 visible="true"
-			 enabled="true" 
-			 handcursor="true"
+			 enabled="false" 
+			 handcursor="false"
 			 capture="false"
-			 zorder="1"
+			 zorder="22"
 			 alpha="0.3"
 			 fillcolor="0x75c3f3"
 			 fillalpha="0.8"
@@ -296,21 +321,29 @@
 			 bordercolor="0x00e4ff"
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"
-			 onover=""
-			 onhover="showtext(LED_5000_E90, DEFAULT5)"
-			 onout=""
-			 ondown=""
-			 onup=""
-			 onclick="action(open_st);"
-
 			/>
-			<style name="hs_ulica"
+			<style name="hs_parkovka_SELECT"
 			 keep="false"
 			 visible="true"
 			 enabled="true" 
 			 handcursor="true"
 			 capture="false"
-			 zorder="1"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(LED_5000_E90, DEFAULT2)"
+			 onout=""
+			 ondown=""
+			 onup=""
+			 onclick="action(open_st);"
+			/>
+			
+			<style name="hs_ulica"
+			 keep="false"
+			 visible="true"
+			 enabled="false" 
+			 handcursor="false"
+			 capture="false"
+			 zorder="22"
 			 alpha="0.3"
 			 fillcolor="0x75c3f3"
 			 fillalpha="0.8"
@@ -318,21 +351,28 @@
 			 bordercolor="0x00e4ff"
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"
-			 onover=""
-			 onhover="showtext(LED_5000_E120, DEFAULT5)"
+			/>
+			<style name="hs_ulica_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(LED_5000_E120, DEFAULT2)"
 			 onout=""
 			 ondown=""
 			 onup=""
 			 onclick="action(open_st);"
-
 			/>
 			<style name="hs_torgcentr"
 			 keep="false"
 			 visible="true"
-			 enabled="true" 
-			 handcursor="true"
+			 enabled="false" 
+			 handcursor="false"
 			 capture="false"
-			 zorder="1"
+			 zorder="22"
 			 alpha="0.3"
 			 fillcolor="0x75c3f3"
 			 fillalpha="0.8"
@@ -340,14 +380,23 @@
 			 bordercolor="0x00e4ff"
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"
-			 onover=""
-			 onhover="showtext(LED_5000_E60, DEFAULT5)"
+			/>
+			<style name="hs_torgcentr_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(LED_5000_E120, DEFAULT2)"
 			 onout=""
 			 ondown=""
 			 onup=""
 			 onclick="action(open_st);"
 			 onloaded=""
 			/>
+			
 			<style name="hs_AREA_"
 		         keep="true"
 				 visible="true"
@@ -452,7 +501,7 @@
 	
 	<scene name="scene_alllight" title="alllight" onstart="" thumburl="panos/alllight.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="120" maxpixelzoom="1.0" fovmin="90" fovmax="120" limitview="auto" />
 
 		<preview url="panos/alllight.tiles/preview.jpg" />
 
@@ -900,7 +949,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 	<scene name="scene_park" title="park" onstart="" thumburl="panos/park.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="20" maxpixelzoom="1.0" fovmin="20" fovmax="20" limitview="auto" />
 
 		<preview url="panos/park.tiles/preview.jpg" />
 
@@ -915,6 +964,265 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<cube url="panos/park.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
+		
+		<hotspot name="Shs4" style="hs_BIG_park_SELECT">
+ <point ath="-132.0811488431142" atv="45.61179446938014"/>
+ <point ath="-132.02382135022714" atv="24.612516411521707"/>
+ <point ath="-134.1416447353339" atv="23.808572252635013"/>
+ <point ath="-138.74144690360623" atv="24.738810602580056"/>
+ <point ath="-138.98098713331422" atv="25.79273213074334"/>
+ <point ath="-137.55183699400504" atv="26.764724463244956"/>
+ <point ath="-136.75590135166428" atv="26.846536651309634"/>
+ <point ath="-135.23114794133585" atv="26.627881585046982"/>
+ <point ath="-135.23130636057138" atv="44.9972928155725"/>
+ <point ath="-133.0415731446611" atv="46.09670343099368"/>
+ </hotspot>
+
+ <hotspot name="Shs5" style="hs_BIG_park_SELECT">
+ <point ath="-132.0811488431142" atv="45.61179446938014"/>
+ <point ath="-132.02382135022714" atv="24.612516411521707"/>
+ <point ath="-134.1416447353339" atv="23.808572252635013"/>
+ <point ath="-138.74144690360623" atv="24.738810602580056"/>
+ <point ath="-138.98098713331422" atv="25.79273213074334"/>
+ <point ath="-137.55183699400504" atv="26.764724463244956"/>
+ <point ath="-136.75590135166428" atv="26.846536651309634"/>
+ <point ath="-135.23114794133585" atv="26.627881585046982"/>
+ <point ath="-135.23130636057138" atv="44.9972928155725"/>
+ <point ath="-133.0415731446611" atv="46.09670343099368"/>
+ </hotspot>
+
+ <hotspot name="Shs6" style="hs_BIG_park_SELECT">
+ <point ath="-66.34484442357234" atv="27.3260274032347"/>
+ <point ath="-68.17314329689424" atv="27.661375333251318"/>
+ <point ath="-68.14892029406627" atv="13.548852475404576"/>
+ <point ath="-66.67790143483023" atv="13.318961553456967"/>
+ <point ath="-65.10428616164938" atv="13.614906329017042"/>
+ <point ath="-65.08641842052026" atv="14.666353477334784"/>
+ <point ath="-66.24623973879528" atv="14.722884132739471"/>
+ </hotspot>
+
+ <hotspot name="Shs7" style="hs_BIG_park_SELECT">
+ <point ath="-66.34484442357234" atv="27.3260274032347"/>
+ <point ath="-68.17314329689424" atv="27.661375333251318"/>
+ <point ath="-68.14892029406627" atv="13.548852475404576"/>
+ <point ath="-66.67790143483023" atv="13.318961553456967"/>
+ <point ath="-65.10428616164938" atv="13.614906329017042"/>
+ <point ath="-65.08641842052026" atv="14.666353477334784"/>
+ <point ath="-66.24623973879528" atv="14.722884132739471"/>
+ </hotspot>
+
+ <hotspot name="Shs8" style="hs_BIG_park_SELECT">
+ <point ath="-23.17383842445099" atv="28.75245222283896"/>
+ <point ath="-24.228015219641463" atv="29.773441980777434"/>
+ <point ath="-24.79647486304657" atv="29.53936374213177"/>
+ <point ath="-24.76573422923849" atv="14.510567742785703"/>
+ <point ath="-23.821963937764338" atv="14.025974080692855"/>
+ <point ath="-20.672585991649953" atv="13.837194332432926"/>
+ <point ath="-20.492023349488875" atv="14.551536161244965"/>
+ <point ath="-23.038105170918584" atv="15.176794684662378"/>
+ </hotspot>
+
+ <hotspot name="Shs9" style="hs_BIG_park_SELECT">
+ <point ath="-23.17383842445099" atv="28.75245222283896"/>
+ <point ath="-24.228015219641463" atv="29.773441980777434"/>
+ <point ath="-24.79647486304657" atv="29.53936374213177"/>
+ <point ath="-24.76573422923849" atv="14.510567742785703"/>
+ <point ath="-23.821963937764338" atv="14.025974080692855"/>
+ <point ath="-20.672585991649953" atv="13.837194332432926"/>
+ <point ath="-20.492023349488875" atv="14.551536161244965"/>
+ <point ath="-23.038105170918584" atv="15.176794684662378"/>
+ </hotspot>
+
+ <hotspot name="Shs10" style="hs_BIG_park_SELECT">
+ <point ath="-34.74891197157234" atv="18.29148179614249"/>
+ <point ath="-34.76983679536187" atv="9.185118886582057"/>
+ <point ath="-33.31911055715773" atv="8.95067013967596"/>
+ <point ath="-33.268163537863416" atv="8.188522934527091"/>
+ <point ath="-35.88661997788648" atv="8.635941183137158"/>
+ <point ath="-35.96434613342666" atv="18.86343612062062"/>
+ <point ath="-34.86765536032351" atv="18.766547939551657"/>
+ </hotspot>
+
+ <hotspot name="Shs11" style="hs_BIG_park_SELECT">
+ <point ath="-34.74891197157234" atv="18.29148179614249"/>
+ <point ath="-34.76983679536187" atv="9.185118886582057"/>
+ <point ath="-33.31911055715773" atv="8.95067013967596"/>
+ <point ath="-33.268163537863416" atv="8.188522934527091"/>
+ <point ath="-35.88661997788648" atv="8.635941183137158"/>
+ <point ath="-35.96434613342666" atv="18.86343612062062"/>
+ <point ath="-34.86765536032351" atv="18.766547939551657"/>
+ </hotspot>
+
+ <hotspot name="Shs12" style="hs_BIG_park_SELECT">
+ <point ath="-11.294184343456607" atv="14.594583513282823"/>
+ <point ath="-11.294184343456607" atv="14.594583513282823"/>
+ <point ath="-11.297984490440172" atv="7.1892161749029695"/>
+ <point ath="-10.081128513592944" atv="6.937895328429956"/>
+ <point ath="-10.104384386006075" atv="6.4397890926422"/>
+ <point ath="-12.03237923542656" atv="6.814848396628634"/>
+ <point ath="-12.070101252882978" atv="14.697858325037023"/>
+ </hotspot>
+
+ <hotspot name="Shs13" style="hs_BIG_park_SELECT">
+ <point ath="-11.294184343456607" atv="14.594583513282823"/>
+ <point ath="-11.294184343456607" atv="14.594583513282823"/>
+ <point ath="-11.297984490440172" atv="7.1892161749029695"/>
+ <point ath="-10.081128513592944" atv="6.937895328429956"/>
+ <point ath="-10.104384386006075" atv="6.4397890926422"/>
+ <point ath="-12.03237923542656" atv="6.814848396628634"/>
+ <point ath="-12.070101252882978" atv="14.697858325037023"/>
+ </hotspot>
+
+ <hotspot name="Shs14" style="hs_BIG_park_SELECT">
+ <point ath="15.652402924147282" atv="17.108254480404987"/>
+ <point ath="15.709617536130281" atv="7.989698307251324"/>
+ <point ath="13.882810911726324" atv="7.79224732378807"/>
+ <point ath="13.717045490144812" atv="8.269685626972953"/>
+ <point ath="14.643985420937838" atv="8.494193196002243"/>
+ <point ath="14.586573647844773" atv="17.142418510684443"/>
+ <point ath="15.50272006147651" atv="17.317933509606966"/>
+ </hotspot>
+
+ <hotspot name="Shs15" style="hs_BIG_park_SELECT">
+ <point ath="15.652402924147282" atv="17.108254480404987"/>
+ <point ath="15.709617536130281" atv="7.989698307251324"/>
+ <point ath="13.882810911726324" atv="7.79224732378807"/>
+ <point ath="13.717045490144812" atv="8.269685626972953"/>
+ <point ath="14.643985420937838" atv="8.494193196002243"/>
+ <point ath="14.586573647844773" atv="17.142418510684443"/>
+ <point ath="15.50272006147651" atv="17.317933509606966"/>
+ </hotspot>
+
+ <hotspot name="Shs16" style="hs_BIG_park_SELECT">
+ <point ath="44.530782173407374" atv="15.14778405926462"/>
+ <point ath="44.58761120703696" atv="6.931289415948763"/>
+ <point ath="42.51946476732985" atv="6.563275407134111"/>
+ <point ath="42.45595348147896" atv="7.164153496068217"/>
+ <point ath="43.76424437008478" atv="7.411063823025954"/>
+ <point ath="43.715954291030926" atv="15.166629741181264"/>
+ </hotspot>
+
+ <hotspot name="Shs17" style="hs_BIG_park_SELECT">
+ <point ath="44.530782173407374" atv="15.14778405926462"/>
+ <point ath="44.58761120703696" atv="6.931289415948763"/>
+ <point ath="42.51946476732985" atv="6.563275407134111"/>
+ <point ath="42.45595348147896" atv="7.164153496068217"/>
+ <point ath="43.76424437008478" atv="7.411063823025954"/>
+ <point ath="43.715954291030926" atv="15.166629741181264"/>
+ </hotspot>
+
+ <hotspot name="Shs18" style="hs_BIG_park_SELECT">
+ <point ath="67.29313150279285" atv="21.134049067748894"/>
+ <point ath="67.32229021760361" atv="10.709856743131375"/>
+ <point ath="67.97628672897957" atv="10.656760683742755"/>
+ <point ath="67.98476318572591" atv="9.715475816589601"/>
+ <point ath="65.86373269502553" atv="9.823994604385799"/>
+ <point ath="65.87221820031255" atv="21.19908536133403"/>
+ </hotspot>
+
+ <hotspot name="Shs19" style="hs_BIG_park_SELECT">
+ <point ath="67.29313150279285" atv="21.134049067748894"/>
+ <point ath="67.32229021760361" atv="10.709856743131375"/>
+ <point ath="67.97628672897957" atv="10.656760683742755"/>
+ <point ath="67.98476318572591" atv="9.715475816589601"/>
+ <point ath="65.86373269502553" atv="9.823994604385799"/>
+ <point ath="65.87221820031255" atv="21.19908536133403"/>
+ </hotspot>
+
+ <hotspot name="Shs20" style="hs_BIG_park_SELECT">
+ <point ath="99.56332129303632" atv="15.697366899771293"/>
+ <point ath="99.52363235195409" atv="7.729132483246997"/>
+ <point ath="100.6289716720035" atv="7.517394135113378"/>
+ <point ath="100.68305198336867" atv="6.969200161603903"/>
+ <point ath="98.35942718173445" atv="7.332953823405843"/>
+ <point ath="98.45163327036278" atv="15.867239717320228"/>
+ </hotspot>
+
+ <hotspot name="Shs21" style="hs_BIG_park_SELECT">
+ <point ath="99.56332129303632" atv="15.697366899771293"/>
+ <point ath="99.52363235195409" atv="7.729132483246997"/>
+ <point ath="100.6289716720035" atv="7.517394135113378"/>
+ <point ath="100.68305198336867" atv="6.969200161603903"/>
+ <point ath="98.35942718173445" atv="7.332953823405843"/>
+ <point ath="98.45163327036278" atv="15.867239717320228"/>
+ </hotspot>
+
+ <hotspot name="Shs22" style="hs_BIG_park_SELECT">
+ <point ath="99.56332129303632" atv="15.697366899771293"/>
+ <point ath="99.52363235195409" atv="7.729132483246997"/>
+ <point ath="100.6289716720035" atv="7.517394135113378"/>
+ <point ath="100.68305198336867" atv="6.969200161603903"/>
+ <point ath="98.35942718173445" atv="7.332953823405843"/>
+ <point ath="98.45163327036278" atv="15.867239717320228"/>
+ </hotspot>
+
+ <hotspot name="Shs23" style="hs_BIG_park_SELECT">
+ <point ath="131.21201838382677" atv="42.95077963903777"/>
+ <point ath="131.12332905462083" atv="37.68820408143015"/>
+ <point ath="127.24311764232408" atv="38.58235786585033"/>
+ <point ath="128.048576417703" atv="44.08775701201804"/>
+ </hotspot>
+
+ <hotspot name="Shs24" style="hs_BIG_park_SELECT">
+ <point ath="131.21201838382677" atv="42.95077963903777"/>
+ <point ath="131.12332905462083" atv="37.68820408143015"/>
+ <point ath="127.24311764232408" atv="38.58235786585033"/>
+ <point ath="128.048576417703" atv="44.08775701201804"/>
+ </hotspot>
+
+ <hotspot name="Shs25" style="hs_BIG_park_SELECT">
+ <point ath="89.58811862035247" atv="48.65786224066609"/>
+ <point ath="89.65570951345" atv="43.88997429949969"/>
+ <point ath="85.4545743280326" atv="43.757284695962184"/>
+ <point ath="85.70595905907851" atv="48.79898267002326"/>
+ </hotspot>
+
+ <hotspot name="Shs26" style="hs_BIG_park_SELECT">
+ <point ath="89.58811862035247" atv="48.65786224066609"/>
+ <point ath="89.65570951345" atv="43.88997429949969"/>
+ <point ath="85.4545743280326" atv="43.757284695962184"/>
+ <point ath="85.70595905907851" atv="48.79898267002326"/>
+ </hotspot>
+
+ <hotspot name="Shs27" style="hs_BIG_park_SELECT">
+ <point ath="77.62913192491368" atv="32.377487628733746"/>
+ <point ath="75.83565363975322" atv="33.437034277874275"/>
+ <point ath="75.26653918889309" atv="33.03827050227674"/>
+ <point ath="75.10394385672407" atv="28.407980974150938"/>
+ <point ath="77.60149031055187" atv="27.475570461083315"/>
+ </hotspot>
+
+ <hotspot name="Shs28" style="hs_BIG_park_SELECT">
+ <point ath="77.62913192491368" atv="32.377487628733746"/>
+ <point ath="75.83565363975322" atv="33.437034277874275"/>
+ <point ath="75.26653918889309" atv="33.03827050227674"/>
+ <point ath="75.10394385672407" atv="28.407980974150938"/>
+ <point ath="77.60149031055187" atv="27.475570461083315"/>
+ </hotspot>
+
+ <hotspot name="Shs29" style="hs_BIG_park_SELECT">
+ <point ath="92.21781382345486" atv="24.539086143166735"/>
+ <point ath="90.79917236006426" atv="25.590491419496754"/>
+ <point ath="90.10366368107526" atv="25.351371894655742"/>
+ <point ath="89.98118357552227" atv="21.58836736188725"/>
+ <point ath="92.05116554242957" atv="20.94618657782018"/>
+ </hotspot>
+
+ <hotspot name="Shs30" style="hs_BIG_park_SELECT">
+ <point ath="92.21781382345486" atv="24.539086143166735"/>
+ <point ath="90.79917236006426" atv="25.590491419496754"/>
+ <point ath="90.10366368107526" atv="25.351371894655742"/>
+ <point ath="89.98118357552227" atv="21.58836736188725"/>
+ <point ath="92.05116554242957" atv="20.94618657782018"/>
+ </hotspot>
+
+ <hotspot name="Shs31" style="hs_BIG_park_SELECT">
+ <point ath="110.99057950981717" atv="24.34175066586393"/>
+ <point ath="111.16327536371818" atv="20.92370779576312"/>
+ <point ath="109.01578898976624" atv="20.44754388478916"/>
+ <point ath="108.87497113810178" atv="24.663017806312155"/>
+ </hotspot>
+
 		<hotspot name="hs4" style="hs_park">
  <point ath="-11.517214935251332" atv="14.514541575960573"/>
  <point ath="-11.460347530962906" atv="7.003565004301306"/>
@@ -1167,8 +1475,6 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
  <point ath="88.64651325051966" atv="48.2589607864399"/>
  </hotspot>
 
-
-		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
@@ -1420,6 +1726,112 @@ IP65[br]
  <point ath="98.70356679383241" atv="7.419179225926016"/>
  <point ath="98.79703912919155" atv="7.418226275317525"/>
  </hotspot>
+ <hotspot name="shs4" style="hs_parkovka_SELECT">
+ <point ath="101.20287745422948" atv="10.584452169213803"/>
+ <point ath="101.24686775291781" atv="4.633924670877091"/>
+ <point ath="99.52869531456878" atv="4.310330233586717"/>
+ <point ath="99.49783126790891" atv="4.934195182467248"/>
+ <point ath="100.52373527958869" atv="5.203901598037126"/>
+ <point ath="100.44735460563402" atv="10.15536723691068"/>
+ </hotspot>
+
+ <hotspot name="shs5" style="hs_parkovka_SELECT">
+ <point ath="101.20287745422948" atv="10.584452169213803"/>
+ <point ath="101.24686775291781" atv="4.633924670877091"/>
+ <point ath="99.52869531456878" atv="4.310330233586717"/>
+ <point ath="99.49783126790891" atv="4.934195182467248"/>
+ <point ath="100.52373527958869" atv="5.203901598037126"/>
+ <point ath="100.44735460563402" atv="10.15536723691068"/>
+ </hotspot>
+
+ <hotspot name="shs6" style="hs_parkovka_SELECT">
+ <point ath="99.05249349298535" atv="7.3650518843815815"/>
+ <point ath="99.12032865702162" atv="3.7783780944159333"/>
+ <point ath="97.78338488946162" atv="3.5341701006104365"/>
+ <point ath="97.72486489558082" atv="4.049723293517634"/>
+ <point ath="98.50575350098796" atv="4.2129237721503205"/>
+ <point ath="98.52958616945301" atv="7.467148085204486"/>
+ </hotspot>
+
+ <hotspot name="shs7" style="hs_parkovka_SELECT">
+ <point ath="99.05249349298535" atv="7.3650518843815815"/>
+ <point ath="99.12032865702162" atv="3.7783780944159333"/>
+ <point ath="97.78338488946162" atv="3.5341701006104365"/>
+ <point ath="97.72486489558082" atv="4.049723293517634"/>
+ <point ath="98.50575350098796" atv="4.2129237721503205"/>
+ <point ath="98.52958616945301" atv="7.467148085204486"/>
+ </hotspot>
+
+ <hotspot name="shs8" style="hs_parkovka_SELECT">
+ <point ath="80.87802458479683" atv="8.605800750497442"/>
+ <point ath="80.91744562477356" atv="4.199075766772056"/>
+ <point ath="81.78563700885815" atv="4.000647823372019"/>
+ <point ath="81.8661985922397" atv="3.6146766362353158"/>
+ <point ath="79.49402260533157" atv="3.5301078417152536"/>
+ <point ath="79.51784020594528" atv="4.061953759410283"/>
+ <point ath="80.35699810631786" atv="4.197721001707054"/>
+ <point ath="80.39376712037938" atv="8.643280377178417"/>
+ </hotspot>
+
+ <hotspot name="shs9" style="hs_parkovka_SELECT">
+ <point ath="80.87802458479683" atv="8.605800750497442"/>
+ <point ath="80.91744562477356" atv="4.199075766772056"/>
+ <point ath="81.78563700885815" atv="4.000647823372019"/>
+ <point ath="81.8661985922397" atv="3.6146766362353158"/>
+ <point ath="79.49402260533157" atv="3.5301078417152536"/>
+ <point ath="79.51784020594528" atv="4.061953759410283"/>
+ <point ath="80.35699810631786" atv="4.197721001707054"/>
+ <point ath="80.39376712037938" atv="8.643280377178417"/>
+ </hotspot>
+
+ <hotspot name="shs10" style="hs_parkovka_SELECT">
+ <point ath="78.6437916043003" atv="10.436596552667611"/>
+ <point ath="78.79982418451016" atv="5.138725497422239"/>
+ <point ath="79.73496378711894" atv="4.89026464049967"/>
+ <point ath="79.77669147442157" atv="4.531133085300992"/>
+ <point ath="77.17040360969969" atv="4.411305669454724"/>
+ <point ath="77.15245781303986" atv="4.902032597758158"/>
+ <point ath="78.0806066806694" atv="5.134397470013397"/>
+ <point ath="78.09172473920006" atv="10.509130091217518"/>
+ </hotspot>
+
+ <hotspot name="shs11" style="hs_parkovka_SELECT">
+ <point ath="78.6437916043003" atv="10.436596552667611"/>
+ <point ath="78.79982418451016" atv="5.138725497422239"/>
+ <point ath="79.73496378711894" atv="4.89026464049967"/>
+ <point ath="79.77669147442157" atv="4.531133085300992"/>
+ <point ath="77.17040360969969" atv="4.411305669454724"/>
+ <point ath="77.15245781303986" atv="4.902032597758158"/>
+ <point ath="78.0806066806694" atv="5.134397470013397"/>
+ <point ath="78.09172473920006" atv="10.509130091217518"/>
+ </hotspot>
+
+ <hotspot name="shs12" style="hs_parkovka_SELECT">
+ <point ath="63.5292718780662" atv="7.159109729835418"/>
+ <point ath="63.57252981938973" atv="3.8731730625406118"/>
+ <point ath="64.34617082888985" atv="3.649417575030511"/>
+ <point ath="64.34786361757108" atv="3.1971370498887057"/>
+ <point ath="62.80375954951387" atv="3.404998992405823"/>
+ <point ath="62.92650581431826" atv="7.287477867570472"/>
+ </hotspot>
+
+ <hotspot name="shs13" style="hs_parkovka_SELECT">
+ <point ath="63.5292718780662" atv="7.159109729835418"/>
+ <point ath="63.57252981938973" atv="3.8731730625406118"/>
+ <point ath="64.34617082888985" atv="3.649417575030511"/>
+ <point ath="64.34786361757108" atv="3.1971370498887057"/>
+ <point ath="62.80375954951387" atv="3.404998992405823"/>
+ <point ath="62.92650581431826" atv="7.287477867570472"/>
+ </hotspot>
+
+ <hotspot name="shs14" style="hs_parkovka_SELECT">
+ <point ath="58.43747752607942" atv="8.935034310552073"/>
+ <point ath="58.44630904215876" atv="4.50770513855013"/>
+ <point ath="59.26082302072041" atv="4.284299270539411"/>
+ <point ath="59.23580802872914" atv="3.831681773059307"/>
+ <point ath="57.596298844302" atv="4.131490202094988"/>
+ <point ath="57.64459896748622" atv="9.126408523582915"/>
+ </hotspot>
  		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
@@ -1554,7 +1966,7 @@ IP65[br]
 				<cube url="panos/torgcenter.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="hs4" style="hs_torgcentr">
+<hotspot name="hs4" style="hs_torgcentr">
  <point ath="-61.73170905622936" atv="13.327422549031496"/>
  <point ath="-61.722980342081655" atv="6.225588351494529"/>
  <point ath="-62.41250228250368" atv="5.818672783707837"/>
@@ -1603,6 +2015,49 @@ IP65[br]
  <point ath="-115.20055802040119" atv="3.7362985547978687"/>
  <point ath="-116.06734260289389" atv="3.972695296712925"/>
  <point ath="-116.10640492602224" atv="8.532456621524199"/>
+ </hotspot>
+  <hotspot name="shs4" style="hs_torgcentr_SELECT">
+ <point ath="-61.39664466255442" atv="13.441324151630342"/>
+ <point ath="-61.26170938946632" atv="6.061270126632331"/>
+ <point ath="-62.506524927481735" atv="5.363515777945747"/>
+ <point ath="-63.38183063490783" atv="5.671082168386015"/>
+ <point ath="-62.67528880412772" atv="6.5121692376716025"/>
+ <point ath="-62.52700848464133" atv="13.445139000945778"/>
+ </hotspot>
+
+ <hotspot name="shs5" style="hs_torgcentr_SELECT">
+ <point ath="-61.39664466255442" atv="13.441324151630342"/>
+ <point ath="-61.26170938946632" atv="6.061270126632331"/>
+ <point ath="-62.506524927481735" atv="5.363515777945747"/>
+ <point ath="-63.38183063490783" atv="5.671082168386015"/>
+ <point ath="-62.67528880412772" atv="6.5121692376716025"/>
+ <point ath="-62.52700848464133" atv="13.445139000945778"/>
+ </hotspot>
+
+ <hotspot name="shs6" style="hs_torgcentr_SELECT">
+ <point ath="-101.96467336403612" atv="14.385171487705326"/>
+ <point ath="-101.93473720646477" atv="7.184686359273537"/>
+ <point ath="-101.05754082707267" atv="6.50776781718318"/>
+ <point ath="-101.01351469822589" atv="5.925738102932229"/>
+ <point ath="-102.32751575123683" atv="5.682258350425066"/>
+ <point ath="-103.52941847854953" atv="6.430706522196008"/>
+ </hotspot>
+
+ <hotspot name="shs7" style="hs_torgcentr_SELECT">
+ <point ath="-101.96467336403612" atv="14.385171487705326"/>
+ <point ath="-101.93473720646477" atv="7.184686359273537"/>
+ <point ath="-101.05754082707267" atv="6.50776781718318"/>
+ <point ath="-101.01351469822589" atv="5.925738102932229"/>
+ <point ath="-102.32751575123683" atv="5.682258350425066"/>
+ <point ath="-103.52941847854953" atv="6.430706522196008"/>
+ </hotspot>
+
+ <hotspot name="shs8" style="hs_torgcentr_SELECT">
+ <point ath="-115.72963013308492" atv="8.518861291150596"/>
+ <point ath="-115.69659756719219" atv="4.347923289529628"/>
+ <point ath="-114.87652734024653" atv="4.029266740908733"/>
+ <point ath="-114.85535345700276" atv="3.4148192963144752"/>
+ <point ath="-116.45580138936634" atv="3.7288404159912756"/>
  </hotspot>
  		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -1738,7 +2193,7 @@ IP65[br]
 				<cube url="panos/trassa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="hs4" style="hs_trassa">
+		<hotspot name="Shs4" style="hs_trassa">
  <point ath="74.0881006127762" atv="1.947453262235674"/>
  <point ath="74.10126050369831" atv="0.13584948680328113"/>
  <point ath="74.22029013268747" atv="0.0035751944565349096"/>
@@ -1757,7 +2212,7 @@ IP65[br]
  <point ath="74.0087358892007" atv="1.9607161787762832"/>
  </hotspot>
 
- <hotspot name="hs5" style="hs_trassa">
+ <hotspot name="Shs5" style="hs_trassa">
  <point ath="74.0881006127762" atv="1.947453262235674"/>
  <point ath="74.10126050369831" atv="0.13584948680328113"/>
  <point ath="74.22029013268747" atv="0.0035751944565349096"/>
@@ -1776,7 +2231,7 @@ IP65[br]
  <point ath="74.0087358892007" atv="1.9607161787762832"/>
  </hotspot>
 
- <hotspot name="hs6" style="hs_trassa">
+ <hotspot name="Shs6" style="hs_trassa">
  <point ath="69.26602022956581" atv="1.4515750325542618"/>
  <point ath="69.29214203451454" atv="0.16895740987224964"/>
  <point ath="69.42427854554774" atv="0.023505045083621917"/>
@@ -1795,7 +2250,7 @@ IP65[br]
  <point ath="69.16022302091636" atv="1.3855355226207844"/>
  </hotspot>
 
- <hotspot name="hs7" style="hs_trassa">
+ <hotspot name="Shs7" style="hs_trassa">
  <point ath="69.26602022956581" atv="1.4515750325542618"/>
  <point ath="69.29214203451454" atv="0.16895740987224964"/>
  <point ath="69.42427854554774" atv="0.023505045083621917"/>
@@ -1814,7 +2269,7 @@ IP65[br]
  <point ath="69.16022302091636" atv="1.3855355226207844"/>
  </hotspot>
 
- <hotspot name="hs8" style="hs_trassa">
+ <hotspot name="Shs8" style="hs_trassa">
  <point ath="65.65806170128212" atv="2.9315648301422366"/>
  <point ath="65.68317130430171" atv="0.14253383236299438"/>
  <point ath="65.85487198847193" atv="-0.002880056613669606"/>
@@ -1833,7 +2288,7 @@ IP65[br]
  <point ath="65.54028222833381" atv="2.919815235192978"/>
  </hotspot>
 
- <hotspot name="hs9" style="hs_trassa">
+ <hotspot name="Shs9" style="hs_trassa">
  <point ath="65.65806170128212" atv="2.9315648301422366"/>
  <point ath="65.68317130430171" atv="0.14253383236299438"/>
  <point ath="65.85487198847193" atv="-0.002880056613669606"/>
@@ -1852,7 +2307,7 @@ IP65[br]
  <point ath="65.54028222833381" atv="2.919815235192978"/>
  </hotspot>
 
- <hotspot name="hs10" style="hs_trassa">
+ <hotspot name="Shs10" style="hs_trassa">
  <point ath="60.659017451494094" atv="3.515321856313148"/>
  <point ath="60.67145614136024" atv="0.1835447725093032"/>
  <point ath="60.856534914279564" atv="-0.014804981689494078"/>
@@ -1871,7 +2326,7 @@ IP65[br]
  <point ath="60.5266108682938" atv="3.515389562188551"/>
  </hotspot>
 
- <hotspot name="hs11" style="hs_trassa">
+ <hotspot name="Shs11" style="hs_trassa">
  <point ath="60.659017451494094" atv="3.515321856313148"/>
  <point ath="60.67145614136024" atv="0.1835447725093032"/>
  <point ath="60.856534914279564" atv="-0.014804981689494078"/>
@@ -1890,7 +2345,7 @@ IP65[br]
  <point ath="60.5266108682938" atv="3.515389562188551"/>
  </hotspot>
 
- <hotspot name="hs12" style="hs_trassa">
+ <hotspot name="Shs12" style="hs_trassa">
  <point ath="53.41720059124208" atv="4.23106466363254"/>
  <point ath="53.428443468527405" atv="0.2261588878154261"/>
  <point ath="53.66622005736065" atv="-0.05143122972930607"/>
@@ -1911,7 +2366,7 @@ IP65[br]
  <point ath="53.4039900148033" atv="4.297047053492585"/>
  </hotspot>
 
- <hotspot name="hs13" style="hs_trassa">
+ <hotspot name="Shs13" style="hs_trassa">
  <point ath="53.41720059124208" atv="4.23106466363254"/>
  <point ath="53.428443468527405" atv="0.2261588878154261"/>
  <point ath="53.66622005736065" atv="-0.05143122972930607"/>
@@ -1932,7 +2387,7 @@ IP65[br]
  <point ath="53.4039900148033" atv="4.297047053492585"/>
  </hotspot>
 
- <hotspot name="hs14" style="hs_trassa">
+ <hotspot name="Shs14" style="hs_trassa">
  <point ath="42.42918592992021" atv="5.299239471669182"/>
  <point ath="42.46509326133605" atv="0.2923560015311613"/>
  <point ath="42.74227526487988" atv="-0.051203945145376226"/>
@@ -1952,7 +2407,7 @@ IP65[br]
  <point ath="42.24370226502327" atv="5.314539545197191"/>
  </hotspot>
 
- <hotspot name="hs15" style="hs_trassa">
+ <hotspot name="Shs15" style="hs_trassa">
  <point ath="42.42918592992021" atv="5.299239471669182"/>
  <point ath="42.46509326133605" atv="0.2923560015311613"/>
  <point ath="42.74227526487988" atv="-0.051203945145376226"/>
@@ -1972,7 +2427,7 @@ IP65[br]
  <point ath="42.24370226502327" atv="5.314539545197191"/>
  </hotspot>
 
- <hotspot name="hs16" style="hs_trassa">
+ <hotspot name="Shs16" style="hs_trassa">
  <point ath="25.839710924201995" atv="6.465592280219228"/>
  <point ath="25.795153243452148" atv="0.33650384094020785"/>
  <point ath="26.03256753338985" atv="-0.12564155622863998"/>
@@ -1992,7 +2447,7 @@ IP65[br]
  <point ath="25.574228326553794" atv="6.492481832851519"/>
  </hotspot>
 
- <hotspot name="hs17" style="hs_trassa">
+ <hotspot name="Shs17" style="hs_trassa">
  <point ath="25.839710924201995" atv="6.465592280219228"/>
  <point ath="25.795153243452148" atv="0.33650384094020785"/>
  <point ath="26.03256753338985" atv="-0.12564155622863998"/>
@@ -2012,7 +2467,7 @@ IP65[br]
  <point ath="25.574228326553794" atv="6.492481832851519"/>
  </hotspot>
 
- <hotspot name="hs18" style="hs_trassa">
+ <hotspot name="Shs18" style="hs_trassa">
  <point ath="2.961275863813796" atv="7.106316421329367"/>
  <point ath="2.951877636151721" atv="-0.03706946189081332"/>
  <point ath="3.069973734852965" atv="-0.5245289507566998"/>
@@ -2026,7 +2481,7 @@ IP65[br]
  <point ath="2.9481612638915067" atv="7.1739084159884765"/>
  </hotspot>
 
- <hotspot name="hs19" style="hs_trassa">
+ <hotspot name="Shs19" style="hs_trassa">
  <point ath="2.961275863813796" atv="7.106316421329367"/>
  <point ath="2.951877636151721" atv="-0.03706946189081332"/>
  <point ath="3.069973734852965" atv="-0.5245289507566998"/>
@@ -2040,7 +2495,7 @@ IP65[br]
  <point ath="2.9481612638915067" atv="7.1739084159884765"/>
  </hotspot>
 
- <hotspot name="hs20" style="hs_trassa">
+ <hotspot name="Shs20" style="hs_trassa">
  <point ath="-20.7593225553681" atv="6.713388643093073"/>
  <point ath="-20.75279413430195" atv="0.26605719709946546"/>
  <point ath="-20.581593004485228" atv="-0.11633612090387298"/>
@@ -2059,7 +2514,7 @@ IP65[br]
  <point ath="-21.024995704621517" atv="6.713903162496656"/>
  </hotspot>
 
- <hotspot name="hs21" style="hs_trassa">
+ <hotspot name="Shs21" style="hs_trassa">
  <point ath="-20.7593225553681" atv="6.713388643093073"/>
  <point ath="-20.75279413430195" atv="0.26605719709946546"/>
  <point ath="-20.581593004485228" atv="-0.11633612090387298"/>
@@ -2078,7 +2533,7 @@ IP65[br]
  <point ath="-21.024995704621517" atv="6.713903162496656"/>
  </hotspot>
 
- <hotspot name="hs22" style="hs_trassa">
+ <hotspot name="Shs22" style="hs_trassa">
  <point ath="-38.982234369059256" atv="5.5791117849295455"/>
  <point ath="-39.00405564223945" atv="0.32064095728765635"/>
  <point ath="-38.767206737877586" atv="-0.08825071106357356"/>
@@ -2098,7 +2553,7 @@ IP65[br]
  <point ath="-39.22098457615857" atv="5.572347466347453"/>
  </hotspot>
 
- <hotspot name="hs23" style="hs_trassa">
+ <hotspot name="Shs23" style="hs_trassa">
  <point ath="-38.982234369059256" atv="5.5791117849295455"/>
  <point ath="-39.00405564223945" atv="0.32064095728765635"/>
  <point ath="-38.767206737877586" atv="-0.08825071106357356"/>
@@ -2118,7 +2573,7 @@ IP65[br]
  <point ath="-39.22098457615857" atv="5.572347466347453"/>
  </hotspot>
 
- <hotspot name="hs24" style="hs_trassa">
+ <hotspot name="Shs24" style="hs_trassa">
  <point ath="-51.14658075536187" atv="4.459879675071428"/>
  <point ath="-51.141174956852865" atv="0.24613251239534675"/>
  <point ath="-50.8911249566122" atv="-0.030948126782813064"/>
@@ -2138,7 +2593,7 @@ IP65[br]
  <point ath="-51.3318251275075" atv="4.486899477435947"/>
  </hotspot>
 
- <hotspot name="hs25" style="hs_trassa">
+ <hotspot name="Shs25" style="hs_trassa">
  <point ath="-51.14658075536187" atv="4.459879675071428"/>
  <point ath="-51.141174956852865" atv="0.24613251239534675"/>
  <point ath="-50.8911249566122" atv="-0.030948126782813064"/>
@@ -2158,7 +2613,7 @@ IP65[br]
  <point ath="-51.3318251275075" atv="4.486899477435947"/>
  </hotspot>
 
- <hotspot name="hs26" style="hs_trassa">
+ <hotspot name="Shs26" style="hs_trassa">
  <point ath="-59.13746646552903" atv="3.6978301025129707"/>
  <point ath="-59.09815290159895" atv="0.2068468093385519"/>
  <point ath="-58.91315928391356" atv="-0.03086662872708926"/>
@@ -2177,7 +2632,7 @@ IP65[br]
  <point ath="-59.27002159576159" atv="3.6859857215743137"/>
  </hotspot>
 
- <hotspot name="hs27" style="hs_trassa">
+ <hotspot name="Shs27" style="hs_trassa">
  <point ath="-59.13746646552903" atv="3.6978301025129707"/>
  <point ath="-59.09815290159895" atv="0.2068468093385519"/>
  <point ath="-58.91315928391356" atv="-0.03086662872708926"/>
@@ -2196,7 +2651,7 @@ IP65[br]
  <point ath="-59.27002159576159" atv="3.6859857215743137"/>
  </hotspot>
 
- <hotspot name="hs28" style="hs_trassa">
+ <hotspot name="Shs28" style="hs_trassa">
  <point ath="72.04404315819329" atv="1.9704369664698693"/>
  <point ath="72.02884346291506" atv="0.014206287295314226"/>
  <point ath="72.16083638061019" atv="-0.06503595392258574"/>
@@ -2215,6 +2670,251 @@ IP65[br]
  <point ath="71.91320431201842" atv="1.867544396922027"/>
  </hotspot>
  		
+		<hotspot name="hs4" style="hs_trassa_SELECT">
+ <point ath="-59.47370408108952" atv="0.3291319105379754"/>
+ <point ath="-59.39800848011578" atv="3.6712857007848"/>
+ <point ath="-59.037607713926036" atv="3.6983879888879874"/>
+ <point ath="-58.95472525434229" atv="0.3158958667601502"/>
+ <point ath="-57.99637840872185" atv="-0.2023668629314432"/>
+ <point ath="-57.98310519115421" atv="-0.5210556895395746"/>
+ <point ath="-59.22004298595181" atv="-0.46786565995268775"/>
+ </hotspot>
+
+ <hotspot name="hs5" style="hs_trassa_SELECT">
+ <point ath="-59.47370408108952" atv="0.3291319105379754"/>
+ <point ath="-59.39800848011578" atv="3.6712857007848"/>
+ <point ath="-59.037607713926036" atv="3.6983879888879874"/>
+ <point ath="-58.95472525434229" atv="0.3158958667601502"/>
+ <point ath="-57.99637840872185" atv="-0.2023668629314432"/>
+ <point ath="-57.98310519115421" atv="-0.5210556895395746"/>
+ <point ath="-59.22004298595181" atv="-0.46786565995268775"/>
+ </hotspot>
+
+ <hotspot name="hs6" style="hs_trassa_SELECT">
+ <point ath="-50.92447816692652" atv="4.535953772298639"/>
+ <point ath="-51.565545948793044" atv="4.455820016362039"/>
+ <point ath="-51.45727446524984" atv="0.4862976562133973"/>
+ <point ath="-52.482035748491455" atv="-0.21913971862173906"/>
+ <point ath="-52.41516706604665" atv="-0.5649006461250242"/>
+ <point ath="-50.019062367763695" atv="-0.5783356470713088"/>
+ <point ath="-49.992186616049196" atv="-0.12605930093139514"/>
+ <point ath="-50.83112269943837" atv="0.2732662814128901"/>
+ </hotspot>
+
+ <hotspot name="hs7" style="hs_trassa_SELECT">
+ <point ath="-50.92447816692652" atv="4.535953772298639"/>
+ <point ath="-51.565545948793044" atv="4.455820016362039"/>
+ <point ath="-51.45727446524984" atv="0.4862976562133973"/>
+ <point ath="-52.482035748491455" atv="-0.21913971862173906"/>
+ <point ath="-52.41516706604665" atv="-0.5649006461250242"/>
+ <point ath="-50.019062367763695" atv="-0.5783356470713088"/>
+ <point ath="-49.992186616049196" atv="-0.12605930093139514"/>
+ <point ath="-50.83112269943837" atv="0.2732662814128901"/>
+ </hotspot>
+
+ <hotspot name="hs8" style="hs_trassa_SELECT">
+ <point ath="-38.86127653803038" atv="5.574231394975802"/>
+ <point ath="-38.761857079696085" atv="0.32003303920382753"/>
+ <point ath="-37.7532577033503" atv="-0.291570094390891"/>
+ <point ath="-37.74141193977033" atv="-0.8492921887646636"/>
+ <point ath="-40.46677472459578" atv="-0.7444134642214184"/>
+ <point ath="-40.426528962850966" atv="-0.06581537449770179"/>
+ <point ath="-39.547467427445554" atv="0.3201926420997731"/>
+ <point ath="-39.42237963726211" atv="5.536421809490725"/>
+ </hotspot>
+
+ <hotspot name="hs9" style="hs_trassa_SELECT">
+ <point ath="-38.86127653803038" atv="5.574231394975802"/>
+ <point ath="-38.761857079696085" atv="0.32003303920382753"/>
+ <point ath="-37.7532577033503" atv="-0.291570094390891"/>
+ <point ath="-37.74141193977033" atv="-0.8492921887646636"/>
+ <point ath="-40.46677472459578" atv="-0.7444134642214184"/>
+ <point ath="-40.426528962850966" atv="-0.06581537449770179"/>
+ <point ath="-39.547467427445554" atv="0.3201926420997731"/>
+ <point ath="-39.42237963726211" atv="5.536421809490725"/>
+ </hotspot>
+
+ <hotspot name="hs10" style="hs_trassa_SELECT">
+ <point ath="-20.532420932374976" atv="6.710652851613717"/>
+ <point ath="-21.281667460434164" atv="6.670498039662591"/>
+ <point ath="-21.305524127200556" atv="0.5624411645900147"/>
+ <point ath="-21.837528573069676" atv="-0.28915605530632743"/>
+ <point ath="-21.810061907580632" atv="-1.312080097626945"/>
+ </hotspot>
+
+ <hotspot name="hs10" style="hs_trassa_SELECT">
+ <point ath="-20.532420932374976" atv="6.710652851613717"/>
+ <point ath="-21.281667460434164" atv="6.670498039662591"/>
+ <point ath="-21.305524127200556" atv="0.5624411645900147"/>
+ <point ath="-21.837528573069676" atv="-0.28915605530632743"/>
+ <point ath="-21.810061907580632" atv="-1.312080097626945"/>
+ </hotspot>
+
+ <hotspot name="hs11" style="hs_trassa_SELECT">
+ <point ath="3.2876845001194965" atv="7.123662271640139"/>
+ <point ath="2.4312493672200617" atv="7.1357605352322"/>
+ <point ath="2.516927994359321" atv="-0.8978755435187942"/>
+ <point ath="3.2621107575847077" atv="-0.858134768326902"/>
+ </hotspot>
+
+ <hotspot name="hs12" style="hs_trassa_SELECT">
+ <point ath="3.2876845001194965" atv="7.123662271640139"/>
+ <point ath="2.4312493672200617" atv="7.1357605352322"/>
+ <point ath="2.516927994359321" atv="-0.8978755435187942"/>
+ <point ath="3.2621107575847077" atv="-0.858134768326902"/>
+ </hotspot>
+
+ <hotspot name="hs13" style="hs_trassa_SELECT">
+ <point ath="25.940166586651912" atv="6.4488602412020795"/>
+ <point ath="26.018432307025932" atv="0.30225831434446093"/>
+ <point ath="26.817366387085258" atv="-0.40190966247729143"/>
+ <point ath="26.804604422780585" atv="-0.866469046226566"/>
+ <point ath="24.68036840820247" atv="-0.8386502119620494"/>
+ <point ath="24.691415243278584" atv="-0.10950405614237997"/>
+ <point ath="25.301064771519293" atv="0.19583319528956336"/>
+ <point ath="25.325461828101254" atv="6.472417278741653"/>
+ </hotspot>
+
+ <hotspot name="hs14" style="hs_trassa_SELECT">
+ <point ath="25.940166586651912" atv="6.4488602412020795"/>
+ <point ath="26.018432307025932" atv="0.30225831434446093"/>
+ <point ath="26.817366387085258" atv="-0.40190966247729143"/>
+ <point ath="26.804604422780585" atv="-0.866469046226566"/>
+ <point ath="24.68036840820247" atv="-0.8386502119620494"/>
+ <point ath="24.691415243278584" atv="-0.10950405614237997"/>
+ <point ath="25.301064771519293" atv="0.19583319528956336"/>
+ <point ath="25.325461828101254" atv="6.472417278741653"/>
+ </hotspot>
+
+ <hotspot name="hs15" style="hs_trassa_SELECT">
+ <point ath="42.599277727710046" atv="5.280645827142492"/>
+ <point ath="42.62567339838381" atv="0.3208862615204956"/>
+ <point ath="43.61155130288171" atv="-0.2520788064327771"/>
+ <point ath="43.638113499411475" atv="-0.6250392415975754"/>
+ <point ath="41.14658669726856" atv="-0.6117916655121667"/>
+ <point ath="41.146506799011604" atv="-0.10554837146898982"/>
+ <point ath="42.05259084230687" atv="0.280909888544081"/>
+ <point ath="42.10580326665723" atv="5.333666808030541"/>
+ </hotspot>
+
+ <hotspot name="hs16" style="hs_trassa_SELECT">
+ <point ath="42.599277727710046" atv="5.280645827142492"/>
+ <point ath="42.62567339838381" atv="0.3208862615204956"/>
+ <point ath="43.61155130288171" atv="-0.2520788064327771"/>
+ <point ath="43.638113499411475" atv="-0.6250392415975754"/>
+ <point ath="41.14658669726856" atv="-0.6117916655121667"/>
+ <point ath="41.146506799011604" atv="-0.10554837146898982"/>
+ <point ath="42.05259084230687" atv="0.280909888544081"/>
+ <point ath="42.10580326665723" atv="5.333666808030541"/>
+ </hotspot>
+
+ <hotspot name="hs17" style="hs_trassa_SELECT">
+ <point ath="53.559494543696474" atv="4.209837191904721"/>
+ <point ath="53.601898347112865" atv="0.1875918096611504"/>
+ <point ath="54.50776511950687" atv="-0.1586004503533586"/>
+ <point ath="54.507820284537104" atv="-0.571238139569679"/>
+ <point ath="52.152294501903214" atv="-0.5440586255284168"/>
+ <point ath="52.17833928552028" atv="-0.13183777563922172"/>
+ <point ath="53.02943206045302" atv="0.1209825901008113"/>
+ <point ath="53.09249408038568" atv="4.26188441934021"/>
+ </hotspot>
+
+ <hotspot name="hs18" style="hs_trassa_SELECT">
+ <point ath="53.559494543696474" atv="4.209837191904721"/>
+ <point ath="53.601898347112865" atv="0.1875918096611504"/>
+ <point ath="54.50776511950687" atv="-0.1586004503533586"/>
+ <point ath="54.507820284537104" atv="-0.571238139569679"/>
+ <point ath="52.152294501903214" atv="-0.5440586255284168"/>
+ <point ath="52.17833928552028" atv="-0.13183777563922172"/>
+ <point ath="53.02943206045302" atv="0.1209825901008113"/>
+ <point ath="53.09249408038568" atv="4.26188441934021"/>
+ </hotspot>
+
+ <hotspot name="hs19" style="hs_trassa_SELECT">
+ <point ath="60.758392263656276" atv="3.498453410261923"/>
+ <point ath="60.809333989258164" atv="0.16574139020431333"/>
+ <point ath="61.607569145659454" atv="-0.12785901106332656"/>
+ <point ath="61.60714849908243" atv="-0.5003003367876934"/>
+ <point ath="59.5572156487965" atv="-0.4474359574200968"/>
+ <point ath="59.59720959988488" atv="-0.0746950364679021"/>
+ <point ath="60.32991998612442" atv="0.17829954259885208"/>
+ <point ath="60.37154855206609" atv="3.5353534864325864"/>
+ </hotspot>
+
+ <hotspot name="hs20" style="hs_trassa_SELECT">
+ <point ath="60.758392263656276" atv="3.498453410261923"/>
+ <point ath="60.809333989258164" atv="0.16574139020431333"/>
+ <point ath="61.607569145659454" atv="-0.12785901106332656"/>
+ <point ath="61.60714849908243" atv="-0.5003003367876934"/>
+ <point ath="59.5572156487965" atv="-0.4474359574200968"/>
+ <point ath="59.59720959988488" atv="-0.0746950364679021"/>
+ <point ath="60.32991998612442" atv="0.17829954259885208"/>
+ <point ath="60.37154855206609" atv="3.5353534864325864"/>
+ </hotspot>
+
+ <hotspot name="hs21" style="hs_trassa_SELECT">
+ <point ath="60.758392263656276" atv="3.498453410261923"/>
+ <point ath="60.809333989258164" atv="0.16574139020431333"/>
+ <point ath="61.607569145659454" atv="-0.12785901106332656"/>
+ <point ath="61.60714849908243" atv="-0.5003003367876934"/>
+ <point ath="59.5572156487965" atv="-0.4474359574200968"/>
+ <point ath="59.59720959988488" atv="-0.0746950364679021"/>
+ <point ath="60.32991998612442" atv="0.17829954259885208"/>
+ <point ath="60.37154855206609" atv="3.5353534864325864"/>
+ </hotspot>
+
+ <hotspot name="hs22" style="hs_trassa_SELECT">
+ <point ath="60.758392263656276" atv="3.498453410261923"/>
+ <point ath="60.809333989258164" atv="0.16574139020431333"/>
+ <point ath="61.607569145659454" atv="-0.12785901106332656"/>
+ <point ath="61.60714849908243" atv="-0.5003003367876934"/>
+ <point ath="59.5572156487965" atv="-0.4474359574200968"/>
+ <point ath="59.59720959988488" atv="-0.0746950364679021"/>
+ <point ath="60.32991998612442" atv="0.17829954259885208"/>
+ <point ath="60.37154855206609" atv="3.5353534864325864"/>
+ </hotspot>
+
+ <hotspot name="hs23" style="hs_trassa_SELECT">
+ <point ath="65.7803267054486" atv="2.899658723238957"/>
+ <point ath="65.87456941032173" atv="0.1267482544871634"/>
+ <point ath="66.56769812345169" atv="-0.12709133308899476"/>
+ <point ath="66.54102979579307" atv="-0.4733458885191764"/>
+ <point ath="64.70312275002425" atv="-0.513072510082843"/>
+ <point ath="64.72948077579542" atv="-0.10041067855173828"/>
+ <point ath="65.36856976198897" atv="0.15262770782310822"/>
+ <point ath="65.42082850737216" atv="2.923761460069159"/>
+ </hotspot>
+
+ <hotspot name="hs24" style="hs_trassa_SELECT">
+ <point ath="69.04705258017361" atv="1.3860597798519536"/>
+ <point ath="69.03248985828418" atv="0.14808173225124954"/>
+ <point ath="68.43369842576891" atv="-0.07817342865035364"/>
+ <point ath="68.37844677025106" atv="-0.4375464333685976"/>
+ <point ath="70.1052730823879" atv="-0.397023742533954"/>
+ <point ath="70.03938611759543" atv="-0.07806408090410596"/>
+ <point ath="69.49539925896937" atv="0.24114371026299938"/>
+ <point ath="69.44356675206825" atv="1.3592930957252136"/>
+ </hotspot>
+
+ <hotspot name="hs25" style="hs_trassa_SELECT">
+ <point ath="69.04705258017361" atv="1.3860597798519536"/>
+ <point ath="69.03248985828418" atv="0.14808173225124954"/>
+ <point ath="68.43369842576891" atv="-0.07817342865035364"/>
+ <point ath="68.37844677025106" atv="-0.4375464333685976"/>
+ <point ath="70.1052730823879" atv="-0.397023742533954"/>
+ <point ath="70.03938611759543" atv="-0.07806408090410596"/>
+ <point ath="69.49539925896937" atv="0.24114371026299938"/>
+ <point ath="69.44356675206825" atv="1.3592930957252136"/>
+ </hotspot>
+
+ <hotspot name="hs26" style="hs_trassa_SELECT">
+ <point ath="74.16965189016423" atv="1.9353652906567211"/>
+ <point ath="74.24555633352782" atv="0.2089190179251682"/>
+ <point ath="74.87917780824023" atv="-0.21553594588238134"/>
+ <point ath="73.26451420287526" atv="-0.3223056421631919"/>
+ <point ath="73.87531499958533" atv="0.27543206395368197"/>
+ <point ath="73.91855348395438" atv="1.9493365892181536"/>
+ </hotspot>
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
@@ -2348,7 +3048,7 @@ IP65[br]
 				<cube url="panos/ulica.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="hs4" style="hs_ulica">
+		<hotspot name="shs4" style="hs_ulica">
  <point ath="97.31010740569761" atv="2.1263509083249637"/>
  <point ath="97.26586277456545" atv="0.9498689257204808"/>
  <point ath="97.04315433017476" atv="0.9098121242659324"/>
@@ -2357,7 +3057,7 @@ IP65[br]
  <point ath="97.23136171008991" atv="2.1127728283665808"/>
  </hotspot>
 
- <hotspot name="hs5" style="hs_ulica">
+ <hotspot name="shs5" style="hs_ulica">
  <point ath="97.98820303269255" atv="1.0173835088207823"/>
  <point ath="97.75173228208325" atv="0.990449530831725"/>
  <point ath="97.77733904589562" atv="1.0962774781117124"/>
@@ -2366,7 +3066,7 @@ IP65[br]
  <point ath="98.01168325238842" atv="1.4937531299101119"/>
  </hotspot>
 
- <hotspot name="hs6" style="hs_ulica">
+ <hotspot name="shs6" style="hs_ulica">
  <point ath="98.83142808433377" atv="1.1513608905764856"/>
  <point ath="98.58082118658751" atv="1.1243887560100436"/>
  <point ath="98.59370971802727" atv="1.1773899446605434"/>
@@ -2375,7 +3075,7 @@ IP65[br]
  <point ath="98.85000662524686" atv="2.58345746312255"/>
  </hotspot>
 
- <hotspot name="hs7" style="hs_ulica">
+ <hotspot name="shs7" style="hs_ulica">
  <point ath="98.83142808433377" atv="1.1513608905764856"/>
  <point ath="98.58082118658751" atv="1.1243887560100436"/>
  <point ath="98.59370971802727" atv="1.1773899446605434"/>
@@ -2384,7 +3084,7 @@ IP65[br]
  <point ath="98.85000662524686" atv="2.58345746312255"/>
  </hotspot>
 
- <hotspot name="hs8" style="hs_ulica">
+ <hotspot name="shs8" style="hs_ulica">
  <point ath="99.87552343585452" atv="1.2991273167343822"/>
  <point ath="99.59764296735327" atv="1.2588335034505003"/>
  <point ath="99.59733052862313" atv="1.3251692054866253"/>
@@ -2393,7 +3093,7 @@ IP65[br]
  <point ath="99.86869755508565" atv="2.8398216409784007"/>
  </hotspot>
 
- <hotspot name="hs9" style="hs_ulica">
+ <hotspot name="shs9" style="hs_ulica">
  <point ath="99.87552343585452" atv="1.2991273167343822"/>
  <point ath="99.59764296735327" atv="1.2588335034505003"/>
  <point ath="99.59733052862313" atv="1.3251692054866253"/>
@@ -2402,7 +3102,7 @@ IP65[br]
  <point ath="99.86869755508565" atv="2.8398216409784007"/>
  </hotspot>
 
- <hotspot name="hs10" style="hs_ulica">
+ <hotspot name="shs10" style="hs_ulica">
  <point ath="101.10336498076597" atv="3.229720665546046"/>
  <point ath="101.13538091174212" atv="1.5269410133952324"/>
  <point ath="100.88308373633902" atv="1.4999811877820501"/>
@@ -2411,7 +3111,7 @@ IP65[br]
  <point ath="101.16985016084331" atv="3.2564989398653537"/>
  </hotspot>
 
- <hotspot name="hs11" style="hs_ulica">
+ <hotspot name="shs11" style="hs_ulica">
  <point ath="101.10336498076597" atv="3.229720665546046"/>
  <point ath="101.13538091174212" atv="1.5269410133952324"/>
  <point ath="100.88308373633902" atv="1.4999811877820501"/>
@@ -2420,7 +3120,7 @@ IP65[br]
  <point ath="101.16985016084331" atv="3.2564989398653537"/>
  </hotspot>
 
- <hotspot name="hs12" style="hs_ulica">
+ <hotspot name="shs12" style="hs_ulica">
  <point ath="102.86949256787045" atv="3.6956407759148098"/>
  <point ath="102.90322585288212" atv="1.7006907160733156"/>
  <point ath="102.50530764867077" atv="1.6202340556580845"/>
@@ -2429,7 +3129,7 @@ IP65[br]
  <point ath="102.80285855729076" atv="3.721985783430352"/>
  </hotspot>
 
- <hotspot name="hs13" style="hs_ulica">
+ <hotspot name="shs13" style="hs_ulica">
  <point ath="102.86949256787045" atv="3.6956407759148098"/>
  <point ath="102.90322585288212" atv="1.7006907160733156"/>
  <point ath="102.50530764867077" atv="1.6202340556580845"/>
@@ -2438,7 +3138,7 @@ IP65[br]
  <point ath="102.80285855729076" atv="3.721985783430352"/>
  </hotspot>
 
- <hotspot name="hs14" style="hs_ulica">
+ <hotspot name="shs14" style="hs_ulica">
  <point ath="105.15586903438245" atv="4.351094596164818"/>
  <point ath="105.18852470545161" atv="2.034728693468024"/>
  <point ath="104.73657182043229" atv="1.927557504098819"/>
@@ -2447,7 +3147,7 @@ IP65[br]
  <point ath="105.08157461442656" atv="4.377589604514501"/>
  </hotspot>
 
- <hotspot name="hs15" style="hs_ulica">
+ <hotspot name="shs15" style="hs_ulica">
  <point ath="105.15586903438245" atv="4.351094596164818"/>
  <point ath="105.18852470545161" atv="2.034728693468024"/>
  <point ath="104.73657182043229" atv="1.927557504098819"/>
@@ -2456,7 +3156,7 @@ IP65[br]
  <point ath="105.08157461442656" atv="4.377589604514501"/>
  </hotspot>
 
- <hotspot name="hs16" style="hs_ulica">
+ <hotspot name="shs16" style="hs_ulica">
  <point ath="108.40078016893068" atv="5.228050805781993"/>
  <point ath="108.39300983711692" atv="2.4313070862940482"/>
  <point ath="107.87384412719052" atv="2.32401615435427"/>
@@ -2465,7 +3165,7 @@ IP65[br]
  <point ath="108.2670111136058" atv="5.2809044023040075"/>
  </hotspot>
 
- <hotspot name="hs17" style="hs_ulica">
+ <hotspot name="shs17" style="hs_ulica">
  <point ath="108.40078016893068" atv="5.228050805781993"/>
  <point ath="108.39300983711692" atv="2.4313070862940482"/>
  <point ath="107.87384412719052" atv="2.32401615435427"/>
@@ -2474,7 +3174,7 @@ IP65[br]
  <point ath="108.2670111136058" atv="5.2809044023040075"/>
  </hotspot>
 
- <hotspot name="hs18" style="hs_ulica">
+ <hotspot name="shs18" style="hs_ulica">
  <point ath="113.27932478211727" atv="6.589224537089024"/>
  <point ath="113.27497926046254" atv="3.04687506275475"/>
  <point ath="112.60923458138993" atv="2.939128650047062"/>
@@ -2483,7 +3183,7 @@ IP65[br]
  <point ath="113.13194485423097" atv="6.575331033944803"/>
  </hotspot>
 
- <hotspot name="hs19" style="hs_ulica">
+ <hotspot name="shs19" style="hs_ulica">
  <point ath="113.27932478211727" atv="6.589224537089024"/>
  <point ath="113.27497926046254" atv="3.04687506275475"/>
  <point ath="112.60923458138993" atv="2.939128650047062"/>
@@ -2492,7 +3192,7 @@ IP65[br]
  <point ath="113.13194485423097" atv="6.575331033944803"/>
  </hotspot>
 
- <hotspot name="hs20" style="hs_ulica">
+ <hotspot name="shs20" style="hs_ulica">
  <point ath="121.36946461124276" atv="8.454438556352027"/>
  <point ath="121.39451990878217" atv="3.9935436385431804"/>
  <point ath="120.48811712596066" atv="3.858471765887916"/>
@@ -2501,7 +3201,7 @@ IP65[br]
  <point ath="121.1407352149592" atv="8.480092620527826"/>
  </hotspot>
 
- <hotspot name="hs21" style="hs_ulica">
+ <hotspot name="shs21" style="hs_ulica">
  <point ath="121.36946461124276" atv="8.454438556352027"/>
  <point ath="121.39451990878217" atv="3.9935436385431804"/>
  <point ath="120.48811712596066" atv="3.858471765887916"/>
@@ -2510,7 +3210,7 @@ IP65[br]
  <point ath="121.1407352149592" atv="8.480092620527826"/>
  </hotspot>
 
- <hotspot name="hs22" style="hs_ulica">
+ <hotspot name="shs22" style="hs_ulica">
  <point ath="136.21604763646215" atv="11.740069680900866"/>
  <point ath="136.2638085207602" atv="5.594780255070032"/>
  <point ath="135.54384825561417" atv="5.445413748719245"/>
@@ -2520,7 +3220,7 @@ IP65[br]
  <point ath="135.8908288854188" atv="11.750636290266138"/>
  </hotspot>
 
- <hotspot name="hs23" style="hs_ulica">
+ <hotspot name="shs23" style="hs_ulica">
  <point ath="136.21604763646215" atv="11.740069680900866"/>
  <point ath="136.2638085207602" atv="5.594780255070032"/>
  <point ath="135.54384825561417" atv="5.445413748719245"/>
@@ -2530,7 +3230,7 @@ IP65[br]
  <point ath="135.8908288854188" atv="11.750636290266138"/>
  </hotspot>
 
- <hotspot name="hs24" style="hs_ulica">
+ <hotspot name="shs24" style="hs_ulica">
  <point ath="164.79651259933257" atv="15.6197976477286"/>
  <point ath="164.7693344451215" atv="7.411126859868843"/>
  <point ath="164.35362479345144" atv="7.318524983374438"/>
@@ -2540,7 +3240,7 @@ IP65[br]
  <point ath="164.2164166926296" atv="15.607042697217768"/>
  </hotspot>
 
- <hotspot name="hs25" style="hs_ulica">
+ <hotspot name="shs25" style="hs_ulica">
  <point ath="164.79651259933257" atv="15.6197976477286"/>
  <point ath="164.7693344451215" atv="7.411126859868843"/>
  <point ath="164.35362479345144" atv="7.318524983374438"/>
@@ -2550,7 +3250,7 @@ IP65[br]
  <point ath="164.2164166926296" atv="15.607042697217768"/>
  </hotspot>
 
- <hotspot name="hs26" style="hs_ulica">
+ <hotspot name="shs26" style="hs_ulica">
  <point ath="-157.6031505670116" atv="14.8731307358296"/>
  <point ath="-157.51942695340068" atv="7.250299159614826"/>
  <point ath="-157.05751195803174" atv="7.1956427776364755"/>
@@ -2560,7 +3260,7 @@ IP65[br]
  <point ath="-158.08332787656244" atv="14.952125580001407"/>
  </hotspot>
 
- <hotspot name="hs27" style="hs_ulica">
+ <hotspot name="shs27" style="hs_ulica">
  <point ath="-157.6031505670116" atv="14.8731307358296"/>
  <point ath="-157.51942695340068" atv="7.250299159614826"/>
  <point ath="-157.05751195803174" atv="7.1956427776364755"/>
@@ -2570,7 +3270,7 @@ IP65[br]
  <point ath="-158.08332787656244" atv="14.952125580001407"/>
  </hotspot>
 
- <hotspot name="hs28" style="hs_ulica">
+ <hotspot name="shs28" style="hs_ulica">
  <point ath="-141.6022764441019" atv="11.456177389859644"/>
  <point ath="-141.56681876370376" atv="5.94873352913038"/>
  <point ath="-140.73724658805125" atv="5.818872946091825"/>
@@ -2579,7 +3279,7 @@ IP65[br]
  <point ath="-141.8465705480805" atv="11.546956112594874"/>
  </hotspot>
 
- <hotspot name="hs29" style="hs_ulica">
+ <hotspot name="shs29" style="hs_ulica">
  <point ath="-141.6022764441019" atv="11.456177389859644"/>
  <point ath="-141.56681876370376" atv="5.94873352913038"/>
  <point ath="-140.73724658805125" atv="5.818872946091825"/>
@@ -2588,7 +3288,7 @@ IP65[br]
  <point ath="-141.8465705480805" atv="11.546956112594874"/>
  </hotspot>
 
- <hotspot name="hs30" style="hs_ulica">
+ <hotspot name="shs30" style="hs_ulica">
  <point ath="-136.96070622258082" atv="8.761710842573983"/>
  <point ath="-136.9648922324127" atv="4.8453955453384605"/>
  <point ath="-136.36358553929244" atv="4.738125710230337"/>
@@ -2597,7 +3297,7 @@ IP65[br]
  <point ath="-137.16276353955146" atv="8.788581535297146"/>
  </hotspot>
 
- <hotspot name="hs31" style="hs_ulica">
+ <hotspot name="shs31" style="hs_ulica">
  <point ath="-136.96070622258082" atv="8.761710842573983"/>
  <point ath="-136.9648922324127" atv="4.8453955453384605"/>
  <point ath="-136.36358553929244" atv="4.738125710230337"/>
@@ -2606,7 +3306,7 @@ IP65[br]
  <point ath="-137.16276353955146" atv="8.788581535297146"/>
  </hotspot>
 
- <hotspot name="hs32" style="hs_ulica">
+ <hotspot name="shs32" style="hs_ulica">
  <point ath="-132.41947376236988" atv="7.244663300676272"/>
  <point ath="-132.38670222359247" atv="4.4074540125366"/>
  <point ath="-132.05306300720804" atv="4.353428615273303"/>
@@ -2615,7 +3315,7 @@ IP65[br]
  <point ath="-132.59387174929978" atv="7.271844330279342"/>
  </hotspot>
 
- <hotspot name="hs33" style="hs_ulica">
+ <hotspot name="shs33" style="hs_ulica">
  <point ath="-132.41947376236988" atv="7.244663300676272"/>
  <point ath="-132.38670222359247" atv="4.4074540125366"/>
  <point ath="-132.05306300720804" atv="4.353428615273303"/>
@@ -2624,7 +3324,7 @@ IP65[br]
  <point ath="-132.59387174929978" atv="7.271844330279342"/>
  </hotspot>
 
- <hotspot name="hs34" style="hs_ulica">
+ <hotspot name="shs34" style="hs_ulica">
  <point ath="-132.96694032802282" atv="20.76822303730201"/>
  <point ath="-132.94202395554055" atv="10.330503465337838"/>
  <point ath="-134.52730650650398" atv="9.658578188907487"/>
@@ -2635,7 +3335,7 @@ IP65[br]
  <point ath="-133.347524743818" atv="20.985205778538706"/>
  </hotspot>
 
- <hotspot name="hs35" style="hs_ulica">
+ <hotspot name="shs35" style="hs_ulica">
  <point ath="-132.96694032802282" atv="20.76822303730201"/>
  <point ath="-132.94202395554055" atv="10.330503465337838"/>
  <point ath="-134.52730650650398" atv="9.658578188907487"/>
@@ -2646,7 +3346,7 @@ IP65[br]
  <point ath="-133.347524743818" atv="20.985205778538706"/>
  </hotspot>
 
- <hotspot name="hs36" style="hs_ulica">
+ <hotspot name="shs36" style="hs_ulica">
  <point ath="168.1483893226427" atv="28.05707933430401"/>
  <point ath="168.30892249748968" atv="27.906801387138234"/>
  <point ath="168.31093441822057" atv="14.009686120771162"/>
@@ -2656,11 +3356,11 @@ IP65[br]
  <point ath="167.3489561088865" atv="13.832710663948443"/>
  </hotspot>
 
- <hotspot name="hs37" style="hs_ulica">
+ <hotspot name="shs37" style="hs_ulica">
  <point ath="167.39536193101736" atv="28.02772835616063"/>
  </hotspot>
 
- <hotspot name="hs38" style="hs_ulica">
+ <hotspot name="shs38" style="hs_ulica">
  <point ath="123.91130383086073" atv="16.718159579645857"/>
  <point ath="124.02009534269772" atv="8.081093305115093"/>
  <point ath="125.1814699711756" atv="7.749469093755442"/>
@@ -2670,7 +3370,7 @@ IP65[br]
  <point ath="123.45926483636376" atv="16.674020311087087"/>
  </hotspot>
 
- <hotspot name="hs39" style="hs_ulica">
+ <hotspot name="shs39" style="hs_ulica">
  <point ath="109.94140357442569" atv="10.282487450187352"/>
  <point ath="109.97851500291321" atv="4.971232352840083"/>
  <point ath="110.8159374221718" atv="4.7854681267070704"/>
@@ -2679,7 +3379,7 @@ IP65[br]
  <point ath="109.6931536755277" atv="10.34811785623492"/>
  </hotspot>
 
- <hotspot name="hs40" style="hs_ulica">
+ <hotspot name="shs40" style="hs_ulica">
  <point ath="109.94140357442569" atv="10.282487450187352"/>
  <point ath="109.97851500291321" atv="4.971232352840083"/>
  <point ath="110.8159374221718" atv="4.7854681267070704"/>
@@ -2688,7 +3388,7 @@ IP65[br]
  <point ath="109.6931536755277" atv="10.34811785623492"/>
  </hotspot>
 
- <hotspot name="hs41" style="hs_ulica">
+ <hotspot name="shs41" style="hs_ulica">
  <point ath="103.9554554081511" atv="7.367876817030755"/>
  <point ath="103.98657186518054" atv="3.505307836041668"/>
  <point ath="104.59563109263323" atv="3.399039495593792"/>
@@ -2697,7 +3397,7 @@ IP65[br]
  <point ath="103.76264929774072" atv="7.367508307869411"/>
  </hotspot>
 
- <hotspot name="hs42" style="hs_ulica">
+ <hotspot name="shs42" style="hs_ulica">
  <point ath="103.9554554081511" atv="7.367876817030755"/>
  <point ath="103.98657186518054" atv="3.505307836041668"/>
  <point ath="104.59563109263323" atv="3.399039495593792"/>
@@ -2706,7 +3406,7 @@ IP65[br]
  <point ath="103.76264929774072" atv="7.367508307869411"/>
  </hotspot>
 
- <hotspot name="hs43" style="hs_ulica">
+ <hotspot name="shs43" style="hs_ulica">
  <point ath="100.69727417952197" atv="5.590742072590564"/>
  <point ath="100.69110573834959" atv="2.7275449435003445"/>
  <point ath="101.23768988994362" atv="2.6217814288374686"/>
@@ -2715,7 +3415,7 @@ IP65[br]
  <point ath="100.56354376205485" atv="5.603665366274041"/>
  </hotspot>
 
- <hotspot name="hs44" style="hs_ulica">
+ <hotspot name="shs44" style="hs_ulica">
  <point ath="100.69727417952197" atv="5.590742072590564"/>
  <point ath="100.69110573834959" atv="2.7275449435003445"/>
  <point ath="101.23768988994362" atv="2.6217814288374686"/>
@@ -2724,13 +3424,349 @@ IP65[br]
  <point ath="100.56354376205485" atv="5.603665366274041"/>
  </hotspot>
 
- <hotspot name="hs45" style="hs_ulica">
+ <hotspot name="shs45" style="hs_ulica">
  <point ath="98.28194847819421" atv="4.422191910188383"/>
  <point ath="98.29630074106902" atv="2.1307361263122746"/>
  <point ath="98.66971834082307" atv="2.0375421474242215"/>
  <point ath="98.65640013023167" atv="1.9309289783260892"/>
  <point ath="98.16297383248266" atv="2.090702905671083"/>
  <point ath="98.18844267323783" atv="4.422112296354307"/>
+ </hotspot>
+ <hotspot name="shs4" style="hs_ulica_SELECT">
+ <point ath="97.11060687899169" atv="3.8231607995291177"/>
+ <point ath="97.17832694021476" atv="2.171040313565973"/>
+ <point ath="97.39173320761688" atv="2.064524755682622"/>
+ <point ath="97.41894317067124" atv="0.7323415895361188"/>
+ <point ath="96.99172223564318" atv="0.7855260166017421"/>
+ <point ath="97.03068414264669" atv="1.5313946017288882"/>
+ <point ath="96.7363524388721" atv="1.784364587865317"/>
+ </hotspot>
+
+ <hotspot name="hs5" style="hs_ulica_SELECT">
+ <point ath="98.37626624606582" atv="4.489236766664792"/>
+ <point ath="98.44199188419472" atv="2.2378026268592683"/>
+ <point ath="98.65537099382192" atv="2.2377173544893867"/>
+ <point ath="98.68223471823867" atv="2.5975178281884963"/>
+ <point ath="98.93567087805644" atv="2.6106736708019618"/>
+ <point ath="98.94790492934752" atv="1.1051179771136397"/>
+ <point ath="98.49484736641301" atv="0.9986806598196619"/>
+ <point ath="98.44183030638698" atv="1.7847104086511898"/>
+ <point ath="98.10854079488772" atv="2.037967366447458"/>
+ <point ath="98.06872561921787" atv="4.449413545423401"/>
+ </hotspot>
+
+ <hotspot name="hs6" style="hs_ulica_SELECT">
+ <point ath="100.01337788357588" atv="2.911946917546284"/>
+ <point ath="99.98409066824149" atv="1.246183752409139"/>
+ <point ath="99.49024047073613" atv="1.1395523798609513"/>
+ <point ath="99.64958292612235" atv="2.8852114051931728"/>
+ </hotspot>
+
+ <hotspot name="hs7" style="hs_ulica_SELECT">
+ <point ath="101.31791179579758" atv="3.33759855135203"/>
+ <point ath="101.30285272560576" atv="1.4190635644048895"/>
+ <point ath="100.76469372776566" atv="1.3260267255134128"/>
+ <point ath="100.80422820352624" atv="2.3386941718474787"/>
+ <point ath="100.4290961829542" atv="2.5787263093780437"/>
+ <point ath="100.40249476879987" atv="5.65662928027618"/>
+ <point ath="100.77687774121407" atv="5.683657788658216"/>
+ <point ath="100.82895541752046" atv="3.1550655427571535"/>
+ </hotspot>
+
+ <hotspot name="hs8" style="hs_ulica_SELECT">
+ <point ath="101.31791179579758" atv="3.33759855135203"/>
+ <point ath="101.30285272560576" atv="1.4190635644048895"/>
+ <point ath="100.76469372776566" atv="1.3260267255134128"/>
+ <point ath="100.80422820352624" atv="2.3386941718474787"/>
+ <point ath="100.4290961829542" atv="2.5787263093780437"/>
+ <point ath="100.40249476879987" atv="5.65662928027618"/>
+ <point ath="100.77687774121407" atv="5.683657788658216"/>
+ <point ath="100.82895541752046" atv="3.1550655427571535"/>
+ </hotspot>
+
+ <hotspot name="hs9" style="hs_ulica_SELECT">
+ <point ath="103.00561285980575" atv="3.822038145419918"/>
+ <point ath="103.03091571671408" atv="1.6101138638423942"/>
+ <point ath="102.32447700305403" atv="1.4770381428856716"/>
+ <point ath="102.33781854433181" atv="1.8633743398006508"/>
+ <point ath="102.53818875311518" atv="3.7023801679773234"/>
+ </hotspot>
+
+ <hotspot name="hs10" style="hs_ulica_SELECT">
+ <point ath="103.00561285980575" atv="3.822038145419918"/>
+ <point ath="103.03091571671408" atv="1.6101138638423942"/>
+ <point ath="102.32447700305403" atv="1.4770381428856716"/>
+ <point ath="102.33781854433181" atv="1.8633743398006508"/>
+ <point ath="102.53818875311518" atv="3.7023801679773234"/>
+ </hotspot>
+
+ <hotspot name="hs11" style="hs_ulica_SELECT">
+ <point ath="104.0678813617607" atv="7.371537381579059"/>
+ <point ath="104.1068163347484" atv="3.633974223600294"/>
+ <point ath="104.80128024594529" atv="3.486448042105572"/>
+ <point ath="104.93568707515368" atv="4.448205781724107"/>
+ <point ath="105.21622890694346" atv="4.4618661521779845"/>
+ <point ath="105.22637901616352" atv="1.8641201337949658"/>
+ <point ath="104.55550916576084" atv="1.8378517837327175"/>
+ <point ath="104.5676342369809" atv="2.2108679397810684"/>
+ <point ath="104.9409701367201" atv="2.223975988411736"/>
+ <point ath="104.92844356518953" atv="3.0634238148378903"/>
+ <point ath="103.70060794527961" atv="3.383752092742243"/>
+ <point ath="103.57924956293485" atv="7.387020399400648"/>
+ </hotspot>
+
+ <hotspot name="hs12" style="hs_ulica_SELECT">
+ <point ath="104.0678813617607" atv="7.371537381579059"/>
+ <point ath="104.1068163347484" atv="3.633974223600294"/>
+ <point ath="104.80128024594529" atv="3.486448042105572"/>
+ <point ath="104.93568707515368" atv="4.448205781724107"/>
+ <point ath="105.21622890694346" atv="4.4618661521779845"/>
+ <point ath="105.22637901616352" atv="1.8641201337949658"/>
+ <point ath="104.55550916576084" atv="1.8378517837327175"/>
+ <point ath="104.5676342369809" atv="2.2108679397810684"/>
+ <point ath="104.9409701367201" atv="2.223975988411736"/>
+ <point ath="104.92844356518953" atv="3.0634238148378903"/>
+ <point ath="103.70060794527961" atv="3.383752092742243"/>
+ <point ath="103.57924956293485" atv="7.387020399400648"/>
+ </hotspot>
+
+ <hotspot name="hs13" style="hs_ulica_SELECT">
+ <point ath="108.5311590016311" atv="5.339944419764951"/>
+ <point ath="108.55778633594647" atv="2.3581922810177303"/>
+ <point ath="107.77001292621375" atv="2.144780358844679"/>
+ <point ath="107.76938024585559" atv="2.4779331372045776"/>
+ <point ath="108.08946383393206" atv="2.6113333403735886"/>
+ <point ath="108.12886351053359" atv="5.260125200859947"/>
+ </hotspot>
+
+ <hotspot name="hs14" style="hs_ulica_SELECT">
+ <point ath="108.5311590016311" atv="5.339944419764951"/>
+ <point ath="108.55778633594647" atv="2.3581922810177303"/>
+ <point ath="107.77001292621375" atv="2.144780358844679"/>
+ <point ath="107.76938024585559" atv="2.4779331372045776"/>
+ <point ath="108.08946383393206" atv="2.6113333403735886"/>
+ <point ath="108.12886351053359" atv="5.260125200859947"/>
+ </hotspot>
+
+ <hotspot name="hs15" style="hs_ulica_SELECT">
+ <point ath="113.4207769255049" atv="6.628666253127176"/>
+ <point ath="113.53404920096969" atv="2.8464219088448455"/>
+ <point ath="112.41335521296031" atv="2.6475643630756176"/>
+ <point ath="112.46667201315628" atv="3.0659346691906073"/>
+ <point ath="113.00100489355043" atv="3.320264427466983"/>
+ </hotspot>
+
+ <hotspot name="hs17" style="hs_ulica_SELECT">
+ <point ath="110.07872835079033" atv="10.335957906054809"/>
+ <point ath="110.10121589269957" atv="5.237869698474102"/>
+ <point ath="111.13161229967778" atv="4.865539291128158"/>
+ <point ath="111.07827371110946" atv="4.279848570867873"/>
+ <point ath="109.41987111434031" atv="4.5976039978644225"/>
+ <point ath="109.44124285290923" atv="10.399911695141176"/>
+ </hotspot>
+
+ <hotspot name="hs18" style="hs_ulica_SELECT">
+ <point ath="110.07872835079033" atv="10.335957906054809"/>
+ <point ath="110.10121589269957" atv="5.237869698474102"/>
+ <point ath="111.13161229967778" atv="4.865539291128158"/>
+ <point ath="111.07827371110946" atv="4.279848570867873"/>
+ <point ath="109.41987111434031" atv="4.5976039978644225"/>
+ <point ath="109.44124285290923" atv="10.399911695141176"/>
+ </hotspot>
+
+ <hotspot name="hs19" style="hs_ulica_SELECT">
+ <point ath="121.57436525452036" atv="8.659967378821475"/>
+ <point ath="121.48251858757595" atv="3.94610590491875"/>
+ <point ath="120.45472838986865" atv="3.7208086201585777"/>
+ <point ath="120.52164122889198" atv="4.093378916948498"/>
+ <point ath="121.04243553871183" atv="4.146266400726256"/>
+ <point ath="121.04910047365772" atv="8.541710401588947"/>
+ </hotspot>
+
+ <hotspot name="hs20" style="hs_ulica_SELECT">
+ <point ath="121.57436525452036" atv="8.659967378821475"/>
+ <point ath="121.48251858757595" atv="3.94610590491875"/>
+ <point ath="120.45472838986865" atv="3.7208086201585777"/>
+ <point ath="120.52164122889198" atv="4.093378916948498"/>
+ <point ath="121.04243553871183" atv="4.146266400726256"/>
+ <point ath="121.04910047365772" atv="8.541710401588947"/>
+ </hotspot>
+
+ <hotspot name="hs21" style="hs_ulica_SELECT">
+ <point ath="124.12675144415752" atv="16.848550644041328"/>
+ <point ath="124.11737706261204" atv="8.331454041492728"/>
+ <point ath="125.50102221252172" atv="7.760827355078002"/>
+ <point ath="125.52170090251778" atv="7.187266270018875"/>
+ <point ath="124.86301107534112" atv="7.107268670113169"/>
+ <point ath="123.12182453780036" atv="7.752217944403934"/>
+ <point ath="123.1786343049726" atv="16.779443606506188"/>
+ </hotspot>
+
+ <hotspot name="hs22" style="hs_ulica_SELECT">
+ <point ath="124.12675144415752" atv="16.848550644041328"/>
+ <point ath="124.11737706261204" atv="8.331454041492728"/>
+ <point ath="125.50102221252172" atv="7.760827355078002"/>
+ <point ath="125.52170090251778" atv="7.187266270018875"/>
+ <point ath="124.86301107534112" atv="7.107268670113169"/>
+ <point ath="123.12182453780036" atv="7.752217944403934"/>
+ <point ath="123.1786343049726" atv="16.779443606506188"/>
+ </hotspot>
+
+ <hotspot name="hs23" style="hs_ulica_SELECT">
+ <point ath="136.45245782472753" atv="11.74596210279889"/>
+ <point ath="136.5818058915042" atv="5.301257835111962"/>
+ <point ath="135.31044333331482" atv="5.078728092701586"/>
+ <point ath="134.91107031538016" atv="5.353664847781684"/>
+ <point ath="135.04673270594387" atv="5.770075335431677"/>
+ <point ath="135.64304906530847" atv="5.852438188289897"/>
+ <point ath="135.70436912825718" atv="11.759850427275817"/>
+ </hotspot>
+
+ <hotspot name="hs24" style="hs_ulica_SELECT">
+ <point ath="136.45245782472753" atv="11.74596210279889"/>
+ <point ath="136.5818058915042" atv="5.301257835111962"/>
+ <point ath="135.31044333331482" atv="5.078728092701586"/>
+ <point ath="134.91107031538016" atv="5.353664847781684"/>
+ <point ath="135.04673270594387" atv="5.770075335431677"/>
+ <point ath="135.64304906530847" atv="5.852438188289897"/>
+ <point ath="135.70436912825718" atv="11.759850427275817"/>
+ </hotspot>
+
+ <hotspot name="hs25" style="hs_ulica_SELECT">
+ <point ath="164.88594656570382" atv="15.642279436807145"/>
+ <point ath="165.0421820838739" atv="7.252569948316667"/>
+ <point ath="163.84559638504476" atv="6.997460339472042"/>
+ <point ath="163.54847172394415" atv="7.1136963243663365"/>
+ <point ath="163.51465369268294" atv="7.509533131112429"/>
+ <point ath="163.95642874174234" atv="7.717878966601331"/>
+ <point ath="163.86584246399295" atv="15.559697430431145"/>
+ </hotspot>
+
+ <hotspot name="hs26" style="hs_ulica_SELECT">
+ <point ath="164.88594656570382" atv="15.642279436807145"/>
+ <point ath="165.0421820838739" atv="7.252569948316667"/>
+ <point ath="163.84559638504476" atv="6.997460339472042"/>
+ <point ath="163.54847172394415" atv="7.1136963243663365"/>
+ <point ath="163.51465369268294" atv="7.509533131112429"/>
+ <point ath="163.95642874174234" atv="7.717878966601331"/>
+ <point ath="163.86584246399295" atv="15.559697430431145"/>
+ </hotspot>
+
+ <hotspot name="hs27" style="hs_ulica_SELECT">
+ <point ath="168.72414569920835" atv="27.93074661180762"/>
+ <point ath="168.72342533103603" atv="14.321072002206277"/>
+ <point ath="169.51151437705647" atv="12.540346993551463"/>
+ <point ath="167.56531814032303" atv="12.22203650150193"/>
+ <point ath="166.79427612500004" atv="13.933184971558829"/>
+ <point ath="166.8105790138752" atv="28.01329207366214"/>
+ </hotspot>
+
+ <hotspot name="hs28" style="hs_ulica_SELECT">
+ <point ath="168.72414569920835" atv="27.93074661180762"/>
+ <point ath="168.72342533103603" atv="14.321072002206277"/>
+ <point ath="169.51151437705647" atv="12.540346993551463"/>
+ <point ath="167.56531814032303" atv="12.22203650150193"/>
+ <point ath="166.79427612500004" atv="13.933184971558829"/>
+ <point ath="166.8105790138752" atv="28.01329207366214"/>
+ </hotspot>
+
+ <hotspot name="hs29" style="hs_ulica_SELECT">
+ <point ath="-157.36452527324013" atv="14.854105899213454"/>
+ <point ath="-157.30744122318202" atv="7.552164439588901"/>
+ <point ath="-156.64738282760416" atv="7.379912010340423"/>
+ <point ath="-156.59967861484878" atv="6.667776687487429"/>
+ <point ath="-158.40914582108036" atv="6.7894466003348235"/>
+ <point ath="-158.40410123991745" atv="14.949956843483397"/>
+ </hotspot>
+
+ <hotspot name="hs30" style="hs_ulica_SELECT">
+ <point ath="-157.36452527324013" atv="14.854105899213454"/>
+ <point ath="-157.30744122318202" atv="7.552164439588901"/>
+ <point ath="-156.64738282760416" atv="7.379912010340423"/>
+ <point ath="-156.59967861484878" atv="6.667776687487429"/>
+ <point ath="-158.40914582108036" atv="6.7894466003348235"/>
+ <point ath="-158.40410123991745" atv="14.949956843483397"/>
+ </hotspot>
+
+ <hotspot name="hs31" style="hs_ulica_SELECT">
+ <point ath="-132.58971323207447" atv="20.82252296991656"/>
+ <point ath="-132.41916563478836" atv="10.13972879189652"/>
+ <point ath="-134.6282247485236" atv="9.154740911227163"/>
+ <point ath="-135.33280970042514" atv="9.624624588676712"/>
+ <point ath="-133.9897842592041" atv="10.65534205314528"/>
+ <point ath="-133.92422413814228" atv="21.080796406143566"/>
+ </hotspot>
+
+ <hotspot name="hs32" style="hs_ulica_SELECT">
+ <point ath="-132.58971323207447" atv="20.82252296991656"/>
+ <point ath="-132.41916563478836" atv="10.13972879189652"/>
+ <point ath="-134.6282247485236" atv="9.154740911227163"/>
+ <point ath="-135.33280970042514" atv="9.624624588676712"/>
+ <point ath="-133.9897842592041" atv="10.65534205314528"/>
+ <point ath="-133.92422413814228" atv="21.080796406143566"/>
+ </hotspot>
+
+ <hotspot name="hs33" style="hs_ulica_SELECT">
+ <point ath="-141.35330801002047" atv="11.356227568744268"/>
+ <point ath="-140.47673902382624" atv="5.534759187393936"/>
+ <point ath="-142.10811799785245" atv="5.445699595477772"/>
+ <point ath="-142.0959066585051" atv="11.67897294906873"/>
+ </hotspot>
+
+ <hotspot name="hs34" style="hs_ulica_SELECT">
+ <point ath="-141.35330801002047" atv="11.356227568744268"/>
+ <point ath="-140.47673902382624" atv="5.534759187393936"/>
+ <point ath="-142.10811799785245" atv="5.445699595477772"/>
+ <point ath="-142.0959066585051" atv="11.67897294906873"/>
+ </hotspot>
+
+ <hotspot name="hs35" style="hs_ulica_SELECT">
+ <point ath="-136.81615764651508" atv="8.860586407509162"/>
+ <point ath="-136.07006727538717" atv="4.482816558546914"/>
+ <point ath="-137.37728599464813" atv="4.609239865765557"/>
+ <point ath="-137.29405875909816" atv="9.04123084721403"/>
+ </hotspot>
+
+ <hotspot name="hs36" style="hs_ulica_SELECT">
+ <point ath="-136.81615764651508" atv="8.860586407509162"/>
+ <point ath="-136.07006727538717" atv="4.482816558546914"/>
+ <point ath="-137.37728599464813" atv="4.609239865765557"/>
+ <point ath="-137.29405875909816" atv="9.04123084721403"/>
+ </hotspot>
+
+ <hotspot name="hs37" style="hs_ulica_SELECT">
+ <point ath="-132.20362641180245" atv="7.165390413930685"/>
+ <point ath="-131.90514324498417" atv="4.160646714989647"/>
+ <point ath="-132.7347981429434" atv="4.166352076320977"/>
+ <point ath="-132.69872383967862" atv="7.269657182187092"/>
+ </hotspot>
+
+ <hotspot name="hs38" style="hs_ulica_SELECT">
+ <point ath="-132.20362641180245" atv="7.165390413930685"/>
+ <point ath="-131.90514324498417" atv="4.160646714989647"/>
+ <point ath="-132.7347981429434" atv="4.166352076320977"/>
+ <point ath="-132.69872383967862" atv="7.269657182187092"/>
+ </hotspot>
+
+ <hotspot name="hs39" style="hs_ulica_SELECT">
+ <point ath="-117.64279327294798" atv="6.421556009593264"/>
+ <point ath="-117.6399275464328" atv="2.688442119918537"/>
+ <point ath="-118.34014925740675" atv="2.850712265180965"/>
+ <point ath="-118.17462424192942" atv="6.665788718231139"/>
+ </hotspot>
+
+ <hotspot name="hs40" style="hs_ulica_SELECT">
+ <point ath="-117.64279327294798" atv="6.421556009593264"/>
+ <point ath="-117.6399275464328" atv="2.688442119918537"/>
+ <point ath="-118.34014925740675" atv="2.850712265180965"/>
+ <point ath="-118.17462424192942" atv="6.665788718231139"/>
+ </hotspot>
+
+ <hotspot name="hs41" style="hs_ulica_SELECT">
+ <point ath="-113.3237424476481" atv="3.8448420969979544"/>
+ <point ath="-113.33691525895219" atv="2.3350011008907487"/>
+ <point ath="-114.17043101972274" atv="2.4383314258100084"/>
+ <point ath="-113.9624427073384" atv="4.1846864316035175"/>
  </hotspot>
  		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
