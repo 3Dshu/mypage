@@ -261,7 +261,7 @@
 			 capture="false"
 			 zorder="21"
 			 alpha="0"
-			 onhover="showtext(LED_5000_E32.5, DEFAULT2);"
+			 onhover="showtext(Уличный светильник 100W, DEFAULT2);"
 			 onout=""
 			 ondown=""
 			 onup=""
