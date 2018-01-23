@@ -4,7 +4,6 @@
 	<include url="%SWFPATH%/plugins/showtext.xml" preload="true"/>
 	<include url="add/SDsvet.xml"/>
 	<include url="add/custom.xml"/>
-
 	
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
@@ -496,6 +495,8 @@
 	<action name="startup" autorun="onstart">
 		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
 		loadscene(get(startscene), null, MERGE);
+		if(device.edge,  mul(stagescale,0.82));
+		if(device.ie,  mul(stagescale,0.9));
 		if(startactions !== null, startactions() );
 	</action>
 	
@@ -1967,99 +1968,220 @@ IP65[br]
 			</level>
 		</image>
 <hotspot name="hs4" style="hs_torgcentr">
- <point ath="-61.73170905622936" atv="13.327422549031496"/>
- <point ath="-61.722980342081655" atv="6.225588351494529"/>
- <point ath="-62.41250228250368" atv="5.818672783707837"/>
- <point ath="-62.722316014593616" atv="5.845945701770243"/>
- <point ath="-62.73694038737369" atv="5.9858255807419285"/>
- <point ath="-62.18838431935916" atv="6.295000893882924"/>
- <point ath="-62.1485628506872" atv="13.368148304906558"/>
+ <point ath="-61.2828960833059" atv="13.679662567688915"/>
+ <point ath="-61.26601454743667" atv="7.382546122320182"/>
+ <point ath="-61.319678995497384" atv="7.38281716187893"/>
+ <point ath="-61.3213574303673" atv="7.089948446259247"/>
+ <point ath="-61.3765473287807" atv="6.81069688402405"/>
+ <point ath="-61.4716896758718" atv="6.5582705865043405"/>
+ <point ath="-61.633512109419996" atv="6.332722930821508"/>
+ <point ath="-61.767991145560416" atv="6.20016716943774"/>
+ <point ath="-62.116709439160275" atv="6.014985407653504"/>
+ <point ath="-62.15723674532967" atv="5.908687279823501"/>
+ <point ath="-62.45182449883225" atv="5.829549536492823"/>
+ <point ath="-62.62579038183674" atv="5.816563863620892"/>
+ <point ath="-62.706012819596424" atv="5.843290882558164"/>
+ <point ath="-62.71919381321379" atv="5.936420970852994"/>
+ <point ath="-62.63873135388269" atv="6.002807109377535"/>
+ <point ath="-62.46456999304178" atv="6.055700322643595"/>
+ <point ath="-62.31732455092788" atv="6.055384423162158"/>
+ <point ath="-62.19690951410803" atv="6.041794305888715"/>
+ <point ath="-61.96898013516807" atv="6.147592493265662"/>
+ <point ath="-61.79451827228695" atv="6.253467785050496"/>
+ <point ath="-61.67335005048193" atv="6.399390848831635"/>
+ <point ath="-61.52511708671403" atv="6.585102043252678"/>
+ <point ath="-61.429923759298845" atv="6.850861435466236"/>
+ <point ath="-61.38824548172289" atv="7.116888129854361"/>
+ <point ath="-61.38691321229555" atv="7.3565190288713405"/>
+ <point ath="-61.46734758018323" atv="7.370214855730126"/>
+ <point ath="-61.44662161131322" atv="13.667901897831637"/>
  </hotspot>
 
  <hotspot name="hs5" style="hs_torgcentr">
- <point ath="-61.73170905622936" atv="13.327422549031496"/>
- <point ath="-61.722980342081655" atv="6.225588351494529"/>
- <point ath="-62.41250228250368" atv="5.818672783707837"/>
- <point ath="-62.722316014593616" atv="5.845945701770243"/>
- <point ath="-62.73694038737369" atv="5.9858255807419285"/>
- <point ath="-62.18838431935916" atv="6.295000893882924"/>
- <point ath="-62.1485628506872" atv="13.368148304906558"/>
+ <point ath="-61.2828960833059" atv="13.679662567688915"/>
+ <point ath="-61.26601454743667" atv="7.382546122320182"/>
+ <point ath="-61.319678995497384" atv="7.38281716187893"/>
+ <point ath="-61.3213574303673" atv="7.089948446259247"/>
+ <point ath="-61.3765473287807" atv="6.81069688402405"/>
+ <point ath="-61.4716896758718" atv="6.5582705865043405"/>
+ <point ath="-61.633512109419996" atv="6.332722930821508"/>
+ <point ath="-61.767991145560416" atv="6.20016716943774"/>
+ <point ath="-62.116709439160275" atv="6.014985407653504"/>
+ <point ath="-62.15723674532967" atv="5.908687279823501"/>
+ <point ath="-62.45182449883225" atv="5.829549536492823"/>
+ <point ath="-62.62579038183674" atv="5.816563863620892"/>
+ <point ath="-62.706012819596424" atv="5.843290882558164"/>
+ <point ath="-62.71919381321379" atv="5.936420970852994"/>
+ <point ath="-62.63873135388269" atv="6.002807109377535"/>
+ <point ath="-62.46456999304178" atv="6.055700322643595"/>
+ <point ath="-62.31732455092788" atv="6.055384423162158"/>
+ <point ath="-62.19690951410803" atv="6.041794305888715"/>
+ <point ath="-61.96898013516807" atv="6.147592493265662"/>
+ <point ath="-61.79451827228695" atv="6.253467785050496"/>
+ <point ath="-61.67335005048193" atv="6.399390848831635"/>
+ <point ath="-61.52511708671403" atv="6.585102043252678"/>
+ <point ath="-61.429923759298845" atv="6.850861435466236"/>
+ <point ath="-61.38824548172289" atv="7.116888129854361"/>
+ <point ath="-61.38691321229555" atv="7.3565190288713405"/>
+ <point ath="-61.46734758018323" atv="7.370214855730126"/>
+ <point ath="-61.44662161131322" atv="13.667901897831637"/>
  </hotspot>
 
  <hotspot name="hs6" style="hs_torgcentr">
- <point ath="-102.29328739204902" atv="14.223680223951181"/>
- <point ath="-102.26786658754605" atv="6.777675705856531"/>
- <point ath="-101.49121220166393" atv="6.4581259672376055"/>
- <point ath="-101.49071277144208" atv="6.2903192222123385"/>
- <point ath="-101.8428032439146" atv="6.275542666364693"/>
- <point ath="-102.74605290351121" atv="6.621864714745549"/>
- <point ath="-102.74051133500984" atv="14.277828420297569"/>
- <point ath="-102.40931283878007" atv="14.322516243092242"/>
+ <point ath="-103.38962825994815" atv="14.538664141818499"/>
+ <point ath="-103.39597687867445" atv="7.930833248833313"/>
+ <point ath="-103.44948715139145" atv="7.917180646730291"/>
+ <point ath="-103.42032620269373" atv="7.66503996503799"/>
+ <point ath="-103.32260473937549" atv="7.227636269561477"/>
+ <point ath="-103.14651219435314" atv="6.976602493703395"/>
+ <point ath="-102.91749286287518" atv="6.765607690469857"/>
+ <point ath="-102.63543011647965" atv="6.5812751124929525"/>
+ <point ath="-102.40777062812685" atv="6.5158909093783075"/>
+ <point ath="-102.30075128369572" atv="6.503018012407489"/>
+ <point ath="-102.15389656528214" atv="6.543278937584606"/>
+ <point ath="-101.92643026790603" atv="6.517437374374636"/>
+ <point ath="-101.67211200980148" atv="6.465033964524855"/>
+ <point ath="-101.60514949029545" atv="6.438662127307253"/>
+ <point ath="-101.53806717390961" atv="6.372513308482518"/>
+ <point ath="-101.5645458723651" atv="6.292935958602192"/>
+ <point ath="-101.69806618235611" atv="6.252902658038119"/>
+ <point ath="-101.95184803864828" atv="6.225785564653955"/>
+ <point ath="-102.2193178320536" atv="6.27799720762721"/>
+ <point ath="-102.32657087585949" atv="6.343890222633285"/>
+ <point ath="-102.35352494645116" atv="6.383549796417353"/>
+ <point ath="-102.64807575202036" atv="6.475189012973862"/>
+ <point ath="-102.970240715015" atv="6.672546735363566"/>
+ <point ath="-103.19943631315442" atv="6.909999523905104"/>
+ <point ath="-103.40300567073126" atv="7.24040834879129"/>
+ <point ath="-103.50083112171689" atv="7.677773684616566"/>
+ <point ath="-103.51652078872166" atv="7.916709701285384"/>
+ <point ath="-103.5969503550665" atv="7.916130521462277"/>
+ <point ath="-103.55520837787259" atv="14.655792098573857"/>
  </hotspot>
 
  <hotspot name="hs7" style="hs_torgcentr">
- <point ath="-102.29328739204902" atv="14.223680223951181"/>
- <point ath="-102.26786658754605" atv="6.777675705856531"/>
- <point ath="-101.49121220166393" atv="6.4581259672376055"/>
- <point ath="-101.49071277144208" atv="6.2903192222123385"/>
- <point ath="-101.8428032439146" atv="6.275542666364693"/>
- <point ath="-102.74605290351121" atv="6.621864714745549"/>
- <point ath="-102.74051133500984" atv="14.277828420297569"/>
- <point ath="-102.40931283878007" atv="14.322516243092242"/>
+ <point ath="-103.38962825994815" atv="14.538664141818499"/>
+ <point ath="-103.39597687867445" atv="7.930833248833313"/>
+ <point ath="-103.44948715139145" atv="7.917180646730291"/>
+ <point ath="-103.42032620269373" atv="7.66503996503799"/>
+ <point ath="-103.32260473937549" atv="7.227636269561477"/>
+ <point ath="-103.14651219435314" atv="6.976602493703395"/>
+ <point ath="-102.91749286287518" atv="6.765607690469857"/>
+ <point ath="-102.63543011647965" atv="6.5812751124929525"/>
+ <point ath="-102.40777062812685" atv="6.5158909093783075"/>
+ <point ath="-102.30075128369572" atv="6.503018012407489"/>
+ <point ath="-102.15389656528214" atv="6.543278937584606"/>
+ <point ath="-101.92643026790603" atv="6.517437374374636"/>
+ <point ath="-101.67211200980148" atv="6.465033964524855"/>
+ <point ath="-101.60514949029545" atv="6.438662127307253"/>
+ <point ath="-101.53806717390961" atv="6.372513308482518"/>
+ <point ath="-101.5645458723651" atv="6.292935958602192"/>
+ <point ath="-101.69806618235611" atv="6.252902658038119"/>
+ <point ath="-101.95184803864828" atv="6.225785564653955"/>
+ <point ath="-102.2193178320536" atv="6.27799720762721"/>
+ <point ath="-102.32657087585949" atv="6.343890222633285"/>
+ <point ath="-102.35352494645116" atv="6.383549796417353"/>
+ <point ath="-102.64807575202036" atv="6.475189012973862"/>
+ <point ath="-102.970240715015" atv="6.672546735363566"/>
+ <point ath="-103.19943631315442" atv="6.909999523905104"/>
+ <point ath="-103.40300567073126" atv="7.24040834879129"/>
+ <point ath="-103.50083112171689" atv="7.677773684616566"/>
+ <point ath="-103.51652078872166" atv="7.916709701285384"/>
+ <point ath="-103.5969503550665" atv="7.916130521462277"/>
+ <point ath="-103.55520837787259" atv="14.655792098573857"/>
  </hotspot>
 
  <hotspot name="hs8" style="hs_torgcentr">
- <point ath="-115.94242684505662" atv="8.52041942329008"/>
- <point ath="-115.87830449099062" atv="4.039878473539217"/>
- <point ath="-115.1746197450089" atv="3.9093357573933534"/>
- <point ath="-115.20055802040119" atv="3.7362985547978687"/>
- <point ath="-116.06734260289389" atv="3.972695296712925"/>
- <point ath="-116.10640492602224" atv="8.532456621524199"/>
+ <point ath="-117.0153116448611" atv="8.496830824538876"/>
+ <point ath="-117.00128143091996" atv="4.625063025301921"/>
+ <point ath="-117.02798172609317" atv="4.624979396100491"/>
+ <point ath="-116.94696082609263" atv="4.358909990437009"/>
+ <point ath="-116.78611698505276" atv="4.146302096213453"/>
+ <point ath="-116.51882980505673" atv="4.013768805557673"/>
+ <point ath="-116.22501058206251" atv="3.9344353524098823"/>
+ <point ath="-115.98468551636836" atv="3.9081793352082337"/>
+ <point ath="-115.86456005152155" atv="3.9216604458644206"/>
+ <point ath="-115.86462878926258" atv="3.9616161341117007"/>
+ <point ath="-115.55753260041399" atv="3.9752790758297976"/>
+ <point ath="-115.21027463025902" atv="3.935568869353064"/>
+ <point ath="-115.15680694607522" atv="3.855673445065145"/>
+ <point ath="-115.14340004272293" atv="3.7624445838569756"/>
+ <point ath="-115.29019923535435" atv="3.6824640388967644"/>
+ <point ath="-115.87758602625905" atv="3.7352013382733005"/>
+ <point ath="-115.95778767984987" atv="3.8016793492040977"/>
+ <point ath="-116.2114212431936" atv="3.827929021805757"/>
+ <point ath="-116.58536224277432" atv="3.9470512071334194"/>
+ <point ath="-116.81258943440287" atv="4.07966319455963"/>
+ <point ath="-117.01359185211751" atv="4.332087260331501"/>
+ <point ath="-117.10807671206854" atv="4.624722527581714"/>
+ <point ath="-117.17486627733788" atv="4.637816143411232"/>
+ <point ath="-117.14936285500207" atv="8.496043100571853"/>
  </hotspot>
-  <hotspot name="shs4" style="hs_torgcentr_SELECT">
- <point ath="-61.39664466255442" atv="13.441324151630342"/>
- <point ath="-61.26170938946632" atv="6.061270126632331"/>
- <point ath="-62.506524927481735" atv="5.363515777945747"/>
- <point ath="-63.38183063490783" atv="5.671082168386015"/>
- <point ath="-62.67528880412772" atv="6.5121692376716025"/>
- <point ath="-62.52700848464133" atv="13.445139000945778"/>
+ 		<hotspot name="shs4" style="hs_torgcentr_SELECT">
+ <point ath="-61.126933256133384" atv="13.747308417634814"/>
+ <point ath="-61.003978766519936" atv="7.358315590929459"/>
+ <point ath="-61.115226726402" atv="6.404346776586804"/>
+ <point ath="-61.6777016365711" atv="5.823427701362614"/>
+ <point ath="-62.63734221873841" atv="5.480426499901315"/>
+ <point ath="-63.15689767632472" atv="5.533283098905474"/>
+ <point ath="-62.865593423844814" atv="6.3305626229836625"/>
+ <point ath="-62.22440485081563" atv="6.383851190911246"/>
+ <point ath="-61.849609732078704" atv="6.900012628774563"/>
+ <point ath="-61.92245825915518" atv="13.766706675267239"/>
  </hotspot>
 
  <hotspot name="shs5" style="hs_torgcentr_SELECT">
- <point ath="-61.39664466255442" atv="13.441324151630342"/>
- <point ath="-61.26170938946632" atv="6.061270126632331"/>
- <point ath="-62.506524927481735" atv="5.363515777945747"/>
- <point ath="-63.38183063490783" atv="5.671082168386015"/>
- <point ath="-62.67528880412772" atv="6.5121692376716025"/>
- <point ath="-62.52700848464133" atv="13.445139000945778"/>
+ <point ath="-61.126933256133384" atv="13.747308417634814"/>
+ <point ath="-61.003978766519936" atv="7.358315590929459"/>
+ <point ath="-61.115226726402" atv="6.404346776586804"/>
+ <point ath="-61.6777016365711" atv="5.823427701362614"/>
+ <point ath="-62.63734221873841" atv="5.480426499901315"/>
+ <point ath="-63.15689767632472" atv="5.533283098905474"/>
+ <point ath="-62.865593423844814" atv="6.3305626229836625"/>
+ <point ath="-62.22440485081563" atv="6.383851190911246"/>
+ <point ath="-61.849609732078704" atv="6.900012628774563"/>
+ <point ath="-61.92245825915518" atv="13.766706675267239"/>
  </hotspot>
 
  <hotspot name="shs6" style="hs_torgcentr_SELECT">
- <point ath="-101.96467336403612" atv="14.385171487705326"/>
- <point ath="-101.93473720646477" atv="7.184686359273537"/>
- <point ath="-101.05754082707267" atv="6.50776781718318"/>
- <point ath="-101.01351469822589" atv="5.925738102932229"/>
- <point ath="-102.32751575123683" atv="5.682258350425066"/>
- <point ath="-103.52941847854953" atv="6.430706522196008"/>
+ <point ath="-102.80040798167158" atv="14.746233023309552"/>
+ <point ath="-102.80829664488118" atv="8.01097683211464"/>
+ <point ath="-102.56442022750758" atv="7.1220249966960125"/>
+ <point ath="-100.90361096690634" atv="6.93520478848507"/>
+ <point ath="-100.55920587728144" atv="6.153062425410283"/>
+ <point ath="-101.25502059543743" atv="5.480725753340251"/>
+ <point ath="-102.69426049500652" atv="5.665555974097761"/>
+ <point ath="-103.75032723082762" atv="6.231398635201459"/>
+ <point ath="-104.35938526944409" atv="7.3145450750763965"/>
  </hotspot>
 
  <hotspot name="shs7" style="hs_torgcentr_SELECT">
- <point ath="-101.96467336403612" atv="14.385171487705326"/>
- <point ath="-101.93473720646477" atv="7.184686359273537"/>
- <point ath="-101.05754082707267" atv="6.50776781718318"/>
- <point ath="-101.01351469822589" atv="5.925738102932229"/>
- <point ath="-102.32751575123683" atv="5.682258350425066"/>
- <point ath="-103.52941847854953" atv="6.430706522196008"/>
+ <point ath="-102.80040798167158" atv="14.746233023309552"/>
+ <point ath="-102.80829664488118" atv="8.01097683211464"/>
+ <point ath="-102.56442022750758" atv="7.1220249966960125"/>
+ <point ath="-100.90361096690634" atv="6.93520478848507"/>
+ <point ath="-100.55920587728144" atv="6.153062425410283"/>
+ <point ath="-101.25502059543743" atv="5.480725753340251"/>
+ <point ath="-102.69426049500652" atv="5.665555974097761"/>
+ <point ath="-103.75032723082762" atv="6.231398635201459"/>
+ <point ath="-104.35938526944409" atv="7.3145450750763965"/>
  </hotspot>
 
  <hotspot name="shs8" style="hs_torgcentr_SELECT">
- <point ath="-115.72963013308492" atv="8.518861291150596"/>
- <point ath="-115.69659756719219" atv="4.347923289529628"/>
- <point ath="-114.87652734024653" atv="4.029266740908733"/>
- <point ath="-114.85535345700276" atv="3.4148192963144752"/>
- <point ath="-116.45580138936634" atv="3.7288404159912756"/>
+ <point ath="-116.75685958368916" atv="8.587177621814016"/>
+ <point ath="-116.7727035311564" atv="4.7639823413690445"/>
+ <point ath="-116.5457996281462" atv="4.3775405160766665"/>
+ <point ath="-115.98490411120241" atv="4.2836928463753186"/>
+ <point ath="-114.85007495634972" atv="4.3477199822289"/>
+ <point ath="-114.03895184519013" atv="3.892772301746372"/>
+ <point ath="-115.14741514631885" atv="3.0982416317852293"/>
+ <point ath="-116.19978274033002" atv="3.192752004414387"/>
+ <point ath="-117.19982413435821" atv="3.632182638540835"/>
+ <point ath="-117.53393946828254" atv="4.324372379221103"/>
+ <point ath="-117.56406976610941" atv="8.639743240077866"/>
  </hotspot>
- 		
+
+		
 		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
@@ -2067,20 +2189,20 @@ IP65[br]
 		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
 		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
 			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
-			<layer name="image_01" url="%CURRENTXML%/images/LED5000E321R.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="image_01" url="%CURRENTXML%/images/Indukcionniy.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
 			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
-			<layer name="image_02" url="%CURRENTXML%/images/LED5000E321R2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="image_02" url="%CURRENTXML%/images/Indukcionniy2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
 			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
 			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
-			<layer name="image_03" url="%CURRENTXML%/images/LED5000E321R3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="image_03" url="%CURRENTXML%/images/Indukcionniy3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
 			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
 			</layer>
 			</layer>
 
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
-			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светильник уличный светодиодный E 32.5[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/street-modul/svetilnik-ulichnyij-svetodiodnyij-e32.5.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Уличный светильник 100W[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/indukczionnoe-osveshhenie/seriya-street-ulichnyie-svetilniki/ulichnyij-svetilnik-100w.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 
@@ -2102,47 +2224,46 @@ IP65[br]
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
-				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Индукционные светильники SDSвет cерии [dq]STREET[dq] - это одно из последних поколений энергосберегающего уличного освещения. Светильники используются для освещения улиц, дорог, дворов и внешних территорий.[/b][br][br]✔Конструктив светильника выдерживает широкий диапазон температур и климатические перепады.[br]
+				✔Свет от индукционной лампы дает равномерную и приятную засветку.[br]✔Мгновенный запуск (перезапуск) лампы в горячем и холодном состоянии.[br]✔Надежность лампы гарантирует отсутствие термокатодов и нитей накала." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Индукционные светильники SDSвет cерии [dq]STREET[dq] - это одно из последних поколений энергосберегающего уличного освещения. Светильники используются для освещения улиц, дорог, дворов и внешних территорий.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
 
 			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
-				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
+				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="
+Тип освещения[br]
 Напряжение питания[br]
 Мощность[br]
 Световой поток[br]
+Видимый световой поток[br]
 Температура свечения[br]
-Коэффициент пульсаций[br]
 Температура эксплуатации[br]
 Степень защиты:[br]
 Габаритные размеры[br]
-Крепление[br]
-КСС[br]
+Тип монтажа[br]
 Вес[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
-176-264В/50Гц[br]
-32.5 Вт[br]
-3510 Лм[br]
-5000 К[br]
-[lt] 1%[br]
-от -50 до +50 ⁰С[br]
+			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="
+индукционный[br]
+220 В[br]
+100 Вт[br]
+8500 Лм[br]
+~14000 ФЛм[br]
+6400 К
+от -60 до +60 ⁰С[br]
 IP65[br]
-370х180х60 мм[br]
-Консоль/Скоба[br]
-Широкая ассиметричная[br]
-2 кг[br]
+680x335x225 мм[br]
+на консоль[br]
+8 кг[br]
 " css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
 			
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
-			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для наружного освещения автомагистралей, железнодорожных перронов, парков и скверов парковок, цехов, складских терминалов, спортивных и промышленных сооружений." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для освещения автомагистралей, парков, спортивных объектов, парковок, промышленных территорий, складских сооружений и железнодорожных перронов." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_PIK.jpg" alpha="1" align="leftcenter" x="5%" y="-20%" width="25%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
 			onclick="openurl('http://sdsvet.ru/proektyi/onezhskij-sudostroitelnyij-zavod-niko.html')" >
@@ -2922,20 +3043,20 @@ IP65[br]
 		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
 		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
 			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
-			<layer name="image_01" url="%CURRENTXML%/images/LED5000E321R.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="image_01" url="%CURRENTXML%/images/LED5000E180R1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
 			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
-			<layer name="image_02" url="%CURRENTXML%/images/LED5000E321R2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="image_02" url="%CURRENTXML%/images/LED5000E180R2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
 			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
 			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
-			<layer name="image_03" url="%CURRENTXML%/images/LED5000E321R3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="image_03" url="%CURRENTXML%/images/LED5000E180R3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
 			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
 			</layer>
 			</layer>
 
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
-			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светильник уличный светодиодный E 32.5[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/street-modul/svetilnik-ulichnyij-svetodiodnyij-e32.5.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светильник уличный светодиодный E180[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/street-modul/svetilnik-ulichnyij-svetodiodnyij-e180.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 
@@ -2957,11 +3078,11 @@ IP65[br]
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии [dq]Модуль[dq] в исполнении [dq]Street-Led[dq] предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
 				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии [dq]Модуль[dq] в исполнении [dq]Street-Led[dq] предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -2977,21 +3098,21 @@ IP65[br]
 Степень защиты:[br]
 Габаритные размеры[br]
 Крепление[br]
-КСС[br]
+Энергоэффективность[br]
 Вес[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
 176-264В/50Гц[br]
-32.5 Вт[br]
-3510 Лм[br]
+180 Вт[br]
+18700 Лм[br]
 5000 К[br]
 [lt] 1%[br]
 от -50 до +50 ⁰С[br]
 IP65[br]
-370х180х60 мм[br]
-Консоль/Скоба[br]
-Широкая ассиметричная[br]
-2 кг[br]
+720х190х95 мм[br]
+Консоль[br]
+108 Лм/Вт[br]
+4.5 кг[br]
 " css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
@@ -2999,9 +3120,12 @@ IP65[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для наружного освещения автомагистралей, железнодорожных перронов, парков и скверов парковок, цехов, складских терминалов, спортивных и промышленных сооружений." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_PIK.jpg" alpha="1" align="leftcenter" x="5%" y="-20%" width="25%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_PIK.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
 			onclick="openurl('http://sdsvet.ru/proektyi/onezhskij-sudostroitelnyij-zavod-niko.html')" >
-			<layer name="project_vipolnen" url="%CURRENTXML%/images/project_PIK.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false"/>
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/project_PIK.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
 			</layer>
 			</layer>
 			</layer>
