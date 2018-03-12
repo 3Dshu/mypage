@@ -920,7 +920,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="torgC_CLICK" 
 				 style="hs_BUILDING_"
-					
+				 onhover=""
+
+				 ondown=""
+				 onup=""
 				>
 				<point atv="6.880691976073127" ath="-112.71397537594112"/>
 				<point atv="-10.343135490612216" ath="-114.18770187695193"/>
