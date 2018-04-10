@@ -1,6 +1,9 @@
-﻿<krpano version="1.19" title="Virtual Tour">
+﻿<krpano version="1.19" title="Virtual Tour" showerrors="false">
 
 	<include url="skin/vtourskin.xml" />
+	<include url="%SWFPATH%/plugins/showtext.xml" preload="true"/>
+	<include url="add/SDsvet.xml"/>
+	<include url="add/custom.xml"/>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -8,17 +11,17 @@
 	               maps_bing_api_key=""
 	               maps_google_api_key=""
 	               maps_zoombuttons="false"
-	               gyro="true"
-	               webvr="true"
+	               gyro="false"
+	               webvr="false"
 	               webvr_gyro_keeplookingdirection="false"
-	               webvr_prev_next_hotspots="true"
+	               webvr_prev_next_hotspots="false"
 	               littleplanetintro="false"
-	               title="true"
-	               thumbs="true"
+	               title="false"
+	               thumbs="false"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
 	               thumbs_opened="false"
 	               thumbs_text="false"
-	               thumbs_dragging="true"
+	               thumbs_dragging="false"
 	               thumbs_onhoverscrolling="false"
 	               thumbs_scrollbuttons="false"
 	               thumbs_scrollindicator="false"
@@ -28,14 +31,14 @@
 	               tooltips_hotspots="false"
 	               tooltips_mapspots="false"
 	               deeplinking="false"
-	               loadscene_flags="MERGE"
+	               loadscene_flags="MERGE|KEEPVIEW"
 	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
 	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
 	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
-	               loadingtext="loading..."
+	               loadingtext="загрузка..."
 	               layout_width="100%"
-	               layout_maxwidth="814"
-	               controlbar_width="-24"
+	               layout_maxwidth="300"
+	               controlbar_width="300"
 	               controlbar_height="40"
 	               controlbar_offset="20"
 	               controlbar_offset_closed="-40"
@@ -43,10 +46,10 @@
 	               controlbar_overlap.fractionalscaling="0"
 	               design_skin_images="vtourskin.png"
 	               design_bgcolor="0x2D3E50"
-	               design_bgalpha="0.8"
+	               design_bgalpha="0.0"
 	               design_bgborder="0"
 	               design_bgroundedge="1"
-	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_bgshadow="0 4 10 0x000000 0.0"
 	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
 	               design_thumbborder_padding="2"
 	               design_thumbborder_bgroundedge="0"
@@ -58,13 +61,307 @@
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
 	-->
+	 <textstyle name="DEFAULT5"  origin="cursor" edge="rightbottom" xoffset="0" yoffset="45" fadeintime="1"        showtime="0.1"
+           fadetime="0" font="Arial" fontsize="22.0" bold="true" italic="false" textcolor="0xFFFFFF" textalign="none" padding="0" css="" background="false"     backgroundcolor="0xffffff" backgroundalpha="0.3" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />
+		   <textstyle name="DEFAULT2"  origin="cursor" edge="top" xoffset="0" yoffset="20" fadeintime="1"        showtime="0.1"
+           fadetime="0" font="Futura" fontsize="22.0" bold="true" italic="false" textcolor="0x75c3f3" textalign="none" padding="0" css="" background="true"     backgroundcolor="0x000000" backgroundalpha="0.6" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="5" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />
+		   <textstyle name="DEFAULT1" origin="cursor" edge="right" xoffset="0" yoffset="50" fadeintime="0.2"        showtime="0.2"
+           fadetime="0.2" font="Arial" fontsize="20.0" bold="false" italic="true" textcolor="0x75C4F4" textalign="center" padding="5" css="" background="true"     backgroundcolor="0x1a2545" backgroundalpha="1" border="true" bordercolor="0x000000" borderalpha="1.0" borderwidth="0.3" roundedge="3" shadow="4" shadowrange="15.0" shadowangle="60" shadowcolor="0x75C4F4" shadowalpha="1.0" textshadow="0.0" textshadowrange="0.0"           textshadowangle="45" textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
+           noclip="true"
+           />
 	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+		<events onmousedown="copy(lastmx,mouse.x);
+                         copy(lastmy,mouse.y);
+                         if(clicks === null, set(clicks,0));
+                         inc(clicks);
+                         delayedcall(0.4, set(clicks,0));
+                        "
+            onmouseup="if(lastmx == mouse.x,
+                          if(lastmy == mouse.y,
+                             if(clicks GE 2,
+                                 set(clicks,0);
+                                 mul(tofov,view.fov,0.5);
+                                 if(tofov LT view.fovmin, copy(tofov,view.fovmin));
+                                 screentosphere(mouse.x,mouse.y,toh,tov);
+                                 adjusthlookat(get(toh));
+                                 tween(view.hlookat,get(toh));
+                                 tween(view.vlookat,get(tov));
+                                 tween(view.fov,get(tofov));
+                                );
+                            );
+                         );
+                        "
+            onmousewheel="stoptween(view.hlookat,view.vlookat,view.fov);"
+            onkeydown="events.onmousewheel();"
+            />
+			<action name="align_at_mouse">
+			  copy(x, mouse.x);
+			  copy(y, mouse.y);
+			  delayedcall(0, align_at_mouse());
+			</action>
 	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+			<action name="open_st">
+			set(plugin[screen_tint].visible, true);
+			tween(plugin[screen_tint].alpha,.9,0.5,default);
+			set(layer[frame].visible,true);
+			tween(layer[frame].alpha,1,2);
+			skin_hideskin();
+		</action>
+	
+		<action name="close_st">
+			tween(plugin[screen_tint].alpha,0,0.5,default);
+			set(plugin[screen_tint].visible, false);
+			tween(layer[frame].alpha,0,.3,default,wait);
+			set(layer[frame].visible,false);
+			skin_showskin();
+		</action>
+		 <action name="reset">
+			tween(layer[cc_01].y,-45%);
+			tween(layer[text_01].x,0.5%,1);
+			tween(layer[text_01].alpha,.8,.5);
+			tween(layer[cc_02].y,-45%);
+			tween(layer[text_02].x,33.833%,1);
+			tween(layer[text_02].alpha,.8,.5);
+			tween(layer[cc_03].y,-45%);
+			tween(layer[text_03].x,67.166%,1);
+			tween(layer[text_03].alpha,.8,.5);
+			tween(layer[scrollarea].x, -100%);
+		</action>
+		<action name="reset_arrow">
+			tween(layer[cc_01].y,-45%);
+			tween(layer[text_01].x,0.5%,1);
+			tween(layer[text_01].alpha,.8,.5);
+			tween(layer[cc_02].y,-45%);
+			tween(layer[text_02].x,33.833%,1);
+			tween(layer[text_02].alpha,.8,.5);
+			tween(layer[cc_03].y,-45%);
+			tween(layer[text_03].x,67.166%,1);
+			tween(layer[text_03].alpha,.8,.5);
+		</action>
 	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+			   <textstyle name="DEFAULT5"  origin="cursor" edge="rightbottom" xoffset="0" yoffset="45" fadeintime="1"        showtime="0.1"
+           fadetime="0" font="Arial" fontsize="22.0" bold="true" italic="false" textcolor="0xFFFFFF" textalign="none" padding="0" css="" background="false"     backgroundcolor="0xffffff" backgroundalpha="0.3" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="0" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />
+		   <textstyle name="DEFAULT2"  origin="cursor" edge="top" xoffset="0" yoffset="20" fadeintime="1"        showtime="0.1"
+           fadetime="0" font="Futura" fontsize="22.0" bold="true" italic="false" textcolor="0x75c3f3" textalign="none" padding="0" css="" background="true"     backgroundcolor="0x000000" backgroundalpha="0.6" border="false" bordercolor="0x000000" borderalpha="1.0" borderwidth="1.0" roundedge="5" shadow="0.0"   shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0" textshadow="0.0" textshadowrange="4.0" textshadowangle="45"           textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""           noclip="true"
+           />
+		   <textstyle name="DEFAULT1" origin="cursor" edge="right" xoffset="0" yoffset="50" fadeintime="0.2"        showtime="0.2"
+           fadetime="0.2" font="Arial" fontsize="20.0" bold="false" italic="true" textcolor="0x75C4F4" textalign="center" padding="5" css="" background="true"     backgroundcolor="0x1a2545" backgroundalpha="1" border="true" bordercolor="0x000000" borderalpha="1.0" borderwidth="0.3" roundedge="3" shadow="4" shadowrange="15.0" shadowangle="60" shadowcolor="0x75C4F4" shadowalpha="1.0" textshadow="0.0" textshadowrange="0.0"           textshadowangle="45" textshadowcolor="0x000000"           textshadowalpha="1.0"           alpha="1.0"           parent=""
+           noclip="true"
+           />
+		   
+		<style name="_hotspot_ani"
+		url="images/hotspot.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
+		timer="0"    delay="0"
+		onloaded="       
+        if(icon_type == 'arrow', set(crop,0|0|54|54);set(crop_normal,0|0|54|54);set(crop_hover,0|54|54|54);set(crop_down,0|108|54|54);set(delay,.7);animation(););
+        if(icon_type == 'camera', set(crop,54|0|54|54);set(crop_normal,54|0|54|54);set(crop_hover,54|54|54|54);set(crop_down,54|108|54|54);set(delay,1.3););
+        if(icon_type == 'info', set(crop,108|0|54|54);set(crop_normal,108|0|54|54);set(crop_hover,108|54|54|54);set(crop_down,108|108|54|54);set(delay,.7);animation(););
+        if(icon_type == 'video', set(crop,162|0|54|54);set(crop_normal,162|0|54|54);set(crop_hover,162|54|54|54);set(crop_down,162|108|54|54);set(delay,1.2); animation(););
+		if(icon_type == 'close_X', set(crop,216|0|54|54);set(crop_normal,216|0|54|54);set(crop_hover,216|54|54|54);set(crop_down,216|108|54|54);set(delay,2););
+		if(icon_type == 'close_X_W', set(crop,270|0|54|54);set(crop_normal,270|0|54|54);set(crop_hover,270|54|54|54);set(crop_down,270|108|54|54);set(delay,2);animation(););
+        if(toscene !== null, if(toscene != '', txtadd(hotspot[get(name)].onclick,toscene_action(););););
+        if(image_url !== null, if(image_url != '', txtadd(hotspot[get(name)].onclick,showimage_action(););););
+        txtadd(hotspot[get(name)].onover,copy(crop,crop_hover););
+        txtadd(hotspot[get(name)].onout,copy(crop,crop_normal););
+        txtadd(hotspot[get(name)].ondown,copy(crop,crop_down););
+        txtadd(hotspot[get(name)].onup,copy(crop,crop_normal););
+        resetsize();
+		"
+		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
+		/>
+		<style name="primenenieIK" url="add/IKONKI_PRIMENENIE3.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
+		width="64" height="prop" 
+		edge="center"
+		rotate="0"
+		scale="1"
+
+		alpha="1"
+		bgcolor="0x000000"
+		bgalpha="0.0"
+		bgborder="0"
+		bgroundedge="0"
+		bgshadow=""
+		bgcapture="false"/>
+		
+		<style name="_hotspot_SERii"
+		url="add/serii_PROD.png"  handcursor="true"		align="center"
+		width="64" height="prop" 
+		edge="center"
+		rotate="0"
+		scale="1"
+		alpha="1"
+		bgcolor="0x000000"
+		bgalpha="0.0"
+		bgborder="0"
+		bgroundedge="0"
+		bgshadow=""  crop=""    crop_normal=""    crop_hover=""    crop_down=""
+		timer="0"    delay="0"
+		onloaded="       
+        if(icon_type == 'offic', set(crop,0|0|256|256);set(crop_normal,0|0|256|256);set(crop_hover,0|0|256|256);set(crop_down,0|0|256|256););
+        if(icon_type == 'torg_centr', set(crop,256|0|256|256);set(crop_normal,256|0|256|256);set(crop_hover,256|0|256|256);set(crop_down,256|0|256|256););
+        if(icon_type == 'ultra_tonk', set(crop,512|0|256|256);set(crop_normal,512|0|256|256);set(crop_hover,512|0|256|256);set(crop_down,512|0|256|256););
+        if(icon_type == 'sclad', set(crop,768|0|256|256);set(crop_normal,768|0|256|256);set(crop_hover,768|0|256|256);set(crop_down,768|0|256|256););
+		if(icon_type == 'promishl', set(crop,1024|0|256|256);set(crop_normal,1024|0|256|256);set(crop_hover,1024|0|256|256);set(crop_down,1024|0|256|256););
+		if(icon_type == 'GKH', set(crop,1280|0|256|256);set(crop_normal,1280|0|256|256);set(crop_hover,1280|0|256|256);set(crop_down,1280|0|256|256););"
+		
+		/>
+		
+		<style name="priemushestvaIK" url="add/IKONKI_PRIEMUSH.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
+		width="64" height="prop" 
+		edge="center"
+		rotate="0"
+		scale="1"
+		alpha="1"
+		bgcolor="0x000000"
+		bgalpha="0.0"
+		bgborder="0"
+		bgroundedge="0"
+		bgshadow=""
+		bgcapture="false"/>
+		
+		<style name="HOTspIK"
+		url="ADD/IKONKI_PRIMENENIE3.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
+		timer="0"    delay="0"
+		onloaded="       
+        if(icon_type == 'park', set(crop,384|0|128|128);set(crop_normal,384|0|128|128);set(crop_hover,384|128|128|128);set(crop_down,384|0|128|128););
+        if(icon_type == 'avto', set(crop,256|0|128|128);set(crop_normal,256|0|128|128);set(crop_hover,256|128|128|128);set(crop_down,256|0|128|128););
+        if(icon_type == 'aley',set(crop,1024|0|128|128);set(crop_normal,1024|0|128|128);set(crop_hover,1024|128|128|128);set(crop_down,1024|0|128|128););
+        if(icon_type == 'arh', set(crop,896|0|128|128);set(crop_normal,896|0|128|128);set(crop_hover,896|128|128|128);set(crop_down,896|0|128|128););
+		if(icon_type == 'glow', set(crop,1152|0|128|128);set(crop_normal,1152|0|128|128);set(crop_hover,1152|0|128|128);set(crop_down,1152|0|128|128);
+		set(delay,.3);animation(););
+		if(icon_type == 'close_X_W', set(crop,270|0|54|54);set(crop_normal,270|0|54|54);set(crop_hover,270|54|54|54);set(crop_down,270|108|54|54);set(delay,2);animation(););
+        if(toscene !== null, if(toscene != '', txtadd(hotspot[get(name)].onclick,toscene_action(););););
+        if(image_url !== null, if(image_url != '', txtadd(hotspot[get(name)].onclick,showimage_action(););););
+        txtadd(hotspot[get(name)].onover,copy(crop,crop_hover););
+        txtadd(hotspot[get(name)].onout,copy(crop,crop_normal););
+        txtadd(hotspot[get(name)].ondown,copy(crop,crop_down););
+        txtadd(hotspot[get(name)].onup,copy(crop,crop_normal););
+        resetsize();
+		"
+		/>
+		
+				<style name="PROD"
+				url="ADD/serii_PROD.png"
+				keep="true"		
+				visible="true"		
+				enabled="true"		
+				handcursor="true"		
+				align="center"
+				width="64" 
+				height="prop" 
+				edge="center"
+				rotate="0"
+				scale="1"
+				alpha="1"
+				bgcolor="0x000000"
+				bgalpha="0.0"
+				bgborder="0"
+				bgroundedge="0"
+				bgshadow=""
+				bgcapture="false"
+				/>
 	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+			<style name="hs_BIG_sphere_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0.2"
+			 fillcolor="0x75c3f3"
+			 fillalpha="0.6"
+			 borderwidth="1"
+			 bordercolor="0x00e4ff"
+			 borderalpha="0.1"
+			 bgshadow="0 5 11 0x5ae1ff 0.5"
+			 onhover="showtext(Подвесной светильник типа [dq]DOME[dq], DEFAULT2);"
+			 onout=""
+			 ondown=""
+			 onup=""
+			 onclick="action(open_st);"
+			 onloaded=""
+			/>
+			
+			<style name="hs_squere_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0.2"
+			 fillcolor="0x75c3f3"
+			 fillalpha="0.8"
+			 borderwidth="1"
+			 bordercolor="0x00e4ff"
+			 borderalpha="0.1"
+			 bgshadow="0 5 11 0x5ae1ff 0.5"
+			 onhover="showtext(Светодиодная панель [dq]ПРОМО[dq], DEFAULT2);"
+			 onout=""
+			 ondown=""
+			 onup=""
+			 onclick="action(open_st);"
+			 onloaded=""
+			/>
+			
+			<style name="hs_down"
+			 keep="false"
+			 visible="true"
+			 enabled="false" 
+			 handcursor="false"
+			 capture="false"
+			 zorder="22"
+			 alpha="0.3"
+			 fillcolor="0x75c3f3"
+			 fillalpha="0.8"
+			 borderwidth="9"
+			 bordercolor="0x00e4ff"
+			 borderalpha="0.333"
+			 bgshadow="0 5 11 0x5ae1ff 0.5"
+			/>
+			
+			<style name="hs_down_SELECT"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(Светодиодная панель Downlight D200, DEFAULT2);"
+			 onout=""
+			 ondown=""
+			 onup=""
+			 onclick="action(open_st);"
+			 onloaded=""
+			/>
+
+	
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
+				<style name="hs_AREA_"
+		         keep="true"
+				 visible="true"
+				 enabled="true"
+				 handcursor="true"
+				 capture="false"
+				 style=""
+				 zorder="1"
+				 alpha="0.0"
+				 fillcolor="0x75C4F4"
+				 fillalpha="0.0"
+				 borderwidth="1.0"
+				 bordercolor="0xfff046"
+				 borderalpha="1.0"				 
+				 onhover=""				 
+				 ondown=""
+				 onup=""				
+				/>
 
 	<!-- startup action - load the first scene -->
 	<action name="startup" autorun="onstart">
@@ -75,17 +372,1482 @@
 
 
 	
-	<scene name="scene_02" title="02" onstart="" thumburl="panos/02.tiles/thumb.jpg" lat="" lng="" heading="">
+
+	<scene name="scene_rgb" title="rgb" onstart="" thumburl="panos/rgb.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/02.tiles/preview.jpg" />
+		<preview url="panos/rgb.tiles/preview.jpg" />
 
-		<image>
-			<cube url="panos/02.tiles/pano_%s.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/rgb.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/rgb.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/rgb.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
 		</image>
-
+		
+			<hotspot name="sphere"
+			style="hs_AREA_"
+			onhover="showtext(Зона освещения[dq]DOME[dq], DEFAULT2);"
+			onclick="loadscene(scene_sphere,MERGE,KEEPVIEW, BLEND(0.7));"
+			>
+			<point ath="-131.60431240304945" atv="2.9963808842348882"/>
+			<point ath="-133.0924478368258" atv="5.4593988059409995"/>
+			<point ath="-138.79525529549875" atv="12.774958916103134"/>
+			<point ath="-112.00047246862789" atv="16.830752096544902"/>
+			 <point ath="-80.56441115330949" atv="20.669624217735354"/>
+			 <point ath="-41.25391540679482" atv="13.757201036306673"/>
+			 <point ath="-24.26906761404905" atv="10.595342880712277"/>
+			 <point ath="16.764955114057784" atv="12.629184481099458"/>
+			 <point ath="19.10383367210568" atv="1.96255265360192"/>
+			 <point ath="-23.80558682963749" atv="2.3737299572491946"/>
+			 <point ath="-24.887960435921286" atv="9.866283925538909"/>
+			 <point ath="-42.87314837259822" atv="9.141600118218278"/>
+			 <point ath="-43.181757590452264" atv="2.0269595986719984"/>
+			</hotspot>
+			
+			<hotspot name="spot1"
+			style="hs_AREA_"
+			onhover="showtext(Зона освещения [dq]Downlight[dq], DEFAULT2);"
+			onclick="loadscene(scene_dawnlght,MERGE,KEEPVIEW, BLEND(0.7));"
+			> <point ath="73.69270089854888" atv="-3.179035559141883"/>
+ <point ath="-44.27322240655951" atv="-8.432595650920364"/>
+ <point ath="-43.00999536517247" atv="8.036816593041197"/>
+ <point ath="-26.25880099982527" atv="10.796161812353224"/>
+ <point ath="-24.035838489408434" atv="2.36570349361237"/>
+ <point ath="73.69270089854888" atv="2.036816593041197"/>
+ </hotspot>
+ 			<hotspot name="spot2"
+			style="hs_AREA_"
+			onhover="showtext(Зона освещения [dq]Downlight[dq], DEFAULT2);"
+			onclick="loadscene(scene_dawnlght,MERGE,KEEPVIEW, BLEND(0.7));"
+			> <point ath="-48.24074315091906" atv="-10.016157327829157"/>
+ <point ath="-46.88709792633222" atv="2.3965043640385586"/>
+ <point ath="-123.54124710606882" atv="2.8165238712803484"/>
+ <point ath="-123.22211295186872" atv="-10.384437799758231"/>
+ </hotspot>
+  			<hotspot name="spot3"
+			style="hs_AREA_"
+			onhover="showtext(Зона освещения [dq]Downlight[dq], DEFAULT2);"
+			onclick="loadscene(scene_dawnlght,MERGE,KEEPVIEW, BLEND(0.7));"
+			>  <point ath="104.8973870962729" atv="-3.5300693187633945"/>
+ <point ath="105.06912093381851" atv="1.1133965013846"/>
+ <point ath="146.27891680966408" atv="4.219904767602835"/>
+ <point ath="147.7581201597718" atv="16.02337880295657"/>
+ <point ath="-139.31587961997354" atv="13.329225083862656"/>
+ <point ath="-139.51049492723158" atv="4.880768128870095"/>
+ <point ath="-129.3768234049946" atv="2.2518517079806757"/>
+ <point ath="-128.9450488174621" atv="-9.494138821370042"/>
+ </hotspot>
+ 
+ <hotspot name="squere"
+			style="hs_AREA_"
+			onhover="showtext(Зона освещения [dq]ПРОМО[dq], DEFAULT2);"
+			onclick="loadscene(scene_squere,MERGE,KEEPVIEW, BLEND(0.7));"
+			>
+ <point ath="85.26967593096424" atv="4.298231322476148"/>
+ <point ath="-70.3352691008518" atv="19.553708198524564"/>
+ <point ath="-105.46527372383682" atv="19.352860178471396"/>
+ <point ath="92.86888068635344" atv="4.461249369200041"/>
+ </hotspot>			
 	</scene>
 
+	<scene name="scene_sphere" title="sphere" onstart="" thumburl="panos/sphere.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/sphere.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/sphere.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/sphere.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/sphere.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		
+		<hotspot name="hs4" style="hs_BIG_sphere_SELECT">
+ <point ath="-124.18455367840022" atv="0.21820547091887293"/>
+ <point ath="-131.37441590318952" atv="0.21493758985542935"/>
+ <point ath="-131.45920465308967" atv="-0.53662904079332"/>
+ <point ath="-131.25019796644372" atv="-1.674604757636476"/>
+ <point ath="-130.84159549848036" atv="-2.426948179749341"/>
+ <point ath="-130.34310837894307" atv="-3.044116870542747"/>
+ <point ath="-129.8672776790138" atv="-3.457143822581578"/>
+ <point ath="-129.14163258689803" atv="-3.827456734947312"/>
+ <point ath="-128.45997330044202" atv="-4.01571282095719"/>
+ <point ath="-127.7539170919905" atv="-4.113003904231416"/>
+ <point ath="-127.04655347240035" atv="-4.027524203721536"/>
+ <point ath="-126.38338351527318" atv="-3.849496385136595"/>
+ <point ath="-125.7878399832359" atv="-3.5556247575251256"/>
+ <point ath="-125.19144779395967" atv="-3.099961315490939"/>
+ <point ath="-124.66352820872422" atv="-2.435531420107853"/>
+ <point ath="-124.29619526217829" atv="-1.6531235005437415"/>
+ <point ath="-124.11282999356942" atv="-0.984032915020476"/>
+ </hotspot>
+
+ <hotspot name="hs5" style="hs_BIG_sphere_SELECT">
+ <point ath="-115.11431121185942" atv="0.28622876370570677"/>
+ <point ath="-106.60357151944163" atv="0.24117978610389784"/>
+ <point ath="-106.60445834922788" atv="-0.4533745317897639"/>
+ <point ath="-106.65183413744487" atv="-1.33228085863752"/>
+ <point ath="-106.88393780632313" atv="-2.0255135892658083"/>
+ <point ath="-107.18533609119615" atv="-2.717975609816306"/>
+ <point ath="-107.69485617547161" atv="-3.478694997577286"/>
+ <point ath="-108.36604397367336" atv="-3.9852857719319004"/>
+ <point ath="-108.94455960725853" atv="-4.421789819534429"/>
+ <point ath="-109.63855424600695" atv="-4.673845630374996"/>
+ <point ath="-110.40165994713544" atv="-4.810332725277015"/>
+ <point ath="-111.14123059106643" atv="-4.831475397763047"/>
+ <point ath="-111.88031119251244" atv="-4.714517338828893"/>
+ <point ath="-112.66482807205023" atv="-4.505111822979541"/>
+ <point ath="-113.3105082253511" atv="-4.11265305209762"/>
+ <point ath="-113.90958477826922" atv="-3.6512726092212864"/>
+ <point ath="-114.46279381891753" atv="-2.891587929857966"/>
+ <point ath="-114.90094055271135" atv="-2.085868660183727"/>
+ <point ath="-115.08616937989919" atv="-1.4644529459834075"/>
+ <point ath="-115.20354555003308" atv="-0.5434357069747932"/>
+ </hotspot>
+
+ <hotspot name="hs6" style="hs_BIG_sphere_SELECT">
+ <point ath="-115.11431121185942" atv="0.28622876370570677"/>
+ <point ath="-106.60357151944163" atv="0.24117978610389784"/>
+ <point ath="-106.60445834922788" atv="-0.4533745317897639"/>
+ <point ath="-106.65183413744487" atv="-1.33228085863752"/>
+ <point ath="-106.88393780632313" atv="-2.0255135892658083"/>
+ <point ath="-107.18533609119615" atv="-2.717975609816306"/>
+ <point ath="-107.69485617547161" atv="-3.478694997577286"/>
+ <point ath="-108.36604397367336" atv="-3.9852857719319004"/>
+ <point ath="-108.94455960725853" atv="-4.421789819534429"/>
+ <point ath="-109.63855424600695" atv="-4.673845630374996"/>
+ <point ath="-110.40165994713544" atv="-4.810332725277015"/>
+ <point ath="-111.14123059106643" atv="-4.831475397763047"/>
+ <point ath="-111.88031119251244" atv="-4.714517338828893"/>
+ <point ath="-112.66482807205023" atv="-4.505111822979541"/>
+ <point ath="-113.3105082253511" atv="-4.11265305209762"/>
+ <point ath="-113.90958477826922" atv="-3.6512726092212864"/>
+ <point ath="-114.46279381891753" atv="-2.891587929857966"/>
+ <point ath="-114.90094055271135" atv="-2.085868660183727"/>
+ <point ath="-115.08616937989919" atv="-1.4644529459834075"/>
+ <point ath="-115.20354555003308" atv="-0.5434357069747932"/>
+ </hotspot>
+
+ <hotspot name="hs7" style="hs_BIG_sphere_SELECT">
+ <point ath="-93.7692048898212" atv="0.2382827365600488"/>
+ <point ath="-84.66068085778068" atv="0.24127877895279864"/>
+ <point ath="-84.59114160407972" atv="-0.4309919711917775"/>
+ <point ath="-84.59118513238832" atv="-1.195384930876443"/>
+ <point ath="-84.75342853802255" atv="-2.1438030943648245"/>
+ <point ath="-85.14717594596812" atv="-2.928790254413257"/>
+ <point ath="-85.65642277417948" atv="-3.596756619529059"/>
+ <point ath="-86.25782427318495" atv="-4.1938186197129435"/>
+ <point ath="-87.06666808865924" atv="-4.696542346864518"/>
+ <point ath="-87.73605550083835" atv="-4.9916376615988165"/>
+ <point ath="-88.51981064541792" atv="-5.193301919516135"/>
+ <point ath="-89.25636979627592" atv="-5.211301103660295"/>
+ <point ath="-89.99161716945218" atv="-5.137206251307117"/>
+ <point ath="-90.84005493670907" atv="-4.879071800361631"/>
+ <point ath="-91.57218378834551" atv="-4.530402820906897"/>
+ <point ath="-92.23437750215828" atv="-4.0683427020855705"/>
+ <point ath="-92.82771720195592" atv="-3.3105950205681802"/>
+ <point ath="-93.30614371948144" atv="-2.6451714924192156"/>
+ <point ath="-93.58129425613072" atv="-1.6613576713685432"/>
+ </hotspot>
+
+ <hotspot name="hs8" style="hs_BIG_sphere_SELECT">
+ <point ath="-93.7692048898212" atv="0.2382827365600488"/>
+ <point ath="-84.66068085778068" atv="0.24127877895279864"/>
+ <point ath="-84.59114160407972" atv="-0.4309919711917775"/>
+ <point ath="-84.59118513238832" atv="-1.195384930876443"/>
+ <point ath="-84.75342853802255" atv="-2.1438030943648245"/>
+ <point ath="-85.14717594596812" atv="-2.928790254413257"/>
+ <point ath="-85.65642277417948" atv="-3.596756619529059"/>
+ <point ath="-86.25782427318495" atv="-4.1938186197129435"/>
+ <point ath="-87.06666808865924" atv="-4.696542346864518"/>
+ <point ath="-87.73605550083835" atv="-4.9916376615988165"/>
+ <point ath="-88.51981064541792" atv="-5.193301919516135"/>
+ <point ath="-89.25636979627592" atv="-5.211301103660295"/>
+ <point ath="-89.99161716945218" atv="-5.137206251307117"/>
+ <point ath="-90.84005493670907" atv="-4.879071800361631"/>
+ <point ath="-91.57218378834551" atv="-4.530402820906897"/>
+ <point ath="-92.23437750215828" atv="-4.0683427020855705"/>
+ <point ath="-92.82771720195592" atv="-3.3105950205681802"/>
+ <point ath="-93.30614371948144" atv="-2.6451714924192156"/>
+ <point ath="-93.58129425613072" atv="-1.6613576713685432"/>
+ </hotspot>
+
+ <hotspot name="hs9" style="hs_BIG_sphere_SELECT">
+ <point ath="-72.3458230155245" atv="0.19366976388207174"/>
+ <point ath="-63.91068809002729" atv="0.31072316619864737"/>
+ <point ath="-63.818602199211455" atv="-0.3611498414761811"/>
+ <point ath="-63.88898904133288" atv="-1.448936331801935"/>
+ <point ath="-64.19059567666744" atv="-2.3272849274020215"/>
+ <point ath="-64.67721229032594" atv="-3.1812172500274727"/>
+ <point ath="-65.32558467509364" atv="-3.7803143324742825"/>
+ <point ath="-66.04316203113098" atv="-4.308986829478481"/>
+ <point ath="-66.78352872739566" atv="-4.652528362469297"/>
+ <point ath="-67.56972455485078" atv="-4.788461981488113"/>
+ <point ath="-68.37839601629133" atv="-4.785868231304883"/>
+ <point ath="-69.16307387224833" atv="-4.713789231730218"/>
+ <point ath="-69.78569663490293" atv="-4.458773732880586"/>
+ <point ath="-70.17731585953072" atv="-4.296316655321974"/>
+ <point ath="-70.77593546831633" atv="-3.88058025693009"/>
+ <point ath="-71.32798437775477" atv="-3.3961314103557694"/>
+ <point ath="-71.83430860528205" atv="-2.590637204053133"/>
+ <point ath="-72.17960041885999" atv="-1.900291051211886"/>
+ <point ath="-72.31891671775179" atv="-1.1183471602606032"/>
+ </hotspot>
+
+ <hotspot name="hs10" style="hs_BIG_sphere_SELECT">
+ <point ath="-72.3458230155245" atv="0.19366976388207174"/>
+ <point ath="-63.91068809002729" atv="0.31072316619864737"/>
+ <point ath="-63.818602199211455" atv="-0.3611498414761811"/>
+ <point ath="-63.88898904133288" atv="-1.448936331801935"/>
+ <point ath="-64.19059567666744" atv="-2.3272849274020215"/>
+ <point ath="-64.67721229032594" atv="-3.1812172500274727"/>
+ <point ath="-65.32558467509364" atv="-3.7803143324742825"/>
+ <point ath="-66.04316203113098" atv="-4.308986829478481"/>
+ <point ath="-66.78352872739566" atv="-4.652528362469297"/>
+ <point ath="-67.56972455485078" atv="-4.788461981488113"/>
+ <point ath="-68.37839601629133" atv="-4.785868231304883"/>
+ <point ath="-69.16307387224833" atv="-4.713789231730218"/>
+ <point ath="-69.78569663490293" atv="-4.458773732880586"/>
+ <point ath="-70.17731585953072" atv="-4.296316655321974"/>
+ <point ath="-70.77593546831633" atv="-3.88058025693009"/>
+ <point ath="-71.32798437775477" atv="-3.3961314103557694"/>
+ <point ath="-71.83430860528205" atv="-2.590637204053133"/>
+ <point ath="-72.17960041885999" atv="-1.900291051211886"/>
+ <point ath="-72.31891671775179" atv="-1.1183471602606032"/>
+ </hotspot>
+
+ <hotspot name="hs11" style="hs_BIG_sphere_SELECT">
+ <point ath="-56.38465558060835" atv="0.15864032920014956"/>
+ <point ath="-49.33149678548307" atv="0.22888160094686108"/>
+ <point ath="-49.14653665161933" atv="-0.23440089782148937"/>
+ <point ath="-49.147075385957635" atv="-0.8362242687835876"/>
+ <point ath="-49.263379016166084" atv="-1.460640741350362"/>
+ <point ath="-49.56482485008519" atv="-2.1537130018371524"/>
+ <point ath="-49.9123171971973" atv="-2.707475475985965"/>
+ <point ath="-50.537344892852275" atv="-3.3294952238833138"/>
+ <point ath="-51.20829243166355" atv="-3.7432183135658685"/>
+ <point ath="-51.83265070791549" atv="-3.9952211492353107"/>
+ <point ath="-52.47981043800553" atv="-4.10879271500151"/>
+ <point ath="-53.17277210444877" atv="-4.106973839855393"/>
+ <point ath="-53.88840930169556" atv="-3.921120771503508"/>
+ <point ath="-54.71865249206223" atv="-3.5967259384209442"/>
+ <point ath="-55.34120776694931" atv="-3.0663688123226174"/>
+ <point ath="-55.87127041619084" atv="-2.5131359909987996"/>
+ <point ath="-56.24068648717707" atv="-1.730338281773744"/>
+ <point ath="-56.4496765139246" atv="-0.947464081005066"/>
+ </hotspot>
+
+ <hotspot name="hs12" style="hs_BIG_sphere_SELECT">
+ <point ath="-56.38465558060835" atv="0.15864032920014956"/>
+ <point ath="-49.33149678548307" atv="0.22888160094686108"/>
+ <point ath="-49.14653665161933" atv="-0.23440089782148937"/>
+ <point ath="-49.147075385957635" atv="-0.8362242687835876"/>
+ <point ath="-49.263379016166084" atv="-1.460640741350362"/>
+ <point ath="-49.56482485008519" atv="-2.1537130018371524"/>
+ <point ath="-49.9123171971973" atv="-2.707475475985965"/>
+ <point ath="-50.537344892852275" atv="-3.3294952238833138"/>
+ <point ath="-51.20829243166355" atv="-3.7432183135658685"/>
+ <point ath="-51.83265070791549" atv="-3.9952211492353107"/>
+ <point ath="-52.47981043800553" atv="-4.10879271500151"/>
+ <point ath="-53.17277210444877" atv="-4.106973839855393"/>
+ <point ath="-53.88840930169556" atv="-3.921120771503508"/>
+ <point ath="-54.71865249206223" atv="-3.5967259384209442"/>
+ <point ath="-55.34120776694931" atv="-3.0663688123226174"/>
+ <point ath="-55.87127041619084" atv="-2.5131359909987996"/>
+ <point ath="-56.24068648717707" atv="-1.730338281773744"/>
+ <point ath="-56.4496765139246" atv="-0.947464081005066"/>
+ </hotspot>
+
+ <hotspot name="hs13" style="hs_BIG_sphere_SELECT">
+ <point ath="-44.88320873931133" atv="0.13544375893703745"/>
+ <point ath="-38.833794326157204" atv="0.20578769201746255"/>
+ <point ath="-38.740997940359534" atv="-0.41975502086799177"/>
+ <point ath="-38.85677018715131" atv="-1.2297966475552415"/>
+ <point ath="-39.180868599771145" atv="-1.9230624474061262"/>
+ <point ath="-39.57420376327161" atv="-2.430571073793061"/>
+ <point ath="-40.059837447630684" atv="-2.8219076861177004"/>
+ <point ath="-40.70680047856473" atv="-3.2351109541026184"/>
+ <point ath="-41.37629397678057" atv="-3.463268516216452"/>
+ <point ath="-42.13742375469394" atv="-3.5066387092737266"/>
+ <point ath="-42.874881073821484" atv="-3.2971480817074736"/>
+ <point ath="-43.54251967434311" atv="-2.972996861079295"/>
+ <point ath="-44.026016585160335" atv="-2.5118865937055115"/>
+ <point ath="-44.39433993633804" atv="-2.0741539950181203"/>
+ <point ath="-44.74028399491726" atv="-1.4066920250991"/>
+ </hotspot>
+
+ <hotspot name="hs14" style="hs_BIG_sphere_SELECT">
+ <point ath="-44.88320873931133" atv="0.13544375893703745"/>
+ <point ath="-38.833794326157204" atv="0.20578769201746255"/>
+ <point ath="-38.740997940359534" atv="-0.41975502086799177"/>
+ <point ath="-38.85677018715131" atv="-1.2297966475552415"/>
+ <point ath="-39.180868599771145" atv="-1.9230624474061262"/>
+ <point ath="-39.57420376327161" atv="-2.430571073793061"/>
+ <point ath="-40.059837447630684" atv="-2.8219076861177004"/>
+ <point ath="-40.70680047856473" atv="-3.2351109541026184"/>
+ <point ath="-41.37629397678057" atv="-3.463268516216452"/>
+ <point ath="-42.13742375469394" atv="-3.5066387092737266"/>
+ <point ath="-42.874881073821484" atv="-3.2971480817074736"/>
+ <point ath="-43.54251967434311" atv="-2.972996861079295"/>
+ <point ath="-44.026016585160335" atv="-2.5118865937055115"/>
+ <point ath="-44.39433993633804" atv="-2.0741539950181203"/>
+ <point ath="-44.74028399491726" atv="-1.4066920250991"/>
+ </hotspot>
+
+ <hotspot name="hs15" style="hs_BIG_sphere_SELECT">
+ <point ath="-10.17772635531702" atv="0.14484300364855338"/>
+ <point ath="-10.015117694923958" atv="-0.5464243013938503"/>
+ <point ath="-10.107427609591014" atv="-1.2641284182145986"/>
+ <point ath="-10.407968632878294" atv="-2.073081581669724"/>
+ <point ath="-10.777753415634947" atv="-2.741950292462303"/>
+ <point ath="-11.332101810103438" atv="-3.385812682086324"/>
+ <point ath="-12.116593266925747" atv="-3.934915434302666"/>
+ <point ath="-12.830838107459954" atv="-4.22987757451765"/>
+ <point ath="-13.566893008286002" atv="-4.408866399678533"/>
+ <point ath="-14.324714909278555" atv="-4.3808680759481735"/>
+ <point ath="-15.126253971532492" atv="-4.283136623369151"/>
+ <point ath="-15.926599153623329" atv="-3.8884882847603204"/>
+ <point ath="-16.474028768351275" atv="-3.4730070393290484"/>
+ <point ath="-17.089463768926464" atv="-2.8520402523919093"/>
+ <point ath="-17.544953822039133" atv="-2.2326163362262954"/>
+ <point ath="-17.72846392897077" atv="-1.592054466407549"/>
+ <point ath="-17.88993477055004" atv="-0.7913236066886212"/>
+ <point ath="-17.848644740160125" atv="0.19276402874910228"/>
+ </hotspot>
+
+ <hotspot name="hs16" style="hs_BIG_sphere_SELECT">
+ <point ath="-10.17772635531702" atv="0.14484300364855338"/>
+ <point ath="-10.015117694923958" atv="-0.5464243013938503"/>
+ <point ath="-10.107427609591014" atv="-1.2641284182145986"/>
+ <point ath="-10.407968632878294" atv="-2.073081581669724"/>
+ <point ath="-10.777753415634947" atv="-2.741950292462303"/>
+ <point ath="-11.332101810103438" atv="-3.385812682086324"/>
+ <point ath="-12.116593266925747" atv="-3.934915434302666"/>
+ <point ath="-12.830838107459954" atv="-4.22987757451765"/>
+ <point ath="-13.566893008286002" atv="-4.408866399678533"/>
+ <point ath="-14.324714909278555" atv="-4.3808680759481735"/>
+ <point ath="-15.126253971532492" atv="-4.283136623369151"/>
+ <point ath="-15.926599153623329" atv="-3.8884882847603204"/>
+ <point ath="-16.474028768351275" atv="-3.4730070393290484"/>
+ <point ath="-17.089463768926464" atv="-2.8520402523919093"/>
+ <point ath="-17.544953822039133" atv="-2.2326163362262954"/>
+ <point ath="-17.72846392897077" atv="-1.592054466407549"/>
+ <point ath="-17.88993477055004" atv="-0.7913236066886212"/>
+ <point ath="-17.848644740160125" atv="0.19276402874910228"/>
+ </hotspot>
+
+ <hotspot name="hs17" style="hs_BIG_sphere_SELECT">
+ <point ath="0.8802308793025304" atv="0.1920104545021757"/>
+ <point ath="8.750177940018261" atv="0.21838874668719363"/>
+ <point ath="8.820512987573636" atv="-0.3369103178272158"/>
+ <point ath="8.775984235068734" atv="-1.3075604305600383"/>
+ <point ath="8.45407450809057" atv="-2.045262774223318"/>
+ <point ath="8.132802614991306" atv="-2.850075896910903"/>
+ <point ath="7.282915749479287" atv="-3.6727801603540406"/>
+ <point ath="6.48067206118111" atv="-4.171282921803112"/>
+ <point ath="5.611647457780975" atv="-4.461263857133844"/>
+ <point ath="4.7904565998841235" atv="-4.54491260236984"/>
+ <point ath="3.9491755753576285" atv="-4.445310905166743"/>
+ <point ath="3.1998950454624833" atv="-4.1652691058468925"/>
+ <point ath="2.4205410012015136" atv="-3.670719410752064"/>
+ <point ath="1.7655726906006066" atv="-3.120039335552697"/>
+ <point ath="1.2450851137722339" atv="-2.2539088018078965"/>
+ <point ath="1.0406100458081369" atv="-1.730673015266641"/>
+ </hotspot>
+
+ <hotspot name="hs18" style="hs_BIG_sphere_SELECT">
+ <point ath="0.8802308793025304" atv="0.1920104545021757"/>
+ <point ath="8.750177940018261" atv="0.21838874668719363"/>
+ <point ath="8.820512987573636" atv="-0.3369103178272158"/>
+ <point ath="8.775984235068734" atv="-1.3075604305600383"/>
+ <point ath="8.45407450809057" atv="-2.045262774223318"/>
+ <point ath="8.132802614991306" atv="-2.850075896910903"/>
+ <point ath="7.282915749479287" atv="-3.6727801603540406"/>
+ <point ath="6.48067206118111" atv="-4.171282921803112"/>
+ <point ath="5.611647457780975" atv="-4.461263857133844"/>
+ <point ath="4.7904565998841235" atv="-4.54491260236984"/>
+ <point ath="3.9491755753576285" atv="-4.445310905166743"/>
+ <point ath="3.1998950454624833" atv="-4.1652691058468925"/>
+ <point ath="2.4205410012015136" atv="-3.670719410752064"/>
+ <point ath="1.7655726906006066" atv="-3.120039335552697"/>
+ <point ath="1.2450851137722339" atv="-2.2539088018078965"/>
+ <point ath="1.0406100458081369" atv="-1.730673015266641"/>
+ </hotspot>
+
+ <hotspot name="hs19" style="hs_BIG_sphere_SELECT">
+ <point ath="21.37172264202013" atv="0.17926956887730966"/>
+ <point ath="28.1037946432038" atv="0.15873227667556195"/>
+ <point ath="28.197187965347325" atv="-0.442703916974393"/>
+ <point ath="28.060058772459456" atv="-1.2745431418562696"/>
+ <point ath="27.761618774673764" atv="-2.0814848864404496"/>
+ <point ath="27.256170583050107" atv="-2.7705985763125973"/>
+ <point ath="26.659631491032997" atv="-3.365082082695524"/>
+ <point ath="25.88059107737604" atv="-3.727049546418436"/>
+ <point ath="25.05766591530397" atv="-3.8810906437985766"/>
+ <point ath="24.419235946349716" atv="-3.898619464669936"/>
+ <point ath="23.464142554865703" atv="-3.684963236360527"/>
+ <point ath="22.76086165525419" atv="-3.340199477696903"/>
+ <point ath="22.17185614718653" atv="-2.743634964056525"/>
+ <point ath="21.65187930023717" atv="-2.0345619369412478"/>
+ <point ath="21.401542228278117" atv="-1.2821990483524932"/>
+ <point ath="21.285998719942597" atv="-0.5530601225043994"/>
+ </hotspot>
+
+ <hotspot name="hs20" style="hs_BIG_sphere_SELECT">
+ <point ath="21.37172264202013" atv="0.17926956887730966"/>
+ <point ath="28.1037946432038" atv="0.15873227667556195"/>
+ <point ath="28.197187965347325" atv="-0.442703916974393"/>
+ <point ath="28.060058772459456" atv="-1.2745431418562696"/>
+ <point ath="27.761618774673764" atv="-2.0814848864404496"/>
+ <point ath="27.256170583050107" atv="-2.7705985763125973"/>
+ <point ath="26.659631491032997" atv="-3.365082082695524"/>
+ <point ath="25.88059107737604" atv="-3.727049546418436"/>
+ <point ath="25.05766591530397" atv="-3.8810906437985766"/>
+ <point ath="24.419235946349716" atv="-3.898619464669936"/>
+ <point ath="23.464142554865703" atv="-3.684963236360527"/>
+ <point ath="22.76086165525419" atv="-3.340199477696903"/>
+ <point ath="22.17185614718653" atv="-2.743634964056525"/>
+ <point ath="21.65187930023717" atv="-2.0345619369412478"/>
+ <point ath="21.401542228278117" atv="-1.2821990483524932"/>
+ <point ath="21.285998719942597" atv="-0.5530601225043994"/>
+ </hotspot>
+
+ <hotspot name="hs21" style="hs_BIG_sphere_SELECT">
+ <point ath="36.63122818641119" atv="0.31313205106573927"/>
+ <point ath="47.558730113293336" atv="0.31829258512740655"/>
+ <point ath="47.65133638562838" atv="-0.7715323111141748"/>
+ <point ath="47.53526151732984" atv="-1.8371470830845835"/>
+ <point ath="47.094710420469596" atv="-3.1089620864917595"/>
+ <point ath="46.39952120699502" atv="-4.2155958400815186"/>
+ <point ath="45.70472222269757" atv="-4.881598780210084"/>
+ <point ath="44.91793256345028" atv="-5.4988951233853545"/>
+ <point ath="44.01649226535045" atv="-5.929741386796551"/>
+ <point ath="42.978157108145524" atv="-6.128665291437004"/>
+ <point ath="42.14937652842622" atv="-6.2585776740890235"/>
+ <point ath="41.25361584102393" atv="-6.20417469454258"/>
+ <point ath="40.520501576482104" atv="-6.036760071724764"/>
+ <point ath="39.81209811014395" atv="-5.778164699465059"/>
+ <point ath="39.037242270821366" atv="-5.313929254864957"/>
+ <point ath="38.33288018642395" atv="-4.7596687206998265"/>
+ <point ath="37.8115128027373" atv="-4.185140468654018"/>
+ <point ath="37.33628289382244" atv="-3.4749799752261694"/>
+ <point ath="36.86170873608273" atv="-2.537700987732909"/>
+ <point ath="36.657915645273704" atv="-1.5569838145415233"/>
+ </hotspot>
+			<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
+		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
+			<layer name="image_01" url="%CURRENTXML%/images/DOME_1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_02" url="%CURRENTXML%/images/DOME_2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_03" url="%CURRENTXML%/images/DOME_1.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
+			</layer>
+			</layer>
+
+		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
+		>
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Подвесной светильник типа [dq]DOME[dq][/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-%C2%ABakczentnoe-svetodiodnoe-osveshhenie%C2%BB/podvesnoj-svetilnik-tipa-dome.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+				/>
+			</layer>
+
+			
+			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="20%" x="0" width="40%" height="80%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true" maskchildren="true">
+			<layer name="TEHharacter" keep="true" type="container" align="centertop" edge="centertop" y="1%" x="0" width="100%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545" scalechildren="true"		
+			>
+			<layer name="kratk_opis" type="text" align="center" x="-33%" y="0" html="Краткое[br]описание" css="font-family:Arial; color:#000000; font-size:14px" 
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="1" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 1" onclick="set(layer[text_op].alpha, 1); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 0);  set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 1); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 1');" 
+			
+			/>
+			<layer name="teh_opis" type="text" align="center" x="0" y="0" html="Технические[br]особенности" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 1); set(layer[text_prim_teh].alpha, 0); set(layer[teh_opis].bgalpha, 1); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			<layer name="priemush" type="text" align="center" x="33%" y="0" html="Область[br]применения" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			</layer>
+			
+
+			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии [dq]Акцентное освещение[dq] предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[br]
+✔Используются для акцентирования внимания на определенных зонах.[br]
+✔Производятся под заказ и соответствуют индивидуальным требованиям.
+				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии Акцентное освещение предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+			
+			</layer>
+
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
+Напряжение питания[br]
+Мощность[br]
+Световой поток[br]
+Температура свечения[br]
+Степень защиты:[br]
+Габаритные размеры[br]
+Тип монтажа[br]
+Цвет корпуса[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
+85-265 В[br]
+18 Вт[br]
+1500 Лм[br]
+3000 К[br]
+IP40[br]
+D450хH225 мм[br]
+подвесной[br]
+Снаружи: темно-серый.
+[br]Внутри: темно-красный.[br]
+" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			</layer>
+			
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для акцентирования внимания на определенных зонах." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
+			</layer>
+			</layer>
+			</layer>
+						
+			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
+			/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
+			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
+			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			</layer>			
+			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
+			/>
+			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
+			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
+			</layer></layer>
+		</layer>
+	</scene>
+
+		<scene name="scene_dawnlght" title="dawnlght" onstart="" thumburl="panos/dawnlght.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/dawnlght.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/dawnlght.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/dawnlght.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/dawnlght.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		
+		<hotspot name="shs4" style="hs_down_SELECT">
+ <point ath="66.51265252553765" atv="-3.979256019495595"/>
+ <point ath="66.44268590509034" atv="-3.5156509481682607"/>
+ <point ath="71.9904458753445" atv="-2.6649417232334645"/>
+ </hotspot>
+
+ <hotspot name="shs5" style="hs_down_SELECT">
+ <point ath="61.42540852802972" atv="-4.72628273460044"/>
+ <point ath="61.39511967528068" atv="-4.225715753252616"/>
+ <point ath="60.60924784633255" atv="-4.282213591416003"/>
+ </hotspot>
+
+ <hotspot name="shs6" style="hs_down_SELECT">
+ <point ath="58.829886414482075" atv="-5.153126431234565"/>
+ <point ath="58.80046899034852" atv="-4.602709637448001"/>
+ <point ath="58.093430428068245" atv="-4.63371227460315"/>
+ </hotspot>
+
+ <hotspot name="shs7" style="hs_down_SELECT">
+ <point ath="55.87277543997311" atv="-5.508782962926018"/>
+ <point ath="55.82353263131313" atv="-5.116680724345751"/>
+ <point ath="55.03781063217809" atv="-5.122840538330533"/>
+ </hotspot>
+
+ <hotspot name="shs8" style="hs_down_SELECT">
+ <point ath="52.24316088121577" atv="-6.0411309857336475"/>
+ <point ath="52.23775806235858" atv="-5.487818577418599"/>
+ <point ath="51.38483846111842" atv="-5.542317896296149"/>
+ </hotspot>
+
+ <hotspot name="shs9" style="hs_down_SELECT">
+ <point ath="48.14089918577429" atv="-6.510053568622124"/>
+ <point ath="48.09047027896804" atv="-6.048939664370903"/>
+ <point ath="47.21098352799163" atv="-6.034081886032605"/>
+ </hotspot>
+
+ <hotspot name="shs10" style="hs_down_SELECT">
+ <point ath="43.22231351115653" atv="-7.084263748332776"/>
+ <point ath="43.217570652781774" atv="-6.622913535118437"/>
+ <point ath="42.38489411938713" atv="-6.67819370159898"/>
+ </hotspot>
+
+ <hotspot name="shs11" style="hs_down_SELECT">
+ <point ath="37.154042061941595" atv="-7.7985498542751595"/>
+ <point ath="37.14604293035825" atv="-7.106612710764402"/>
+ <point ath="36.31270651379543" atv="-7.1626777469270095"/>
+ </hotspot>
+
+ <hotspot name="shs12" style="hs_down_SELECT">
+ <point ath="30.127115176735742" atv="-8.435163495512743"/>
+ <point ath="30.164090247104355" atv="-7.7434537888483534"/>
+ <point ath="29.053274475372064" atv="-7.8052153731831435"/>
+ </hotspot>
+
+ <hotspot name="shs13" style="hs_down_SELECT">
+ <point ath="22.010019789241255" atv="-9.066206706562035"/>
+ <point ath="21.97876162899928" atv="-8.28146729591027"/>
+ <point ath="20.88386323681641" atv="-8.33945679327622"/>
+ </hotspot>
+
+ <hotspot name="shs14" style="hs_down_SELECT">
+ <point ath="12.754478794138322" atv="-9.505512680232549"/>
+ <point ath="12.789018702348244" atv="-8.651809011803117"/>
+ <point ath="11.277451681356979" atv="-8.718826137937617"/>
+ </hotspot>
+
+ <hotspot name="shs15" style="hs_down_SELECT">
+ <point ath="2.7623391436168276" atv="-9.767250962196988"/>
+ <point ath="2.75164058402072" atv="-8.936806329278438"/>
+ </hotspot>
+
+ <hotspot name="shs16" style="hs_down_SELECT">
+ <point ath="2.2625476923550423" atv="-8.943711103583754"/>
+ <point ath="1.5395329175011057" atv="-8.952746719524049"/>
+ <point ath="1.641449139413453" atv="-9.783494801597998"/>
+ </hotspot>
+
+ <hotspot name="shs17" style="hs_down_SELECT">
+ <point ath="-7.4262192707240615" atv="-9.540566106398614"/>
+ <point ath="-7.407551303958655" atv="-8.938793637278746"/>
+ <point ath="-8.414831639112379" atv="-8.877122644220677"/>
+ <point ath="-8.505311775326902" atv="-9.479890945141268"/>
+ </hotspot>
+
+ <hotspot name="shs18" style="hs_down_SELECT">
+ <point ath="-17.142993963487697" atv="-9.273033685404208"/>
+ <point ath="-17.102668089219776" atv="-8.694664225359599"/>
+ <point ath="-18.246890583243896" atv="-8.68360053723528"/>
+ </hotspot>
+
+ <hotspot name="shs19" style="hs_down_SELECT">
+ <point ath="-25.965115656531793" atv="-8.718995953222866"/>
+ <point ath="-25.820073968111274" atv="-8.098027393520619"/>
+ <point ath="-26.801579401780884" atv="-8.077254687633157"/>
+ </hotspot>
+
+ <hotspot name="shs20" style="hs_down_SELECT">
+ <point ath="-33.52450912143638" atv="-8.238893964662848"/>
+ <point ath="-33.43470226890315" atv="-7.543053300296085"/>
+ <point ath="-34.510199918255296" atv="-7.482641805022894"/>
+ </hotspot>
+
+ <hotspot name="shs21" style="hs_down_SELECT">
+ <point ath="-39.97673636797998" atv="-7.464245927877787"/>
+ <point ath="-39.99397646983965" atv="-6.862628074165907"/>
+ <point ath="-40.85235618385241" atv="-6.831206028794408"/>
+ </hotspot>
+
+ <hotspot name="shs22" style="hs_down_SELECT">
+ <point ath="-50.33357523632259" atv="-7.418043053482398"/>
+ <point ath="-50.384995391851305" atv="-6.886378902761878"/>
+ <point ath="-51.293070392524385" atv="-6.800775351826082"/>
+ </hotspot>
+
+ <hotspot name="shs23" style="hs_down_SELECT">
+ <point ath="-57.00497224405723" atv="-8.060904749474386"/>
+ <point ath="-57.03755484232511" atv="-7.392445424015162"/>
+ <point ath="-58.1952154659831" atv="-7.407476349090856"/>
+ </hotspot>
+
+ <hotspot name="shs24" style="hs_down_SELECT">
+ <point ath="-64.80868153916464" atv="-8.650727912089552"/>
+ <point ath="-64.843112053668" atv="-7.938154063856819"/>
+ <point ath="-65.92881829838535" atv="-7.955685877804782"/>
+ </hotspot>
+
+ <hotspot name="shs25" style="hs_down_SELECT">
+ <point ath="-73.73319750245696" atv="-9.114131760299253"/>
+ <point ath="-73.76776698670824" atv="-8.378561808957388"/>
+ <point ath="-74.94742807835502" atv="-8.444107270413888"/>
+ </hotspot>
+
+ <hotspot name="shs26" style="hs_down_SELECT">
+ <point ath="-83.5142294183641" atv="-9.539021087674039"/>
+ <point ath="-83.41000525824381" atv="-8.754313697861296"/>
+ <point ath="-84.54761042871934" atv="-8.703422973915458"/>
+ </hotspot>
+
+ <hotspot name="shs27" style="hs_down_SELECT">
+ <point ath="-93.56260295399994" atv="-9.556679707206037"/>
+ <point ath="-93.688987744261" atv="-8.774396768679217"/>
+ <point ath="-94.85334470474419" atv="-8.789794381778309"/>
+ </hotspot>
+
+ <hotspot name="shs28" style="hs_down_SELECT">
+ <point ath="-93.56260295399994" atv="-9.556679707206037"/>
+ <point ath="-93.688987744261" atv="-8.774396768679217"/>
+ <point ath="-94.85334470474419" atv="-8.789794381778309"/>
+ </hotspot>
+
+ <hotspot name="shs29" style="hs_down_SELECT">
+ <point ath="-103.52031437742113" atv="-9.246254851514777"/>
+ <point ath="-103.44378612744265" atv="-8.53576933526027"/>
+ <point ath="-104.68262413617725" atv="-8.426597995824865"/>
+ </hotspot>
+
+ <hotspot name="shs30" style="hs_down_SELECT">
+ <point ath="-112.66775788333979" atv="-8.813825331984509"/>
+ <point ath="-113.85871755005721" atv="-7.984093216713999"/>
+ <point ath="-113.93995206609665" atv="-8.745882331919873"/>
+ </hotspot>
+
+ <hotspot name="shs31" style="hs_down_SELECT">
+ <point ath="-120.76332367520573" atv="-8.11851058682657"/>
+ <point ath="-120.83821681818768" atv="-7.635127545366584"/>
+ <point ath="-121.79028436700565" atv="-7.577255540968169"/>
+ </hotspot>
+
+ <hotspot name="shs32" style="hs_down_SELECT">
+ <point ath="-119.16741175377223" atv="-6.146899215706216"/>
+ <point ath="-119.16741175377223" atv="-6.146899215706216"/>
+ <point ath="-119.15251871716825" atv="-5.409369486260209"/>
+ <point ath="-119.95838948076144" atv="-5.417665055569219"/>
+ </hotspot>
+
+ <hotspot name="shs33" style="hs_down_SELECT">
+ <point ath="-122.49802377999941" atv="-6.640901054034855"/>
+ <point ath="-122.59414005932928" atv="-6.085960387440906"/>
+ <point ath="-123.31578573567577" atv="-6.0202064282939665"/>
+ </hotspot>
+
+ <hotspot name="shs34" style="hs_down_SELECT">
+ <point ath="-132.06139660443512" atv="-8.218275534225972"/>
+ <point ath="-132.09574242862487" atv="-7.576352795473108"/>
+ <point ath="-133.267760471964" atv="-7.574291276139132"/>
+ </hotspot>
+
+ <hotspot name="shs35" style="hs_down_SELECT">
+ <point ath="-138.8049216427647" atv="-8.9845024836253"/>
+ <point ath="-138.8049216427647" atv="-8.9845024836253"/>
+ </hotspot>
+
+ <hotspot name="shs36" style="hs_down_SELECT">
+ <point ath="-138.48216484660156" atv="-9.113699136943248"/>
+ <point ath="-138.52409502635425" atv="-8.130408700831465"/>
+ <point ath="-139.9430421984266" atv="-8.252240998828999"/>
+ </hotspot>
+
+ <hotspot name="shs37" style="hs_down_SELECT">
+ <point ath="-147.00608490021432" atv="-10.114386000026649"/>
+ <point ath="-147.0866827224315" atv="-9.357443002596458"/>
+ <point ath="-148.29509030137342" atv="-9.377814527337366"/>
+ </hotspot>
+
+ <hotspot name="shs38" style="hs_down_SELECT">
+ <point ath="-157.3289725434479" atv="-11.174744846911464"/>
+ <point ath="-157.31852871797207" atv="-10.324790774574025"/>
+ <point ath="-158.4829652329263" atv="-10.32370094452172"/>
+ </hotspot>
+
+ <hotspot name="shs39" style="hs_down_SELECT">
+ <point ath="-169.09448597906643" atv="-11.895386530399186"/>
+ <point ath="-169.06318066263418" atv="-11.02358680714381"/>
+ <point ath="-170.3675952268755" atv="-11.006154438716507"/>
+ </hotspot>
+
+ <hotspot name="shs40" style="hs_down_SELECT">
+ <point ath="177.89246609959173" atv="-12.075487101735705"/>
+ <point ath="177.99525115988905" atv="-11.125480771357097"/>
+ <point ath="176.68944163484528" atv="-11.05085095603195"/>
+ </hotspot>
+
+ <hotspot name="shs41" style="hs_down_SELECT">
+ <point ath="165.34117679915659" atv="-11.643095635977783"/>
+ <point ath="165.4542656154535" atv="-10.801004449016828"/>
+ <point ath="164.13687527360622" atv="-10.826171457013588"/>
+ </hotspot>
+
+ <hotspot name="shs42" style="hs_down_SELECT">
+ <point ath="153.9164857594048" atv="-10.882919555472577"/>
+ <point ath="154.08937429113814" atv="-10.054620443611224"/>
+ <point ath="152.79028513343772" atv="-9.989697129393665"/>
+ </hotspot>
+
+ <hotspot name="shs43" style="hs_down_SELECT">
+ <point ath="144.59866455657698" atv="-9.78811239440118"/>
+ <point ath="144.65507407200988" atv="-9.063251573888627"/>
+ <point ath="143.45501962104657" atv="-9.007634761639169"/>
+ </hotspot>
+
+ <hotspot name="shs44" style="hs_down_SELECT">
+ <point ath="130.69486455433776" atv="-7.9036389947519305"/>
+ <point ath="130.75799665413516" atv="-7.2859365514211625"/>
+ <point ath="129.68165487702015" atv="-7.25918350641473"/>
+ </hotspot>
+
+ <hotspot name="shs45" style="hs_down_SELECT">
+ <point ath="125.75009009112631" atv="-7.074669251984341"/>
+ <point ath="125.77128776771764" atv="-6.497585429972709"/>
+ <point ath="124.93388592042439" atv="-6.363789505695469"/>
+ </hotspot>
+
+ <hotspot name="shs46" style="hs_down_SELECT">
+ <point ath="121.74903943565863" atv="-6.474326703796329"/>
+ <point ath="121.74673411198546" atv="-5.899702011200552"/>
+ <point ath="121.0767332312181" atv="-5.7447497056927626"/>
+ </hotspot>
+
+ <hotspot name="shs47" style="hs_down_SELECT">
+ <point ath="118.43454858588223" atv="-5.830410537869238"/>
+ <point ath="118.45707142233044" atv="-5.391342052017326"/>
+ <point ath="117.92238058257325" atv="-5.27752307038917"/>
+ </hotspot>
+
+ <hotspot name="shs48" style="hs_down_SELECT">
+ <point ath="115.77046555446873" atv="-5.339048662883363"/>
+ <point ath="115.83942055711861" atv="-4.969507259182677"/>
+ <point ath="115.12035511634792" atv="-4.810833289088938"/>
+ </hotspot>
+
+ <hotspot name="shs49" style="hs_down_SELECT">
+ <point ath="113.47136118693342" atv="-4.9303229247617475"/>
+ <point ath="113.61063396582793" atv="-4.53706073698181"/>
+ <point ath="112.95997063492874" atv="-4.445042088183287"/>
+ </hotspot>
+ <hotspot name="hs4" style="hs_down">
+ <point ath="71.94471182253176" atv="-3.0613373985948713"/>
+ <point ath="71.57457190575906" atv="-3.014090351185251"/>
+ <point ath="71.75962303305187" atv="-2.9221936221039133"/>
+ </hotspot>
+
+ <hotspot name="hs5" style="hs_down">
+ <point ath="70.58140476091216" atv="-3.1491367326544735"/>
+ <point ath="70.88137711973746" atv="-3.150392938256271"/>
+ </hotspot>
+
+ <hotspot name="hs6" style="hs_down">
+ <point ath="69.42913062118271" atv="-3.3281852295751992"/>
+ <point ath="69.72825174482489" atv="-3.3297614871226813"/>
+ </hotspot>
+
+ <hotspot name="hs7" style="hs_down">
+ <point ath="68.0756393475719" atv="-3.503621073011463"/>
+ <point ath="68.46496846117691" atv="-3.529304315140639"/>
+ </hotspot>
+
+ <hotspot name="hs8" style="hs_down">
+ <point ath="66.60709323705908" atv="-3.7512046211579024"/>
+ <point ath="67.02259192401141" atv="-3.7532271245978572"/>
+ </hotspot>
+
+ <hotspot name="hs9" style="hs_down">
+ <point ath="60.82700787731585" atv="-4.622765284020248"/>
+ <point ath="61.24356226188138" atv="-4.601865047065539"/>
+ </hotspot>
+
+ <hotspot name="hs10" style="hs_down">
+ <point ath="58.26848552855057" atv="-4.957503858870873"/>
+ <point ath="58.66095605469633" atv="-4.9120287269648895"/>
+ </hotspot>
+
+ <hotspot name="hs11" style="hs_down">
+ <point ath="55.22575263745182" atv="-5.375710791907365"/>
+ <point ath="55.76090357878104" atv="-5.376091467430944"/>
+ </hotspot>
+
+ <hotspot name="hs12" style="hs_down">
+ <point ath="51.70257037882254" atv="-5.840485152975713"/>
+ <point ath="52.14502249038014" atv="-5.840148368783062"/>
+ </hotspot>
+
+ <hotspot name="hs13" style="hs_down">
+ <point ath="47.49183268774732" atv="-6.333979378394157"/>
+ <point ath="48.02536393005238" atv="-6.360872802903523"/>
+ </hotspot>
+
+ <hotspot name="hs14" style="hs_down">
+ <point ath="42.467048511868256" atv="-6.9315066304589825"/>
+ <point ath="43.027323923639074" atv="-6.953893091418289"/>
+ </hotspot>
+
+ <hotspot name="hs15" style="hs_down">
+ <point ath="36.36308397401183" atv="-7.657317790508993"/>
+ <point ath="37.10459761190441" atv="-7.643468399556439"/>
+ </hotspot>
+
+ <hotspot name="hs16" style="hs_down">
+ <point ath="29.334755528210962" atv="-8.225940506318713"/>
+ <point ath="29.99004363260144" atv="-8.228520203793144"/>
+ </hotspot>
+
+ <hotspot name="hs17" style="hs_down">
+ <point ath="21.044055144651907" atv="-8.812582628985295"/>
+ <point ath="21.80910884513156" atv="-8.799710470944827"/>
+ </hotspot>
+
+ <hotspot name="hs18" style="hs_down">
+ <point ath="11.68703202417845" atv="-9.274626676489145"/>
+ <point ath="12.573475643479298" atv="-9.239868093355955"/>
+ </hotspot>
+
+ <hotspot name="hs19" style="hs_down">
+ <point ath="1.7391283305302068" atv="-9.422922261818044"/>
+ <point ath="2.487715441191824" atv="-9.391826034896154"/>
+ </hotspot>
+
+ <hotspot name="hs20" style="hs_down">
+ <point ath="-8.357610480307699" atv="-9.361924791234118"/>
+ <point ath="-7.61876162469548" atv="-9.346080343456155"/>
+ <point ath="-7.99070911339868" atv="-9.193386463195424"/>
+ </hotspot>
+
+ <hotspot name="hs21" style="hs_down">
+ <point ath="-18.045095995764484" atv="-8.993801065803698"/>
+ <point ath="-17.294838460842243" atv="-9.018355164176128"/>
+ </hotspot>
+
+ <hotspot name="hs22" style="hs_down">
+ <point ath="-26.812032415394924" atv="-8.46236124128268"/>
+ <point ath="-26.015547700399736" atv="-8.504941394521515"/>
+ </hotspot>
+
+ <hotspot name="hs23" style="hs_down">
+ <point ath="-34.3027993030791" atv="-7.858841280369056"/>
+ <point ath="-33.62891097426257" atv="-7.851221687408663"/>
+ </hotspot>
+
+ <hotspot name="hs24" style="hs_down">
+ <point ath="-40.74931518917879" atv="-7.2058366562491525"/>
+ <point ath="-40.165470252820285" atv="-7.1848429267426335"/>
+ </hotspot>
+
+ <hotspot name="hs25" style="hs_down">
+ <point ath="-51.202434017387986" atv="-7.2189907484793325"/>
+ <point ath="-50.574882794556686" atv="-7.144320494032905"/>
+ </hotspot>
+
+ <hotspot name="hs26" style="hs_down">
+ <point ath="-57.92577445765437" atv="-7.781416182855448"/>
+ <point ath="-57.20727770361543" atv="-7.772234836710121"/>
+ </hotspot>
+
+ <hotspot name="hs27" style="hs_down">
+ <point ath="-65.7368195729199" atv="-8.397638599612687"/>
+ <point ath="-64.97742251757006" atv="-8.337390433205595"/>
+ </hotspot>
+
+ <hotspot name="hs28" style="hs_down">
+ <point ath="-74.70487439159666" atv="-8.873778978858473"/>
+ <point ath="-73.8948576387412" atv="-8.859566261216859"/>
+ </hotspot>
+
+ <hotspot name="hs29" style="hs_down">
+ <point ath="-84.52805940510109" atv="-9.167625675952909"/>
+ <point ath="-83.67173761330793" atv="-9.151383972086442"/>
+ </hotspot>
+
+ <hotspot name="hs30" style="hs_down">
+ <point ath="-94.6659051665614" atv="-9.216123927041401"/>
+ <point ath="-93.80944273565626" atv="-9.177270759461319"/>
+ </hotspot>
+
+ <hotspot name="hs31" style="hs_down">
+ <point ath="-104.5350736505253" atv="-8.86992767924505"/>
+ <point ath="-103.7516308232967" atv="-8.899649311333064"/>
+ </hotspot>
+
+ <hotspot name="hs32" style="hs_down">
+ <point ath="-113.63459712747769" atv="-8.519549881179156"/>
+ <point ath="-112.84935757390883" atv="-8.495833151286487"/>
+ </hotspot>
+
+ <hotspot name="hs33" style="hs_down">
+ <point ath="-121.62809456483984" atv="-7.892173601065031"/>
+ <point ath="-120.97618300428854" atv="-7.887012417768308"/>
+ </hotspot>
+
+ <hotspot name="hs34" style="hs_down">
+ <point ath="-119.87378699701816" atv="-5.865938604014526"/>
+ <point ath="-119.29521951441106" atv="-5.814829507033925"/>
+ </hotspot>
+
+ <hotspot name="hs35" style="hs_down">
+ <point ath="-123.31528112093181" atv="-6.439312881850849"/>
+ <point ath="-122.81491090763353" atv="-6.3915260302112795"/>
+ </hotspot>
+
+ <hotspot name="hs36" style="hs_down">
+ <point ath="-132.99543426899425" atv="-7.951846034218639"/>
+ <point ath="-132.30206043342451" atv="-7.895366535174033"/>
+ </hotspot>
+
+ <hotspot name="hs37" style="hs_down">
+ <point ath="-139.70868772060416" atv="-8.938162496706271"/>
+ <point ath="-138.9670671087741" atv="-8.879995484534975"/>
+ </hotspot>
+
+ <hotspot name="hs38" style="hs_down">
+ <point ath="-148.08040508576397" atv="-9.907048016394745"/>
+ <point ath="-147.21997460069898" atv="-9.855265962552243"/>
+ </hotspot>
+
+ <hotspot name="hs39" style="hs_down">
+ <point ath="-158.34922098564078" atv="-10.83986390679671"/>
+ <point ath="-157.43646923192819" atv="-10.809172568946074"/>
+ </hotspot>
+
+ <hotspot name="hs40" style="hs_down">
+ <point ath="-170.16781017328327" atv="-11.446338725975423"/>
+ <point ath="-169.30727011748945" atv="-11.455656894601434"/>
+ </hotspot>
+
+ <hotspot name="hs41" style="hs_down">
+ <point ath="176.86370085213804" atv="-11.678485092743637"/>
+ <point ath="177.8041247299534" atv="-11.614639242976345"/>
+ </hotspot>
+
+ <hotspot name="hs42" style="hs_down">
+ <point ath="164.19185579025276" atv="-11.26792269005439"/>
+ <point ath="165.07955444021516" atv="-11.302257706038716"/>
+ </hotspot>
+
+ <hotspot name="hs43" style="hs_down">
+ <point ath="152.9221967164933" atv="-10.429509421251668"/>
+ <point ath="153.81938475145148" atv="-10.45018350170238"/>
+ </hotspot>
+
+ <hotspot name="hs44" style="hs_down">
+ <point ath="143.57725195028885" atv="-9.51506854529105"/>
+ <point ath="144.37344214223083" atv="-9.488288608189844"/>
+ </hotspot>
+
+ <hotspot name="hs45" style="hs_down">
+ <point ath="129.8839786055796" atv="-7.640489247139542"/>
+ <point ath="130.47325276436365" atv="-7.642038036857979"/>
+ </hotspot>
+
+ <hotspot name="hs46" style="hs_down">
+ <point ath="125.05508345554833" atv="-6.84569427713897"/>
+ <point ath="125.64154551692613" atv="-6.809479924180567"/>
+ </hotspot>
+
+ <hotspot name="hs47" style="hs_down">
+ <point ath="121.08840733203223" atv="-6.196285798829606"/>
+ <point ath="121.64153232761956" atv="-6.189814739256708"/>
+ </hotspot>
+
+ <hotspot name="hs48" style="hs_down">
+ <point ath="117.93345327306713" atv="-5.597143076923066"/>
+ <point ath="118.32841083953528" atv="-5.571990174333041"/>
+ </hotspot>
+
+ <hotspot name="hs49" style="hs_down">
+ <point ath="115.27935046119109" atv="-5.139977107032719"/>
+ <point ath="115.69851438473569" atv="-5.139749085175082"/>
+ </hotspot>
+
+ <hotspot name="hs50" style="hs_down">
+ <point ath="113.02235383531652" atv="-4.719295125785963"/>
+ <point ath="113.4874499675843" atv="-4.6741779523672005"/>
+ </hotspot>
+ 
+  <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
+		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
+			<layer name="image_01" url="%CURRENTXML%/images/Downlight D200_1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_02" url="%CURRENTXML%/images/Downlight D200_2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_03" url="%CURRENTXML%/images/Downlight D200_3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
+			</layer>
+			</layer>
+
+		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
+		>
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светодиодная панель Downlight D200[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ultratonkie-svetodiodnyie-paneli/svetodiodnaya-panel-downlight-200(krug.).html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+				/>
+			</layer>
+
+			
+			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="20%" x="0" width="40%" height="80%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true" maskchildren="true">
+			<layer name="TEHharacter" keep="true" type="container" align="centertop" edge="centertop" y="1%" x="0" width="100%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545" scalechildren="true"		
+			>
+			<layer name="kratk_opis" type="text" align="center" x="-33%" y="0" html="Краткое[br]описание" css="font-family:Arial; color:#000000; font-size:14px" 
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="1" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 1" onclick="set(layer[text_op].alpha, 1); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 0);  set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 1); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 1');" 
+			
+			/>
+			<layer name="teh_opis" type="text" align="center" x="0" y="0" html="Технические[br]особенности" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 1); set(layer[text_prim_teh].alpha, 0); set(layer[teh_opis].bgalpha, 1); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			<layer name="priemush" type="text" align="center" x="33%" y="0" html="Область[br]применения" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			</layer>
+			
+
+			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные панели Даунлайт из серии ультратонких панелей имеют множество модификаций по конструктиву и техническим характеристикам.[br]
+✔Панели используются для точечного освещения.[br]
+✔Светильники встраиваются в потолок.
+				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные панели Даунлайт из серии ультратонких панелей имеют множество модификаций по конструктиву и техническим характеристикам.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+			
+			</layer>
+
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
+Напряжение питания[br]
+Мощность[br]
+Световой поток[br]
+Температура свечения[br]
+Коэффициент пульсаций[br]
+Температура эксплуатации[br]
+Степень защиты:[br]
+Габаритные размеры[br]
+Тип монтажа[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
+90-264 В/50Гц[br]
+15 Вт[br]
+1050 Лм[br]
+6000 К[br]
+[lt] 1%[br]
+от -10 до +40 ⁰С[br]
+IP43[br]
+D200x15 мм[br]
+Встраиваемый[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			</layer>
+			
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для точечного освещения." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
+			</layer>
+			</layer>
+			</layer>
+						
+			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
+			/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
+			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
+			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			</layer>			
+			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
+			/>
+			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
+			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
+			</layer></layer>
+		</layer>
+
+	</scene>
+	
+	<scene name="scene_squere" title="squere" onstart="" thumburl="panos/squere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/squere.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/squere.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/squere.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/squere.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+ <hotspot name="hs4" style="hs_squere_SELECT">
+ <point ath="-112.8941234581653" atv="-27.244803263622472"/>
+ <point ath="-104.47965656275687" atv="-28.44016128153039"/>
+ <point ath="-102.46279473153379" atv="-25.138944558670673"/>
+ <point ath="-110.02876925622456" atv="-24.219511084020958"/>
+ </hotspot>
+
+ <hotspot name="hs5" style="hs_squere_SELECT">
+ <point ath="-63.82939032628656" atv="-26.591071316814908"/>
+ <point ath="-56.734334084435204" atv="-24.965677026944586"/>
+ <point ath="-60.55682004902832" atv="-22.574056658859227"/>
+ <point ath="-67.14617136718283" atv="-23.826729081341075"/>
+ </hotspot>
+
+ <hotspot name="hs6" style="hs_squere_SELECT">
+ <point ath="7.329236116184688" atv="-48.280954975908735"/>
+ <point ath="5.437176110678024" atv="-40.04221297542627"/>
+ <point ath="18.849973870519364" atv="-38.62570664534252"/>
+ <point ath="24.597915618560478" atv="-45.8024198521385"/>
+ </hotspot>
+
+ <hotspot name="hs7" style="hs_squere_SELECT">
+ <point ath="165.62905871289556" atv="-64.81307242588336"/>
+ <point ath="171.0890320153323" atv="-52.665488926994236"/>
+ <point ath="151.53523243958932" atv="-49.46728273602983"/>
+ <point ath="138.07698791826786" atv="-58.561324758369246"/>
+ </hotspot>
+
+ <hotspot name="hs8" style="hs_squere_SELECT">
+ <point ath="100.98625345985761" atv="-22.99980851864091"/>
+ <point ath="107.86344541282327" atv="-22.363223452831114"/>
+ <point ath="105.99225033897216" atv="-20.2453791455384"/>
+ <point ath="99.78763364513347" atv="-20.702948457035504"/>
+ </hotspot>
+
+ <hotspot name="hs9" style="hs_squere_SELECT">
+ <point ath="99.31011801394772" atv="-12.410231821522075"/>
+ <point ath="98.7952533275633" atv="-11.621120635978281"/>
+ <point ath="95.26927618598728" atv="-11.682246701755405"/>
+ <point ath="95.6086924988935" atv="-12.447782691749298"/>
+ </hotspot>
+
+ <hotspot name="hs10" style="hs_squere_SELECT">
+ <point ath="96.24371953747149" atv="-8.499397614547245"/>
+ <point ath="95.98919284974036" atv="-8.036974233720748"/>
+ <point ath="93.62065896342244" atv="-8.148347911633934"/>
+ <point ath="93.77205565183792" atv="-8.486301477507265"/>
+ </hotspot>
+
+ <hotspot name="hs11" style="hs_squere_SELECT">
+ <point ath="94.69562154973741" atv="-6.411093314383782"/>
+ <point ath="94.51094354579737" atv="-6.156718572197213"/>
+ <point ath="92.71000923338471" atv="-6.185939657147671"/>
+ <point ath="92.82427575034325" atv="-6.462408979808201"/>
+ </hotspot>
+
+ <hotspot name="hs12" style="hs_squere_SELECT">
+ <point ath="93.70404373800434" atv="-5.183736922367682"/>
+ <point ath="93.61228146625041" atv="-4.975726884995498"/>
+ <point ath="92.13915694126433" atv="-5.006741794752157"/>
+ <point ath="92.25357436759083" atv="-5.168616835243423"/>
+ </hotspot>
+
+ <hotspot name="hs13" style="hs_squere_SELECT">
+ <point ath="93.06119277155724" atv="-4.3702841006459145"/>
+ <point ath="92.99266705034222" atv="-4.185447742156128"/>
+ <point ath="91.72954917842625" atv="-4.198437729684759"/>
+ <point ath="91.86694872705044" atv="-4.337333602029056"/>
+ </hotspot>
+
+ <hotspot name="hs14" style="hs_squere_SELECT">
+ <point ath="86.03679319506512" atv="-4.35792475197368"/>
+ <point ath="86.12913744321992" atv="-4.174606290196814"/>
+ <point ath="84.91498012211832" atv="-4.141138928792521"/>
+ <point ath="84.80016386702715" atv="-4.323638936874751"/>
+ </hotspot>
+
+ <hotspot name="hs15" style="hs_squere_SELECT">
+ <point ath="85.30100045748691" atv="-5.200375399706307"/>
+ <point ath="85.39352897791889" atv="-4.948983674506492"/>
+ <point ath="83.95837543908783" atv="-4.906546849651887"/>
+ <point ath="83.79836283280173" atv="-5.133062039883267"/>
+ </hotspot>
+
+ <hotspot name="hs16" style="hs_squere_SELECT">
+ <point ath="84.21427616260087" atv="-6.413977780356342"/>
+ <point ath="84.37783235715938" atv="-6.184049185085886"/>
+ <point ath="82.59441800403005" atv="-6.09739932223967"/>
+ <point ath="82.29234082468537" atv="-6.370831767456243"/>
+ </hotspot>
+
+ <hotspot name="hs17" style="hs_squere_SELECT">
+ <point ath="82.35449399415643" atv="-8.43976408942666"/>
+ <point ath="82.63646921790314" atv="-8.116736696685885"/>
+ <point ath="80.30106361762762" atv="-7.98539394022603"/>
+ <point ath="79.87864826201434" atv="-8.350931109749277"/>
+ </hotspot>
+
+ <hotspot name="hs18" style="hs_squere_SELECT">
+ <point ath="78.81854386452022" atv="-12.313372770467069"/>
+ <point ath="79.43343668602341" atv="-11.568514775539821"/>
+ <point ath="76.05670253225202" atv="-11.359009110953409"/>
+ <point ath="75.15225116659337" atv="-12.10806622789642"/>
+ </hotspot>
+
+ <hotspot name="hs19" style="hs_squere_SELECT">
+ <point ath="68.92579145124432" atv="-22.01838599463979"/>
+ <point ath="71.15571992004527" atv="-19.967262442930267"/>
+ <point ath="65.46534379792081" atv="-19.198299705628706"/>
+ <point ath="62.832547102749004" atv="-21.053384672507296"/>
+ </hotspot>
+  <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
+		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
+			<layer name="image_01" url="%CURRENTXML%/images/PROMO_1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_02" url="%CURRENTXML%/images/PROMO_2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_03" url="%CURRENTXML%/images/PROMO_3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
+			</layer>
+			</layer>
+
+		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
+		>
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светодиодная панель Downlight D200[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ultratonkie-svetodiodnyie-paneli/svetodiodnaya-panel-downlight-200(krug.).html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+				/>
+			</layer>
+
+			
+			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="20%" x="0" width="40%" height="80%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true" maskchildren="true">
+			<layer name="TEHharacter" keep="true" type="container" align="centertop" edge="centertop" y="1%" x="0" width="100%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545" scalechildren="true"		
+			>
+			<layer name="kratk_opis" type="text" align="center" x="-33%" y="0" html="Краткое[br]описание" css="font-family:Arial; color:#000000; font-size:14px" 
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="1" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 1" onclick="set(layer[text_op].alpha, 1); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 0);  set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 1); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 1');" 
+			
+			/>
+			<layer name="teh_opis" type="text" align="center" x="0" y="0" html="Технические[br]особенности" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 1); set(layer[text_prim_teh].alpha, 0); set(layer[teh_opis].bgalpha, 1); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			<layer name="priemush" type="text" align="center" x="33%" y="0" html="Область[br]применения" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			</layer>
+			
+
+			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные панели Даунлайт из серии ультратонких панелей имеют множество модификаций по конструктиву и техническим характеристикам.[br]
+✔Панели используются для точечного освещения.[br]
+✔Светильники встраиваются в потолок.
+				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные панели Даунлайт из серии ультратонких панелей имеют множество модификаций по конструктиву и техническим характеристикам.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+			
+			</layer>
+
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
+Напряжение питания[br]
+Мощность[br]
+Световой поток[br]
+Температура свечения[br]
+Коэффициент пульсаций[br]
+Температура эксплуатации[br]
+Степень защиты:[br]
+Габаритные размеры[br]
+Тип монтажа[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
+90-264 В/50Гц[br]
+15 Вт[br]
+1050 Лм[br]
+6000 К[br]
+[lt] 1%[br]
+от -10 до +40 ⁰С[br]
+IP43[br]
+D200x15 мм[br]
+Встраиваемый[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			</layer>
+			
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для точечного освещения." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
+			</layer>
+			</layer>
+			</layer>
+						
+			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
+			/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
+			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
+			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			</layer>			
+			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
+			/>
+			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
+			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
+			</layer></layer>
+		</layer>
+
+		</scene>
+		
 </krpano>
