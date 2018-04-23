@@ -919,11 +919,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="torgC_CLICK" 
-				 style="hs_BUILDING_"
-				 onhover=""
+				style="hs_BUILDING_"
 
-				 ondown=""
-				 onup=""
+				onhover="showtext(ПЕРЕЙТИ В ТОРГОВЫЙ ЦЕНТР, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/ent/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 				<point atv="6.880691976073127" ath="-112.71397537594112"/>
 				<point atv="-10.343135490612216" ath="-114.18770187695193"/>

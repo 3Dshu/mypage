@@ -1,0 +1,152 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="%FIRSTXML%skin/vtourskin.xml" />
+	<include url="add/SDsvet.xml"/>
+	<include url="add/custom.xml"/>
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="false"
+	               webvr="false"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="false"
+	               littleplanetintro="false"
+	               title="false"
+	               thumbs="false"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="false"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE|KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="загрузка..."
+	               layout_width="100%"
+	               layout_maxwidth="300"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.0"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.0"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
+	<scene name="scene_rgb_vhod" title="rgb_vhod" onstart="" thumburl="panos/rgb_vhod.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/rgb_vhod.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/rgb_vhod.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/rgb_vhod.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/rgb_vhod.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="foodcort" 
+				style="hs_BUILDING_"
+
+				onhover="showtext(ПЕРЕЙТИ В ФУД-КОРТ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/foodcord/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				>
+					 <point ath="-112.6700339325904" atv="-18.837781034549568"/>
+					 <point ath="-112.22552111342932" atv="13.311608766689679"/>
+					 <point ath="-143.74038136672687" atv="8.783810757936335"/>
+					 <point ath="-143.2164498541202" atv="-13.477325868799735"/>	
+				</hotspot>
+				
+		<hotspot name="perecrestok" 
+				style="hs_BUILDING_"
+
+				onhover="showtext(ПЕРЕЙТИ В ПЕРЕКРЕСТОК, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/perecrestok/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				>
+					 <point ath="-5.872586131859407" atv="-8.673828895079065"/>
+					 <point ath="-6.179291183700286" atv="5.939508846688007"/>
+					 <point ath="-27.760083960360873" atv="5.285582438892985"/>
+					 <point ath="-38.468663205052565" atv="8.58311482211443"/>
+					 <point ath="-48.722910121169264" atv="3.79775323375855"/>
+					 <point ath="-48.67824927968991" atv="-14.309948858441887"/>
+					 <point ath="-30.24790541173934" atv="-9.96429251364385"/>
+					 <point ath="-30.250023486040163" atv="-7.703639753216806"/>	
+				</hotspot>
+				
+		<hotspot name="magazin" 
+				style="hs_BUILDING_"
+
+				onhover="showtext(ПЕРЕЙТИ В МАГАЗИН, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/magazin/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				>
+					 <point ath="44.84502289844431" atv="-19.357423717645116"/>
+					 <point ath="44.94305613323229" atv="11.697091491134746"/>
+					 <point ath="135.72966841371428" atv="12.085098503094041"/>
+					 <point ath="135.44627375578057" atv="-18.726197296346484"/>	
+				</hotspot>
+				
+		<hotspot name="startscene" 
+				style="hs_BUILDING_"
+
+				onhover="showtext(НУ УЛИЦУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				>
+					 <point ath="-171.19122144052045" atv="-17.276966609800155"/>
+					 <point ath="-171.32057317671055" atv="11.915247590492633"/>
+					 <point ath="156.61313278623223" atv="10.426376851355451"/>
+					 <point ath="156.74503649086415" atv="-16.428673906991992"/>	
+				</hotspot>
+
+	</scene>
+
+
+</krpano>
