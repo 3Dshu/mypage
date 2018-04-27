@@ -1302,7 +1302,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<hotspot name="offic_CLICK" 
 				style="hs_BUILDING_"
 				onhover="showtext(ПЕРЕЙТИ В ОФИС, DEFAULT2)"
-				onclick="loadpano('%FIRSTXML%/perehod/offic/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				onclick="loadpano('%FIRSTXML%/perehod/office/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					<point atv="4.311657070052108" ath="75.19990911993204"/>
 					<point atv="4.379390762796229" ath="77.26355777281634"/>
@@ -2404,7 +2404,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<hotspot name="offic_CLICK" 
 					style="hs_BUILDING_"
 					onhover="showtext(ПЕРЕЙТИ В ОФИС, DEFAULT2)"
-				onclick="loadpano('%FIRSTXML%/perehod/offic/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				onclick="loadpano('%FIRSTXML%/perehod/office/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					<point atv="4.311657070052108" ath="75.19990911993204"/>
 					<point atv="4.379390762796229" ath="77.26355777281634"/>
@@ -3218,7 +3218,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<hotspot name="offic_CLICK" 
 					style="hs_BUILDING_"
 					onhover="showtext(ПЕРЕЙТИ В ОФИС, DEFAULT2)"
-				onclick="loadpano('%FIRSTXML%/perehod/offic/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				onclick="loadpano('%FIRSTXML%/perehod/office/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					<point atv="4.311657070052108" ath="75.19990911993204"/>
 					<point atv="4.379390762796229" ath="77.26355777281634"/>
@@ -4025,7 +4025,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<hotspot name="offic_CLICK" 
 					style="hs_BUILDING_"
 					onhover="showtext(ПЕРЕЙТИ В ОФИС, DEFAULT2)"
-				onclick="loadpano('%FIRSTXML%/perehod/offic/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				onclick="loadpano('%FIRSTXML%/perehod/office/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					<point atv="4.311657070052108" ath="75.19990911993204"/>
 					<point atv="4.379390762796229" ath="77.26355777281634"/>
@@ -5340,7 +5340,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<hotspot name="offic_CLICK" 
 					style="hs_BUILDING_"
 					onhover="showtext(ПЕРЕЙТИ В ОФИС, DEFAULT2)"
-				onclick="loadpano('%FIRSTXML%/perehod/offic/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				onclick="loadpano('%FIRSTXML%/perehod/office/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					<point atv="4.311657070052108" ath="75.19990911993204"/>
 					<point atv="4.379390762796229" ath="77.26355777281634"/>
@@ -6654,7 +6654,7 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<hotspot name="offic_CLICK" 
 					style="hs_BUILDING_"
 					onhover="showtext(ПЕРЕЙТИ В ОФИС, DEFAULT2)"
-				onclick="loadpano('%FIRSTXML%/perehod/offic/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				onclick="loadpano('%FIRSTXML%/perehod/office/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					<point atv="4.311657070052108" ath="75.19990911993204"/>
 					<point atv="4.379390762796229" ath="77.26355777281634"/>
