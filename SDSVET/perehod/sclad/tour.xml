@@ -171,7 +171,7 @@
 		"
 		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
 		/>
-		<style name="primenenieIK" url="%FIRSTXML%/add/IKONKI_PRIMENENIE3.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
+		<style name="primenenieIK" url="%FIRSTXML%/add/IKONKI_PRIMENENIE5.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
 		width="64" height="prop" 
 		edge="center"
 		rotate="0"
