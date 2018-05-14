@@ -295,7 +295,7 @@
 			 capture="false"
 			 zorder="21"
 			 alpha="0"
-			 onhover="showtext(Трековый светодиодный светильник 45W 5000K, DEFAULT2);"
+			 onhover="showtext(Cветильник 25W, DEFAULT2);"
 			 onout=""
 			 ondown=""
 			 onup=""
