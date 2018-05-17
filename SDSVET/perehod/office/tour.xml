@@ -164,7 +164,7 @@
 		"
 		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
 		/>
-		<style name="primenenieIK" url="%FIRSTXML%/add/IKONKI_PRIMENENIE3.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
+		<style name="primenenieIK" url="%FIRSTXML%/add/IKONKI_PRIMENENIE5.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
 		width="64" height="prop" 
 		edge="center"
 		rotate="0"
@@ -215,7 +215,7 @@
 		bgcapture="false"/>
 		
 		<style name="HOTspIK"
-		url="ADD/IKONKI_PRIMENENIE3.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
+		url="ADD/IKONKI_PRIMENENIE5.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
 		timer="0"    delay="0"
 		onloaded="       
         if(icon_type == 'park', set(crop,384|0|128|128);set(crop_normal,384|0|128|128);set(crop_hover,384|128|128|128);set(crop_down,384|0|128|128););
