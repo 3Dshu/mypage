@@ -1420,6 +1420,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="admin_CLICK" 
 				 style="hs_BUILDING_"
+				 onhover="showtext(ПЕРЕЙТИ В ШКОЛУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/shkola/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 					
 				>
 				<point atv="7.804575597294002" ath="126.66933003565453"/>
@@ -2522,6 +2524,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="admin_CLICK" 
 				 style="hs_BUILDING_"
+				 onhover="showtext(ПЕРЕЙТИ В ШКОЛУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/shkola/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 					
 				>
 				<point atv="7.804575597294002" ath="126.66933003565453"/>
@@ -3336,6 +3340,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="admin_CLICK" 
 				 style="hs_BUILDING_"
+				 onhover="showtext(ПЕРЕЙТИ В ШКОЛУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/shkola/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 					
 				>
 				<point atv="7.804575597294002" ath="126.66933003565453"/>
@@ -4143,6 +4149,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="admin_CLICK" 
 				 style="hs_BUILDING_"
+				 onhover="showtext(ПЕРЕЙТИ В ШКОЛУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/shkola/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 					
 				>
 				<point atv="7.804575597294002" ath="126.66933003565453"/>
@@ -5458,6 +5466,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="admin_CLICK" 
 				 style="hs_BUILDING_"
+				 onhover="showtext(ПЕРЕЙТИ В ШКОЛУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/shkola/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 					
 				>
 				<point atv="7.804575597294002" ath="126.66933003565453"/>
@@ -6772,6 +6782,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="admin_CLICK" 
 				 style="hs_BUILDING_"
+				 onhover="showtext(ПЕРЕЙТИ В ШКОЛУ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/shkola/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 					
 				>
 				<point atv="7.804575597294002" ath="126.66933003565453"/>
