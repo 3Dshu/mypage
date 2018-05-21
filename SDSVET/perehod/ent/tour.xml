@@ -137,7 +137,7 @@
 		<hotspot name="startscene" 
 				style="hs_BUILDING_"
 
-				onhover="showtext(НУ УЛИЦУ, DEFAULT2)"
+				onhover="showtext(На УЛИЦУ, DEFAULT2)"
 				onclick="loadpano('%FIRSTXML%/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					 <point ath="-171.19122144052045" atv="-17.276966609800155"/>
