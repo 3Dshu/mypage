@@ -871,8 +871,11 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 				<hotspot name="zavod_CLICK"				
 				style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				>
 				
-				><point atv="-8.39424531171725" ath="17.994914185297034"/>
+				<point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
 				<point atv="4.345181500761247" ath="30.816373787358998"/>
 				<point atv="2.3074734102472805" ath="62.919112153333"/>
@@ -1345,7 +1348,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="zavod_CLICK"				
-				style="hs_BUILDING_"
+								style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				
 				
 				><point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
@@ -2449,7 +2455,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="zavod_CLICK"				
-				style="hs_BUILDING_"
+								style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				
 				
 				><point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
@@ -3265,7 +3274,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="zavod_CLICK"				
-				style="hs_BUILDING_"
+								style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				
 				
 				><point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
@@ -4074,7 +4086,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="zavod_CLICK"				
-				style="hs_BUILDING_"
+								style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				
 				
 				><point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
@@ -5391,7 +5406,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="zavod_CLICK"				
-				style="hs_BUILDING_"
+								style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				
 				
 				><point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
@@ -6707,7 +6725,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 		
 
 				<hotspot name="zavod_CLICK"				
-				style="hs_BUILDING_"
+								style="hs_BUILDING_"
+				onhover="showtext(ПЕРЕЙТИ В ХЛЕБОПЕКАРНЮ, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/zavod/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				
 				
 				><point atv="-8.39424531171725" ath="17.994914185297034"/>
 				<point atv="2.7616017786565945" ath="17.843420043792094"/>
