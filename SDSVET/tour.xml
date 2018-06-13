@@ -106,7 +106,7 @@
 		"
 		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
 		/>
-		<style name="primenenieIK" url="add/IKONKI_PRIMENENIE5.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
+		<style name="primenenieIK" url="add/IKONKI_PRIMENENIE.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
 		width="64" height="prop" 
 		edge="center"
 		rotate="0"
@@ -157,7 +157,7 @@
 		bgcapture="false"/>
 		
 		<style name="HOTspIK"
-		url="ADD/IKONKI_PRIMENENIE5.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
+		url="ADD/IKONKI_PRIMENENIE.png"    crop=""    crop_normal=""    crop_hover=""    crop_down=""
 		timer="0"    delay="0"
 		onloaded="       
         if(icon_type == 'park', set(crop,384|0|128|128);set(crop_normal,384|0|128|128);set(crop_hover,384|128|128|128);set(crop_down,384|0|128|128););
@@ -2044,11 +2044,17 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, встроенный в дизайнерскую опору типа БОЛАРД. Новейшая разработка SDSВЕТ в области паркового освещения. Применяется для городского освещения и освещения территорий жилых комплексов[br]
+				✔классическая проверенная модель модульного уличного светильника[br]
+				✔дизайнерский корпус, возможность выбора цвета опоры[br]
+				✔энергосберегающие технологии[br]
+				✔антивандальное исполнение[br]
+				✔долгий срок службы [br]
+				✔простота эксплуатации[br]
+				✔7 лет  - срок гарантии[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, встроенный в дизайнерскую опору типа БОЛАРД. Новейшая разработка SDSВЕТ в области паркового освещения. Применяется для городского освещения и освещения территорий жилых комплексов[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -2101,19 +2107,16 @@ IP65[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
-			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+
+			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="0%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
+
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
-			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]7 лет, DEFAULT1)"/>
 			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
 			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
 			</layer></layer>
@@ -2862,11 +2865,17 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED также возможен в исполнении, применяемом на парковках и зонах погрузки-разгрузки. Возможна замена крепления с консоли на скобу для монтажа  на стены.[br]
+				✔особая линза для дорог, с помощью которой светильник не слепит водителей[br]
+				✔большая площадь освещенности дорожного полотна[br]
+				✔возможность наращивания модулей при изменения высоты опоры[br]
+				✔антивандальное исполнение[br]
+				✔долгий срок службы [br]
+				✔простота эксплуатации[br]
+				✔7 лет  - срок гарантии[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED также возможен в исполнении, применяемом на парковках и зонах погрузки-разгрузки. Возможна замена крепления с консоли на скобу для монтажа  на стены.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -2919,19 +2928,18 @@ IP65[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
-			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(дороги, DEFAULT1)"/>
+			<layer name="stopBusIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="1408|0|128|128"   zorder="10" onhover="showtext(остановки, DEFAULT1)"/>
+			<layer name="pakoffkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парки, DEFAULT1)"/>
+
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
-			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]7 лет, DEFAULT1)"/>
 			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
 			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
 			</layer></layer>
@@ -3739,7 +3747,7 @@ IP65[br]
 			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
@@ -4994,11 +5002,16 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии [dq]Модуль[dq] в исполнении [dq]Street-Led[dq] предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, сертифицированный автодором для использования на трассах и автомагистралях. Протестирован на трассе М4 «Дон», участник проектов «Роснано».[br]
+				✔уникальная вторичная оптика, КСС которой позволяет устранить стробоскопический эффект[br]
+				✔низкое энергопотребление: светильники работают на трассах даже глубокой ночью[br]
+				✔Легкая заменяя драйвера[br]
+				✔Простота ухода и экплуатации[br]
+				✔долгий срок службы [br]
+				✔7 лет  - срок гарантии[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии [dq]Модуль[dq] в исполнении [dq]Street-Led[dq] предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, сертифицированный автодором для использования на трассах и автомагистралях. Протестирован на трассе М4 «Дон», участник проектов «Роснано».[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -5051,19 +5064,18 @@ IP65[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(дороги, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="1408|0|128|128"   zorder="10" onhover="showtext(остановки, DEFAULT1)"/>
 			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(улица, DEFAULT1)"/>
+
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
-			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]7 лет, DEFAULT1)"/>
 			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
 			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
 			</layer></layer>
@@ -6312,12 +6324,19 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			</layer>
 			
 
-			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
+						<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, встроенный в новейшие дизайнерский опоры. Применяются, в основном, для освещения территорий новых жилых комплексов, но также адаптирован для освещения парковок ТЦ и городского освещения.[br]
+
+				✔Проверенный уличный модульный светильник в новом дизайнерском корпусе[br]
+				✔Возможность замены светодиодов[br]
+				✔Низкое энергопотребление: светильники работают во дворе [br]
+				✔Легкая замена драйвера[br]
+				✔Простота ухода и эксплуатации[br]
+				✔долгий срок службы[br]
+				✔7 лет  - срок гарантии[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии Модуль в исполнении Street-Led предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, встроенный в новейшие дизайнерский опоры. Применяются, в основном, для освещения территорий новых жилых комплексов, но также адаптирован для освещения парковок ТЦ и городского освещения.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -6370,19 +6389,18 @@ IP65[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(дороги, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="1408|0|128|128"   zorder="10" onhover="showtext(остановки, DEFAULT1)"/>
 			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(улица, DEFAULT1)"/>
+
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
-			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]7 лет, DEFAULT1)"/>
 			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
 			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
 			</layer></layer>
@@ -7165,11 +7183,17 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии [dq]Модуль[dq] в исполнении [dq]Street-Led[dq] предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br][br]✔Специальное крепление на консоль предполагает монтаж светильника на стандартные столбы и опоры уличного освещения.[br]
-				✔Модульный конструктив светильника - это возможность сборки светильника с необходимыми характеристиками без каких-либо сложностей. Количество модульных блоков в светильнике Вы определяете сами по желанию, можно заменить линзу, что даст другое распределение света.[br]✔Возможность замены светодиодов.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED с тремя модулями повышенной мощности применяется на остановках и пешеходных переходов для улучшения качества света в местах повышенной опасности.[br]
+				✔особая линза для автомагистралей, которая позволяет добиться КСС для дорог[br]
+				✔нет стробоскопического эффекта[br]
+				✔повышенная освещенность, позволяющая водителям мгновенно увидеть пешехода[br]
+				✔долгий срок службы [br]
+				✔простота эксплуатации [br]
+				✔7 лет  - срок гарантии[br]
+				✔снижение энергозатрат[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники cерии [dq]Модуль[dq] в исполнении [dq]Street-Led[dq] предназначены для наружного освещения: улиц, придворовых территорий, дорог, дворов и т.д.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED с тремя модулями повышенной мощности применяется на остановках и пешеходных переходов для улучшения качества света в местах повышенной опасности." css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -7222,19 +7246,17 @@ IP65[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
-			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+
+			<layer name="perehodIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="70%" crop="256|128|128|128"   zorder="10" onhover="showtext(пешеходные[br]переходы, DEFAULT1)"/>
+			<layer name="BuaStopIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="70%" crop="1408|0|128|128"   zorder="10" onhover="showtext(остановки, DEFAULT1)"/>
+			
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
-			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]7 лет, DEFAULT1)"/>
 			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
 			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
 			</layer></layer>

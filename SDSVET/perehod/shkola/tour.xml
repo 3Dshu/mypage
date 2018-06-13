@@ -164,7 +164,7 @@
 		"
 		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
 		/>
-		<style name="primenenieIK" url="%FIRSTXML%/add/IKONKI_PRIMENENIE5.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
+		<style name="primenenieIK" url="%FIRSTXML%/add/IKONKI_PRIMENENIE.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
 		width="64" height="prop" 
 		edge="center"
 		rotate="0"
@@ -413,7 +413,7 @@
 		
 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
-		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.9" bgcolor="0x0c0c0c" scalechildren="true" maskchildren="true"/>
 		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
 			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
 			<layer name="image_01" url="%FIRSTXML%/images/600-LED4-16-4000-Е33_1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
@@ -451,15 +451,16 @@
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]
-✔Многократное снижение затрат на энергоснабжение.[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты.[br]
-✔Многократное снижение нагрузки на сеть, высвобождение доп. мощностей.[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность.[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения классных кабинетов, коридоров, столовых и даже спортивных залов. Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]
+✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
+✔Специальная цена по категории [dq]Социальный проект[dq][br]
+✔Позволяет добиться требуемой нормы освещенности над школьной партой[br]
+✔Допустим к использованию в социальных учреждениях[br]
+✔Не влияет негативно на детское зрение[br]
+✔Не мерцают, не пульсируют, не взрываются[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения классных кабинетов, коридоров, столовых и даже спортивных залов. Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]" css="font-family:Arial; color:#b0b0b0; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -491,7 +492,7 @@ IP40[br]
 Накладной/Подвесной/Встраиваемый[br]
 «Призма»/ «Опал»[br]
 3.1 кг[br]
-" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+" css="font-family:Arial; color:#b0b0b0; font-size:20px; text-align:right;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
 			
@@ -508,27 +509,28 @@ IP40[br]
 			</layer>
 			</layer>
 						
-			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+		<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
 			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
-			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			<layer name="shkolaIK" style="primenenieIK" align="center" x="0%" y="10" width="prop" height="70%" crop="512|0|128|128"   zorder="10" onhover="showtext(школы, DEFAULT1)"/>
+			<layer name="MedUchIK" style="primenenieIK" align="center" x="16%" y="10" width="prop" height="70%" crop="0|128|128|128"   zorder="10" onhover="showtext(медицинские[br]учреждения, DEFAULT1)"/>
+			<layer name="kafeIKI" style="primenenieIK" align="center" x="-16%" y="10" width="prop" height="70%" crop="1536|0|128|128"   zorder="10" onhover="showtext(кафе, DEFAULT1)"/>
+			<layer name="officeIK" style="primenenieIK" align="center" x="32%" y="10" width="prop" height="70%" crop="0|0|128|128"   zorder="10" onhover="showtext(офисы, DEFAULT1)"/>
+			<layer name="bizneszentrIK" style="primenenieIK" align="center" x="-32%" y="10" width="prop" height="70%" crop="640|128|128|128"   zorder="10" onhover="showtext(бизнес-центры, DEFAULT1)"/>
+
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
 			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
 			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
 			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
-			</layer></layer>
+			</layer>
+		</layer>
 		</layer>
  
 
@@ -629,7 +631,7 @@ IP40[br]
 		
 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
-		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.9" bgcolor="0x0c0c0c" scalechildren="true" maskchildren="true"/>
 		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
 			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
 			<layer name="image_01" url="%FIRSTXML%/images/clasika.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
@@ -667,15 +669,16 @@ IP40[br]
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]
-✔Многократное снижение затрат на энергоснабжение.[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты.[br]
-✔Многократное снижение нагрузки на сеть, высвобождение доп. мощностей.[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность.[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Используется как общее освещение в классных кабинетах, столовых и коридорах, так и как специальное освещение школьных досок.  Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]
+✔Специальная цена по категории [dq]Социальный проект[dq][br]
+✔Позволяет добиться требуемой нормы освещенности над школьной партой[br]
+✔Допустим к использованию в социальных учреждениях[br]
+✔Не влияет негативно на детское зрение[br]
+✔Не мерцают, не пульсируют, не взрываются[br]
+✔Используется как освещение школьной доски. Позволяет видеть мелкий текст даже с задней парты[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Используется как общее освещение в классных кабинетах, столовых и коридорах, так и как специальное освещение школьных досок.  Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]" css="font-family:Arial; color:#b0b0b0; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -707,7 +710,7 @@ IP40[br]
 Накладной/Подвесной/Встраиваемый[br]
 «Призма»/ «Опал»[br]
 3.1 кг[br]
-" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+" css="font-family:Arial; color:#b0b0b0; font-size:20px; text-align:right;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
 			
@@ -729,15 +732,14 @@ IP40[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
-			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			<layer name="shkolaIK" style="primenenieIK" align="center" x="0%" y="10" width="prop" height="70%" crop="512|0|128|128"   zorder="10" onhover="showtext(школы, DEFAULT1)"/>
+			<layer name="MedUchIK" style="primenenieIK" align="center" x="16%" y="10" width="prop" height="70%" crop="0|128|128|128"   zorder="10" onhover="showtext(медицинские[br]учреждения, DEFAULT1)"/>
+			<layer name="kafeIKI" style="primenenieIK" align="center" x="-16%" y="10" width="prop" height="70%" crop="1536|0|128|128"   zorder="10" onhover="showtext(кафе, DEFAULT1)"/>
+			<layer name="officeIK" style="primenenieIK" align="center" x="32%" y="10" width="prop" height="70%" crop="0|0|128|128"   zorder="10" onhover="showtext(офисы, DEFAULT1)"/>
+			<layer name="bizneszentrIK" style="primenenieIK" align="center" x="-32%" y="10" width="prop" height="70%" crop="640|128|128|128"   zorder="10" onhover="showtext(бизнес-центры, DEFAULT1)"/>
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
-			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
 			/>
 			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
