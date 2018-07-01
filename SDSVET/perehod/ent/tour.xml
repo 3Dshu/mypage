@@ -3,7 +3,7 @@
 	<include url="%FIRSTXML%skin/vtourskin.xml" />
 	<include url="%FIRSTXML%add/SDsvetINT.xml"/>
 	<include url="%FIRSTXML%add/custom.xml"/>
-
+	<include url="%FIRSTXML%/add/STYLE.xml"/>
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
 	               maps_type="google"
@@ -34,7 +34,7 @@
 	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
 	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
 	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
-	               loadingtext=""
+	               loadingtext="загрузка..."
 	               layout_width="100%"
 	               layout_maxwidth="300"
 	               controlbar_width="-24"
@@ -137,7 +137,7 @@
 		<hotspot name="startscene" 
 				style="hs_BUILDING_"
 
-				onhover="showtext(На УЛИЦУ, DEFAULT2)"
+				onhover="showtext(НУ УЛИЦУ, DEFAULT2)"
 				onclick="loadpano('%FIRSTXML%/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
 				>
 					 <point ath="-171.19122144052045" atv="-17.276966609800155"/>

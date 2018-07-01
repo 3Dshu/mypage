@@ -1,0 +1,1764 @@
+<krpano version="1.19" title="Virtual Tour" showerrors="false">
+
+	<include url="%FIRSTXML%skin/vtourskin.xml" />
+	<include url="%SWFPATH%/plugins/showtext.xml" preload="true"/>
+	<include url="%FIRSTXML%add/SDsvetINT.xml"/>
+	<include url="%FIRSTXML%add/custom.xml"/>
+	<include url="%FIRSTXML%add/STYLE.xml"/>
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="false"
+	               webvr="false"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="false"
+	               littleplanetintro="false"
+	               title="false"
+	               thumbs="false"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="false"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE|KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="300"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.0"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.0"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	
+		
+
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+
+
+			<style name="hs_lineyniy_vidimij"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="true"
+			 zorder="22"
+			 alpha="0.9"			
+			 fillcolor="0x75c3f3"
+			 fillalpha="0.8"
+			 borderwidth="1"
+			 bordercolor="0x00e4ff"
+			 borderalpha="0.1"
+			 bgshadow="0 5 11 0x5ae1ff 0.5"	
+			 onhover="showtext(Светодиодный линейный светильник алюминиевый, DEFAULT2);"
+			 onclick="action(open_st);"
+			/>
+			<style name="hs_lineyniy_select"
+			 keep="false"
+			 visible="false"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="true"
+			 zorder="22"
+			 alpha="0"			
+			 onhover="showtext(Светодиодный линейный светильник алюминиевый, DEFAULT2);"
+			 onclick="action(open_st);"
+			/>
+			
+
+			<style name="hs_tracker_sel"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="21"
+			 alpha="0"
+			 onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			 onout=""
+			 ondown=""
+			 onup=""
+			 onclick="action(open_st);"
+			 onloaded=""
+			/>
+				<style name="hs_AREA_"
+			 keep="false"
+			 visible="true"
+			 enabled="true" 
+			 handcursor="true"
+			 capture="false"
+			 zorder="22"
+			 alpha="0.9"			
+			 fillcolor="0x75c3f3"
+			 fillalpha="0.8"
+			 borderwidth="1"
+			 bordercolor="0x00e4ff"
+			 borderalpha="0.1"
+			 bgshadow="0 5 11 0x5ae1ff 0.5"		
+	 
+				/>
+					<style name="hs_BUILDING_"
+		         keep="true"
+				 visible="true"
+				 enabled="true"
+				 handcursor="true"
+				 capture="false"
+				 style=""
+				 zorder="1"
+				 alpha="0"
+				 fillcolor="0xffcf27"
+				 fillalpha="0.1"
+				 borderwidth="1.0"
+				 bordercolor="0xff0000"
+				 borderalpha="0.8"
+				 onover="tween(hotspot[get(name)].alpha, 1)"
+				 onhover=""
+				 onout="tween(hotspot[get(name)].alpha, 0)"
+				 
+				 ondown=""
+				 onup=""
+				
+			/>
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
+	<scene name="scene_RGB_odejda" title="RGB_odejda" onstart="" thumburl="panos/RGB_odejda.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/RGB_odejda.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/RGB_odejda.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/RGB_odejda.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/RGB_odejda.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		
+		<hotspot name="h4" style="hs_lineyniy_select">
+ <point ath="-7.625917031396739" atv="-7.454438121956499"/>
+ <point ath="-7.411898900914082" atv="-6.249442449818928"/>
+ <point ath="-8.436878869816269" atv="-6.15286527871724"/>
+ <point ath="-26.20676224414018" atv="-19.00946465042071"/>
+ <point ath="-25.54942958101725" atv="-22.240523429503646"/>
+ </hotspot>
+
+ <hotspot name="h5" style="hs_lineyniy_select">
+ <point ath="-27.766605171910726" atv="-25.77760869201761"/>
+ <point ath="-29.159654069681267" atv="-21.135938527727273"/>
+ <point ath="-54.61192285886386" atv="-30.086183054269874"/>
+ <point ath="-52.193090474841824" atv="-37.77197877943089"/>
+ </hotspot>
+
+ <hotspot name="h6" style="hs_lineyniy_select">
+ <point ath="-68.27508381148635" atv="-42.69349424371492"/>
+ <point ath="-68.17670755845114" atv="-36.01884552805595"/>
+ <point ath="-121.62321069863322" atv="-32.53760450373404"/>
+ <point ath="-124.1624842468982" atv="-39.67849873898412"/>
+ </hotspot>
+
+ <hotspot name="h7" style="hs_lineyniy_select">
+ <point ath="-133.60031072392326" atv="-34.46773167041258"/>
+ <point ath="-132.9862341235404" atv="-28.205216228512583"/>
+ <point ath="-167.06368906916714" atv="-8.731255584855422"/>
+ <point ath="-170.43965892921574" atv="-11.040873958973526"/>
+ </hotspot>
+
+ <hotspot name="h8" style="hs_lineyniy_select">
+ <point ath="174.53461380392594" atv="-12.365998179489292"/>
+ <point ath="173.46458356733592" atv="-8.732777924894647"/>
+ <point ath="146.3294897603534" atv="-34.689185229236784"/>
+ <point ath="151.85666865488295" atv="-40.342642145556695"/>
+ </hotspot>
+
+ <hotspot name="h9" style="hs_lineyniy_select">
+ <point ath="141.1528385973634" atv="-50.49423698208043"/>
+ <point ath="135.7164473788119" atv="-41.87983957045947"/>
+ <point ath="57.85296541794986" atv="-47.615994321716784"/>
+ <point ath="52.585531364304416" atv="-54.986203657767426"/>
+ </hotspot>
+
+ <hotspot name="h10" style="hs_lineyniy_select">
+ <point ath="36.105413170304075" atv="-46.09660706452137"/>
+ <point ath="42.45099950636484" atv="-43.67378896399715"/>
+ <point ath="20.03331064352858" atv="-22.55409068192744"/>
+ </hotspot>
+
+ <hotspot name="hs11" style="hs_lineyniy_select">
+ <point ath="15.27589581997097" atv="-25.214785181896104"/>
+ </hotspot>
+
+ <hotspot name="h12" style="hs_lineyniy_select">
+ <point ath="13.85550581843853" atv="-23.243238696156038"/>
+ <point ath="17.11913794642635" atv="-21.02156718713174"/>
+ <point ath="5.725985629127081" atv="-5.75188336197085"/>
+ <point ath="3.509959193117936" atv="-6.965315465657519"/>
+ </hotspot>
+
+ <hotspot name="h13" style="hs_lineyniy_select">
+ <point ath="16.232901445906748" atv="-8.368002143147622"/>
+ <point ath="16.431044113729286" atv="-5.795228634498217"/>
+ <point ath="46.29289746286588" atv="-14.181197509212753"/>
+ <point ath="45.80976344117357" atv="-19.189524916827327"/>
+ </hotspot>
+
+ <hotspot name="h14" style="hs_lineyniy_select">
+ <point ath="50.784518059070706" atv="-19.01724249493267"/>
+ <point ath="50.795586646100446" atv="-15.273690832084782"/>
+ <point ath="71.25291611791994" atv="-18.49975067982439"/>
+ <point ath="70.78977730742986" atv="-23.269977194936267"/>
+ </hotspot>
+
+ <hotspot name="h15" style="hs_lineyniy_select">
+ <point ath="80.03935489869741" atv="-24.793365851240768"/>
+ <point ath="79.53449601190238" atv="-19.722417471539465"/>
+ <point ath="106.57945298332578" atv="-19.178571422869567"/>
+ <point ath="107.3324649578044" atv="-23.330017454384446"/>
+ </hotspot>
+
+ <hotspot name="h16" style="hs_lineyniy_select">
+ <point ath="114.87097340549272" atv="-22.249626386602745"/>
+ <point ath="114.13594537975578" atv="-17.189023332754182"/>
+ <point ath="156.11722431825135" atv="-7.889887851106248"/>
+ <point ath="156.58158666021865" atv="-11.325365461742654"/>
+ </hotspot>
+
+ <hotspot name="h17" style="hs_lineyniy_select">
+ <point ath="142.19701058187223" atv="-8.855031375722108"/>
+ <point ath="142.08634936839516" atv="-7.265196707294444"/>
+ <point ath="139.1051789308624" atv="-7.425127263845579"/>
+ <point ath="139.105711247886" atv="-9.116699974192796"/>
+ </hotspot>
+
+ <hotspot name="h18" style="hs_lineyniy_select">
+ <point ath="129.24832873064838" atv="-11.31383312663491"/>
+ <point ath="129.6612542569267" atv="-6.2346527229096615"/>
+ <point ath="111.3801014572955" atv="-3.7607193612765624"/>
+ <point ath="110.41532193530858" atv="-6.617261260653587"/>
+ <point ath="107.28117932641825" atv="-6.57961702577337"/>
+ <point ath="106.45056938007176" atv="-4.745124914546664"/>
+ <point ath="76.89086788024906" atv="-4.158636052730351"/>
+ <point ath="76.74411725643495" atv="-7.135742947072974"/>
+ <point ath="73.23864878842062" atv="-7.135352691349854"/>
+ <point ath="72.30280076105021" atv="-4.567105098255388"/>
+ <point ath="56.65746498878383" atv="-3.18272206414319"/>
+ <point ath="56.707808190374976" atv="-11.688496108172531"/>
+ </hotspot>
+
+ <hotspot name="h19" style="hs_lineyniy_select">
+ <point ath="46.06064591940253" atv="-10.870638199682421"/>
+ <point ath="45.846323352068225" atv="-3.801923478109825"/>
+ <point ath="27.512590110489498" atv="-5.518695790984927"/>
+ <point ath="26.81310255866879" atv="-7.2019922403476455"/>
+ </hotspot>
+
+ <hotspot name="h20" style="hs_lineyniy_select">
+ <point ath="-18.67147687535811" atv="-8.758944391002537"/>
+ <point ath="-19.117161729889062" atv="-5.251258414562355"/>
+ <point ath="-37.59458660710652" atv="-10.183712664448368"/>
+ <point ath="-37.07698332552695" atv="-11.94850624152673"/>
+ </hotspot>
+
+ <hotspot name="hs21" style="hs_lineyniy_select">
+ <point ath="-38.52569770373145" atv="-8.39273730177037"/>
+ <point ath="-29.506039818707677" atv="-6.599818208902613"/>
+ <point ath="-29.60272201726201" atv="-5.489651894214194"/>
+ <point ath="-38.669633472641806" atv="-5.795242435191389"/>
+ </hotspot>
+
+ <hotspot name="h22" style="hs_lineyniy_select">
+ <point ath="-55.41917716654518" atv="-17.661209677259347"/>
+ <point ath="-55.48765880091122" atv="-13.876738224113792"/>
+ <point ath="-135.9898059098864" atv="-11.419295555354854"/>
+ <point ath="-135.56350257121326" atv="-14.081101685738668"/>
+ </hotspot>
+
+ <hotspot name="h23" style="hs_lineyniy_select">
+ <point ath="-146.98427863781214" atv="-12.704733517387126"/>
+ <point ath="-146.58186988963578" atv="-8.010018912413495"/>
+ <point ath="-152.20726303877754" atv="-7.8602673333516835"/>
+ <point ath="-152.28803437672076" atv="-10.704096311111957"/>
+ </hotspot>
+
+ <hotspot name="h24" style="hs_lineyniy_select">
+ <point ath="-50.795387831884454" atv="-11.40927107631904"/>
+ <point ath="-50.99242810414091" atv="-4.210070704983415"/>
+ <point ath="-123.45370948720941" atv="-4.253027673512567"/>
+ <point ath="-135.95956232547854" atv="-7.3579521175631015"/>
+ <point ath="-135.8635911217874" atv="-9.616924594094202"/>
+ </hotspot>
+		
+		<hotspot name="hs4v" style="hs_lineyniy_vidimij">
+ <point ath="4.81849235971697" atv="-6.563197082318971"/>
+ <point ath="4.423320648539288" atv="-6.58315958755289"/>
+ <point ath="4.467480577182755" atv="-6.86115557163357"/>
+ <point ath="6.644099275989959" atv="-10.115681777677791"/>
+ <point ath="6.9964489317617335" atv="-10.117644698732699"/>
+ <point ath="7.021755039890536" atv="-9.563248624608171"/>
+ </hotspot>
+
+ <hotspot name="hs5v" style="hs_lineyniy_vidimij">
+ <point ath="7.160019609977439" atv="-10.487755274444332"/>
+ <point ath="7.158287855714491" atv="-11.064133353503854"/>
+ <point ath="9.021060167271003" atv="-13.842892151577633"/>
+ <point ath="9.636886142339677" atv="-13.818427520225226"/>
+ <point ath="9.659051956335759" atv="-13.064383175511953"/>
+ <point ath="7.701215505492939" atv="-10.37444202768522"/>
+ </hotspot>
+
+ <hotspot name="hs6v" style="hs_lineyniy_vidimij">
+ <point ath="15.820419527070726" atv="-20.642682007698973"/>
+ <point ath="11.136035116752737" atv="-14.831099323762434"/>
+ <point ath="10.298626946275704" atv="-14.819865011254409"/>
+ <point ath="10.261695366253093" atv="-15.583498680813657"/>
+ <point ath="14.740303202545476" atv="-21.82206305325636"/>
+ <point ath="15.831809248115121" atv="-21.789541377321534"/>
+ </hotspot>
+
+ <hotspot name="hs7v" style="hs_lineyniy_vidimij">
+ <point ath="19.371893086064972" atv="-24.47677960854715"/>
+ <point ath="18.040512969552424" atv="-24.644662893975898"/>
+ <point ath="17.982914391742156" atv="-25.929456262934465"/>
+ <point ath="36.37747421794711" atv="-43.023999036374725"/>
+ <point ath="38.49375573402631" atv="-42.28256349928264"/>
+ <point ath="38.44249576901336" atv="-40.59349767990198"/>
+ </hotspot>
+
+ <hotspot name="hs8v" style="hs_lineyniy_vidimij">
+ <point ath="137.12214365784922" atv="-47.0455271329656"/>
+ <point ath="137.1119574586539" atv="-45.38830401463527"/>
+ <point ath="135.02596732708912" atv="-44.238673969049955"/>
+ <point ath="58.74998731586709" atv="-49.63256800231274"/>
+ <point ath="56.70081896902161" atv="-51.12900226408063"/>
+ <point ath="56.73895621903807" atv="-52.7178987394011"/>
+ </hotspot>
+
+ <hotspot name="hs9v" style="hs_lineyniy_vidimij">
+ <point ath="149.45536646255817" atv="-35.06188743370573"/>
+ <point ath="149.5021531440546" atv="-36.65238491281172"/>
+ <point ath="151.2418759499942" atv="-37.066252886736955"/>
+ <point ath="164.320716738359" atv="-23.384809446040634"/>
+ <point ath="164.29732548048196" atv="-21.899362516402526"/>
+ <point ath="163.06115158103597" atv="-21.790017800176148"/>
+ </hotspot>
+
+ <hotspot name="hs10v" style="hs_lineyniy_vidimij">
+ <point ath="166.83801312020728" atv="-19.71102188052304"/>
+ <point ath="170.5370567028384" atv="-14.486920255454491"/>
+ <point ath="170.47629411577077" atv="-13.772236006532777"/>
+ <point ath="169.76327501759033" atv="-13.715851244929963"/>
+ <point ath="165.8356003026497" atv="-18.52643613327383"/>
+ <point ath="165.81217846893293" atv="-19.69224985213119"/>
+ </hotspot>
+
+ <hotspot name="hs11v" style="hs_lineyniy_vidimij">
+ <point ath="170.8427910259553" atv="-13.118010609909527"/>
+ <point ath="170.85042888333504" atv="-12.30912481248639"/>
+ <point ath="172.66699929155882" atv="-9.966023414725397"/>
+ <point ath="173.19965634278157" atv="-9.954372690553454"/>
+ <point ath="173.21398174554326" atv="-10.459623898953607"/>
+ <point ath="171.47940506967623" atv="-13.081277312612015"/>
+ </hotspot>
+
+ <hotspot name="hs12v" style="hs_lineyniy_vidimij">
+ <point ath="-7.811330323026425" atv="-6.593013519941307"/>
+ <point ath="-7.788196267346962" atv="-6.963316902182233"/>
+ <point ath="-8.956631116319613" atv="-7.931267129915977"/>
+ <point ath="-9.213432232748858" atv="-7.930215204475482"/>
+ <point ath="-9.282469164123711" atv="-7.514324852277027"/>
+ <point ath="-8.067769714386372" atv="-6.4306611272590954"/>
+ </hotspot>
+
+ <hotspot name="hs13v" style="hs_lineyniy_vidimij">
+ <point ath="-9.55887007850589" atv="-8.04507019424394"/>
+ <point ath="-9.513012477210623" atv="-8.554255037779283"/>
+ <point ath="-11.321689079271437" atv="-9.999945733462862"/>
+ <point ath="-11.790206150455617" atv="-9.995907058924896"/>
+ <point ath="-11.787179408030056" atv="-9.419927596949258"/>
+ <point ath="-9.956646231529476" atv="-7.9514116295610835"/>
+ </hotspot>
+
+ <hotspot name="hs14v" style="hs_lineyniy_vidimij">
+ <point ath="-12.36953135572901" atv="-10.305419401759014"/>
+ <point ath="-12.367553413543362" atv="-10.908404729447575"/>
+ <point ath="-15.597465124460712" atv="-13.564511552365072"/>
+ <point ath="-16.215265572517183" atv="-13.512173938453778"/>
+ <point ath="-16.184323220329645" atv="-12.70354123899766"/>
+ <point ath="-12.817619827343208" atv="-10.190561394485204"/>
+ </hotspot>
+
+ <hotspot name="hs15v" style="hs_lineyniy_vidimij">
+ <point ath="-17.657041135710074" atv="-15.26929884389433"/>
+ <point ath="-17.65862101926234" atv="-14.415595391711948"/>
+ <point ath="-18.422178813858068" atv="-14.271313379086823"/>
+ <point ath="-25.667045279403396" atv="-19.316651567244758"/>
+ <point ath="-25.730869755213803" atv="-20.51727898028096"/>
+ <point ath="-24.917386471077975" atv="-20.664685131195107"/>
+ </hotspot>
+
+ <hotspot name="hs16v" style="hs_lineyniy_vidimij">
+ <point ath="-29.57059633959716" atv="-24.051232535953364"/>
+ <point ath="-29.580063378297496" atv="-22.792503790869375"/>
+ <point ath="-30.66043164645106" atv="-22.491339349698492"/>
+ <point ath="-53.39184585832993" atv="-33.12268005134733"/>
+ <point ath="-53.38665820919499" atv="-34.74201715632918"/>
+ <point ath="-52.219078985366366" atv="-35.38467531634955"/>
+ </hotspot>
+
+ <hotspot name="hs17v" style="hs_lineyniy_vidimij">
+ <point ath="-69.4784914284188" atv="-40.144733882703164"/>
+ <point ath="-69.4527668846224" atv="-38.496439199204985"/>
+ <point ath="-70.25044300318359" atv="-37.446250142173604"/>
+ <point ath="-120.53335180061634" atv="-34.920038977486385"/>
+ <point ath="-121.5472129114531" atv="-35.85192167959628"/>
+ <point ath="-121.64480270736115" atv="-37.432858672056994"/>
+ </hotspot>
+
+ <hotspot name="hs18v" style="hs_lineyniy_vidimij">
+ <point ath="-134.995756655741" atv="-31.434059456452367"/>
+ <point ath="-135.03339782624272" atv="-29.966381550568933"/>
+ <point ath="-152.67186631880017" atv="-20.38363512520655"/>
+ <point ath="-153.75672655644965" atv="-20.57139737839858"/>
+ <point ath="-153.81510438477767" atv="-21.74218142937702"/>
+ <point ath="-136.19318969833182" atv="-31.86458060930114"/>
+ </hotspot>
+
+ <hotspot name="hs19v" style="hs_lineyniy_vidimij">
+ <point ath="-156.83340723274165" atv="-18.678421431115957"/>
+ <point ath="-156.79052666649702" atv="-17.727389320727827"/>
+ <point ath="-162.88543070892905" atv="-13.300850037407441"/>
+ <point ath="-163.66906561062822" atv="-13.424310109473165"/>
+ <point ath="-163.7079983256652" atv="-14.162430218998516"/>
+ <point ath="-157.7088833734532" atv="-18.834216309874424"/>
+ </hotspot>
+
+ <hotspot name="hs20v" style="hs_lineyniy_vidimij">
+ <point ath="-164.8337597959018" atv="-12.79815077644471"/>
+ <point ath="-164.78977437799605" atv="-11.96891894168234"/>
+ <point ath="-167.7152793836961" atv="-9.780774089428286"/>
+ <point ath="-168.21843487772415" atv="-9.766534964718472"/>
+ <point ath="-168.23895858469547" atv="-10.314077035950291"/>
+ <point ath="-165.35066931238455" atv="-12.808027192687678"/>
+ </hotspot>
+
+ <hotspot name="hs21v" style="hs_lineyniy_vidimij">
+ <point ath="-19.595735406099948" atv="-6.61030976630029"/>
+ <point ath="-19.599764989340315" atv="-6.24232215068709"/>
+ <point ath="-19.96845666716183" atv="-6.15512490056894"/>
+ <point ath="-22.667371077027894" atv="-6.991945538898155"/>
+ <point ath="-22.618251062876084" atv="-7.407344594819209"/>
+ <point ath="-22.339223210855266" atv="-7.427739435009962"/>
+ </hotspot>
+
+ <hotspot name="hs22v" style="hs_lineyniy_vidimij">
+ <point ath="-23.710305340082527" atv="-7.8784777273850075"/>
+ <point ath="-23.735466007032187" atv="-7.485742614775871"/>
+ <point ath="-24.085763486174073" atv="-7.349245939961597"/>
+ <point ath="-28.08192798401467" atv="-8.511971748289033"/>
+ <point ath="-28.106171151777914" atv="-8.950516728257393"/>
+ <point ath="-27.755094403555802" atv="-9.066975381082905"/>
+ </hotspot>
+
+ <hotspot name="hs23v" style="hs_lineyniy_vidimij">
+ <point ath="-29.840489978849405" atv="-9.723389269247138"/>
+ <point ath="-29.814435718893492" atv="-9.148020008336012"/>
+ <point ath="-30.281217761504422" atv="-9.074755342228"/>
+ <point ath="-36.54341298424049" atv="-10.710401830124976"/>
+ <point ath="-36.55223132874636" atv="-11.298199499405365"/>
+ <point ath="-36.21123945673901" atv="-11.44492182437487"/>
+ </hotspot>
+
+ <hotspot name="hs24v" style="hs_lineyniy_vidimij">
+ <point ath="-29.986575895317287" atv="-6.07341243653603"/>
+ <point ath="-29.96176740826604" atv="-5.7493819147193586"/>
+ <point ath="-30.216992040560285" atv="-5.678461635038852"/>
+ <point ath="-33.80602721556386" atv="-6.313819521643178"/>
+ <point ath="-33.81018302752187" atv="-6.704923972747271"/>
+ </hotspot>
+
+ <hotspot name="hs25v" style="hs_lineyniy_vidimij">
+ <point ath="-35.39600539998821" atv="-7.023496005160513"/>
+ <point ath="-35.41345711690303" atv="-6.610689844304833"/>
+ <point ath="-38.69933239955782" atv="-7.064688101946631"/>
+ <point ath="-38.66308110745251" atv="-7.5417464688047255"/>
+ </hotspot>
+
+ <hotspot name="hs26v" style="hs_lineyniy_vidimij">
+ <point ath="-51.37364886810781" atv="-5.407810829006005"/>
+ <point ath="-51.36188707158169" atv="-5.114247807141107"/>
+ <point ath="-56.39218725506214" atv="-5.417871117484928"/>
+ <point ath="-56.43144776725819" atv="-5.715859392616106"/>
+ </hotspot>
+
+ <hotspot name="hs27v" style="hs_lineyniy_vidimij">
+ <point ath="-51.99105020149119" atv="-6.938316158407052"/>
+ <point ath="-52.006352749142366" atv="-6.484724559485922"/>
+ <point ath="-58.60106624085711" atv="-6.958594995873313"/>
+ <point ath="-58.59487494591252" atv="-7.3969087090433066"/>
+ </hotspot>
+
+ <hotspot name="hs28v" style="hs_lineyniy_vidimij">
+ <point ath="-53.35384188849724" atv="-9.687636634086841"/>
+ <point ath="-53.372944202230315" atv="-9.047925818743122"/>
+ <point ath="-63.0696792849277" atv="-9.971845107079966"/>
+ <point ath="-63.045544719438" atv="-10.714041718156532"/>
+ </hotspot>
+
+ <hotspot name="hs29v" style="hs_lineyniy_vidimij">
+ <point ath="-56.08325128916675" atv="-15.984727406393446"/>
+ <point ath="-56.066407632667676" atv="-15.134157741120664"/>
+ <point ath="-56.54722897859796" atv="-14.87508883414687"/>
+ <point ath="-73.72312668775953" atv="-17.03180901061091"/>
+ <point ath="-73.72419400283542" atv="-18.196283364780925"/>
+ <point ath="-73.51430932106814" atv="-18.2977760460479"/>
+ </hotspot>
+
+ <hotspot name="hs30v" style="hs_lineyniy_vidimij">
+ <point ath="-58.51909954753012" atv="-5.856811569033543"/>
+ <point ath="-58.53105074017611" atv="-5.5678805834825935"/>
+ <point ath="-61.31802131957113" atv="-5.616880353938938"/>
+ <point ath="-61.32537202804775" atv="-6.045251370297492"/>
+ </hotspot>
+
+ <hotspot name="hs31v" style="hs_lineyniy_vidimij">
+ <point ath="-66.47778401417065" atv="-8.054184397541524"/>
+ <point ath="-66.46708945451348" atv="-7.479904876238595"/>
+ <point ath="-69.64981315021282" atv="-7.6666386056698625"/>
+ <point ath="-69.71199805242713" atv="-8.245108062230749"/>
+ </hotspot>
+
+ <hotspot name="hs32v" style="hs_lineyniy_vidimij">
+ <point ath="-67.45627094213535" atv="-11.08646313521583"/>
+ <point ath="-67.42031244666009" atv="-10.534056130978183"/>
+ <point ath="-67.67908013757892" atv="-10.355873372775886"/>
+ <point ath="-79.70798640044" atv="-10.994061553578439"/>
+ <point ath="-79.74174049357867" atv="-11.777297754840854"/>
+ </hotspot>
+
+ <hotspot name="hs33v" style="hs_lineyniy_vidimij">
+ <point ath="-67.10850927546068" atv="-6.365314497948782"/>
+ <point ath="-67.11886842201454" atv="-5.837388531303952"/>
+ <point ath="-73.82948338341595" atv="-6.142712844360402"/>
+ <point ath="-73.80511429399672" atv="-6.6059280980330985"/>
+ </hotspot>
+
+ <hotspot name="hs34v" style="hs_lineyniy_vidimij">
+ <point ath="-76.79378756647799" atv="-6.724232189419498"/>
+ <point ath="-76.71334705678896" atv="-6.218616428776724"/>
+ <point ath="-84.06235184112563" atv="-6.382050313142559"/>
+ <point ath="-84.08438646482398" atv="-6.799308016564352"/>
+ </hotspot>
+
+ <hotspot name="hs35v" style="hs_lineyniy_vidimij">
+ <point ath="-73.21772202852105" atv="-8.395335084333471"/>
+ <point ath="-73.2338606666894" atv="-7.8291944793262225"/>
+ <point ath="-82.44877460684052" atv="-8.066587247169196"/>
+ <point ath="-82.46833500394763" atv="-8.599586494023066"/>
+ </hotspot>
+
+ <hotspot name="hs36v" style="hs_lineyniy_vidimij">
+ <point ath="-87.2391609142067" atv="-6.899408052901779"/>
+ <point ath="-87.18089764011722" atv="-6.394335104252424"/>
+ <point ath="-94.64278374750074" atv="-6.403942075368625"/>
+ <point ath="-94.6880781287665" atv="-6.775047015968503"/>
+ </hotspot>
+
+ <hotspot name="hs37v" style="hs_lineyniy_vidimij">
+ <point ath="-86.3808264215275" atv="-8.733372665750018"/>
+ <point ath="-86.37146313156524" atv="-8.116251281573524"/>
+ <point ath="-95.90126603233699" atv="-8.05336868373609"/>
+ <point ath="-95.94760256648362" atv="-8.633086311316566"/>
+ </hotspot>
+
+ <hotspot name="hs38v" style="hs_lineyniy_vidimij">
+ <point ath="-84.98696605056011" atv="-11.848266703702986"/>
+ <point ath="-84.98314965018574" atv="-11.10104760160505"/>
+ <point ath="-98.13803243755507" atv="-11.011963747415397"/>
+ <point ath="-98.21206925279535" atv="-11.818612324795827"/>
+ </hotspot>
+
+ <hotspot name="hs39v" style="hs_lineyniy_vidimij">
+ <point ath="-81.92866376566343" atv="-18.7450114388878"/>
+ <point ath="-81.91006617690101" atv="-17.545758814946783"/>
+ <point ath="-102.9629890718465" atv="-17.196674132700146"/>
+ <point ath="-103.13932078048862" atv="-18.48679149267003"/>
+ </hotspot>
+
+ <hotspot name="hs40v" style="hs_lineyniy_vidimij">
+ <point ath="-97.98276157227315" atv="-6.789507060510033"/>
+ <point ath="-97.92618903961335" atv="-6.381046161382848"/>
+ <point ath="-105.14260924239977" atv="-6.169701377483148"/>
+ <point ath="-105.18394921992055" atv="-6.608650777470231"/>
+ </hotspot>
+
+ <hotspot name="hs41v" style="hs_lineyniy_vidimij">
+ <point ath="-100.16106542535971" atv="-8.597531199903687"/>
+ <point ath="-109.01278820630756" atv="-7.682619206682765"/>
+ <point ath="-109.08085211294886" atv="-8.308318154682462"/>
+ <point ath="-100.15356858527116" atv="-8.580538086941397"/>
+ <point ath="-100.11985607820901" atv="-8.010197466916749"/>
+ <point ath="-108.89566099774532" atv="-7.751619653800307"/>
+ </hotspot>
+
+ <hotspot name="hs42v" style="hs_lineyniy_vidimij">
+ <point ath="-108.0635567626133" atv="-6.509004024972813"/>
+ <point ath="-108.04555034748245" atv="-6.073692640922374"/>
+ <point ath="-114.57625128053036" atv="-5.86275257661126"/>
+ <point ath="-114.55192021473329" atv="-6.23307811831386"/>
+ </hotspot>
+
+ <hotspot name="hs43v" style="hs_lineyniy_vidimij">
+ <point ath="-103.7728532392826" atv="-11.664012849074958"/>
+ <point ath="-103.78612953452523" atv="-10.8632018288868"/>
+ <point ath="-115.5475714816834" atv="-10.088340200563918"/>
+ <point ath="-115.57001837154274" atv="-10.844387151345748"/>
+ </hotspot>
+
+ <hotspot name="hs44v" style="hs_lineyniy_vidimij">
+ <point ath="-112.54382435131063" atv="-8.066096432464308"/>
+ <point ath="-112.56989974809363" atv="-7.536506023164482"/>
+ <point ath="-120.21714682556458" atv="-7.035778690813803"/>
+ <point ath="-120.31262532688356" atv="-7.589005039208526"/>
+ </hotspot>
+
+ <hotspot name="hs45v" style="hs_lineyniy_vidimij">
+ <point ath="-117.02287803367346" atv="-6.122114869308846"/>
+ <point ath="-117.02276296346761" atv="-5.728179232911031"/>
+ <point ath="-122.73163130473381" atv="-5.374826758533038"/>
+ <point ath="-122.73454318815317" atv="-5.7667882531591275"/>
+ </hotspot>
+
+ <hotspot name="hs46v" style="hs_lineyniy_vidimij">
+ <point ath="-123.0232595257657" atv="-7.351923818560255"/>
+ <point ath="-123.0652437831011" atv="-6.822407570948217"/>
+ <point ath="-127.93711530168301" atv="-6.416729267310266"/>
+ <point ath="-127.87633247399668" atv="-6.895285987800653"/>
+ </hotspot>
+
+ <hotspot name="hs47v" style="hs_lineyniy_vidimij">
+ <point ath="-119.67006109830132" atv="-10.353203423495215"/>
+ <point ath="-119.64451516968839" atv="-9.757551056796158"/>
+ <point ath="-128.8900970857888" atv="-8.745835419895279"/>
+ <point ath="-128.96614326524204" atv="-9.328843116291571"/>
+ </hotspot>
+
+ <hotspot name="hs48v" style="hs_lineyniy_vidimij">
+ <point ath="-131.88577925254984" atv="-8.92399300185163"/>
+ <point ath="-131.90759231164404" atv="-8.369070595519084"/>
+ <point ath="-135.8403069997207" atv="-7.8191695593999695"/>
+ <point ath="-135.77732136216594" atv="-8.441552293492748"/>
+ </hotspot>
+
+ <hotspot name="hs49v" style="hs_lineyniy_vidimij">
+ <point ath="-111.46772686437203" atv="-17.722226261891112"/>
+ <point ath="-111.40740288972262" atv="-16.60000168894546"/>
+ <point ath="-127.40798592550985" atv="-14.129778516659778"/>
+ <point ath="-127.81679445385322" atv="-14.43730578202933"/>
+ <point ath="-127.81935078643735" atv="-15.239084402363405"/>
+ </hotspot>
+
+ <hotspot name="hs50v" style="hs_lineyniy_vidimij">
+ <point ath="-132.49705261883489" atv="-14.04730287032998"/>
+ <point ath="-132.46825448250385" atv="-13.195206147997991"/>
+ <point ath="-135.77021208145362" atv="-12.48049630394629"/>
+ <point ath="-135.76165352304815" atv="-13.469438600345493"/>
+ </hotspot>
+
+ <hotspot name="hs51v" style="hs_lineyniy_vidimij">
+ <point ath="-146.66079589988885" atv="-10.679506111502137"/>
+ <point ath="-146.6204922227466" atv="-9.952295883528473"/>
+ <point ath="-151.01189731563227" atv="-8.734869722693318"/>
+ <point ath="-151.40817224033742" atv="-8.829540953517792"/>
+ <point ath="-151.4535703185819" atv="-9.312079505414962"/>
+ </hotspot>
+
+ <hotspot name="hs52v" style="hs_lineyniy_vidimij">
+ <point ath="155.5095022461402" atv="-9.710613018015431"/>
+ <point ath="155.51862440120595" atv="-9.120149854766126"/>
+ <point ath="155.08732732801184" atv="-9.042531914664924"/>
+ <point ath="149.82455982268175" atv="-10.81911956921392"/>
+ <point ath="149.85667079951293" atv="-11.575299956755412"/>
+ </hotspot>
+
+ <hotspot name="hs53v" style="hs_lineyniy_vidimij">
+ <point ath="147.3625376685366" atv="-12.595819461564579"/>
+ <point ath="147.36633506120916" atv="-11.842876732756704"/>
+ <point ath="146.80942027617613" atv="-11.723859792876317"/>
+ <point ath="137.55596914402517" atv="-14.307987468460997"/>
+ <point ath="137.53140923673487" atv="-15.110915942497188"/>
+ <point ath="138.1046094047498" atv="-15.340005500801928"/>
+ </hotspot>
+
+ <hotspot name="hs54v" style="hs_lineyniy_vidimij">
+ <point ath="132.85935379554414" atv="-16.749939651238556"/>
+ <point ath="132.842214907248" atv="-15.905076358283509"/>
+ <point ath="132.08990441774205" atv="-15.673822804377641"/>
+ <point ath="115.07796565381861" atv="-18.9481014469209"/>
+ <point ath="115.02521437261692" atv="-20.073062273049093"/>
+ <point ath="115.6386247479843" atv="-20.39536053285216"/>
+ </hotspot>
+
+ <hotspot name="hs55v" style="hs_lineyniy_vidimij">
+ <point ath="105.69200205705786" atv="-21.623081018793105"/>
+ <point ath="105.67027385418623" atv="-20.55248425778165"/>
+ <point ath="105.29254577346512" atv="-20.184189395768424"/>
+ <point ath="80.57233763471885" atv="-20.44630106537798"/>
+ <point ath="80.3293368927375" atv="-20.958637786909364"/>
+ <point ath="80.31839581018141" atv="-22.142842022104187"/>
+ </hotspot>
+
+ <hotspot name="hs56v" style="hs_lineyniy_vidimij">
+ <point ath="70.43912504968381" atv="-21.172565938440123"/>
+ <point ath="70.8155292718385" atv="-20.838035810622177"/>
+ <point ath="70.77832176190248" atv="-19.794675823746378"/>
+ <point ath="51.788704691296516" atv="-16.49743772415151"/>
+ <point ath="51.121094900256026" atv="-16.779159931458445"/>
+ <point ath="51.13773279267451" atv="-17.824429480585167"/>
+ </hotspot>
+
+ <hotspot name="hs57v" style="hs_lineyniy_vidimij">
+ <point ath="45.80202776011993" atv="-16.165381960969"/>
+ <point ath="45.763952439956995" atv="-15.262371889212446"/>
+ <point ath="35.3470145452232" atv="-12.381450870669939"/>
+ <point ath="34.82989142455364" atv="-12.45947321508841"/>
+ <point ath="34.767533457058335" atv="-13.173786481352247"/>
+ <point ath="45.3643804211618" atv="-16.377299560424312"/>
+ </hotspot>
+
+ <hotspot name="hs58v" style="hs_lineyniy_vidimij">
+ <point ath="31.867987239433432" atv="-11.980950033542037"/>
+ <point ath="31.881649506830286" atv="-11.391149366967808"/>
+ <point ath="26.054319377506204" atv="-9.41983116993906"/>
+ <point ath="25.586411285128975" atv="-9.493115993774962"/>
+ <point ath="25.518915472364142" atv="-10.092971390145472"/>
+ <point ath="31.45576250031303" atv="-12.130592569022506"/>
+ </hotspot>
+
+ <hotspot name="hs59v" style="hs_lineyniy_vidimij">
+ <point ath="24.132900882082026" atv="-9.408894790103165"/>
+ <point ath="24.084820639260272" atv="-8.831468457976083"/>
+ <point ath="20.564973077349066" atv="-7.566823832316799"/>
+ <point ath="20.1213848464065" atv="-7.587357354074458"/>
+ <point ath="20.16581618608666" atv="-8.05041760037671"/>
+ <point ath="23.794019443459092" atv="-9.446378875308392"/>
+ </hotspot>
+
+ <hotspot name="hs60v" style="hs_lineyniy_vidimij">
+ <point ath="19.282103573719155" atv="-7.60429616925153"/>
+ <point ath="19.261626881408574" atv="-7.164645176376836"/>
+ <point ath="16.904482367943558" atv="-6.240458317495196"/>
+ <point ath="16.65023450611193" atv="-6.283616362758516"/>
+ <point ath="16.622365479285634" atv="-6.7213275911122645"/>
+ <point ath="19.025608906664047" atv="-7.648315098170203"/>
+ </hotspot>
+
+ <hotspot name="hs61v" style="hs_lineyniy_vidimij">
+ <point ath="27.362600284980203" atv="-6.148227863340867"/>
+ <point ath="27.388539916561342" atv="-5.850009203887757"/>
+ <point ath="31.09771390688445" atv="-6.489906129770942"/>
+ </hotspot>
+
+ <hotspot name="hs62v" style="hs_lineyniy_vidimij">
+ <point ath="31.09562121065727" atv="-6.882599259090848"/>
+ </hotspot>
+
+ <hotspot name="hs63v" style="hs_lineyniy_vidimij">
+ <point ath="32.5138410025657" atv="-7.239192395817956"/>
+ <point ath="32.5619441104036" atv="-6.800144071839046"/>
+ <point ath="37.60297075147929" atv="-7.678833301939834"/>
+ <point ath="37.65139192759784" atv="-8.16313617846012"/>
+ </hotspot>
+
+ <hotspot name="hs64v" style="hs_lineyniy_vidimij">
+ <point ath="39.750166206765414" atv="-8.604603772329103"/>
+ <point ath="39.770394642055635" atv="-8.121245819495266"/>
+ <point ath="46.26998431773217" atv="-9.059655914319675"/>
+ <point ath="46.25678209313901" atv="-9.714988118259718"/>
+ </hotspot>
+
+ <hotspot name="hs65v" style="hs_lineyniy_vidimij">
+ <point ath="56.69077984018935" atv="-11.227360065210036"/>
+ <point ath="56.6466254685007" atv="-10.441743234133583"/>
+ <point ath="60.41557756481291" atv="-10.809248245152865"/>
+ <point ath="60.584500853363124" atv="-11.615723313840267"/>
+ </hotspot>
+
+ <hotspot name="hs66v" style="hs_lineyniy_vidimij">
+ <point ath="78.53138335499301" atv="-13.004748691506778"/>
+ <point ath="78.52572391181411" atv="-12.196943343668748"/>
+ <point ath="65.38178265388319" atv="-11.251591649356623"/>
+ <point ath="65.15249236651658" atv="-12.039592411863206"/>
+ </hotspot>
+
+ <hotspot name="hs67v" style="hs_lineyniy_vidimij">
+ <point ath="84.38116915779739" atv="-13.223710245093944"/>
+ <point ath="84.43610615746383" atv="-12.322148658157785"/>
+ <point ath="98.98243720416704" atv="-12.286337547741429"/>
+ <point ath="99.2003938200447" atv="-13.115536378451056"/>
+ </hotspot>
+
+ <hotspot name="hs68v" style="hs_lineyniy_vidimij">
+ <point ath="105.14834541672451" atv="-12.650463935675097"/>
+ <point ath="105.16982268894975" atv="-11.87694092550727"/>
+ <point ath="117.98421892028514" atv="-10.985754724653914"/>
+ </hotspot>
+
+ <hotspot name="hs70v" style="hs_lineyniy_vidimij">
+ <point ath="122.28019906707496" atv="-11.20257950087099"/>
+ <point ath="122.37408242268907" atv="-10.416002179787153"/>
+ <point ath="129.66659363687216" atv="-9.569131181281058"/>
+ <point ath="129.6812350720645" atv="-10.372757567051965"/>
+ </hotspot>
+
+ <hotspot name="hs71v" style="hs_lineyniy_vidimij">
+ <point ath="141.60046479121857" atv="-8.413741661655148"/>
+ <point ath="141.57552421813403" atv="-7.85955834760634"/>
+ <point ath="139.30837661375327" atv="-8.164634851909007"/>
+ <point ath="139.37834289254582" atv="-8.834307547858383"/>
+ </hotspot>
+
+ <hotspot name="hs72v" style="hs_lineyniy_vidimij">
+ <point ath="129.5872633307877" atv="-7.313758582188782"/>
+ <point ath="129.62701489615077" atv="-6.786855238482564"/>
+ <point ath="125.0687522431958" atv="-7.216905872720775"/>
+ </hotspot>
+
+ <hotspot name="hs73v" style="hs_lineyniy_vidimij">
+ <point ath="122.18611635666582" atv="-8.07446735292128"/>
+ <point ath="122.15611544506567" atv="-7.526434019930658"/>
+ <point ath="114.11710774826201" atv="-8.032258785526233"/>
+ </hotspot>
+
+ <hotspot name="hs75v" style="hs_lineyniy_vidimij">
+ <point ath="124.33258286724467" atv="-6.067098335402449"/>
+ <point ath="124.34880943868734" atv="-5.679745895122441"/>
+ <point ath="118.48434150317703" atv="-5.993968751498013"/>
+ <point ath="118.48766694082033" atv="-6.432647275010609"/>
+ </hotspot>
+
+ <hotspot name="hs76v" style="hs_lineyniy_vidimij">
+ <point ath="119.07852808505558" atv="-5.22654107429339"/>
+ <point ath="119.09841747682475" atv="-4.834193707314042"/>
+ <point ath="113.80995755964284" atv="-5.043980153689823"/>
+ <point ath="113.81021352496373" atv="-5.438286927580624"/>
+ </hotspot>
+
+ <hotspot name="hs77v" style="hs_lineyniy_vidimij">
+ <point ath="115.1120904575269" atv="-4.578084503403484"/>
+ <point ath="115.08796418848286" atv="-4.230365078682334"/>
+ <point ath="110.55476854225836" atv="-4.343022795336832"/>
+ <point ath="110.55362312635361" atv="-4.621038272277618"/>
+ </hotspot>
+
+ <hotspot name="hs78v" style="hs_lineyniy_vidimij">
+ <point ath="115.88651190927348" atv="-6.568247067426163"/>
+ <point ath="115.86143444810912" atv="-6.0820420478870885"/>
+ <point ath="109.058821753823" atv="-6.417451181810411"/>
+ <point ath="109.14881531228909" atv="-6.88017769929459"/>
+ </hotspot>
+
+ <hotspot name="hs79v" style="hs_lineyniy_vidimij">
+ <point ath="110.42926297869104" atv="-8.875702766377449"/>
+ <point ath="110.32597385808057" atv="-8.237002446608491"/>
+ <point ath="100.90965410338424" atv="-8.614787403467295"/>
+ <point ath="100.9090309662381" atv="-9.147542403168677"/>
+ </hotspot>
+
+ <hotspot name="hs80v" style="hs_lineyniy_vidimij">
+ <point ath="105.99661281342907" atv="-6.970515073776085"/>
+ <point ath="105.96865593510387" atv="-6.461985575665616"/>
+ <point ath="98.44111991804036" atv="-6.727283497721082"/>
+ <point ath="98.43830944697328" atv="-7.167376644215019"/>
+ </hotspot>
+
+ <hotspot name="hs81v" style="hs_lineyniy_vidimij">
+ <point ath="103.2689160102693" atv="-5.783173878849108"/>
+ <point ath="103.28287372820742" atv="-5.444281979806483"/>
+ <point ath="96.88110505479341" atv="-5.532067119855586"/>
+ <point ath="96.93198817808366" atv="-5.922817269718153"/>
+ </hotspot>
+
+ <hotspot name="hs82v" style="hs_lineyniy_vidimij">
+ <point ath="96.32715066176891" atv="-9.291562916572719"/>
+ <point ath="96.29725658853474" atv="-8.717519801794985"/>
+ <point ath="86.15630824570871" atv="-8.778238459998919"/>
+ <point ath="86.05882848978894" atv="-9.377261135226778"/>
+ </hotspot>
+
+ <hotspot name="hs83v" style="hs_lineyniy_vidimij">
+ <point ath="94.91471081344491" atv="-7.262119524080167"/>
+ <point ath="94.91048163475048" atv="-6.800195694594406"/>
+ <point ath="87.07716138863611" atv="-6.818803619946542"/>
+ <point ath="87.07494768130329" atv="-7.235543771150577"/>
+ </hotspot>
+
+ <hotspot name="hs84v" style="hs_lineyniy_vidimij">
+ <point ath="93.9986112819719" atv="-5.930097490691929"/>
+ <point ath="93.97234214446209" atv="-5.513800546851036"/>
+ <point ath="87.61836902094677" atv="-5.500286916585571"/>
+ <point ath="87.64003424172375" atv="-5.894405734452422"/>
+ </hotspot>
+
+ <hotspot name="hs85v" style="hs_lineyniy_vidimij">
+ <point ath="84.8432377150703" atv="-5.956665102202955"/>
+ <point ath="78.38346698197938" atv="-5.481330798355294"/>
+ <point ath="78.33659998741552" atv="-5.852434134932953"/>
+ </hotspot>
+
+ <hotspot name="hs86v" style="hs_lineyniy_vidimij">
+ <point ath="83.74653799280702" atv="-7.239783628373105"/>
+ <point ath="83.71878890336308" atv="-6.731841306619061"/>
+ <point ath="76.07329988137838" atv="-6.587784512420635"/>
+ <point ath="76.0242258961515" atv="-7.097140742194897"/>
+ </hotspot>
+
+ <hotspot name="hs87v" style="hs_lineyniy_vidimij">
+ <point ath="81.85084055260131" atv="-9.337362442286059"/>
+ <point ath="81.89406665092406" atv="-8.71350295914085"/>
+ <point ath="72.1788213866302" atv="-8.371456834046258"/>
+ <point ath="72.0331700094489" atv="-8.943749406982034"/>
+ </hotspot>
+
+ <hotspot name="hs88v" style="hs_lineyniy_vidimij">
+ <point ath="68.3457913358805" atv="-8.793021327042792"/>
+ <point ath="68.29211890874046" atv="-8.156091193981853"/>
+ <point ath="59.92742948510397" atv="-7.589494563810904"/>
+ <point ath="59.83455445481741" atv="-8.167478922764962"/>
+ </hotspot>
+
+ <hotspot name="hs89v" style="hs_lineyniy_vidimij">
+ <point ath="72.8099469231347" atv="-7.084239498000518"/>
+ <point ath="72.8435295789642" atv="-6.520528826430285"/>
+ <point ath="65.88853643182449" atv="-6.204344544025209"/>
+ <point ath="65.89302551686774" atv="-6.68752752012973"/>
+ </hotspot>
+
+ <hotspot name="hs90v" style="hs_lineyniy_vidimij">
+ <point ath="72.85196516316853" atv="-5.709982921580669"/>
+ <point ath="72.84396898359068" atv="-5.281942662876805"/>
+ <point ath="70.0176246895432" atv="-5.179264099491179"/>
+ <point ath="69.93413484164404" atv="-5.613636371036547"/>
+ </hotspot>
+
+ <hotspot name="hs91v" style="hs_lineyniy_vidimij">
+ <point ath="70.75072686776355" atv="-4.757099204380196"/>
+ <point ath="70.7676532244966" atv="-4.415922640352996"/>
+ <point ath="66.05428032815126" atv="-4.2451664637679585"/>
+ <point ath="66.01213459688148" atv="-4.637079968674888"/>
+ </hotspot>
+
+ <hotspot name="hs92v" style="hs_lineyniy_vidimij">
+ <point ath="67.48552589768815" atv="-5.5163363792152875"/>
+ <point ath="67.5495687500852" atv="-5.102708348351815"/>
+ <point ath="62.133264546794805" atv="-4.87276730291348"/>
+ <point ath="62.15811297933601" atv="-5.266429443409189"/>
+ </hotspot>
+
+ <hotspot name="hs93v" style="hs_lineyniy_vidimij">
+ <point ath="64.2160943690447" atv="-4.560005388329016"/>
+ <point ath="64.23643373506593" atv="-4.167053948894222"/>
+ <point ath="59.83053868686335" atv="-4.020786138674188"/>
+ <point ath="59.87740857685492" atv="-4.391849828115029"/>
+ </hotspot>
+
+ <hotspot name="hs94v" style="hs_lineyniy_vidimij">
+ <point ath="60.1345683293996" atv="-5.203296264594514"/>
+ <point ath="60.087429550479555" atv="-4.762715970112011"/>
+ <point ath="56.691069418473035" atv="-4.596482717004261"/>
+ <point ath="56.68975896440327" atv="-4.967259519085949"/>
+ </hotspot>
+
+ <hotspot name="hs95v" style="hs_lineyniy_vidimij">
+ <point ath="63.07073066843725" atv="-6.53408622753568"/>
+ <point ath="63.068494976893305" atv="-6.117879867881973"/>
+ <point ath="57.0365009279551" atv="-5.663765578985819"/>
+ <point ath="57.01179620454917" atv="-6.127012982223679"/>
+ </hotspot>
+
+ <hotspot name="hs96v" style="hs_lineyniy_vidimij">
+ <point ath="58.20267719756896" atv="-4.252343005276384"/>
+ <point ath="58.24962548518897" atv="-3.9277201132352206"/>
+ <point ath="56.69360457597537" atv="-3.878121986586508"/>
+ <point ath="56.76194521228115" atv="-4.249100817628413"/>
+ </hotspot>
+
+ <hotspot name="hs97v" style="hs_lineyniy_vidimij">
+ <point ath="46.2077475149714" atv="-5.308369884583614"/>
+ <point ath="46.228989007481744" atv="-4.848621698745584"/>
+ <point ath="43.73921652125159" atv="-4.706404598103489"/>
+ <point ath="43.74001515528789" atv="-5.052548206377107"/>
+ </hotspot>
+
+ <hotspot name="hs98v" style="hs_lineyniy_vidimij">
+ <point ath="46.213370733226554" atv="-6.86710522248789"/>
+ <point ath="46.23445753339888" atv="-6.363219847754935"/>
+ <point ath="42.350796409792395" atv="-5.936651553798612"/>
+ <point ath="42.35135520025585" atv="-6.305378000915481"/>
+ </hotspot>
+
+ <hotspot name="hs99v" style="hs_lineyniy_vidimij">
+ <point ath="40.56161033621015" atv="-6.172931869039639"/>
+ <point ath="40.56139857854566" atv="-5.734469805283945"/>
+ <point ath="36.51834788214046" atv="-5.218596120539763"/>
+ <point ath="36.47119635113114" atv="-5.633638539900686"/>
+ </hotspot>
+
+ <hotspot name="hs100v" style="hs_lineyniy_vidimij">
+ <point ath="106.85791052612618" atv="-4.88766476500224"/>
+ <point ath="106.83575570770202" atv="-4.4555601413279895"/>
+ <point ath="103.33970595495259" atv="-4.53401353982906"/>
+ <point ath="103.43145379186677" atv="-4.922981868027845"/>
+ </hotspot>
+
+ <hotspot name="hs101v" style="hs_lineyniy_vidimij">
+ <point ath="101.14792684596591" atv="-4.936465798972556"/>
+ <point ath="101.14808157486155" atv="-4.522806404706691"/>
+ <point ath="95.79696193553946" atv="-4.569739187460136"/>
+ <point ath="95.8202068938869" atv="-4.891627670964685"/>
+ </hotspot>
+
+ <hotspot name="hs102v" style="hs_lineyniy_vidimij">
+ <point ath="93.23619142598375" atv="-5.014405082224933"/>
+ <point ath="93.28189400590895" atv="-4.579397632138631"/>
+ <point ath="88.00404547597725" atv="-4.6363022824263265"/>
+ <point ath="87.93719824590119" atv="-4.974703840039897"/>
+ </hotspot>
+
+ <hotspot name="hs103v" style="hs_lineyniy_vidimij">
+ <point ath="85.6761969333512" atv="-5.0098743598351305"/>
+ <point ath="85.65330178843584" atv="-4.666703844508678"/>
+ <point ath="80.31985844621272" atv="-4.578594499289732"/>
+ <point ath="80.29666506265664" atv="-4.924105253799043"/>
+ </hotspot>
+
+ <hotspot name="hs104hs_lineyniy_vidimij" style="hs_lineyniy_vidimij">
+ <point ath="78.11639467010696" atv="-4.946442616929578"/>
+ <point ath="78.06996625328458" atv="-4.5780986907437375"/>
+ <point ath="76.61055927913014" atv="-4.550918949444093"/>
+ <point ath="76.65684864151058" atv="-4.896275687858554"/>
+ </hotspot>
+		
+<hotspot name="hs4s" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> >
+ <point ath="31.308477884293723" atv="-29.4501413665661"/>
+ <point ath="31.033729090674115" atv="-25.578011586663337"/>
+ <point ath="33.47439066325023" atv="-21.19800156237513"/>
+ <point ath="27.471262461250035" atv="-18.009249792172795"/>
+ <point ath="24.28653320733588" atv="-24.367346866091527"/>
+ </hotspot>
+
+ <hotspot name="hs5s" style="hs_tracker_sel"
+  			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> >
+ <point ath="44.59944636071975" atv="-10.83075083560599"/>
+ <point ath="44.35050119078835" atv="-9.306780336396645"/>
+ <point ath="44.883198553443606" atv="-7.728605671545274"/>
+ <point ath="43.15470411077786" atv="-6.34706221073568"/>
+ <point ath="41.59214530997872" atv="-8.132709586449735"/>
+ <point ath="41.634154710580276" atv="-10.29688288357546"/>
+ </hotspot>
+
+ <hotspot name="hs6s" style="hs_tracker_sel"
+  			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> >
+ <point ath="58.73343290766468" atv="-7.6411072703053735"/>
+ <point ath="66.91609360530936" atv="-6.058450375841731"/>
+ <point ath="66.32625730820791" atv="-4.037003371178339"/>
+ <point ath="59.03954424290521" atv="-4.653579024589487"/>
+ </hotspot>
+
+ <hotspot name="hs7s" style="hs_tracker_sel"
+  			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> >
+ <point ath="60.996652164688044" atv="-14.273280944270704"/>
+ <point ath="65.27615434042752" atv="-14.832583067996257"/>
+ <point ath="80.43452856452393" atv="-6.1464922321645235"/>
+ <point ath="79.88572804272559" atv="-4.515011389292336"/>
+ </hotspot>
+
+
+
+
+
+ <hotspot name="hs9s" style="hs_tracker_sel"
+  			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> >
+ <point ath="91.27800874566736" atv="-8.121510522275353"/>
+ <point ath="93.80780136451693" atv="-8.248160878324189"/>
+ <point ath="94.02067035810163" atv="-6.122752694941994"/>
+ <point ath="92.40972261092321" atv="-4.366108996502589"/>
+ <point ath="90.95044002619204" atv="-4.873623552221223"/>
+ </hotspot>
+
+ <hotspot name="hs10s" style="hs_tracker_sel"
+  			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> >
+ <point ath="56.64408097662135" atv="0.8567117272694648"/>
+ <point ath="56.72683506023975" atv="4.151502539790827"/>
+ <point ath="45.9795276866472" atv="4.560694420059646"/>
+ <point ath="45.822568954404915" atv="1.0504822962090414"/>
+ <point ath="37.850244175275236" atv="2.2637829118343302"/>
+ <point ath="33.62136497438985" atv="22.630486153683893"/>
+ <point ath="67.26435016603284" atv="34.56831107332582"/>
+ <point ath="86.9243742833861" atv="10.145639750758113"/>
+ <point ath="87.38955665532654" atv="1.0553834327079807"/>
+ <point ath="81.50971014776064" atv="1.1947822200210825"/>
+ <point ath="79.87140814155987" atv="11.478525155318659"/>
+ <point ath="72.28290673781157" atv="13.523430086278928"/>
+ <point ath="75.89295437620171" atv="7.314307895660568"/>
+ <point ath="76.27958359987815" atv="1.0031506730649227"/>
+ <point ath="59.36652702604249" atv="0.8922681425328483"/>
+ </hotspot>
+ 
+		
+		<hotspot name="foodcort" 
+				style="hs_BUILDING_"
+				keep="true"
+				onhover="showtext(ПЕРЕЙТИ ТОРГОВЫЙ ЦЕНТР, DEFAULT2)"
+				onclick="loadpano('%FIRSTXML%/perehod/ent/tour.xml', startscene=scene_rgb, IGNOREKEEP|REMOVESCENES, ZOOMBLEND(0.5, 2, easeInQuart)); delayedcall(0.5 ,startup());"
+				>
+ <point ath="-18.67041157013881" atv="-7.561276591565155"/>
+ <point ath="19.404380482359443" atv="-7.452772852897023"/>
+ <point ath="19.09136499954451" atv="7.521769325171481"/>
+ <point ath="-18.766299691787253" atv="6.565163352368053"/>	
+				</hotspot>
+				
+
+ 
+  
+ <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
+		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
+			<layer name="image_01" url="%CURRENTXML%/images/Lineyniy1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_02" url="%CURRENTXML%/images/Lineyniy2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_03" url="%CURRENTXML%/images/Lineyniy3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
+			</layer>
+			</layer>
+
+		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
+		>
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светодиодный линейный светильник алюминиевый[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seria-retail/svetodiodnyij-linejnyij-svetilnik-v-alyuminievom-korpuse.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+				/>
+			</layer>
+
+			
+			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="20%" x="0" width="40%" height="80%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true" maskchildren="true">
+			<layer name="TEHharacter" keep="true" type="container" align="centertop" edge="centertop" y="1%" x="0" width="100%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545" scalechildren="true"		
+			>
+			<layer name="kratk_opis" type="text" align="center" x="-33%" y="0" html="Краткое[br]описание" css="font-family:Arial; color:#000000; font-size:14px" 
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="1" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 1" onclick="set(layer[text_op].alpha, 1); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 0);  set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 1); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 1');" 
+			
+			/>
+			<layer name="teh_opis" type="text" align="center" x="0" y="0" html="Технические[br]особенности" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 1); set(layer[text_prim_teh].alpha, 0); set(layer[teh_opis].bgalpha, 1); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			<layer name="priemush" type="text" align="center" x="33%" y="0" html="Область[br]применения" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			</layer>
+			
+
+			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Серия [dq]Ритейл[dq] разработана специально для освещения торговых залов.[br]
+✔Равномерное расположения светодиодов в светильнике дает ровный матовый свет[br]
+✔Матовое освещение приятно для зрения: покупатели остаются в магазине дольше. Мельчайшие детали и элементы на стеллажах и других местах хранения отчетливо видны благодаря равномерной засветке[br]
+✔Алюминиевый корпус облегчает монтаж светильника на объекте. При этом корпус светильника устойчив к механическим воздействиям и защищен от вандализма[br]
+✔Есть возможность сборки в линию[br]
+				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Серия [dq]Ритейл[dq] разработана специально для освещения торговых залов.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+			
+			</layer>
+
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
+Напряжение питания[br]
+Мощность[br]
+Световой поток[br]
+Температура свечения[br]
+Коэффициент пульсаций[br]
+Температура эксплуатации[br]
+Степень защиты:[br]
+Тип монтажа[br]
+Тип рассеивателя[br]
+Вес[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
+176-264В[br]
+50 Вт[br]
+4000Лм [br]
+4000 К[br]
+[lt]1%[br]
+от 0 до +40 °С[br]
+IP20[br]
+Подвесной[br]
+Матовый[br]
+2.5 кг[br]
+" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			</layer>
+			
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для акцентирования внимания на определенных зонах." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
+			</layer>
+			</layer>
+			</layer>
+						
+			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
+			/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
+			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
+			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			</layer>			
+			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
+			/>
+			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
+			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
+			</layer></layer>
+		</layer>
+
+				
+
+	</scene>
+
+	<scene name="scene_tracker_odejda" title="tracker_odejda" onstart="" thumburl="panos/tracker_odejda.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/tracker_odejda.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/tracker_odejda.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/tracker_odejda.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/tracker_odejda.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		
+		<hotspot name="hs4" style="hs_tracker_sel"
+			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="28.53828709551715" atv="-20.872771840800514"/>
+ <point ath="30.232361033853067" atv="-21.571305749634973"/>
+ <point ath="30.344893352077236" atv="-21.965486057366046"/>
+ <point ath="29.7026813976654" atv="-23.536466494703948"/>
+ <point ath="29.127358019241626" atv="-24.116886772249895"/>
+ <point ath="28.91029533045628" atv="-24.27103918363312"/>
+ <point ath="28.83523617016118" atv="-24.955269466327326"/>
+ <point ath="29.28475641424336" atv="-25.409776958718954"/>
+ <point ath="29.36958914848492" atv="-26.002387986336945"/>
+ <point ath="29.55226570809782" atv="-26.259595555425786"/>
+ <point ath="29.628677297583693" atv="-26.784695597716357"/>
+ <point ath="28.953694055839264" atv="-26.869557381191267"/>
+ <point ath="28.380008493857872" atv="-26.521388015101415"/>
+ <point ath="28.13758390716208" atv="-26.575269846777086"/>
+ <point ath="26.486818754555543" atv="-25.378629028584086"/>
+ <point ath="26.61657193770094" atv="-24.56164827681126"/>
+ <point ath="27.774958938255736" atv="-24.353774768066504"/>
+ <point ath="28.260041049914662" atv="-24.74153604480804"/>
+ <point ath="28.44574204068857" atv="-24.66940319797353"/>
+ <point ath="28.47488572606386" atv="-24.354359598875387"/>
+ <point ath="28.14883316734705" atv="-24.309512915119594"/>
+ <point ath="27.734593521534066" atv="-24.14668719909361"/>
+ <point ath="27.431173038979807" atv="-23.758314597099083"/>
+ <point ath="27.33473846625759" atv="-23.361633019236283"/>
+ <point ath="27.388664080546278" atv="-22.739943897117143"/>
+ <point ath="27.714139133871015" atv="-21.895434775983503"/>
+ <point ath="28.122212624787778" atv="-21.140859920772225"/>
+ </hotspot>
+
+ <hotspot name="hs5" style="hs_tracker_sel"
+ <point ath="28.53828709551715" atv="-20.872771840800514"/>
+ <point ath="30.232361033853067" atv="-21.571305749634973"/>
+ <point ath="30.344893352077236" atv="-21.965486057366046"/>
+ <point ath="29.7026813976654" atv="-23.536466494703948"/>
+ <point ath="29.127358019241626" atv="-24.116886772249895"/>
+ <point ath="28.91029533045628" atv="-24.27103918363312"/>
+ <point ath="28.83523617016118" atv="-24.955269466327326"/>
+ <point ath="29.28475641424336" atv="-25.409776958718954"/>
+ <point ath="29.36958914848492" atv="-26.002387986336945"/>
+ <point ath="29.55226570809782" atv="-26.259595555425786"/>
+ <point ath="29.628677297583693" atv="-26.784695597716357"/>
+ <point ath="28.953694055839264" atv="-26.869557381191267"/>
+ <point ath="28.380008493857872" atv="-26.521388015101415"/>
+ <point ath="28.13758390716208" atv="-26.575269846777086"/>
+ <point ath="26.486818754555543" atv="-25.378629028584086"/>
+ <point ath="26.61657193770094" atv="-24.56164827681126"/>
+ <point ath="27.774958938255736" atv="-24.353774768066504"/>
+ <point ath="28.260041049914662" atv="-24.74153604480804"/>
+ <point ath="28.44574204068857" atv="-24.66940319797353"/>
+ <point ath="28.47488572606386" atv="-24.354359598875387"/>
+ <point ath="28.14883316734705" atv="-24.309512915119594"/>
+ <point ath="27.734593521534066" atv="-24.14668719909361"/>
+ <point ath="27.431173038979807" atv="-23.758314597099083"/>
+ <point ath="27.33473846625759" atv="-23.361633019236283"/>
+ <point ath="27.388664080546278" atv="-22.739943897117143"/>
+ <point ath="27.714139133871015" atv="-21.895434775983503"/>
+ <point ath="28.122212624787778" atv="-21.140859920772225"/>
+ </hotspot>
+
+ <hotspot name="hs6" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="43.55558339762638" atv="-9.764868857820217"/>
+ <point ath="43.555301189093484" atv="-9.58495678774099"/>
+ <point ath="43.427450765264325" atv="-9.522186202418546"/>
+ <point ath="43.42793397744208" atv="-9.35125367159085"/>
+ <point ath="43.30000817526178" atv="-9.09942218736706"/>
+ <point ath="43.290582400196286" atv="-8.739391220515637"/>
+ <point ath="43.499798767659" atv="-8.550105680193623"/>
+ <point ath="43.699537427719065" atv="-8.2707064545217"/>
+ <point ath="43.798943825693755" atv="-7.964435552842274"/>
+ <point ath="43.762193790519575" atv="-7.811490388771926"/>
+ <point ath="43.216727562302935" atv="-7.506096667788894"/>
+ <point ath="43.0814744965503" atv="-7.568238153781264"/>
+ <point ath="42.790643691111654" atv="-8.063375814700846"/>
+ <point ath="42.75412748608983" atv="-8.342451482926197"/>
+ <point ath="42.809802002100184" atv="-8.629265396136795"/>
+ <point ath="42.94648090589067" atv="-8.791334517350437"/>
+ <point ath="43.16414869124765" atv="-8.809290346154592"/>
+ <point ath="43.14696851338874" atv="-9.223323343444497"/>
+ <point ath="43.14705364046961" atv="-9.421294813975846"/>
+ <point ath="42.30803619463995" atv="-9.222753017749104"/>
+ <point ath="42.25268553501223" atv="-9.582545908068349"/>
+ <point ath="43.40293946838631" atv="-9.825904071344766"/>
+ </hotspot>
+
+ <hotspot name="hs7" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="60.18746059160338" atv="-6.742392420993407"/>
+ <point ath="60.169908748887565" atv="-6.607384684657035"/>
+ <point ath="59.99225681705957" atv="-6.516440845606238"/>
+ <point ath="59.98539922512521" atv="-6.067207920811873"/>
+ <point ath="60.12987806003184" atv="-6.050071685427817"/>
+ <point ath="60.23034123854217" atv="-5.789966354057356"/>
+ <point ath="60.07061551179629" atv="-5.222814798020534"/>
+ <point ath="59.52910936866658" atv="-5.399575023764995"/>
+ <point ath="59.67116553726339" atv="-5.786767683541473"/>
+ <point ath="59.88646627469279" atv="-6.003718662257185"/>
+ <point ath="59.82121343850929" atv="-6.4165410996"/>
+ <point ath="59.21708573076148" atv="-6.385283324014294"/>
+ <point ath="59.14471633113851" atv="-6.42959363602323"/>
+ <point ath="59.13427043691854" atv="-6.662822898483873"/>
+ </hotspot>
+
+ <hotspot name="hs8" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="62.91498772322069" atv="-6.004700661160688"/>
+ <point ath="63.72963653988529" atv="-6.022526836078268"/>
+ <point ath="63.7204593059588" atv="-5.91548052988731"/>
+ <point ath="63.54195038566559" atv="-5.843616819728127"/>
+ <point ath="63.50558819780338" atv="-5.447568086277609"/>
+ <point ath="63.70436910546766" atv="-5.267404753467606"/>
+ <point ath="63.83145045943314" atv="-4.799164662002194"/>
+ <point ath="63.36163677489253" atv="-4.65638640390054"/>
+ <point ath="63.16286409733425" atv="-5.124552396008346"/>
+ <point ath="63.24532277437646" atv="-5.457657561618238"/>
+ <point ath="63.40722732853533" atv="-5.493642235826273"/>
+ <point ath="63.44350274407111" atv="-5.808687573130592"/>
+ <point ath="62.93678900211404" atv="-5.808647284959076"/>
+ </hotspot>
+
+ <hotspot name="hs9" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="66.09226793541643" atv="-5.5089725048224"/>
+ <point ath="66.08404547345964" atv="-5.384044275791175"/>
+ <point ath="65.93940858072165" atv="-5.366324904938126"/>
+ <point ath="65.92972848131785" atv="-4.9433300949452335"/>
+ <point ath="66.07420479413031" atv="-4.91607428090493"/>
+ <point ath="66.10990307899351" atv="-4.672989813466795"/>
+ <point ath="65.94672765200329" atv="-4.250203372062391"/>
+ <point ath="65.50552697433136" atv="-4.403764980778245"/>
+ <point ath="65.70468215791124" atv="-4.853660721488774"/>
+ <point ath="65.86736612301632" atv="-4.917727310453818"/>
+ <point ath="65.84066455438398" atv="-5.205796687160223"/>
+ <point ath="65.26221551192668" atv="-5.206448190757747"/>
+ <point ath="65.25242180734455" atv="-5.456603559726687"/>
+ </hotspot>
+
+
+
+ <hotspot name="hs11" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="62.027863533755806" atv="-14.100624227150796"/>
+ <point ath="62.04713805182121" atv="-13.83086743840939"/>
+ <point ath="62.38072323947665" atv="-13.858580108287052"/>
+ <point ath="62.40899722205245" atv="-13.49874845094203"/>
+ <point ath="62.493007993362994" atv="-12.778815550518019"/>
+ <point ath="62.20056949901232" atv="-12.598304496116992"/>
+ <point ath="61.99971613734334" atv="-12.381702438325895"/>
+ <point ath="61.78144316975022" atv="-11.615853041548014"/>
+ <point ath="61.90196959857383" atv="-11.292223632044658"/>
+ <point ath="62.168614351645374" atv="-11.085896445752255"/>
+ <point ath="62.46220355884856" atv="-11.01435403290251"/>
+ <point ath="62.74646948049866" atv="-11.041518376982745"/>
+ <point ath="62.975848747116345" atv="-11.18545651701528"/>
+ <point ath="63.12313326618391" atv="-11.554368423775083"/>
+ <point ath="63.23435651699026" atv="-12.121369824739178"/>
+ <point ath="63.161271085122735" atv="-12.5266067510811"/>
+ <point ath="62.84777050380001" atv="-12.76993191990285"/>
+ <point ath="62.681609329823345" atv="-12.778922577073173"/>
+ <point ath="62.681443068566296" atv="-13.210986427199494"/>
+ <point ath="62.755382122389506" atv="-13.516984208118096"/>
+ <point ath="64.01509133178297" atv="-13.711882967864453"/>
+ <point ath="64.09162258287245" atv="-14.357796532103652"/>
+ </hotspot>
+
+ <hotspot name="hs12" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="69.70792972922891" atv="-10.419333306982407"/>
+ <point ath="69.70943057350951" atv="-9.960328533672183"/>
+ <point ath="70.87015378597613" atv="-9.971176571240262"/>
+ <point ath="70.8700792013924" atv="-9.412993951277581"/>
+ <point ath="70.61674651927513" atv="-9.178848925154915"/>
+ <point ath="70.36222108344333" atv="-8.530481766044716"/>
+ <point ath="70.53630075308638" atv="-8.307540945707743"/>
+ <point ath="71.13663780499718" atv="-8.064608791073734"/>
+ <point ath="71.49475868447678" atv="-8.667080245653024"/>
+ <point ath="71.5596385117517" atv="-9.198040641396709"/>
+ <point ath="71.34114950678998" atv="-9.44149015012535"/>
+ <point ath="71.09474693632524" atv="-9.450769428972206"/>
+ <point ath="71.16851421442345" atv="-10.188919072185412"/>
+ <point ath="71.4429963017592" atv="-10.242522862193477"/>
+ <point ath="71.51676172835994" atv="-10.530390571315747"/>
+ </hotspot>
+
+ <hotspot name="hs13" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="73.17858023961094" atv="-8.734850028045765"/>
+ <point ath="73.21581939670818" atv="-8.33367797475574"/>
+ <point ath="74.1889499289644" atv="-8.343947899206517"/>
+ <point ath="74.12536294554553" atv="-7.9390443324835145"/>
+ <point ath="73.95270396754427" atv="-7.911970209408408"/>
+ <point ath="73.81660599292405" atv="-7.659864628014792"/>
+ <point ath="74.0893389984472" atv="-6.768811649455059"/>
+ <point ath="74.75137856256134" atv="-6.966606856127653"/>
+ <point ath="74.73354184247796" atv="-7.254701535422101"/>
+ <point ath="74.6067844864258" atv="-7.623886885386701"/>
+ <point ath="74.27077432427609" atv="-7.93905379823064"/>
+ <point ath="74.33447178175129" atv="-8.298010913411384"/>
+ <point ath="74.38003815156549" atv="-8.585834506207746"/>
+ <point ath="74.625739582464" atv="-8.585649263408781"/>
+ <point ath="74.63502199021923" atv="-8.801450731091624"/>
+ </hotspot>
+
+ <hotspot name="hs14" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="76.92086997665905" atv="-7.55242505255318"/>
+ <point ath="76.90053567925372" atv="-7.399604612612876"/>
+ <point ath="76.63769533584752" atv="-7.300092349562975"/>
+ <point ath="76.62961672527098" atv="-6.796426486982987"/>
+ <point ath="76.78363356996942" atv="-6.805773482132844"/>
+ <point ath="76.87455844442024" atv="-6.644027927816572"/>
+ <point ath="76.9023157239152" atv="-6.2571259736403775"/>
+ <point ath="76.6315374155148" atv="-5.815570730412532"/>
+ <point ath="76.07016874128266" atv="-6.0480759268061455"/>
+ <point ath="76.22275825874999" atv="-6.516439297943791"/>
+ <point ath="76.48483577255598" atv="-6.742103456294953"/>
+ <point ath="76.45667653720545" atv="-7.182726564058155"/>
+ <point ath="75.64129492926622" atv="-7.143668051082123"/>
+ <point ath="75.630911817004" atv="-7.512065421848843"/>
+ </hotspot>
+
+ <hotspot name="hs15" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="77.60748232652338" atv="-6.595655022020267"/>
+ <point ath="77.59914008567364" atv="-6.361925710663674"/>
+ <point ath="78.20452252534403" atv="-6.346721677841389"/>
+ <point ath="78.22346406505801" atv="-5.914976821489221"/>
+ <point ath="78.08784023584553" atv="-5.896644085157323"/>
+ <point ath="77.97986339676936" atv="-5.66242851690354"/>
+ <point ath="78.02574109717966" atv="-5.357455671588914"/>
+ <point ath="78.17083064390954" atv="-5.10579967026427"/>
+ <point ath="78.56831756682016" atv="-5.142533993766738"/>
+ <point ath="78.70369316224628" atv="-5.286754416460562"/>
+ <point ath="78.59460339775842" atv="-5.727620510495455"/>
+ <point ath="78.35920839056007" atv="-5.8711572410606205"/>
+ <point ath="78.39448904869255" atv="-6.402012258525815"/>
+ <point ath="78.58457545636645" atv="-6.420392930374217"/>
+ <point ath="78.62050693433355" atv="-6.627316416894242"/>
+ </hotspot>
+
+ <hotspot name="hs16" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="78.81131931050868" atv="-5.952910504258697"/>
+ <point ath="78.81252603583607" atv="-5.637924679814935"/>
+ <point ath="79.4547859296647" atv="-5.638396706191685"/>
+ <point ath="79.47206532245252" atv="-5.28732726366509"/>
+ <point ath="79.30936607732139" atv="-5.170252064803806"/>
+ <point ath="79.17397005023963" atv="-4.819077418287302"/>
+ <point ath="79.55343649221771" atv="-4.576099614386321"/>
+ <point ath="79.80643632680267" atv="-4.873153413722408"/>
+ <point ath="79.86977464703097" atv="-5.143216717366293"/>
+ <point ath="79.61105423300387" atv="-5.341345564832783"/>
+ <point ath="79.6020761606872" atv="-5.710411912060709"/>
+ <point ath="79.80857703587355" atv="-5.952500431125676"/>
+ </hotspot>
+
+ <hotspot name="hs17" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="93.33550974752166" atv="-7.743722255525169"/>
+ <point ath="93.33493580338" atv="-7.545850432569631"/>
+ <point ath="93.11709913879844" atv="-7.5195636352570165"/>
+ <point ath="93.08928580071961" atv="-7.276727030219823"/>
+ <point ath="93.03475932607074" atv="-7.231886518601402"/>
+ <point ath="93.01604252490682" atv="-6.979967102705805"/>
+ <point ath="93.20647547810006" atv="-7.006441653991705"/>
+ <point ath="93.3415468711045" atv="-6.682038484875183"/>
+ <point ath="93.09525941811557" atv="-5.989689128773524"/>
+ <point ath="92.4802018072512" atv="-6.242857570196836"/>
+ <point ath="92.66220227483785" atv="-6.75567904094569"/>
+ <point ath="92.87507622850617" atv="-6.939154391033891"/>
+ <point ath="92.85790121618942" atv="-7.407129658698963"/>
+ <point ath="92.04112480953921" atv="-7.426351410737547"/>
+ <point ath="92.04127626433359" atv="-7.732262170689123"/>
+ </hotspot>
+
+ <hotspot name="hs18" style="hs_tracker_sel"
+ 			onhover="showtext(Трековый светодиодный светильник 45W, DEFAULT2);"
+			onclick="loadscene(scene_tracker_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="92.50196771775268" atv="-5.985655956248095"/>
+ <point ath="92.49268905239171" atv="-5.850645856318573"/>
+ <point ath="92.34972940463808" atv="-5.859819558756957"/>
+ <point ath="92.32211831121992" atv="-5.391747743102161"/>
+ <point ath="92.52106184809796" atv="-5.418547525913932"/>
+ <point ath="92.62026306909183" atv="-5.2564161410422185"/>
+ <point ath="92.39357334754624" atv="-4.635792286761591"/>
+ <point ath="91.9161088493938" atv="-4.861980894681225"/>
+ <point ath="92.05180833551054" atv="-5.300370692627953"/>
+ <point ath="92.25078024918807" atv="-5.399272616408143"/>
+ <point ath="92.21483981213066" atv="-5.696358726757678"/>
+ <point ath="91.59055921252079" atv="-5.723468451501763"/>
+ </hotspot>
+		
+						
+ <hotspot name="hs18" style="hs_lineyniy"
+ 			onhover="showtext(линейные светильники, DEFAULT2);"
+			onclick="loadscene(scene_RGB_odejda,MERGE,KEEPVIEW, BLEND(0.7));"> 
+ <point ath="-120.88084926958078" atv="-6.64003562519714"/>
+ <point ath="-135.8820067529626" atv="-9.51851180682172"/>
+ <point ath="-135.7281071097449" atv="-15.845626252940434"/>
+ <point ath="-142.81122023888685" atv="-17.519894718055696"/>
+ <point ath="-146.61828440125976" atv="-15.897724092301566"/>
+ <point ath="-146.7827685293388" atv="-11.303060964266072"/>
+ <point ath="139.39962467018316" atv="-10.015011687692338"/>
+ <point ath="139.9100340245161" atv="-14.598809309628075"/>
+ <point ath="134.9643252055681" atv="-15.803639303305156"/>
+ <point ath="129.68957517781934" atv="-14.517884234735643"/>
+ <point ath="129.50208867465753" atv="-8.97493038731171"/>
+ <point ath="114.32992560712108" atv="-4.810058114420493"/>
+ <point ath="56.58098412899511" atv="-4.513643717539066"/>
+ <point ath="56.81052024028759" atv="-15.690136227416078"/>
+ <point ath="51.903586691199735" atv="-17.252389272464626"/>
+ <point ath="46.213694719099294" atv="-16.394396864108124"/>
+ <point ath="46.20347369093929" atv="-4.615314368961177"/>
+ <point ath="-38.614930130133416" atv="-6.262859657997981"/>
+ <point ath="-38.61193153115448" atv="-18.265664108802092"/>
+ <point ath="-43.92948762630817" atv="-20.10348564037841"/>
+ <point ath="-51.03604133660161" atv="-17.881215391279728"/>
+ <point ath="-50.828105800375624" atv="-6.033080496087729"/>
+ </hotspot>
+		
+		 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
+		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
+		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.4" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
+		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
+			<layer name="image_01" url="%CURRENTXML%/images/W45_.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
+			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_02" url="%CURRENTXML%/images/W45_2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
+			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
+			<layer name="image_03" url="%CURRENTXML%/images/W45_3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
+			</layer>
+			</layer>
+
+		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
+		>
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Трековый светодиодный светильник 45W[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-%C2%ABakczentnoe-svetodiodnoe-osveshhenie%C2%BB/trekovyij-svetodiodnyij-svetilnik-45w.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+				/>
+			</layer>
+
+			
+			<layer name="block_swich_text" keep="true" type="container" align="righttop" edge="righttop" y="20%" x="0" width="40%" height="80%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true" maskchildren="true">
+			<layer name="TEHharacter" keep="true" type="container" align="centertop" edge="centertop" y="1%" x="0" width="100%" height="50"	handcursor="false"	 zorder="83" bgalpha="1" bgcolor="0x1a2545" scalechildren="true"		
+			>
+			<layer name="kratk_opis" type="text" align="center" x="-33%" y="0" html="Краткое[br]описание" css="font-family:Arial; color:#000000; font-size:14px" 
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="1" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 1" onclick="set(layer[text_op].alpha, 1); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 0);  set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 1); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 1');" 
+			
+			/>
+			<layer name="teh_opis" type="text" align="center" x="0" y="0" html="Технические[br]особенности" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 1); set(layer[text_prim_teh].alpha, 0); set(layer[teh_opis].bgalpha, 1); set(layer[priemush].bgalpha, 0); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[priemush].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			<layer name="priemush" type="text" align="center" x="33%" y="0" html="Область[br]применения" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0x75C4F4" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="0 0 5 0x5ae1ff 0" onclick="set(layer[text_op].alpha, 0); set(layer[text_op_teh].alpha, 0); set(layer[text_prim_teh].alpha, 1); set(layer[teh_opis].bgalpha, 0); set(layer[priemush].bgalpha, 1); set(layer[kratk_opis].bgalpha, 0); set(layer[teh_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[teh_opis].bgshadow, '0 0 5 0x5ae1ff 0'); set(layer[priemush].css, 'font-family:Arial; color:#000000; font-size:14px'); set(layer[priemush].bgshadow, '0 0 5 0x5ae1ff 1'); set(layer[kratk_opis].css, 'font-family:Arial; color:#75C4F4; font-size:14px'); set(layer[kratk_opis].bgshadow, '0 0 5 0x5ae1ff 0');"
+			/>
+			</layer>
+			
+
+			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии Акцентное освещение предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[br]
+✔Используются для акцентирования внимания на определенных зонах.[br]
+✔Производятся под заказ и соответствуют индивидуальным требованиям.
+				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии Акцентное освещение предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true" />
+			
+			</layer>
+
+			<layer name="text_op_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+				<layer name="kratk_opis_teh" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Тип освещения[br]
+Напряжение питания[br]
+Мощность[br]
+Световой поток[br]
+Температура свечения[br]
+Степень защиты:[br]
+Габаритные размеры[br]
+Крепление[br]
+Угол cвечения[br]" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
+176-264В/50Гц[br]
+45 Вт[br]
+4500 Лм[br]
+3000/4000/5000 К[br]
+IP40[br]
+D115х210 мм[br]
+устанавливается на трек[br]
+24⁰[br]
+" css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			</layer>
+			
+			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
+			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для акцентирования внимания на определенных зонах." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
+			<layer name="logo_pic" url="%CURRENTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
+			<layer name="project_vipolnen" url="%CURRENTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
+			</layer>
+			</layer>
+			</layer>
+						
+			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
+			/>
+			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
+			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
+			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
+			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
+			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
+			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
+			</layer>			
+			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
+			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРИЕМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
+			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
+			/>
+			<layer name="snij_enrg" style="priemushestvaIK" align="center" x="10%" y="10" width="prop" height="60%" crop="0|0|100|100"   zorder="10" onhover="showtext(Снижение[br]энергозатрат, DEFAULT1)"/>
+			<layer name="garantia" style="priemushestvaIK" align="center" x="-10%" y="10" width="prop" height="60%" crop="100|0|100|100"   zorder="10" onhover="showtext(Гарантия[br]3 года, DEFAULT1)"/>
+			<layer name="serv_obsluj" style="priemushestvaIK" align="center" x="30%" y="10" width="prop" height="60%" crop="200|0|100|100"   zorder="10" onhover="showtext(Сервисное[br]обслуживание, DEFAULT1)"/>
+			<layer name="dost" style="priemushestvaIK" align="center" x="-30%" y="10" width="prop" height="60%" crop="300|0|100|100"   zorder="10" onhover="showtext(Доставка[br]до склада, DEFAULT1)"/>
+			</layer></layer>
+		</layer>
+
+	</scene>
+
+
+</krpano>
