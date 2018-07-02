@@ -249,9 +249,7 @@
 			style="hs_AREA_"
 			onhover="showtext(Светодиодный линейный светильник алюминиевый, DEFAULT5);"
 			zorder="1"
-			onclick="loadscene(scene_perekrestock,MERGE,KEEPVIEW, BLEND(0.7));"
-			>
- <hotspot name="hs4" style="hs">
+			onclick="loadscene(scene_perekrestock,MERGE,KEEPVIEW, BLEND(0.7));">
  <point ath="107.58235815309072" atv="-9.374166670309465"/>
  <point ath="44.215285237830926" atv="-6.718916369661038"/>
  <point ath="44.311699489193586" atv="-20.206891986668207"/>
@@ -271,12 +269,10 @@
  <point ath="-54.97029189677676" atv="-12.764897842688379"/>
  <point ath="-117.64888867122909" atv="-13.958109808752331"/>
  </hotspot>
- </hotspot>
  
  <hotspot name="pressa"
 			style="hs_AREA_"
 			onhover="showtext(Светодиодная панель Downlight D200, DEFAULT5);"
-
 			onclick="loadscene(scene_perekrestock_Pressa,MERGE,KEEPVIEW, BLEND(0.7));">
  <point ath="20.03923332058548" atv="27.136530212991293"/>
  <point ath="19.903123323003797" atv="11.156685410657648"/>
