@@ -181,7 +181,7 @@
 				 handcursor="true"
 				 capture="false"
 				 style=""
-				 zorder="1"
+				 zorder="3"
 				 alpha="0.0"
 				 fillcolor="0x75C4F4"
 				 fillalpha="0.1"
@@ -248,7 +248,7 @@
  <hotspot name="lineynij"
 			style="hs_AREA_"
 			onhover="showtext(Светодиодный линейный светильник алюминиевый, DEFAULT5);"
-
+			zorder="1"
 			onclick="loadscene(scene_perekrestock,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
  <point ath="20.03923332058548" atv="27.136530212991293"/>
