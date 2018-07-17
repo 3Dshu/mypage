@@ -2,7 +2,7 @@
 
 	<include url="%FIRSTXML%skin/vtourskin.xml" />
 	<include url="%FIRSTXML%/add/custom.xml"/>
-	<include url="%FIRSTXML%/add/SDsvetINT.xml"/>
+	<include url="%FIRSTXML%/add/SDsvetINT_office.xml"/>
 	<include url="%FIRSTXML%/add/STYLE.xml"/>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
@@ -741,7 +741,7 @@ IP40[br]
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
 			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светодиодный светильник с «Классика»[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ofis/4x16.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ofis/klassika.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 
@@ -811,10 +811,9 @@ IP40[br]
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
-			<layer name="logo_pic_GORKAPSTOY" url="%FIRSTXML%/images/GORKAPSRTOJ.png" alpha="1" align="center" edge="center" x="-30%" y="0%" height="35%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
-			<layer name="logo_pic_IPLANA" url="%FIRSTXML%/images/IPLANA.png" alpha="1" align="center" edge="center" x="-10%" y="0%" height="35%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
-			<layer name="logo_pic_TBM" url="%FIRSTXML%/images/TBM.png" alpha="1" align="center" edge="center" x="10%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
-			<layer name="logo_pic_Retail" url="%FIRSTXML%/images/Retail.png" alpha="1" align="center" edge="center" x="30%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>
+			<layer name="logo_pic_X5" url="%FIRSTXML%/images/Retail.png" alpha="1" align="center" edge="center" x="-28%" y="0%" height="35%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_TBM" url="%FIRSTXML%/images/TBM.png" alpha="1" align="center" edge="center" x="0%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_ROSINTER" url="%FIRSTXML%/images/ROSINTER.png" alpha="1" align="center" edge="center" x="28%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>
 			</layer>
 			</layer>
 			</layer>

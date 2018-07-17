@@ -1,7 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
 	<include url="%FIRSTXML%skin/vtourskin.xml" />
-	<include url="%FIRSTXML%add/SDsvetINT.xml"/>
+	<include url="%FIRSTXML%add/SDsvetINT_shkola.xml"/>
 	<include url="%FIRSTXML%add/custom.xml"/>
 	<include url="%FIRSTXML%/add/STYLE.xml"/>
 
@@ -475,7 +475,7 @@ IP40[br]
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
 			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светодиодный светильник с «Классика»[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ofis/4x16.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ofis/klassika.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 

@@ -2101,10 +2101,12 @@ IP65[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для наружного освещения автомагистралей, железнодорожных перронов, парков и скверов парковок, цехов, складских терминалов, спортивных и промышленных сооружений." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
-			<layer name="logo_pic_granel" url="%CURRENTXML%/images/GRANEL.png" alpha="1" align="center" edge="center" x="-25%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
-			<layer name="logo_pic_PIK" url="%CURRENTXML%/images/LOGO_PIK.png" alpha="1" align="center" edge="center" x="0%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
-			<layer name="logo_pic_mytishi" url="%CURRENTXML%/images/MYTISHI.png" alpha="1" align="center" edge="center" x="25%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic" url="%FIRSTXML%/images/LOGO_PIK.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
+			onclick="openurl('http://sdsvet.ru/proektyi/onezhskij-sudostroitelnyij-zavod-niko.html')" >
+			<layer name="project_vipolnen" url="%FIRSTXML%/images/project_PIK.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
+			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
+			vcenter="true" padding="5" wordwrap="true"/>
+			</layer>
 			</layer>
 			</layer>
 			</layer>

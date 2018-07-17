@@ -2,7 +2,7 @@
 
 	<include url="%FIRSTXML%/skin/vtourskin.xml" />
 	<include url="%FIRSTXML%/add/custom.xml"/>
-	<include url="%FIRSTXML%/add/SDsvetINT.xml"/>
+	<include url="%FIRSTXML%/add/SDsvetINT_SKLAD.xml"/>
 	<include url="%FIRSTXML%/add/STYLE.xml"/>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->

@@ -1,7 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour" showerrors="false">
 
 	<include url="%FIRSTXML%/skin/vtourskin.xml" />
-	<include url="%FIRSTXML%/add/SDsvetINT.xml"/>
+	<include url="%FIRSTXML%/add/SDsvetINT_perekrestock.xml"/>
 	<include url="%FIRSTXML%/add/custom.xml"/>
 	<include url="%FIRSTXML%/add/STYLE.xml"/>
 
@@ -181,7 +181,7 @@
 				 handcursor="true"
 				 capture="false"
 				 style=""
-				 zorder="3"
+				 zorder="1"
 				 alpha="0.0"
 				 fillcolor="0x75C4F4"
 				 fillalpha="0.1"
@@ -225,7 +225,7 @@
 		
 <hotspot name="hleb"
 			style="hs_AREA_"
-			onhover="showtext(Трековый светодиодный светильник 45W 3000K, DEFAULT5);"
+			onhover="showtext(Трековый светодиодный светильник 45W 3000K, DEFAULT2);"
 
 			onclick="loadscene(scene_perekrestock_HLEB_3000,MERGE,KEEPVIEW, BLEND(0.7));"
 			>
@@ -244,36 +244,12 @@
 			 <point ath="-86.02598440074968" atv="-1.464903069258241"/>
 			 <point ath="-85.5371832708559" atv="-0.21638560807433202"/>
  </hotspot>
- 
- <hotspot name="lineynij"
-			style="hs_AREA_"
-			onhover="showtext(Светодиодный линейный светильник алюминиевый, DEFAULT5);"
-			zorder="1"
-			onclick="loadscene(scene_perekrestock,MERGE,KEEPVIEW, BLEND(0.7));">
- <point ath="107.58235815309072" atv="-9.374166670309465"/>
- <point ath="44.215285237830926" atv="-6.718916369661038"/>
- <point ath="44.311699489193586" atv="-20.206891986668207"/>
- <point ath="36.188450972401824" atv="-23.024365915436977"/>
- <point ath="29.112187701681307" atv="-19.527928231171"/>
- <point ath="29.181936808959563" atv="-5.170016786479941"/>
- <point ath="15.263300712864748" atv="-3.0826396007914005"/>
- <point ath="15.18004851960768" atv="-6.340930531515856"/>
- <point ath="19.08304433697333" atv="-7.590456196879574"/>
- <point ath="19.687456332607837" atv="-26.945520248555663"/>
- <point ath="-52.30916311812234" atv="-18.292595631003987"/>
- <point ath="-52.29223666876601" atv="-5.116560264810899"/>
- <point ath="11.170738209598824" atv="-6.909056053096584"/>
- <point ath="10.677813450514634" atv="-2.523979710790091"/>
- <point ath="-31.036834200898113" atv="-2.6442250312440323"/>
- <point ath="-54.98053640842636" atv="-4.904883056966379"/>
- <point ath="-54.97029189677676" atv="-12.764897842688379"/>
- <point ath="-117.64888867122909" atv="-13.958109808752331"/>
- </hotspot>
- 
  <hotspot name="pressa"
 			style="hs_AREA_"
-			onhover="showtext(Светодиодная панель Downlight D200, DEFAULT5);"
-			onclick="loadscene(scene_perekrestock_Pressa,MERGE,KEEPVIEW, BLEND(0.7));">
+			onhover="showtext(Светодиодная панель Downlight D200, DEFAULT2);"
+
+			onclick="loadscene(scene_perekrestock_Pressa,MERGE,KEEPVIEW, BLEND(0.7));"
+			>
  <point ath="20.03923332058548" atv="27.136530212991293"/>
  <point ath="19.903123323003797" atv="11.156685410657648"/>
  <point ath="17.669575577457294" atv="9.627347626354908"/>
@@ -299,7 +275,7 @@
  
   <hotspot name="ovoshi"
 			style="hs_AREA_"
-			onhover="showtext(Трековый светодиодный светильник 45W 5000K, DEFAULT5);"
+			onhover="showtext(Трековый светодиодный светильник 45W 5000K, DEFAULT2);"
 
 			onclick="loadscene(scene_perekrestock_OVOSHI_6000,MERGE,KEEPVIEW, BLEND(0.7));">
  <point ath="38.56906865432245" atv="43.18107201632189"/>
@@ -966,13 +942,13 @@
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
 		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.9" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
 		<layer name="container_picture" keep="true" type="container" align="left" edge="left" y="0" x="0" width="60%" height="100%"	handcursor="false"	 zorder="81" bgalpha="0.6" bgcolor="0x1a2545" >
-			<layer name="scrollarea" url="%FIRSTXML%/plugins/scrollarea.swf" alturl=	"%FIRSTXML%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
+			<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl=	"%SWFPATH%/plugins/scrollarea.js"  mwheel="false"  draggable="false"  onhover_autoscrolling="false" handcursor="false" align="bottom" edge="bottom" backgroundcolor="0xFFFFFF" alpha="1" width="300%" height="100%" direction="h" onloaded="setcenter(0,0);">			
 			<layer name="image_01" url="%FIRSTXML%/images/Lineyniy1.jpg" align="left" x="0" width="33.333%" height="prop" zorder="12" scale="1" handcursor="false" onclick=""/>
 			<layer name="next_01" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="32%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_01].alpha,1)" onout="tween(layer[next_01].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
-			<layer name="image_02" url="%FIRSTXML%/images/lineyniy2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
+			<layer name="image_02" url="%FIRSTXML%/images/Lineyniy2.jpg" align="left" x="33.333%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="11" onclick=""/>
 			<layer name="previous_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="34.666%" visible="true" alpha=".5" zorder="13" rotate="180" scale="1" onover="tween(layer[previous_02].alpha,1)" onout="tween(layer[previous_02].alpha,.5)" onclick="tween(layer[scrollarea].x, 100%, distance(calc(layer[frame].width)/4,0.17),default,wait); action(reset_arrow);" />
 			<layer name="next_02" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="65.333%" visible="true" alpha=".5" zorder="13" scale="1" onover="tween(layer[next_02].alpha,1)" onout="tween(layer[next_02].alpha,.5)" onclick="tween(layer[scrollarea].x, -100%, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />
-			<layer name="image_03" url="%FIRSTXML%/images/lineyniy3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
+			<layer name="image_03" url="%FIRSTXML%/images/Lineyniy3.jpg" align="left" x="66.666%" width="33.333%" height="prop" scale="1" handcursor="false" zorder="12" onclick=""/>
 			<layer name="previous_03" style="_hotspot_ani" icon_type="arrow" align="left" edge="center" x="67.999%" visible="true" alpha=".5" zorder="12" rotate="180" scale="1" onover="tween(layer[previous_03].alpha,1)" onout="tween(layer[previous_03].alpha,.5)" onclick="tween(layer[scrollarea].x, 0, distance((calc(layer[frame].width)/4),0.17),default,wait); action(reset_arrow);" />			 
 			</layer>
 			</layer>
@@ -1639,12 +1615,15 @@ IP20[br]
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии Акцентное освещение предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[br]
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Трековые светодиодные светильники SDSВЕТ предназначены для акцентной подсветки групп товаров или элементов интерьера в зависимости от пожелания заказчика. Есть модели с разной цветовой температурой, углом раскрытия и с функцией диммирования.[br]
 ✔Используются для акцентирования внимания на определенных зонах.[br]
-✔Производятся под заказ и соответствуют индивидуальным требованиям.
+✔Производятся под заказ и соответствуют индивидуальным требованиям.[br]
+✔Консультируем по подбору нужного акцентного светильника для определенной категории товара.[br]
+✔Используется вместе со светильниками серии Ритейл для сектора HoReCa.[br]
+✔Настройка любого сценария освещения.[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии Акцентное освещение предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Трековые светодиодные светильники SDSВЕТ предназначены для акцентной подсветки групп товаров или элементов интерьера в зависимости от пожелания заказчика. Есть модели с разной цветовой температурой, углом раскрытия и с функцией диммирования.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -2675,7 +2654,7 @@ D115х210 мм[br]
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
 			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Светодиодная панель Downlight D200[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ultratonkie-svetodiodnyie-paneli/svetodiodnaya-panel-downlight-200(krug.).html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ultratonkie-paneli/panel200.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 
@@ -2699,7 +2678,10 @@ D115х210 мм[br]
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
 				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные панели Даунлайт из серии ультратонких панелей имеют множество модификаций по конструктиву и техническим характеристикам.[br]
 ✔Панели используются для точечного освещения.[br]
-✔Светильники встраиваются в потолок.
+✔Светильники встраиваются в потолок.[br]
+✔Диммирование особенно актуальной для ресторанов среднего и премиального ценового сегмента.[br]
+✔Универсальный дизайн в черном корпусе, цвет корпуса можно менять.[br]
+✔Настройка любого сценария освещения.[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные панели Даунлайт из серии ультратонких панелей имеют множество модификаций по конструктиву и техническим характеристикам.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
@@ -2735,17 +2717,18 @@ D200x15 мм[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для точечного освещения." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%FIRSTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
-			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
-			<layer name="project_vipolnen" url="%FIRSTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
-			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
-			vcenter="true" padding="5" wordwrap="true"/>
-			</layer>
+			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
+			<layer name="logo_pic_KFC" url="%FIRSTXML%/images/KFC.png" alpha="1" align="center" edge="center" x="-30%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_FARSH" url="%FIRSTXML%/images/FARSH.png" alpha="1" align="center" edge="center" x="-10%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>	
+			<layer name="logo_pic_shoko" url="%FIRSTXML%/images/SHOKO.png" alpha="1" align="center" edge="center" x="10%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>		
+			<layer name="logo_pic_ILPAT" url="%FIRSTXML%/images/ILPAT.png" alpha="1" align="center" edge="center" x="30%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>					
+			
 			</layer>
 			</layer>
 			</layer>
 						
 			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+
 			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
@@ -2756,7 +2739,8 @@ D200x15 мм[br]
 			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
 			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
 			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
-			</layer>			
+			</layer>	
+			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
 			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"

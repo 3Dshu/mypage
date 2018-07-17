@@ -1,7 +1,7 @@
 ﻿<krpano version="1.19" title="Virtual Tour" showerrors="false">
 
 	<include url="%FIRSTXML%skin/vtourskin.xml" />
-	<include url="%FIRSTXML%add/SDsvetINT.xml"/>
+	<include url="%FIRSTXML%add/SDsvetINT_KAFE.xml"/>
 	<include url="%FIRSTXML%add/custom.xml"/>
 	<include url="%FIRSTXML%add/STYLE.xml"/>
 
@@ -516,7 +516,7 @@
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
 			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Трековый диммируемый светильник 14W[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ofis/4x16.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-%C2%ABakczentnoe-svetodiodnoe-osveshhenie%C2%BB/trekovii-dim-14w.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 
@@ -585,12 +585,10 @@ IP40[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%FIRSTXML%/images/magaz_gidro.jpg" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
-			onclick="openurl('http://sdsvet.ru/proektyi/magazin-gidrosfera.html')" >
-			<layer name="project_vipolnen" url="%FIRSTXML%/images/magaz_gidro.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
-			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
-			vcenter="true" padding="5" wordwrap="true"/>
-			</layer>
+			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
+			<layer name="logo_pic_SHIKARI" url="%FIRSTXML%/images/SHIKARI.png" alpha="1" align="center" edge="center" x="-20%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_FARSH" url="%FIRSTXML%/images/FARSH.png" alpha="1" align="center" edge="center" x="0%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>	
+			<layer name="logo_pic_KALYAEV" url="%FIRSTXML%/images/KALYAEV.png" alpha="1" align="center" edge="center" x="20%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>
 			</layer>
 			</layer>
 			</layer>
@@ -821,8 +819,8 @@ IP40[br]
 
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
-			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Трековый светодиодный светильник 45W 5000K[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
-			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-ofis/4x16.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Cветильник 25W[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog/svetodiodnoe-osveshhenie/seriya-%C2%ABakczentnoe-svetodiodnoe-osveshhenie%C2%BB/cvetilnik-25w.html');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
 
@@ -844,15 +842,13 @@ IP40[br]
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]
-✔Многократное снижение затрат на энергоснабжение.[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты.[br]
-✔Многократное снижение нагрузки на сеть, высвобождение доп. мощностей.[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность.[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии [dq]Акцентное освещение[dq] предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[br]
+✔Используются для акцентирования внимания на определенных зонах.[br]
+✔Производятся под заказ и соответствуют индивидуальным требованиям.[br]
+
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии [dq]Акцентное освещение[dq] предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -863,27 +859,25 @@ IP40[br]
 Мощность[br]
 Световой поток[br]
 Температура свечения[br]
-Коэффициент пульсаций[br]
-Температура эксплуатации[br]
-Степень защиты:[br]
+Степень защиты[br]
 Габаритные размеры[br]
+Габариты монтажного отверстия[br]
 Тип монтажа[br]
-Тип рассеивателя[br]
+Угол cвечения[br]
 Вес[br]
 " css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			<layer name="kratk_opis_teh_2" type="text" width="100%" handcursor="false" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодное[br]
 176-264В/50Гц[br]
-33 Вт[br]
-3200 Лм[br]
-4700 К[br]
-[lt]1%[br]
-от 0 до +40 ⁰С[br]
-IP40[br]
-1200х240х35 мм[br]
-Накладной/Подвесной/Встраиваемый[br]
-«Призма»/ «Опал»[br]
-3.1 кг[br]
+25 Вт[br]
+2000 Лм[br]
+2700/3000 К[br]
+IP20[br]
+D138х112 мм[br]
+D125 мм[br]
+встраиваемый[br]
+60°[br]
+
 " css="font-family:Arial; color:#909090; font-size:20px; text-align:right;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
 			</layer>
@@ -891,12 +885,10 @@ IP40[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%FIRSTXML%/images/magaz_gidro.jpg" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
-			onclick="openurl('http://sdsvet.ru/proektyi/magazin-gidrosfera.html')" >
-			<layer name="project_vipolnen" url="%FIRSTXML%/images/magaz_gidro.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
-			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
-			vcenter="true" padding="5" wordwrap="true"/>
-			</layer>
+			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
+			<layer name="logo_pic_SHIKARI" url="%FIRSTXML%/images/SHIKARI.png" alpha="1" align="center" edge="center" x="-20%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_FARSH" url="%FIRSTXML%/images/FARSH.png" alpha="1" align="center" edge="center" x="0%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>	
+			<layer name="logo_pic_KALYAEV" url="%FIRSTXML%/images/KALYAEV.png" alpha="1" align="center" edge="center" x="20%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>
 			</layer>
 			</layer>
 			</layer>
