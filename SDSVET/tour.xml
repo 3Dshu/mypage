@@ -480,7 +480,7 @@
 				 onup=""
 				
 			/>
-			<action name="align_at_mouse">
+			<!--<action name="align_at_mouse">
 			  copy(x, mouse.x);
 			  copy(y, mouse.y);
 			  delayedcall(0, align_at_mouse());
@@ -500,7 +500,7 @@
 			style="PROD"
 			crop="256|0|256|256"
 			onloaded="align_at_mouse();"
-       	/>
+       	/>-->
 		
 	<events onmousedown="copy(lastmx,mouse.x);
                          copy(lastmy,mouse.y);
@@ -3691,8 +3691,11 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Индукционные светильники SDSвет cерии [dq]STREET[dq] - это одно из последних поколений энергосберегающего уличного освещения. Светильники используются для освещения улиц, дорог, дворов и внешних территорий.[/b][br][br]✔Конструктив светильника выдерживает широкий диапазон температур и климатические перепады.[br]
-				✔Свет от индукционной лампы дает равномерную и приятную засветку.[br]✔Мгновенный запуск (перезапуск) лампы в горячем и холодном состоянии.[br]✔Надежность лампы гарантирует отсутствие термокатодов и нитей накала." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Индукционные светильники SDSвет cерии [dq]STREET[dq] - это одно из последних поколений энергосберегающего уличного освещения. Светильники используются для освещения улиц, дорог, дворов и внешних территорий.[/b][br][br]
+				✔конструктив светильника выдерживает широкий диапазон температур и климатические перепады.[br]
+				✔свет от индукционной лампы дает равномерную и приятную засветку.[br]
+				✔мгновенный запуск (перезапуск) лампы в горячем и холодном состоянии.[br]
+				✔надежность лампы гарантирует отсутствие термокатодов и нитей накала." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Индукционные светильники SDSвет cерии [dq]STREET[dq] - это одно из последних поколений энергосберегающего уличного освещения. Светильники используются для освещения улиц, дорог, дворов и внешних территорий.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
@@ -5011,8 +5014,8 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, сертифицированный автодором для использования на трассах и автомагистралях. Протестирован на трассе М4 «Дон», участник проектов «Роснано».[br]
 				✔уникальная вторичная оптика, КСС которой позволяет устранить стробоскопический эффект[br]
 				✔низкое энергопотребление: светильники работают на трассах даже глубокой ночью[br]
-				✔Легкая заменяя драйвера[br]
-				✔Простота ухода и экплуатации[br]
+				✔легкая заменяя драйвера[br]
+				✔простота ухода и экплуатации[br]
 				✔долгий срок службы [br]
 				✔7 лет  - срок гарантии[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
@@ -6331,12 +6334,10 @@ onclick="loadscene(scene_ulica,MERGE,KEEPVIEW, BLEND(0.7));"
 
 						<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
 				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Модульный уличный светильник серии STREET-LED, встроенный в новейшие дизайнерский опоры. Применяются, в основном, для освещения территорий новых жилых комплексов, но также адаптирован для освещения парковок ТЦ и городского освещения.[br]
-
-				✔Проверенный уличный модульный светильник в новом дизайнерском корпусе[br]
-				✔Возможность замены светодиодов[br]
-				✔Низкое энергопотребление: светильники работают во дворе [br]
-				✔Легкая замена драйвера[br]
-				✔Простота ухода и эксплуатации[br]
+				✔проверенный уличный модульный светильник в новом дизайнерском корпусе[br]
+				✔возможность замены светодиодов[br]
+				✔низкое энергопотребление: светильники работают во дворе [br]
+				✔простота ухода и эксплуатации[br]
 				✔долгий срок службы[br]
 				✔7 лет  - срок гарантии[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"

@@ -575,11 +575,11 @@
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
 				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]
-✔Многократное снижение затрат на энергоснабжение.[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты.[br]
-✔Многократное снижение нагрузки на сеть, высвобождение доп. мощностей.[br]
-✔Нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность.[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп.
+✔многократное снижение затрат на энергоснабжение.[br]
+✔срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты.[br]
+✔многократное снижение нагрузки на сеть, высвобождение доп. мощностей.[br]
+✔нетепловая природа излучения влечет за собой пожаро- и взрывобезопасность.[br]
+✔отсутствие затрат на утилизацию ртутьсодержащих ламп.
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения офисных, административных помещений, медицинский, общеобразовательных учреждений и т.д.[br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
@@ -627,17 +627,16 @@ D530x480 мм[br]
 			</layer>
 						
 			<layer name="ZNAKI" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="40%" height="10%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
-			<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
+						<layer name="primenenie" keep="true" type="container" align="righttop" edge="righttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" scalechildren="true">
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="avtoIK" style="primenenieIK" align="center" x="-8%" y="10" width="prop" height="60%" crop="256|0|128|128"   zorder="10" onhover="showtext(автомагистрали, DEFAULT1)"/>
-			<layer name="parkovkiIK" style="primenenieIK" align="center" x="8%" y="10" width="prop" height="60%" crop="384|0|128|128"   zorder="10" onhover="showtext(парковки, DEFAULT1)"/>
-			<layer name="podsvetkaIK" style="primenenieIK" align="center" x="-24%" y="10" width="prop" height="60%" crop="1024|0|128|128"   zorder="10" onhover="showtext(парк, DEFAULT1)"/>
-			<layer name="parkIK" style="primenenieIK" align="center" x="24%" y="10" width="prop" height="60%" crop="896|0|128|128"   zorder="10" onhover="showtext(архитектурная[br]подсветка, DEFAULT1)"/>
-			<layer name="skladIK" style="primenenieIK" align="center" x="-40%" y="10" width="prop" height="60%" crop="768|0|128|128"   zorder="10" onhover="showtext(склады, DEFAULT1)"/>
-			<layer name="adminIK" style="primenenieIK" align="center" x="40%" y="10" width="prop" height="60%" crop="512|0|128|128"   zorder="10" onhover="showtext(административные[br]учереждения, DEFAULT1)"/>
-			</layer>			
+			<layer name="zavodIK_1" style="primenenieIK" icon_type="skladIK" align="center" x="0%" y="10" />
+			<layer name="SportKomIK_1" style="primenenieIK" icon_type="SportKomIK" align="center" x="16%" y="10" />
+			<layer name="TorgCentr_1" style="primenenieIK" icon_type="TorgCentr" align="center" x="-16%" y="10"  />
+			<layer name="pakoffkaIK_1" style="primenenieIK" icon_type="pakoffkaIK" align="center" x="32%" y="10"  />
+			<layer name="bizneszentrIK_1" style="primenenieIK" icon_type="bizneszentrIK" align="center" x="-32%" y="10"/>
+			</layer>		
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
 			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"

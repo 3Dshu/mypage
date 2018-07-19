@@ -411,15 +411,15 @@
 			
 
 			<layer name="ltext_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="lkratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светильники предназначены для обеспечения аварийного освещения в общественных помещениях.[br]
-✔Многократное снижение затрат на энергоснабжение[br]
-✔Использование в качестве источника света светодиодов позволяет сохранить яркость светового потока при минимальном расходе электроэнергии от аккумулятора[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
-✔Многократное снижение нагрузки на сеть, высвобождение доп. мощностей[br]
-✔Отсутствие затрат на утилизацию ртутьсодержащих ламп[br]
+				<layer name="lkratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодные светильники предназначены предназначены для обеспечения аварийного освещения в общественных помещениях. Рекомендованы к обязательному использованию в местах общего пользования[br]
+✔мгновенное срабатывание блока аварийного питания[br]
+✔в аварийном режиме работает несколько часов[br]
+✔защита от короткого замыкания[br]
+✔малогабаритный, легкий, но заметный[br]
+✔не нарушает общую концепцию интерьера[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="lkratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светильники предназначены для обеспечения аварийного освещения в общественных помещениях.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="lkratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Светодиодные светильники предназначены предназначены для обеспечения аварийного освещения в общественных помещениях. Рекомендованы к обязательному использованию в местах общего пользования[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
@@ -502,7 +502,7 @@ IP40[br]
 
 		<layer name="LEDname" keep="true" type="container" align="righttop" width="100%" height="50" zorder="82" bgcolor="0x1a2545" bgalpha="1"  scalechildren="true" bgcapture="true" handcursor="false"
 		>
-			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]Абажур[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
+			<layer name="LED_NAME" type="text" align="center" x="0" y="0" html="[b]SDSBET-ABAJUR-LED[/b]" css="font-family:Arial; color:#ffffff; font-size:28px"
 			   vcenter="true" padding="2" wordwrap="true" bg="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" onhover="set(layer[LEDname].bgcolor, 0xd75C4F4); showtext(Хотите перейти на страницу товара на сайт?, DEFAULT1)" onout="set(layer[LEDname].bgcolor, 0x1a2545)" onclick="openurl('http://sdsvet.ru/catalog');" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="true"
 				/>
 			</layer>
@@ -525,15 +525,15 @@ IP40[br]
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Интерьерный светильник в текстильном абажуре предназначен для общего освещения в ТРЦ, ресторанах и бизнес-центрах. Текстильный абажур может быть исполнен в любых габаритах и любом цвете.[br]
-✔Станет доминантой светового дизайна[br]
-✔Разработка под любые габариты и интерьер помещения[br]
-✔Равномерная торцевая засветка[br]
-✔Легкий и прочный[br]
-✔Могут быть установлены сериями [br]
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Интерьерный светильник в текстильном абажуре предназначен для общего освещения в ТРЦ, ресторанах и бизнес-центрах. Текстильный абажур может быть исполнен в любых габаритах и любом цвете[br]
+✔станет доминантой светового дизайна[br]
+✔разработка под любые габариты и интерьер помещения[br]
+✔равномерная торцевая засветка[br]
+✔легкий и прочный[br]
+✔могут быть установлены сериями[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Интерьерный светильник в текстильном абажуре предназначен для общего освещения в ТРЦ, ресторанах и бизнес-центрах. Текстильный абажур может быть исполнен в любых габаритах и любом цвете.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Интерьерный светильник в текстильном абажуре предназначен для общего освещения в ТРЦ, ресторанах и бизнес-центрах. Текстильный абажур может быть исполнен в любых габаритах и любом цвете[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>

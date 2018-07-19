@@ -103,11 +103,10 @@
 		animation="tween(timer,1,get(delay),easeOutQuad,tween(alpha,0.6,0.4,easeOutQuad, set(timer,0);tween(alpha,1,0.3,easeOutQuad);animation();););"
 		/>
 		<style name="primenenieIK" url="%FIRSTXML%add/IKONKI_PRIMENENIE.png"		keep="true"		visible="true"		enabled="true"		handcursor="true"		align="center"
-		width="64" height="prop" 
+		width="prop" height="70%"
 		edge="center"
 		rotate="0"
 		scale="1"
-
 		alpha="1"
 		bgcolor="0x000000"
 		bgalpha="0.0"
@@ -116,21 +115,21 @@
 		bgshadow=""
 		bgcapture="false"
 		onloaded="       
-        if(icon_type == 'podsvetkaIK', set(crop,1024|0|128|128);set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_park, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(90,70,140,smooth(100,50,100))););
-		if(icon_type == 'avtoIK', set(crop,256|0|128|128);set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_trassa, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); lookto(0,0,110,smooth(100,50,100))););
-		if(icon_type == 'stopBusIK', set(crop,1408|0|128|128);set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_stopBUS, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(33,5,60,smooth(100,50,100))););
-		if(icon_type == 'pakoffkaIK', set(crop,384|0|128|128);set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_parkovka, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(87,10,90,smooth(100,50,100))););
-		if(icon_type == 'ulicaIK', set(crop,896|0|128|128);set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_ulica, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(170,15,120,smooth(100,50,100))););
-		if(icon_type == 'perehodIK', set(crop,256|128|128|128);set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_stopBUS, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(33,5,60,smooth(100,50,100))););				
-		if(icon_type == 'zavodIK', set(crop,640|0|128|128);set(onclick, loadpano('%FIRSTXML%/perehod/zavod/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup());););
-		if(icon_type == 'SportKomIK', set(crop,128|128|128|128););
-		if(icon_type == 'TorgCentr', set(crop,128|0|128|128);set(onclick, loadpano('%FIRSTXML%/perehod/ent/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup());););
-		if(icon_type == 'bizneszentrIK', set(crop,640|128|128|128);set(onclick, loadpano('%FIRSTXML%/perehod/zavod/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
-		if(icon_type == 'shkolaIK', set(crop,512|0|128|128);set(onclick, loadpano('%FIRSTXML%/perehod/shkola/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
+        if(icon_type == 'podsvetkaIK', set(crop,1024|0|128|128); set(onhover, showtext(парк, DEFAULT1));set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_park, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(90,70,140,smooth(100,50,100))););
+		if(icon_type == 'avtoIK', set(crop,256|0|128|128); set(onhover, showtext(автотрасса, DEFAULT1)); set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_trassa, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); lookto(0,0,110,smooth(100,50,100))););
+		if(icon_type == 'stopBusIK', set(crop,1408|0|128|128);set(onhover, showtext(автобусная остановка, DEFAULT1)); set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_stopBUS, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(33,5,60,smooth(100,50,100))););
+		if(icon_type == 'pakoffkaIK', set(crop,384|0|128|128);set(onhover, showtext(парковка, DEFAULT1)); set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_parkovka, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(87,10,90,smooth(100,50,100))););
+		if(icon_type == 'ulicaIK', set(crop,896|0|128|128); set(onhover, showtext(улица, DEFAULT1)); set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_ulica, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(170,15,120,smooth(100,50,100))););
+		if(icon_type == 'perehodIK', set(crop,256|128|128|128); set(onhover, showtext(переход, DEFAULT1)); set(onclick, loadpanoscene('%FIRSTXML%tour.xml', scene_stopBUS, null, IGNOREKEEP|REMOVESCENES, BLEND(1)); lookto(33,5,60,smooth(100,50,100))););				
+		if(icon_type == 'zavodIK', set(crop,640|0|128|128); set(onhover, showtext(завод, DEFAULT1)); set(onclick, loadpano('%FIRSTXML%/perehod/zavod/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup());););
+		if(icon_type == 'SportKomIK', set(crop,128|128|128|128);  set(onhover, showtext(спортивные объекты, DEFAULT1)););
+		if(icon_type == 'TorgCentr', set(crop,128|0|128|128); set(onhover, showtext(торговый центр, DEFAULT1)); set(onclick, loadpano('%FIRSTXML%/perehod/ent/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup());););
+		if(icon_type == 'bizneszentrIK', set(crop,640|128|128|128); set(onhover, showtext(бизнес центр, DEFAULT1)); set(onclick, loadpano('%FIRSTXML%/perehod/office/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
+		if(icon_type == 'shkolaIK', set(crop,512|0|128|128); set(onhover, showtext(школа, DEFAULT1));set(onclick, loadpano('%FIRSTXML%/perehod/shkola/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
 		if(icon_type == 'MedUchIK', set(crop,0|128|128|128););
-		if(icon_type == 'kafeIKI', set(crop,1536|0|128|128);set(onclick, loadpano('%FIRSTXML%/perehod/kafe/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
-		if(icon_type == 'officeIK', set(crop,0|0|128|128); set(onclick, loadpano('%FIRSTXML%/perehod/office/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););		
-		
+		if(icon_type == 'kafeIKI', set(crop,1536|0|128|128); set(onhover, showtext(кафе, DEFAULT1)); set(onclick, loadpano('%FIRSTXML%/perehod/kafe/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
+		if(icon_type == 'officeIK', set(crop,0|0|128|128); set(onhover, showtext(офис, DEFAULT1)); set(onclick, loadpano('%FIRSTXML%/perehod/office/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););		
+		if(icon_type == 'skladIK', set(crop,768|0|128|128); set(onhover, showtext(склад, DEFAULT1)); set(onclick, loadpano('%FIRSTXML%/perehod/sclad/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup())););
 		
 		
 		"

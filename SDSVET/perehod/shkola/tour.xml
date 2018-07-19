@@ -280,12 +280,12 @@
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
 				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения классных кабинетов, коридоров, столовых и даже спортивных залов. Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]
-✔Срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
-✔Специальная цена по категории [dq]Социальный проект[dq][br]
-✔Позволяет добиться требуемой нормы освещенности над школьной партой[br]
-✔Допустим к использованию в социальных учреждениях[br]
-✔Не влияет негативно на детское зрение[br]
-✔Не мерцают, не пульсируют, не взрываются[br]
+✔срок службы светодиодных светильников – более 10 лет, что сводит к минимуму эксплуатационные затраты[br]
+✔специальная цена по категории [dq]Социальный проект[dq][br]
+✔позволяет добиться требуемой нормы освещенности над школьной партой[br]
+✔допустим к использованию в социальных учреждениях[br]
+✔не влияет негативно на детское зрение[br]
+✔не мерцают, не пульсируют, не взрываются[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Применяется для внутреннего освещения классных кабинетов, коридоров, столовых и даже спортивных залов. Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]" css="font-family:Arial; color:#b0b0b0; font-size:20px; text-align:left;"
@@ -498,12 +498,12 @@ IP40[br]
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
 				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Используется как общее освещение в классных кабинетах, столовых и коридорах, так и как специальное освещение школьных досок.  Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]
-✔Специальная цена по категории [dq]Социальный проект[dq][br]
-✔Позволяет добиться требуемой нормы освещенности над школьной партой[br]
-✔Допустим к использованию в социальных учреждениях[br]
-✔Не влияет негативно на детское зрение[br]
-✔Не мерцают, не пульсируют, не взрываются[br]
-✔Используется как освещение школьной доски. Позволяет видеть мелкий текст даже с задней парты[br]
+✔специальная цена по категории [dq]Социальный проект[dq][br]
+✔позволяет добиться требуемой нормы освещенности над школьной партой[br]
+✔допустим к использованию в социальных учреждениях[br]
+✔не влияет негативно на детское зрение[br]
+✔не мерцают, не пульсируют, не взрываются[br]
+✔используется как освещение школьной доски. Позволяет видеть мелкий текст даже с задней парты[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Используется как общее освещение в классных кабинетах, столовых и коридорах, так и как специальное освещение школьных досок.  Может также использоваться в медицинский учреждениях, бизнес-центрах и ТРЦ.[br]" css="font-family:Arial; color:#b0b0b0; font-size:20px; text-align:left;"
