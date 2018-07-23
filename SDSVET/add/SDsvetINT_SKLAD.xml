@@ -65,15 +65,15 @@
 				
 				<layer  name="sidebar1" keep="true" enebled="true" visible="true" type="container" zorder="7"  bgcapture="true" handcursor="false" scale="1" draggable="false" bgborder="0 0xFFFFFF 1"   align="rightcenter" x="0" width="280" height="100%" bgcolor="0x5E75AA" bgalpha="0" scalechildren="true" >	
 					
-					<layer name="PROMISHLENN" style="ikonki" x="195" y="0" crop="800|0|200|200"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 195])"   onhover="showtext(ПРОМЫШЛЕННЫЕ СВЕТИЛЬНИКИ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="lookto(0,-80,90,smooth(100,90,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 195])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="PROMISHLENN" style="ikonki" x="195" y="0" crop="200|0|50|50"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 195])"   onhover="showtext(ПРОМЫШЛЕННЫЕ СВЕТИЛЬНИКИ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="lookto(0,-80,90,smooth(100,90,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 195])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 					
-					<layer name="nazad" style="ikonki" x="250" y="0" crop="2000|0|200|200"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 250])"   onhover="showtext(НА УЛИЦУ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="loadpanoscene('%FIRSTXML%tour.xml', scene_RGB, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); delayedcall(0.5 ,startup());"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 250])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="nazad" style="ikonki" x="250" y="0" crop="400|0|50|50"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 250])"   onhover="showtext(НА УЛИЦУ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="loadpanoscene('%FIRSTXML%tour.xml', scene_RGB, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); delayedcall(0.5 ,startup());"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 250])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 								
 
 					
 					
-					<layer name="glowOUT" 		style="ikonki" x="15%"  y="0" crop="2400|0|200|200"  alpha="0" zorder="8" handcursor="false"/>
-					<layer name="glowIN"        style="ikonki" x="19%" y="0" crop="2200|0|200|200"  alpha="0" zorder="6" handcursor="false"/>
+					<layer name="glowOUT" 		style="ikonki" x="15%"  y="0" crop="600|0|50|50"  alpha="0" zorder="8" handcursor="false"/>
+					<layer name="glowIN"        style="ikonki" x="19%" y="0" crop="550|0|50|50"  alpha="0" zorder="6" handcursor="false"/>
 				</layer>
 	
 				
