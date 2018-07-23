@@ -75,7 +75,7 @@
 					
 					<layer name="VIHOD" style="ikonki" x="250" y="0" crop="650|0|50|50"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 250])"   onhover="showtext(АВАРИЙНЫЕ СВЕТИЛЬНИКИ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="lookto(-190,-10,40,smooth(100,50,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 250])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 					
-					<layer name="nazad" style="ikonki" x="305" y="0" crop="400|0|50|50"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 305])"   onhover="showtext(НА УЛИЦУ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="loadpanoscene('%FIRSTXML%tour.xml', scene_RGB, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); delayedcall(0.5 ,startup());"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 305])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="nazad" style="ikonki" x="305" y="0" crop="500|0|50|50"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 305])"   onhover="showtext(НА УЛИЦУ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="loadpanoscene('%FIRSTXML%tour.xml', scene_RGB, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); delayedcall(0.5 ,startup());"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 305])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 								
 
 					
