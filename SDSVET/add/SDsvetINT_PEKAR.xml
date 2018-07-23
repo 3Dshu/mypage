@@ -67,7 +67,7 @@
 					
 					<layer name="PROMISHLENN" style="ikonki" x="195" y="0" crop="1600|0|200|200"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 195])"   onhover="showtext(HB СВЕТИЛЬНИКИ СЕРИИ [dq]КОЛОКОЛ[dq], DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="lookto(-100,-20,40,smooth(100,90,100));"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 195])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 					
-					<layer name="nazad" style="ikonki" x="250" y="0" crop="2000|0|200|200"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 250])"   onhover="showtext(ОБРАТНО, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="loadpanoscene('%FIRSTXML%tour.xml', scene_RGB, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); delayedcall(0.5 ,startup());"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 250])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
+					<layer name="nazad" style="ikonki" x="250" y="0" crop="2000|0|200|200"   zorder="10"  onover="tween(layer[glowIN].alpha, 1 , 0.666); set(layer[glowIN].x , 250])"   onhover="showtext(НА УЛИЦУ, DEFAULT3)" onout="tween(layer[glowIN].alpha,0 , 0.8)"   onclick="loadpanoscene('%FIRSTXML%tour.xml', scene_RGB, null, IGNOREKEEP|REMOVESCENES, BLEND(1) ); delayedcall(0.5 ,startup());"   ondown="tween(layer[glowOUT].alpha, 0.8, 0.06, easeInOutExpo); set(layer[glowOUT].x , 250])"    onup="tween(layer[glowOUT].alpha, 0 , 0.08, easeOutExpo);"/>
 								
 
 					

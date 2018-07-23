@@ -135,6 +135,27 @@
 		"
 		/>
 		
+		<style name="ikonki" url="INT_IK.png"
+		keep="true"
+		visible="true"
+		enabled="true"
+		handcursor="true"
+		align="left"
+		width="256"
+		height="prop" 
+		edge="center"
+		rotate="0"
+		scale="0.2"		
+		alpha="1"
+		bgcolor="0x000000"
+		bgalpha="0.0"
+		bgborder="0"
+		bgroundedge="0"
+		bgshadow=""
+		scalechildren="true"
+		maskchildren="true"
+		bgcapture="false"/>
+		
 		<style name="_hotspot_SERii"
 		url="%FIRSTXML%/add/serii_PROD.png"  handcursor="true"		align="center"
 		width="64" height="prop" 

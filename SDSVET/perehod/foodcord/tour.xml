@@ -709,12 +709,15 @@
 			
 
 			<layer name="text_op"  keep="true" type="container" align="topcenter" edge="topcenter" y="50" x="0" width="100%" height="90%" direction="all" handcursor="false" mwheel="true" draggable="true" renderer="css3d"  zorder="79" bgalpha="0" bgcolor="0x000000" maskchildren="true" alpha="1" >
-				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии [dq]Акцентное освещение[dq] предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[br]
-✔используются для акцентирования внимания на определенных зонах.[br]
-✔производятся под заказ и соответствуют индивидуальным требованиям.
+				<layer name="kratk_opis_text" type="text" width="100%" zorder="84" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светильники типа DOME - это наш аналог светильников Martini. Качественные характеристики позволяют добиться хорошего освещения, но цена аналога ниже. Установлены во всех новых ресторанах KFC с 2014 года.[br]
+✔цвет корпуса можно менять[br]
+✔энергосберегающие технологии[br]
+✔температуру цвета можно менять[br]
+✔мощность светильника выбирает Заказчик[br]
+✔используется для общего свещения[br]
 				" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
-				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светодиодные светильники SDSвет cерии [dq]Акцентное освещение[dq] предназначены для точечной подсветки. Светильники могут иметь абсолютно любой дизайн и технические параметры в зависимости от желаний клиента.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
+				<layer name="kratk_opis_text1" type="text" width="100%" zorder="85" autoheight="true" align="topcenter" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="[b]Светильники типа DOME - это наш аналог светильников Martini. Качественные характеристики позволяют добиться хорошего освещения, но цена аналога ниже. Установлены во всех новых ресторанах KFC с 2014 года.[/b][br]" css="font-family:Arial; color:#909090; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true" />
 			
 			</layer>
