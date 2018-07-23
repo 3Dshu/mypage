@@ -1278,10 +1278,10 @@ IP20[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="odejdA" style="ikonki" x="58%" y="10" width="prop" height="250%" zorder="10" crop="3000|0|200|200" onhover="showtext(МАГАЗИН ОДЕЖДЫ, DEFAULT1)" onclick=
+			<layer name="odejdA" style="ikonki" x="58%" y="10" width="prop" height="250%" zorder="10" crop="750|0|50|50" onhover="showtext(МАГАЗИН ОДЕЖДЫ, DEFAULT1)" onclick=
 			"loadpano('%FIRSTXML%/perehod/magazin/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup()) "/>
 			<layer name="kafeIKI_1" style="primenenieIK" icon_type="kafeIKI" align="center" x="-16%" y="10" width="prop" height="70%" zorder="10" onhover="showtext(кафе, DEFAULT1)"/>
-			<layer name="foodcordL" style="ikonki" x="80%" y="10" width="prop" height="250%" zorder="10" crop="3200|0|200|200" onhover="showtext(ФУД-КОРД, DEFAULT1)" onclick=" loadpano('%FIRSTXML%/perehod/foodcord/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup()) "/>
+			<layer name="foodcordL" style="ikonki" x="80%" y="10" width="prop" height="250%" zorder="10" crop="800|0|50|50" onhover="showtext(ФУД-КОРД, DEFAULT1)" onclick=" loadpano('%FIRSTXML%/perehod/foodcord/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup()) "/>
 			</layer>			
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
 			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
