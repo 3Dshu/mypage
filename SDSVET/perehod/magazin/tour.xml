@@ -1176,7 +1176,7 @@
 
  
   
- <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
  		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
 		<layer name="block_black" keep="true" type="container" align="center" edge="center" y="0" x="0" width="100%" height="100%"	handcursor="false"	 zorder="79" bgalpha="0.9" bgcolor="0x000000" scalechildren="true" maskchildren="true"/>
@@ -1263,12 +1263,11 @@ IP20[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для акцентирования внимания на определенных зонах." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%FIRSTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
-			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
-			<layer name="project_vipolnen" url="%FIRSTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
-			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
-			vcenter="true" padding="5" wordwrap="true"/>
-			</layer>
+			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
+			<layer name="logo_pic_perekrestok" url="%FIRSTXML%/images/PEREKRESTOK.png" alpha="1" align="center" edge="center" x="-30%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_KFC" url="%FIRSTXML%/images/KFC.png" alpha="1" align="center" edge="center" x="-10%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_SHOKO" url="%FIRSTXML%/images/VERNIJ.png" alpha="1" align="center" edge="center" x="10%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>
+			<layer name="logo_pic_ROSINTER" url="%FIRSTXML%/images/PAYTER.png" alpha="1" align="center" edge="center" x="30%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
 			</layer>
 			</layer>
 			</layer>
@@ -1664,7 +1663,7 @@ IP20[br]
  <point ath="-50.828105800375624" atv="-6.033080496087729"/>
  </hotspot>
 		
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		
 		<layer name="frame" type="container" align="left" x="5%" y="3%" width="90%" height="80%" zorder="79" visible="false" enabled="true" bgcolor="0x5ae1ff" bgalpha="0.1" bgborder="0" bgroundedge="0" bgshadow="0 0 11 8 0x5ae1ff 0.5" bgcapture="true" handcursor="false" alpha="0" maskchildren="false">
 		<layer name="frame_close_01" style="_hotspot_ani" icon_type="close_X_W" align="righttop" x="-40" y="-40" scale="1" alpha=".5" zorder="11" onover="tween(layer[frame_close_01].alpha,1)" onout="tween(layer[frame_close_01].alpha,.5)" onclick="action(close_st);action(reset)" />
@@ -1746,12 +1745,11 @@ D115х210 мм[br]
 			<layer name="text_prim_teh" keep="true" type="container" align="righttop" edge="righttop" y="50" x="0" width="100%" height="100%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="0.0" bgcolor="0x000000" maskchildren="true" alpha="0">
 			<layer name="text_prim_teh_" type="text" width="100%" handcursor="false" zorder="85" align="topleft" edge="topleft" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Применяются для акцентирования внимания на определенных зонах." css="font-family:Arial; color:#ffffff; font-size:20px; text-align:left;"
 			vcenter="true" padding="25 25 75 30" wordwrap="true"/>
-			<layer name="logo_pic" url="%FIRSTXML%/images/LOGO_ALENKA.png" alpha="1" align="leftcenter" x="5%" y="-15%" width="15%" height="prop" scale="1" handcursor="true" zorder="85" onover="tween(layer[project_vipolnen].alpha, 1, 1)" onout="tween(layer[project_vipolnen].alpha, 0, 1)"
-			onclick="openurl('http://sdsvet.ru/proektyi/magazin-alenka.html')" >
-			<layer name="project_vipolnen" url="%FIRSTXML%/images/alenka.jpg" keep="false" enabled="false" alpha="0" align="leftbottom" edge="topleft" zorder="84" x="0%" y="0%" width="200%" height="prop" scale="1" handcursor="false">
-			<layer name="perehod" type="text" width="100%" handcursor="false" zorder="85" align="centertop" edge="topcenter" x="0" y="0" bgcolor="0x000000" bgalpha="0" html="Перейти на страницу проекта на сайт?" css="font-family:Arial; color:#ffffff; font-size:20px; text-align:center;"
-			vcenter="true" padding="5" wordwrap="true"/>
-			</layer>
+			<layer name="place_logo_trassa" keep="false" type="container" align="center" edge="center" y="0" x="0" width="98%" height="30%"	renderer="css3d" handcursor="false" zorder="83" bgalpha="1" bgcolor="0x1a2545" border="true" bordercolor="0xffffff" borderalpha="1.0" borderwidth="0.3" maskchildren="true" alpha="1" bgroundedge="15" bgshadow="0 0 11 8 0x5ae1ff 0.5">
+			<layer name="logo_pic_perekrestok" url="%FIRSTXML%/images/PEREKRESTOK.png" alpha="1" align="center" edge="center" x="-20%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_DETMIR" url="%FIRSTXML%/images/DETMIR.png" alpha="1" align="center" edge="center" x="0%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>			
+			<layer name="logo_pic_FASHION" url="%FIRSTXML%/images/FASHION.png" alpha="1" align="center" edge="center" x="20%" y="0%" height="45%" width="prop" scale="0.7" handcursor="false" zorder="85" onhover="showtext(, DEFAULT1); tween(scale, 1.6, 0.1)" onout="tween(scale, 0.7, 0.3)"/>
+			
 			</layer>
 			</layer>
 			</layer>
@@ -1761,12 +1759,11 @@ D115х210 мм[br]
 			<layer name="PODpis" type="text" align="top" x="0" y="-18" html="[br]ПРИМЕНЕНИЕ" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false" maskchildren="true" scalechildren="true"
 			/>
-			<layer name="shkolaIK_1" style="primenenieIK" icon_type="shkolaIK" align="center" x="-8%" y="10" />
-			<layer name="kafeIKI_1" style="primenenieIK" icon_type="kafeIKI" align="center" x="-8%" y="10"/>
-			<layer name="officeIK_1" style="primenenieIK" icon_type="officeIK" align="center" x="-24%" y="10"/>
-			<layer name="TorgCentr_1" style="primenenieIK" icon_type="TorgCentr" align="center" x="24%" y="10"/>
-			
-			</layer>			
+			<layer name="odejdA" align="center" edge="center" style="ikonki" x="-16%" y="10" width="prop" height="250%" zorder="10" crop="750|0|50|50" onhover="showtext(магазин одежды, DEFAULT1)" onclick=
+			"loadpano('%FIRSTXML%/perehod/magazin/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup()) "/>
+			<layer name="kafeIKI_1" style="primenenieIK" icon_type="kafeIKI" align="center" x="0%" y="10" width="prop" height="70%" zorder="10" onhover="showtext(кафе, DEFAULT1)"/>
+			<layer name="foodcordL" align="center" edge="center" style="ikonki" x="16%" y="10" width="prop" height="250%" zorder="10" crop="800|0|50|50" onhover="showtext(фуд-корт, DEFAULT1)" onclick=" loadpano('%FIRSTXML%/perehod/foodcord/tour.xml', null, IGNOREKEEP|REMOVESCENES, BLEND(0.5)); delayedcall(0.5 ,startup()) "/>
+			</layer>				
 			<layer name="priemushestvO" keep="true" type="container" align="lefttop" edge="leftttop" y="0" x="0" width="50%" height="100%"	handcursor="false"	 zorder="83" bgalpha="0" bgcolor="0x000000" bgshadow="0 0 8 3 0xfff046 0" scalechildren="true">
 			<layer name="PODpis_" type="text" align="top" x="0" y="-18" html="[br]ПРЕИМУЩЕСТВА" css="font-family:Arial; color:#75C4F4; font-size:14px"
 			vcenter="true" padding="2" wordwrap="true" bgcolor="0xFFFFFF" bgalpha="0.0" bgborder="0"  bgroundedge="0" bgshadow="" handcursor="false"
