@@ -118,7 +118,7 @@
 			 bordercolor="0x00e4ff"
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"	
-			 onhover="showtext(абажур, DEFAULT2);"
+			 onhover="showtext(АБАЖУР, DEFAULT2);"
 			 onclick="action(open_st);"
 			/>
 			<style name="hs_exit_videmiy"
@@ -135,7 +135,7 @@
 			 bordercolor="0x00e4ff"
 			 borderalpha="0.1"
 			 bgshadow="0 5 11 0x5ae1ff 0.5"	
-			 onhover="showtext(Аварийный светильник, DEFAULT2);"
+			 onhover="showtext(АВАРИЙНЫЙ СВЕТИЛЬНИК, DEFAULT2);"
 			 onclick="action(lopen_st);"
 			/>
 
